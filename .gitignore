@@ -1,2 +1,4 @@
 /cmake-build-debug/
 *.o
+/libft/*.o
+/libft/%.o

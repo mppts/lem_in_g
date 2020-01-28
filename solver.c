@@ -6,7 +6,7 @@
 /*   By: limry <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/28 19:23:42 by limry             #+#    #+#             */
-/*   Updated: 2020/01/28 19:23:44 by limry            ###   ########.fr       */
+/*   Updated: 2020/01/28 19:52:20 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ void	dfs(t_map *g, t_room *start, t_queue *q[g->num_nodes], int64_t levs[g->num_
 	int64_t rear;
 	int64_t lev;
 	t_room	*tmp;
+	t_link	*link;
 
 	rear = -1;
 	init_queue(g, queue);
@@ -64,8 +65,8 @@ void	dfs(t_map *g, t_room *start, t_queue *q[g->num_nodes], int64_t levs[g->num_
 	while(-1 != rear)
 	{
 		tmp = pop_rear(g, queue, &rear);
-		tmp = tmp->linked_to->to;
-		while (tmp)
+		link = tmp->linked_to;
+		while (tmp->level + 1 ==  link->to->level && link->path_id == 0)
 		{
 			if (levs[tmp->hash_id] == -1)
 			{

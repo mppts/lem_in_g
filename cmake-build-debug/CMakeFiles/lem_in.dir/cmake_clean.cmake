@@ -1,9 +1,9 @@
 file(REMOVE_RECURSE
   "CMakeFiles/lem_in.dir/main.c.o"
-  "CMakeFiles/lem_in.dir/solver.c.o"
   "CMakeFiles/lem_in.dir/man_err.c.o"
-  "lem_in.pdb"
+  "CMakeFiles/lem_in.dir/solver.c.o"
   "lem_in"
+  "lem_in.pdb"
 )
 
 # Per-language clean rules from dependency scanning.

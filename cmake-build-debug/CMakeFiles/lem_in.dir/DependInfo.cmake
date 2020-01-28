@@ -4,9 +4,9 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/Users/limry/CLionProjects/lem_in/main.c" "/Users/limry/CLionProjects/lem_in/cmake-build-debug/CMakeFiles/lem_in.dir/main.c.o"
-  "/Users/limry/CLionProjects/lem_in/man_err.c" "/Users/limry/CLionProjects/lem_in/cmake-build-debug/CMakeFiles/lem_in.dir/man_err.c.o"
-  "/Users/limry/CLionProjects/lem_in/solver.c" "/Users/limry/CLionProjects/lem_in/cmake-build-debug/CMakeFiles/lem_in.dir/solver.c.o"
+  "/Users/limry/CLionProjects/lem_in_g/main.c" "/Users/limry/CLionProjects/lem_in_g/cmake-build-debug/CMakeFiles/lem_in.dir/main.c.o"
+  "/Users/limry/CLionProjects/lem_in_g/man_err.c" "/Users/limry/CLionProjects/lem_in_g/cmake-build-debug/CMakeFiles/lem_in.dir/man_err.c.o"
+  "/Users/limry/CLionProjects/lem_in_g/solver.c" "/Users/limry/CLionProjects/lem_in_g/cmake-build-debug/CMakeFiles/lem_in.dir/solver.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 

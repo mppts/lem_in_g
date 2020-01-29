@@ -53,6 +53,7 @@ t_room			*new_room(char **splt, t_flag *flag, int64_t id)
 	new->prev = NULL;
 	new->num_linked_to = 0;
 	new->level = -1;
+	new->path_id = 0;
 	return (new);
 }
 

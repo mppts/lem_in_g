@@ -6,130 +6,115 @@
 /*   By: limry <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/28 19:23:42 by limry             #+#    #+#             */
-/*   Updated: 2020/01/28 19:52:20 by limry            ###   ########.fr       */
+/*   Updated: 2020/01/29 14:04:37 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <lem_in.h>
+#include "deque.c"
 
-void		push_back(t_map *g, t_room *room, t_room *queue[g->num_nodes], int64_t *rear)
+void	remove_room(t_map *g, t_room *room, t_link *link)
 {
-	rear++;
-	queue[*rear] = room;
+	//delete all links to room
+	//delete room
 }
 
-t_room		*pop_front(t_map *g, t_room *queue[g->num_nodes], int64_t *begin)
+void	path_is_founded(t_deq *deq, t_paths *paths);
+
+void	dfs(t_map *g, t_deq *deq, int64_t levs[g->num_nodes], t_paths *paths)
 {
-	if (*begin > - 1)
-	{
-		(*begin)++;
-		return (queue[*begin - 1]);
-	}
-	else
-		return (NULL);
-}
-
-t_room		*pop_rear(t_map *g, t_room *queue[g->num_nodes], int64_t *rear)
-{
-	if (*rear > - 1)
-	{
-		(*rear)--;
-		return (queue[*rear + 1]);
-	}
-	else
-		return (NULL);
-}
-
-void		init_queue(t_map *g, t_room	*queue[g->num_nodes])
-{
-	uint64_t k;
-
-	k = 0;
-	while (k < g->num_nodes)
-		queue[k++] = NULL;
-}
-
-
-void	dfs(t_map *g, t_room *start, t_queue *q[g->num_nodes], int64_t levs[g->num_nodes])
-{
-	t_room	*queue[g->num_nodes];
-	int64_t rear;
-	int64_t lev;
 	t_room	*tmp;
 	t_link	*link;
 
-	rear = -1;
-	init_queue(g, queue);
-	push_back(g, start, queue, &rear);
-	g->fin->level = INT64_MAX - 10;
-	while(-1 != rear)
+	while(-1 != deq->rear)
 	{
-		tmp = pop_rear(g, queue, &rear);
+		tmp = pop_rear(g, deq);
 		link = tmp->linked_to;
-		while (tmp->level + 1 ==  link->to->level && link->path_id == 0)
+		while (link)
 		{
-			if (levs[tmp->hash_id] == -1)
+			if (levs[tmp->hash_id] + 1 ==  levs[link->to->hash_id] && link->path_id == 0)
 			{
-				push_back(g, tmp, queue, &rear);
+				if (link->to == g->fin)
+					path_is_founded(deq, paths);
+				else if (!link->to->num_linked_to)
+					remove_room(g, link->to, link);
+				else
+				{
+					push_back(g, tmp, deq);
+					dfs (g, deq, levs, paths);
+				}
 			}
-			tmp = tmp->next;
+			link = link->next;
 		}
 	}
-	return (queue[rear] == g->fin);
 }
 
 
-int		bfs(t_map *g, t_room *start, t_room *q[g->num_nodes], int64_t levs[g->num_nodes])
+int		bfs(t_map *g, t_room *start, t_deq *deq, int64_t levs[g->num_nodes])
 {
-	t_room	*queue[g->num_nodes];
-	int64_t begin;
-	int64_t rear;
 	int64_t lev;
 	t_room	*tmp;
 	t_link	*link;
 
 	lev = 0;
-	begin = 0;
-	rear = -1;
-	init_queue(g, queue);
-	push_back(g, start, queue, &rear);
+	init_dequeue(g, deq);
+	push_back(g, start, deq);
 	levs[start->hash_id] = lev;
-	g->fin->level = INT64_MAX - 10;
-	while(begin != rear)
+	g->fin->level = INT64_MAX - 2;
+	while(deq->begin != deq->rear)
 	{
-		tmp = pop_front(g, queue, &begin);
+		tmp = pop_front(g, deq);
 		lev = levs[tmp->hash_id] + 1;
 		link = tmp->linked_to;
 		while (link)
 		{
-			if (link->path_id)
+			if (link->to->path_id)
 				continue ;
 			if (levs[link->to->hash_id] == -1)
 			{
 				levs[link->to->hash_id]= lev;
-				push_back(g, link->to, queue, &rear);
+				push_back(g, link->to, deq);
 			}
+			else if (link->to == g->fin)
+				g->no_path_exists = FALSE;
 			link = link->next;
 		}
 	}
-	return (queue[rear] == g->fin);
 }
 
-void			dinic(t_map *g, int ants)
+void			dinic(t_map *g, int ants, t_deq *deq, t_paths *paths)
 {
-	t_room		*q[g->num_nodes];
 	int64_t		lev[g->num_nodes];
-	uint64_t 	n;
+	uint64_t	n;
 
 	n = 0;
 	while (n < g->num_nodes)
 		lev[n++] = -1;
-	//if bfs is NULL return paths else search path
-	bfs(g, g->start, q, lev);
-
-
+	g->no_path_exists = FALSE;
+	while (!g->no_path_exists)
+	{
+		g->no_path_exists = TRUE;
+		bfs(g, g->start, deq, lev);
+		if (!g->no_path_exists)
+			break ;
+		else
+		{
+			init_dequeue(g, deq);
+			push_back(g, g->start, deq);
+			dfs(g, deq, lev, paths);
+		}
+	}
 }
 
+void		prep_for_solver(t_map *g, int ants)
+{
+	t_deq	deq;
+	t_room	*q[g->num_nodes];
+	t_paths *paths;
 
-//dinic algorithm and Edmonds-Karp algorithm
+	deq.deq = q;
+	init_paths(g, paths);
+	init_dequeue(g, &deq);
+	dinic(g, ants, &deq, paths);
+}
 

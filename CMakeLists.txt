@@ -7,4 +7,4 @@ include_directories( libft/includes includes)
 
 add_executable(lem_in main.c
         includes/lem_in.h
-        libft/includes/libft.h solver.c man_err.c)
+        libft/includes/libft.h solver.c man_err.c deque.c)

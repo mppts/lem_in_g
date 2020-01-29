@@ -1,4 +1,5 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/lem_in.dir/deque.c.o"
   "CMakeFiles/lem_in.dir/main.c.o"
   "CMakeFiles/lem_in.dir/man_err.c.o"
   "CMakeFiles/lem_in.dir/solver.c.o"

@@ -8,6 +8,13 @@
 # define FALSE 0
 # define TRUE 1
 
+typedef struct		s_paths
+{
+	struct s_room	**room;
+	uint64_t 		path_len;
+
+}					t_paths;
+
 typedef struct 		s_link
 {
 	struct s_room	*to;
@@ -27,6 +34,7 @@ typedef struct		s_room
 	int64_t			id;
 	uint64_t 		hash;
 	uint64_t 		hash_id;
+	uint64_t 		path_id;
 	uint64_t 		num_linked_to;
 	int64_t			level;
 	t_link			*linked_to;
@@ -37,6 +45,7 @@ typedef struct		s_room
 
 typedef struct		s_map
 {
+	uint8_t 		no_path_exists;
 	t_room			*room_start;
 	t_room			*room_end;
 	t_room			*start;
@@ -55,11 +64,12 @@ typedef struct 		s_flag
 	int 			flag_start;
 }					t_flag;
 
-typedef struct 		s_dequeue
+typedef struct 		s_deq
 {
-	t_room			*front;
-	t_room			*back;
-}					t_queue;
+	t_room			**deq;
+	int64_t 		rear;
+	int64_t 		begin;
+}					t_deq;
 
 void				man_err(char *msg, void *data, void (*f_todel)(void**));
 void				man_err_map(char *msg, void *data, void (*f_todel)(void**), t_map *map);

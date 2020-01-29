@@ -84,6 +84,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/limry/CLionProjects/lem_in_g/deque.c">
+			<Option target="lem_in"/>
+		</Unit>
 		<Unit filename="/Users/limry/CLionProjects/lem_in_g/includes/lem_in.h">
 			<Option target="lem_in"/>
 		</Unit>

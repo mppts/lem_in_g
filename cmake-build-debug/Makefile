@@ -123,6 +123,33 @@ lem_in/fast:
 	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/build
 .PHONY : lem_in/fast
 
+deque.o: deque.c.o
+
+.PHONY : deque.o
+
+# target to build an object file
+deque.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/deque.c.o
+.PHONY : deque.c.o
+
+deque.i: deque.c.i
+
+.PHONY : deque.i
+
+# target to preprocess a source file
+deque.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/deque.c.i
+.PHONY : deque.c.i
+
+deque.s: deque.c.s
+
+.PHONY : deque.s
+
+# target to generate assembly for a file
+deque.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/deque.c.s
+.PHONY : deque.c.s
+
 main.o: main.c.o
 
 .PHONY : main.o
@@ -213,6 +240,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... edit_cache"
 	@echo "... lem_in"
+	@echo "... deque.o"
+	@echo "... deque.i"
+	@echo "... deque.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

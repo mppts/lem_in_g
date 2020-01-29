@@ -6,20 +6,17 @@
 /*   By: limry <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/28 19:23:42 by limry             #+#    #+#             */
-/*   Updated: 2020/01/29 14:04:37 by limry            ###   ########.fr       */
+/*   Updated: 2020/01/29 16:30:26 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <lem_in.h>
 #include "deque.c"
 
-void	remove_room(t_map *g, t_room *room, t_link *link)
-{
-	//delete all links to room
-	//delete room
-}
-
 void	path_is_founded(t_deq *deq, t_paths *paths);
+{
+	deq->
+}
 
 void	dfs(t_map *g, t_deq *deq, int64_t levs[g->num_nodes], t_paths *paths)
 {
@@ -32,12 +29,12 @@ void	dfs(t_map *g, t_deq *deq, int64_t levs[g->num_nodes], t_paths *paths)
 		link = tmp->linked_to;
 		while (link)
 		{
-			if (levs[tmp->hash_id] + 1 ==  levs[link->to->hash_id] && link->path_id == 0)
+			if (levs[tmp->hash_id] + 1 ==  levs[link->to->hash_id] && link->to->path_id != 0)
 			{
 				if (link->to == g->fin)
 					path_is_founded(deq, paths);
 				else if (!link->to->num_linked_to)
-					remove_room(g, link->to, link);
+					link->to->path_id = 0;
 				else
 				{
 					push_back(g, tmp, deq);
@@ -68,16 +65,15 @@ int		bfs(t_map *g, t_room *start, t_deq *deq, int64_t levs[g->num_nodes])
 		link = tmp->linked_to;
 		while (link)
 		{
-			if (link->to->path_id)
-				continue ;
-			if (levs[link->to->hash_id] == -1)
+			while (link && link->to->path_id)
+				link = link->next;
+			if (link && levs[link->to->hash_id] == -1)
 			{
 				levs[link->to->hash_id]= lev;
 				push_back(g, link->to, deq);
 			}
-			else if (link->to == g->fin)
+			else if (link && link->to == g->fin)
 				g->no_path_exists = FALSE;
-			link = link->next;
 		}
 	}
 }

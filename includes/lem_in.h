@@ -10,16 +10,15 @@
 
 typedef struct		s_paths
 {
-	struct s_room	**room;
+	struct s_room	**path;
 	uint64_t 		path_len;
-
 }					t_paths;
 
 typedef struct 		s_link
 {
 	struct s_room	*to;
 	struct s_link	*next;
-	uint64_t 		path_id;
+	int64_t 		path_id;
 }					t_link;
 /*
 ** type: 1 is entrance; 2 is exit
@@ -29,7 +28,7 @@ typedef struct		s_room
 	char			*name;
 	int				x;
 	int				y;
-	u_char			type;
+	char			type;
 	int 			checked;
 	int64_t			id;
 	uint64_t 		hash;

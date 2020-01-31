@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
+CMAKE_COMMAND = /home/kona/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/193.6015.37/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
+RM = /home/kona/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/193.6015.37/bin/cmake/linux/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/limry/CLionProjects/lem_in_g
+CMAKE_SOURCE_DIR = /home/kona/CLionProjects/lem_in_g
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/limry/CLionProjects/lem_in_g/cmake-build-debug
+CMAKE_BINARY_DIR = /home/kona/CLionProjects/lem_in_g/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /Users/limry/CLionProjects/lem_in_g/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/home/kona/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/193.6015.37/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/home/kona/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/193.6015.37/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/limry/CLionProjects/lem_in_g/cmake-build-debug/CMakeFiles /Users/limry/CLionProjects/lem_in_g/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kona/CLionProjects/lem_in_g/cmake-build-debug/CMakeFiles /home/kona/CLionProjects/lem_in_g/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/limry/CLionProjects/lem_in_g/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kona/CLionProjects/lem_in_g/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -123,6 +123,195 @@ lem_in/fast:
 	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/build
 .PHONY : lem_in/fast
 
+binary_heap/srcs/bin_free.o: binary_heap/srcs/bin_free.c.o
+
+.PHONY : binary_heap/srcs/bin_free.o
+
+# target to build an object file
+binary_heap/srcs/bin_free.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/binary_heap/srcs/bin_free.c.o
+.PHONY : binary_heap/srcs/bin_free.c.o
+
+binary_heap/srcs/bin_free.i: binary_heap/srcs/bin_free.c.i
+
+.PHONY : binary_heap/srcs/bin_free.i
+
+# target to preprocess a source file
+binary_heap/srcs/bin_free.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/binary_heap/srcs/bin_free.c.i
+.PHONY : binary_heap/srcs/bin_free.c.i
+
+binary_heap/srcs/bin_free.s: binary_heap/srcs/bin_free.c.s
+
+.PHONY : binary_heap/srcs/bin_free.s
+
+# target to generate assembly for a file
+binary_heap/srcs/bin_free.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/binary_heap/srcs/bin_free.c.s
+.PHONY : binary_heap/srcs/bin_free.c.s
+
+binary_heap/srcs/bin_get_root.o: binary_heap/srcs/bin_get_root.c.o
+
+.PHONY : binary_heap/srcs/bin_get_root.o
+
+# target to build an object file
+binary_heap/srcs/bin_get_root.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/binary_heap/srcs/bin_get_root.c.o
+.PHONY : binary_heap/srcs/bin_get_root.c.o
+
+binary_heap/srcs/bin_get_root.i: binary_heap/srcs/bin_get_root.c.i
+
+.PHONY : binary_heap/srcs/bin_get_root.i
+
+# target to preprocess a source file
+binary_heap/srcs/bin_get_root.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/binary_heap/srcs/bin_get_root.c.i
+.PHONY : binary_heap/srcs/bin_get_root.c.i
+
+binary_heap/srcs/bin_get_root.s: binary_heap/srcs/bin_get_root.c.s
+
+.PHONY : binary_heap/srcs/bin_get_root.s
+
+# target to generate assembly for a file
+binary_heap/srcs/bin_get_root.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/binary_heap/srcs/bin_get_root.c.s
+.PHONY : binary_heap/srcs/bin_get_root.c.s
+
+binary_heap/srcs/bin_inc_key.o: binary_heap/srcs/bin_inc_key.c.o
+
+.PHONY : binary_heap/srcs/bin_inc_key.o
+
+# target to build an object file
+binary_heap/srcs/bin_inc_key.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/binary_heap/srcs/bin_inc_key.c.o
+.PHONY : binary_heap/srcs/bin_inc_key.c.o
+
+binary_heap/srcs/bin_inc_key.i: binary_heap/srcs/bin_inc_key.c.i
+
+.PHONY : binary_heap/srcs/bin_inc_key.i
+
+# target to preprocess a source file
+binary_heap/srcs/bin_inc_key.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/binary_heap/srcs/bin_inc_key.c.i
+.PHONY : binary_heap/srcs/bin_inc_key.c.i
+
+binary_heap/srcs/bin_inc_key.s: binary_heap/srcs/bin_inc_key.c.s
+
+.PHONY : binary_heap/srcs/bin_inc_key.s
+
+# target to generate assembly for a file
+binary_heap/srcs/bin_inc_key.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/binary_heap/srcs/bin_inc_key.c.s
+.PHONY : binary_heap/srcs/bin_inc_key.c.s
+
+binary_heap/srcs/bin_insert.o: binary_heap/srcs/bin_insert.c.o
+
+.PHONY : binary_heap/srcs/bin_insert.o
+
+# target to build an object file
+binary_heap/srcs/bin_insert.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/binary_heap/srcs/bin_insert.c.o
+.PHONY : binary_heap/srcs/bin_insert.c.o
+
+binary_heap/srcs/bin_insert.i: binary_heap/srcs/bin_insert.c.i
+
+.PHONY : binary_heap/srcs/bin_insert.i
+
+# target to preprocess a source file
+binary_heap/srcs/bin_insert.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/binary_heap/srcs/bin_insert.c.i
+.PHONY : binary_heap/srcs/bin_insert.c.i
+
+binary_heap/srcs/bin_insert.s: binary_heap/srcs/bin_insert.c.s
+
+.PHONY : binary_heap/srcs/bin_insert.s
+
+# target to generate assembly for a file
+binary_heap/srcs/bin_insert.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/binary_heap/srcs/bin_insert.c.s
+.PHONY : binary_heap/srcs/bin_insert.c.s
+
+binary_heap/srcs/bin_remove_root.o: binary_heap/srcs/bin_remove_root.c.o
+
+.PHONY : binary_heap/srcs/bin_remove_root.o
+
+# target to build an object file
+binary_heap/srcs/bin_remove_root.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/binary_heap/srcs/bin_remove_root.c.o
+.PHONY : binary_heap/srcs/bin_remove_root.c.o
+
+binary_heap/srcs/bin_remove_root.i: binary_heap/srcs/bin_remove_root.c.i
+
+.PHONY : binary_heap/srcs/bin_remove_root.i
+
+# target to preprocess a source file
+binary_heap/srcs/bin_remove_root.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/binary_heap/srcs/bin_remove_root.c.i
+.PHONY : binary_heap/srcs/bin_remove_root.c.i
+
+binary_heap/srcs/bin_remove_root.s: binary_heap/srcs/bin_remove_root.c.s
+
+.PHONY : binary_heap/srcs/bin_remove_root.s
+
+# target to generate assembly for a file
+binary_heap/srcs/bin_remove_root.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/binary_heap/srcs/bin_remove_root.c.s
+.PHONY : binary_heap/srcs/bin_remove_root.c.s
+
+binary_heap/srcs/bin_swap.o: binary_heap/srcs/bin_swap.c.o
+
+.PHONY : binary_heap/srcs/bin_swap.o
+
+# target to build an object file
+binary_heap/srcs/bin_swap.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/binary_heap/srcs/bin_swap.c.o
+.PHONY : binary_heap/srcs/bin_swap.c.o
+
+binary_heap/srcs/bin_swap.i: binary_heap/srcs/bin_swap.c.i
+
+.PHONY : binary_heap/srcs/bin_swap.i
+
+# target to preprocess a source file
+binary_heap/srcs/bin_swap.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/binary_heap/srcs/bin_swap.c.i
+.PHONY : binary_heap/srcs/bin_swap.c.i
+
+binary_heap/srcs/bin_swap.s: binary_heap/srcs/bin_swap.c.s
+
+.PHONY : binary_heap/srcs/bin_swap.s
+
+# target to generate assembly for a file
+binary_heap/srcs/bin_swap.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/binary_heap/srcs/bin_swap.c.s
+.PHONY : binary_heap/srcs/bin_swap.c.s
+
+binary_heap/srcs/binary_init.o: binary_heap/srcs/binary_init.c.o
+
+.PHONY : binary_heap/srcs/binary_init.o
+
+# target to build an object file
+binary_heap/srcs/binary_init.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/binary_heap/srcs/binary_init.c.o
+.PHONY : binary_heap/srcs/binary_init.c.o
+
+binary_heap/srcs/binary_init.i: binary_heap/srcs/binary_init.c.i
+
+.PHONY : binary_heap/srcs/binary_init.i
+
+# target to preprocess a source file
+binary_heap/srcs/binary_init.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/binary_heap/srcs/binary_init.c.i
+.PHONY : binary_heap/srcs/binary_init.c.i
+
+binary_heap/srcs/binary_init.s: binary_heap/srcs/binary_init.c.s
+
+.PHONY : binary_heap/srcs/binary_init.s
+
+# target to generate assembly for a file
+binary_heap/srcs/binary_init.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/binary_heap/srcs/binary_init.c.s
+.PHONY : binary_heap/srcs/binary_init.c.s
+
 deque.o: deque.c.o
 
 .PHONY : deque.o
@@ -149,6 +338,168 @@ deque.s: deque.c.s
 deque.c.s:
 	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/deque.c.s
 .PHONY : deque.c.s
+
+dijkstra.o: dijkstra.c.o
+
+.PHONY : dijkstra.o
+
+# target to build an object file
+dijkstra.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/dijkstra.c.o
+.PHONY : dijkstra.c.o
+
+dijkstra.i: dijkstra.c.i
+
+.PHONY : dijkstra.i
+
+# target to preprocess a source file
+dijkstra.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/dijkstra.c.i
+.PHONY : dijkstra.c.i
+
+dijkstra.s: dijkstra.c.s
+
+.PHONY : dijkstra.s
+
+# target to generate assembly for a file
+dijkstra.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/dijkstra.c.s
+.PHONY : dijkstra.c.s
+
+fibonacci_heap/srcs/fib_create_node.o: fibonacci_heap/srcs/fib_create_node.c.o
+
+.PHONY : fibonacci_heap/srcs/fib_create_node.o
+
+# target to build an object file
+fibonacci_heap/srcs/fib_create_node.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/fibonacci_heap/srcs/fib_create_node.c.o
+.PHONY : fibonacci_heap/srcs/fib_create_node.c.o
+
+fibonacci_heap/srcs/fib_create_node.i: fibonacci_heap/srcs/fib_create_node.c.i
+
+.PHONY : fibonacci_heap/srcs/fib_create_node.i
+
+# target to preprocess a source file
+fibonacci_heap/srcs/fib_create_node.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/fibonacci_heap/srcs/fib_create_node.c.i
+.PHONY : fibonacci_heap/srcs/fib_create_node.c.i
+
+fibonacci_heap/srcs/fib_create_node.s: fibonacci_heap/srcs/fib_create_node.c.s
+
+.PHONY : fibonacci_heap/srcs/fib_create_node.s
+
+# target to generate assembly for a file
+fibonacci_heap/srcs/fib_create_node.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/fibonacci_heap/srcs/fib_create_node.c.s
+.PHONY : fibonacci_heap/srcs/fib_create_node.c.s
+
+fibonacci_heap/srcs/fib_heap_union.o: fibonacci_heap/srcs/fib_heap_union.c.o
+
+.PHONY : fibonacci_heap/srcs/fib_heap_union.o
+
+# target to build an object file
+fibonacci_heap/srcs/fib_heap_union.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/fibonacci_heap/srcs/fib_heap_union.c.o
+.PHONY : fibonacci_heap/srcs/fib_heap_union.c.o
+
+fibonacci_heap/srcs/fib_heap_union.i: fibonacci_heap/srcs/fib_heap_union.c.i
+
+.PHONY : fibonacci_heap/srcs/fib_heap_union.i
+
+# target to preprocess a source file
+fibonacci_heap/srcs/fib_heap_union.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/fibonacci_heap/srcs/fib_heap_union.c.i
+.PHONY : fibonacci_heap/srcs/fib_heap_union.c.i
+
+fibonacci_heap/srcs/fib_heap_union.s: fibonacci_heap/srcs/fib_heap_union.c.s
+
+.PHONY : fibonacci_heap/srcs/fib_heap_union.s
+
+# target to generate assembly for a file
+fibonacci_heap/srcs/fib_heap_union.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/fibonacci_heap/srcs/fib_heap_union.c.s
+.PHONY : fibonacci_heap/srcs/fib_heap_union.c.s
+
+fibonacci_heap/srcs/fib_init.o: fibonacci_heap/srcs/fib_init.c.o
+
+.PHONY : fibonacci_heap/srcs/fib_init.o
+
+# target to build an object file
+fibonacci_heap/srcs/fib_init.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/fibonacci_heap/srcs/fib_init.c.o
+.PHONY : fibonacci_heap/srcs/fib_init.c.o
+
+fibonacci_heap/srcs/fib_init.i: fibonacci_heap/srcs/fib_init.c.i
+
+.PHONY : fibonacci_heap/srcs/fib_init.i
+
+# target to preprocess a source file
+fibonacci_heap/srcs/fib_init.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/fibonacci_heap/srcs/fib_init.c.i
+.PHONY : fibonacci_heap/srcs/fib_init.c.i
+
+fibonacci_heap/srcs/fib_init.s: fibonacci_heap/srcs/fib_init.c.s
+
+.PHONY : fibonacci_heap/srcs/fib_init.s
+
+# target to generate assembly for a file
+fibonacci_heap/srcs/fib_init.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/fibonacci_heap/srcs/fib_init.c.s
+.PHONY : fibonacci_heap/srcs/fib_init.c.s
+
+fibonacci_heap/srcs/fib_insert_node.o: fibonacci_heap/srcs/fib_insert_node.c.o
+
+.PHONY : fibonacci_heap/srcs/fib_insert_node.o
+
+# target to build an object file
+fibonacci_heap/srcs/fib_insert_node.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/fibonacci_heap/srcs/fib_insert_node.c.o
+.PHONY : fibonacci_heap/srcs/fib_insert_node.c.o
+
+fibonacci_heap/srcs/fib_insert_node.i: fibonacci_heap/srcs/fib_insert_node.c.i
+
+.PHONY : fibonacci_heap/srcs/fib_insert_node.i
+
+# target to preprocess a source file
+fibonacci_heap/srcs/fib_insert_node.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/fibonacci_heap/srcs/fib_insert_node.c.i
+.PHONY : fibonacci_heap/srcs/fib_insert_node.c.i
+
+fibonacci_heap/srcs/fib_insert_node.s: fibonacci_heap/srcs/fib_insert_node.c.s
+
+.PHONY : fibonacci_heap/srcs/fib_insert_node.s
+
+# target to generate assembly for a file
+fibonacci_heap/srcs/fib_insert_node.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/fibonacci_heap/srcs/fib_insert_node.c.s
+.PHONY : fibonacci_heap/srcs/fib_insert_node.c.s
+
+fibonacci_heap/srcs/fib_remove_min.o: fibonacci_heap/srcs/fib_remove_min.c.o
+
+.PHONY : fibonacci_heap/srcs/fib_remove_min.o
+
+# target to build an object file
+fibonacci_heap/srcs/fib_remove_min.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/fibonacci_heap/srcs/fib_remove_min.c.o
+.PHONY : fibonacci_heap/srcs/fib_remove_min.c.o
+
+fibonacci_heap/srcs/fib_remove_min.i: fibonacci_heap/srcs/fib_remove_min.c.i
+
+.PHONY : fibonacci_heap/srcs/fib_remove_min.i
+
+# target to preprocess a source file
+fibonacci_heap/srcs/fib_remove_min.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/fibonacci_heap/srcs/fib_remove_min.c.i
+.PHONY : fibonacci_heap/srcs/fib_remove_min.c.i
+
+fibonacci_heap/srcs/fib_remove_min.s: fibonacci_heap/srcs/fib_remove_min.c.s
+
+.PHONY : fibonacci_heap/srcs/fib_remove_min.s
+
+# target to generate assembly for a file
+fibonacci_heap/srcs/fib_remove_min.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/fibonacci_heap/srcs/fib_remove_min.c.s
+.PHONY : fibonacci_heap/srcs/fib_remove_min.c.s
 
 main.o: main.c.o
 
@@ -238,11 +589,50 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... edit_cache"
 	@echo "... lem_in"
+	@echo "... edit_cache"
+	@echo "... binary_heap/srcs/bin_free.o"
+	@echo "... binary_heap/srcs/bin_free.i"
+	@echo "... binary_heap/srcs/bin_free.s"
+	@echo "... binary_heap/srcs/bin_get_root.o"
+	@echo "... binary_heap/srcs/bin_get_root.i"
+	@echo "... binary_heap/srcs/bin_get_root.s"
+	@echo "... binary_heap/srcs/bin_inc_key.o"
+	@echo "... binary_heap/srcs/bin_inc_key.i"
+	@echo "... binary_heap/srcs/bin_inc_key.s"
+	@echo "... binary_heap/srcs/bin_insert.o"
+	@echo "... binary_heap/srcs/bin_insert.i"
+	@echo "... binary_heap/srcs/bin_insert.s"
+	@echo "... binary_heap/srcs/bin_remove_root.o"
+	@echo "... binary_heap/srcs/bin_remove_root.i"
+	@echo "... binary_heap/srcs/bin_remove_root.s"
+	@echo "... binary_heap/srcs/bin_swap.o"
+	@echo "... binary_heap/srcs/bin_swap.i"
+	@echo "... binary_heap/srcs/bin_swap.s"
+	@echo "... binary_heap/srcs/binary_init.o"
+	@echo "... binary_heap/srcs/binary_init.i"
+	@echo "... binary_heap/srcs/binary_init.s"
 	@echo "... deque.o"
 	@echo "... deque.i"
 	@echo "... deque.s"
+	@echo "... dijkstra.o"
+	@echo "... dijkstra.i"
+	@echo "... dijkstra.s"
+	@echo "... fibonacci_heap/srcs/fib_create_node.o"
+	@echo "... fibonacci_heap/srcs/fib_create_node.i"
+	@echo "... fibonacci_heap/srcs/fib_create_node.s"
+	@echo "... fibonacci_heap/srcs/fib_heap_union.o"
+	@echo "... fibonacci_heap/srcs/fib_heap_union.i"
+	@echo "... fibonacci_heap/srcs/fib_heap_union.s"
+	@echo "... fibonacci_heap/srcs/fib_init.o"
+	@echo "... fibonacci_heap/srcs/fib_init.i"
+	@echo "... fibonacci_heap/srcs/fib_init.s"
+	@echo "... fibonacci_heap/srcs/fib_insert_node.o"
+	@echo "... fibonacci_heap/srcs/fib_insert_node.i"
+	@echo "... fibonacci_heap/srcs/fib_insert_node.s"
+	@echo "... fibonacci_heap/srcs/fib_remove_min.o"
+	@echo "... fibonacci_heap/srcs/fib_remove_min.i"
+	@echo "... fibonacci_heap/srcs/fib_remove_min.s"
 	@echo "... main.o"
 	@echo "... main.i"
 	@echo "... main.s"

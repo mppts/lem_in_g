@@ -46,7 +46,6 @@ void	dfs(t_map *g, t_deq *deq, int64_t levs[g->num_nodes], t_paths *paths)
 	}
 }
 
-
 int		bfs(t_map *g, t_room *start, t_deq *deq, int64_t levs[g->num_nodes])
 {
 	int64_t lev;

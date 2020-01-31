@@ -8,101 +8,152 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
-				<Option working_dir="/Users/limry/CLionProjects/lem_in_g/cmake-build-debug"/>
+				<Option working_dir="/home/kona/CLionProjects/lem_in_g/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/limry/CLionProjects/lem_in_g/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/limry/CLionProjects/lem_in_g/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/limry/CLionProjects/lem_in_g/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/limry/CLionProjects/lem_in_g/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/kona/CLionProjects/lem_in_g/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/kona/CLionProjects/lem_in_g/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/kona/CLionProjects/lem_in_g/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/kona/CLionProjects/lem_in_g/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="rebuild_cache">
-				<Option working_dir="/Users/limry/CLionProjects/lem_in_g/cmake-build-debug"/>
+				<Option working_dir="/home/kona/CLionProjects/lem_in_g/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/limry/CLionProjects/lem_in_g/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/limry/CLionProjects/lem_in_g/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/limry/CLionProjects/lem_in_g/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/limry/CLionProjects/lem_in_g/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-				</MakeCommands>
-			</Target>
-			<Target title="edit_cache">
-				<Option working_dir="/Users/limry/CLionProjects/lem_in_g/cmake-build-debug"/>
-				<Option type="4"/>
-				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/limry/CLionProjects/lem_in_g/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/limry/CLionProjects/lem_in_g/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/limry/CLionProjects/lem_in_g/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/limry/CLionProjects/lem_in_g/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/kona/CLionProjects/lem_in_g/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/kona/CLionProjects/lem_in_g/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/kona/CLionProjects/lem_in_g/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/kona/CLionProjects/lem_in_g/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="lem_in">
-				<Option output="/Users/limry/CLionProjects/lem_in_g/cmake-build-debug/lem_in" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/limry/CLionProjects/lem_in_g/cmake-build-debug"/>
+				<Option output="/home/kona/CLionProjects/lem_in_g/cmake-build-debug/lem_in" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/kona/CLionProjects/lem_in_g/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Users/limry/CLionProjects/lem_in_g/libft/includes"/>
-					<Add directory="/Users/limry/CLionProjects/lem_in_g/includes"/>
+					<Add directory="/home/kona/CLionProjects/lem_in_g/libft/includes"/>
+					<Add directory="/home/kona/CLionProjects/lem_in_g/includes"/>
+					<Add directory="/home/kona/CLionProjects/lem_in_g/binary_heap"/>
+					<Add directory="/home/kona/CLionProjects/lem_in_g/binary_heap/includes"/>
+					<Add directory="/home/kona/CLionProjects/lem_in_g/fibonacci_heap"/>
+					<Add directory="/home/kona/CLionProjects/lem_in_g/fibonacci_heap/includes"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/limry/CLionProjects/lem_in_g/cmake-build-debug/Makefile&quot;  VERBOSE=1 lem_in"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/limry/CLionProjects/lem_in_g/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/limry/CLionProjects/lem_in_g/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/limry/CLionProjects/lem_in_g/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/kona/CLionProjects/lem_in_g/cmake-build-debug/Makefile&quot;  VERBOSE=1 lem_in"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/kona/CLionProjects/lem_in_g/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/kona/CLionProjects/lem_in_g/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/kona/CLionProjects/lem_in_g/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 			<Target title="lem_in/fast">
-				<Option output="/Users/limry/CLionProjects/lem_in_g/cmake-build-debug/lem_in" prefix_auto="0" extension_auto="0"/>
-				<Option working_dir="/Users/limry/CLionProjects/lem_in_g/cmake-build-debug"/>
+				<Option output="/home/kona/CLionProjects/lem_in_g/cmake-build-debug/lem_in" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/home/kona/CLionProjects/lem_in_g/cmake-build-debug"/>
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
-					<Add directory="/Users/limry/CLionProjects/lem_in_g/libft/includes"/>
-					<Add directory="/Users/limry/CLionProjects/lem_in_g/includes"/>
+					<Add directory="/home/kona/CLionProjects/lem_in_g/libft/includes"/>
+					<Add directory="/home/kona/CLionProjects/lem_in_g/includes"/>
+					<Add directory="/home/kona/CLionProjects/lem_in_g/binary_heap"/>
+					<Add directory="/home/kona/CLionProjects/lem_in_g/binary_heap/includes"/>
+					<Add directory="/home/kona/CLionProjects/lem_in_g/fibonacci_heap"/>
+					<Add directory="/home/kona/CLionProjects/lem_in_g/fibonacci_heap/includes"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
 					<Add directory="/usr/local/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/9.0.0/include"/>
-					<Add directory="/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include"/>
+					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
+					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
-					<Add directory="/System/Library/Frameworks"/>
-					<Add directory="/Library/Frameworks"/>
 				</Compiler>
 				<MakeCommands>
-					<Build command="/usr/bin/make -j4 -f &quot;/Users/limry/CLionProjects/lem_in_g/cmake-build-debug/Makefile&quot;  VERBOSE=1 lem_in/fast"/>
-					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/limry/CLionProjects/lem_in_g/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
-					<Clean command="/usr/bin/make -j4 -f &quot;/Users/limry/CLionProjects/lem_in_g/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
-					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/limry/CLionProjects/lem_in_g/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/kona/CLionProjects/lem_in_g/cmake-build-debug/Makefile&quot;  VERBOSE=1 lem_in/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/kona/CLionProjects/lem_in_g/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/kona/CLionProjects/lem_in_g/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/kona/CLionProjects/lem_in_g/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/home/kona/CLionProjects/lem_in_g/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/home/kona/CLionProjects/lem_in_g/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/kona/CLionProjects/lem_in_g/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/home/kona/CLionProjects/lem_in_g/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/home/kona/CLionProjects/lem_in_g/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/Users/limry/CLionProjects/lem_in_g/deque.c">
+		<Unit filename="/home/kona/CLionProjects/lem_in_g/binary_heap/includes/binary_heap.h">
 			<Option target="lem_in"/>
 		</Unit>
-		<Unit filename="/Users/limry/CLionProjects/lem_in_g/includes/lem_in.h">
+		<Unit filename="/home/kona/CLionProjects/lem_in_g/binary_heap/srcs/bin_free.c">
 			<Option target="lem_in"/>
 		</Unit>
-		<Unit filename="/Users/limry/CLionProjects/lem_in_g/libft/includes/libft.h">
+		<Unit filename="/home/kona/CLionProjects/lem_in_g/binary_heap/srcs/bin_get_root.c">
 			<Option target="lem_in"/>
 		</Unit>
-		<Unit filename="/Users/limry/CLionProjects/lem_in_g/main.c">
+		<Unit filename="/home/kona/CLionProjects/lem_in_g/binary_heap/srcs/bin_inc_key.c">
 			<Option target="lem_in"/>
 		</Unit>
-		<Unit filename="/Users/limry/CLionProjects/lem_in_g/man_err.c">
+		<Unit filename="/home/kona/CLionProjects/lem_in_g/binary_heap/srcs/bin_insert.c">
 			<Option target="lem_in"/>
 		</Unit>
-		<Unit filename="/Users/limry/CLionProjects/lem_in_g/solver.c">
+		<Unit filename="/home/kona/CLionProjects/lem_in_g/binary_heap/srcs/bin_remove_root.c">
 			<Option target="lem_in"/>
 		</Unit>
-		<Unit filename="/Users/limry/CLionProjects/lem_in_g/CMakeLists.txt">
+		<Unit filename="/home/kona/CLionProjects/lem_in_g/binary_heap/srcs/bin_swap.c">
+			<Option target="lem_in"/>
+		</Unit>
+		<Unit filename="/home/kona/CLionProjects/lem_in_g/binary_heap/srcs/binary_init.c">
+			<Option target="lem_in"/>
+		</Unit>
+		<Unit filename="/home/kona/CLionProjects/lem_in_g/deque.c">
+			<Option target="lem_in"/>
+		</Unit>
+		<Unit filename="/home/kona/CLionProjects/lem_in_g/dijkstra.c">
+			<Option target="lem_in"/>
+		</Unit>
+		<Unit filename="/home/kona/CLionProjects/lem_in_g/fibonacci_heap/includes/fibonacci_heap.h">
+			<Option target="lem_in"/>
+		</Unit>
+		<Unit filename="/home/kona/CLionProjects/lem_in_g/fibonacci_heap/srcs/fib_create_node.c">
+			<Option target="lem_in"/>
+		</Unit>
+		<Unit filename="/home/kona/CLionProjects/lem_in_g/fibonacci_heap/srcs/fib_heap_union.c">
+			<Option target="lem_in"/>
+		</Unit>
+		<Unit filename="/home/kona/CLionProjects/lem_in_g/fibonacci_heap/srcs/fib_init.c">
+			<Option target="lem_in"/>
+		</Unit>
+		<Unit filename="/home/kona/CLionProjects/lem_in_g/fibonacci_heap/srcs/fib_insert_node.c">
+			<Option target="lem_in"/>
+		</Unit>
+		<Unit filename="/home/kona/CLionProjects/lem_in_g/fibonacci_heap/srcs/fib_remove_min.c">
+			<Option target="lem_in"/>
+		</Unit>
+		<Unit filename="/home/kona/CLionProjects/lem_in_g/includes/lem_in.h">
+			<Option target="lem_in"/>
+		</Unit>
+		<Unit filename="/home/kona/CLionProjects/lem_in_g/libft/includes/libft.h">
+			<Option target="lem_in"/>
+		</Unit>
+		<Unit filename="/home/kona/CLionProjects/lem_in_g/main.c">
+			<Option target="lem_in"/>
+		</Unit>
+		<Unit filename="/home/kona/CLionProjects/lem_in_g/man_err.c">
+			<Option target="lem_in"/>
+		</Unit>
+		<Unit filename="/home/kona/CLionProjects/lem_in_g/solver.c">
+			<Option target="lem_in"/>
+		</Unit>
+		<Unit filename="/home/kona/CLionProjects/lem_in_g/CMakeLists.txt">
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

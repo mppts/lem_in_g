@@ -3,17 +3,29 @@ project(lem_in C)
 
 set(CMAKE_C_STANDARD 11)
 
-include_directories( libft/includes includes binary_heap binary_heap/includes fibonacci_heap fibonacci_heap/includes)
+include_directories( libft/includes includes libbinheap libbinheap/includes fibonacci_heap fibonacci_heap/includes)
 
-add_executable(lem_in
-        main.c
-        includes/lem_in.h
-        libft/includes/libft.h
-        solver.c
-        man_err.c
-        deque.c
-        binary_heap/srcs/binary_init.c
-        binary_heap/includes/binary_heap.h
-        fibonacci_heap/includes/fibonacci_heap.h
-        fibonacci_heap/srcs/fib_init.c
-        binary_heap/srcs/bin_free.c binary_heap/srcs/bin_swap.c binary_heap/srcs/bin_get_root.c binary_heap/srcs/bin_insert.c binary_heap/srcs/bin_remove_root.c binary_heap/srcs/bin_inc_key.c fibonacci_heap/srcs/fib_create_node.c fibonacci_heap/srcs/fib_insert_node.c fibonacci_heap/srcs/fib_heap_union.c fibonacci_heap/srcs/fib_remove_min.c dijkstra.c)
+add_executable(lem_in srcs/main.c
+                includes/lem_in.h
+                libft/includes/libft.h
+                #srcs/solver.c
+                srcs/man_err.c
+                srcs/deque.c
+                libbinheap/srcs/binary_init.c
+                libbinheap/includes/binary_heap.h
+                #fibonacci_heap/includes/fibonacci_heap.h
+                #fibonacci_heap/srcs/fib_init.c
+                libbinheap/srcs/bin_free.c
+                libbinheap/srcs/bin_swap.c
+                libbinheap/srcs/bin_get_root.c
+                libbinheap/srcs/bin_insert.c
+                libbinheap/srcs/bin_remove_root.c
+                libbinheap/srcs/bin_inc_key.c
+                #fibonacci_heap/srcs/fib_create_node.c
+                #fibonacci_heap/srcs/fib_insert_node.c
+                #fibonacci_heap/srcs/fib_heap_union.c
+                #fibonacci_heap/srcs/fib_remove_min.c
+                srcs/dijkstra.c
+                )
+target_link_libraries(lem_in ${CMAKE_SOURCE_DIR}/libft/libft.a ${CMAKE_SOURCE_DIR}/libbinheap/libbinheap.a)
+

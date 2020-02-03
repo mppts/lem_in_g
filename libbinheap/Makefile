@@ -7,7 +7,7 @@ DIR_INC = includes/
 DIR_OBJ = obj/
 
 SOURCE = bin_free.c\
-         bin_get_min.c\
+		 bin_get_root.c\
          bin_inc_key.c\
          bin_insert.c\
          bin_remove_root.c\

@@ -2,12 +2,15 @@
 
 void			ft_del_splitter(char **pocket)
 {
+	uint64_t 	i;
+
+	i = 0;
 	if (!pocket)
 		return ;
-	while (*pocket)
+	while (pocket[i])
 	{
-		free(*pocket);
-		pocket++;
+		free(pocket[i]);
+		i++;
 	}
 	free(pocket);
 }

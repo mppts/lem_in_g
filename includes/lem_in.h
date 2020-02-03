@@ -2,7 +2,7 @@
 #define LEM_IN_LEM_IN_H
 
 #include <inttypes.h>
-#include "libft.h"
+#include <libft.h>
 #include <stdlib.h>
 
 # define FALSE 0
@@ -51,7 +51,7 @@ typedef struct		s_map
 	t_room			*fin;
 	uint64_t		num_nodes;
 	uint64_t		num_links;
-	uint64_t		ants;
+	int64_t			ants;
 	char 			**splt;
 	uint8_t			is_rooms_hashed;
 	t_room			**hashed_rooms;

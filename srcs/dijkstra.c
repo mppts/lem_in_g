@@ -1,6 +1,5 @@
 
 #include <lem_in.h>
-#include "fibonacci_heap.h"
 #include "binary_heap.h"
 /*
 ** g - map

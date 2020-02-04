@@ -22,6 +22,7 @@ void 			del_room(t_room *room)
 		}
 		free(room->name);
 	}
+	free(room);
 }
 
 void 			del_map(t_map *g)
@@ -31,7 +32,10 @@ void 			del_map(t_map *g)
 	i = 0;
 	if (g->hashed_rooms)
 		while (i < g->num_nodes)
-			del_room(g->hashed_rooms[i++]);
+		{
+			del_room(g->hashed_rooms[i]);
+			i++;
+		}
 	del_hashed_rooms(g);
 }
 
@@ -63,26 +67,25 @@ void			set_flag(t_room *new,t_flag *flag)
 	flag->flag_start = 0;
 }
 
-t_room			*new_room(char **splt, t_flag *flag, int64_t id)
+t_room			*new_room(char **splt, t_flag *flag)
 {
 	t_room		*new;
 	int64_t 	coord_x;
 	int64_t 	coord_y;
 
 	if(!(new = (t_room*)malloc(sizeof(t_room))))
-		man_err("Error", NULL, NULL);//memory managenment
+		man_err("Error", NULL, NULL);
 	set_flag(new, flag);
-	new->name = ft_strjoin(new->name, splt[0]);
+	new->name = ft_strjoin(NULL, splt[0]);
 	if (check_if_not_nmbrs(splt, 1) || check_if_not_nmbrs(splt, 2))
-		man_err("Error", NULL, NULL);//memory managenment
+		man_err("Error", NULL, NULL);
 	coord_x = ft_atoli(splt[1]);
 	coord_y = ft_atoli(splt[2]);
 	if (coord_x > INT32_MAX || coord_y > INT32_MAX ||
 	coord_x < INT32_MIN || coord_y < INT32_MIN)
-		man_err("Error", NULL, NULL);//memory managenment
+		man_err("Error", NULL, NULL);
 	new->x = coord_x;
 	new->y = coord_y;
-	new->id = id;
 	new->linked_to = NULL;
 	new->next = NULL;
 	new->prev = NULL;
@@ -124,9 +127,25 @@ int				no_room_with_this_name(t_map *map)
 			return (0);
 		if (tmp == map->room_start)
 			break ;
-		tmp = tmp->next;
 	}
 	return (1);
+}
+void 	set_start_and_fin(t_room *new, t_map *map)
+{
+	if (new->type == 1 || new->type == 3)
+	{
+		if (!map->start)
+			map->start = new;
+		else
+			man_err("Error Too many entries", NULL, NULL);
+		}
+	if (new->type == 2 || new->type == 3)
+	{
+		if (!map->fin)
+			map->fin = new;
+		else
+			man_err("Error: Too many exits", NULL, NULL);
+	}
 }
 
 void			add_room(char *buf, t_flag *flag, t_map *map)
@@ -145,11 +164,8 @@ void			add_room(char *buf, t_flag *flag, t_map *map)
 		man_err("Error", NULL, NULL);
 	}
 	if (no_room_with_this_name(map))
-		new = new_room(map->splt, flag, map->num_nodes);
-	if (new->type == 1 || new->type == 3)
-		map->start = new;
-	if (new->type == 2 || new->type == 3)
-		map->fin = new;
+		new = new_room(map->splt, flag);
+	set_start_and_fin(new, map);
 	if (new)
 		link_rooms(map, new);
 	ft_del_splitter(map->splt);
@@ -161,7 +177,7 @@ uint64_t 		get_hash(char *str, uint64_t size)
 	uint64_t c;
 
 	hash = 5381UL;
-	while (c = *str)
+	while ((c = *str))
 	{
 		hash = ((hash << 5UL) + hash) + c; /* hash * 33 + c */
 		str++;
@@ -175,10 +191,8 @@ void			hash_rooms(t_map *map)
 	uint64_t	num;
 	uint64_t	i;
 
-	map->hashed_rooms = (t_room**)malloc((map->num_nodes) * sizeof(t_room*));
-	num = 0;
-	while (num <= map->num_nodes)
-		map->hashed_rooms[num++] = NULL;
+	map->hashed_rooms = (t_room**)malloc(map->num_nodes * sizeof(t_room*));
+	ft_bzero(map->hashed_rooms, map->num_nodes * sizeof(t_room*));
 	tmp = map->room_start;
 	i = 0;
 	while (i++ < map->num_nodes)
@@ -200,11 +214,11 @@ void			hash_rooms(t_map *map)
 t_room			*find_hashed_room(t_map *map, char *name)
 {
 	uint64_t 	hash;
-	uint64_t 	loop;
+	uint8_t 	loop;
 
 	hash = get_hash(name, map->num_nodes);
 	loop = 0;
-	while (map->hashed_rooms[hash] &&  ft_strcmp(map->hashed_rooms[hash]->name, name))
+	while (!map->hashed_rooms[hash] || ft_strcmp(map->hashed_rooms[hash]->name, name))
 	{
 		hash++;
 		if (hash > map->num_nodes)
@@ -287,6 +301,7 @@ void			add_link(char *buf, t_map *map)
 		man_err("Error\n", NULL, NULL);
 	add_link_to_room(from, to);
 	add_link_to_room(to, from);
+	ft_del_splitter(map->splt);
 }
 
 void			add_room_or_path(char *buf, t_flag *flag, t_map *map)
@@ -308,9 +323,10 @@ void			add_room_or_path(char *buf, t_flag *flag, t_map *map)
 }
 
 
-static void		parse_line(char *buf, t_flag *flag, t_map *map)
+static int		parse_line(char *buf, t_flag *flag, t_map *map)
 {
-
+	if (!buf)
+		return (1);
 	if (*buf == '#')
 	{
 		if (!ft_strcmp(buf, "##start"))
@@ -320,6 +336,9 @@ static void		parse_line(char *buf, t_flag *flag, t_map *map)
 	}
 	else if (*buf != 'L')
 		add_room_or_path(buf, flag, map);
+	else
+		man_err("Room starts with L\n", NULL, NULL);
+	return (0);
 }
 
 void			parse_map(t_map *map)
@@ -329,11 +348,32 @@ void			parse_map(t_map *map)
 
 	flag.flag_end = 0;
 	flag.flag_start = 0;
+	buf = NULL;
 	while (-1 != get_next_line(0, &buf))
 	{
-		parse_line(buf, &flag, map);
+		if (parse_line(buf, &flag, map))
+		{
+			free(buf);
+			break ;
+		}
+		ft_putstr(buf);
+		ft_putchar('\n');
 		free(buf);
 	}
+}
+
+int 			is_num(char *str)
+{
+	char 		*tmp;
+
+	tmp = str;
+	while (*tmp)
+	{
+		if (!ft_isdigit(*tmp))
+			return (0);
+		tmp++;
+	}
+	return (1);
 }
 
 void			parse_ants(t_map *map)
@@ -341,34 +381,49 @@ void			parse_ants(t_map *map)
 	char 		*buf;
 	int64_t		ants;
 
-	if ( -1 != get_next_line(0, &buf) && ft_isdigit(*buf))
+	buf = NULL;
+	if ( -1 != get_next_line(0, &buf) && buf)
 	{
+		if (!is_num(buf))
+			man_err("Error: not only numbers in first line\n", buf, ft_memdel);
 		ants = ft_atoli(buf);
 		if (ants < 0 || ants >= INT32_MAX)
-			man_err("Error\n", buf, ft_memdel);
+			man_err("Error: number of ants is not int\n", buf, ft_memdel);
 		map->ants = ants;
+		ft_putstr(buf);
+		ft_putchar('\n');
 		free(buf);
 	}
 	else
-		man_err("Error\n", buf, ft_memdel);
+		man_err("Error: no input data\n", buf, ft_memdel);
 }
 
-int			main(int ac, char *av[])
+void		init_map(t_map *map)
+{
+	map->num_links = 0;
+	map->num_nodes = 0;
+	map->is_rooms_hashed = FALSE;
+	map->room_start = NULL;
+	map->room_end = NULL;
+	map->start = NULL;
+	map->fin = NULL;
+	map->no_path_exists = 1;
+	map->ants = 0;
+	map->splt = NULL;
+	map->hashed_rooms = NULL;
+}
+
+int			main(void)
 {
 	t_map	map;
 
-	map.num_links = 0;
-	map.num_nodes = 0;
-	map.is_rooms_hashed = FALSE;
-	map.room_start = NULL;
-	map.room_end = NULL;
-	map.start = NULL;
-	map.fin = NULL;
+	init_map(&map);
 	//parse input
 	// parse ants
 	parse_ants(&map);
 	// parse map
 	parse_map(&map);
+	//check ant farm
 	//algorithm processing
 	//output
 	// VISUALIZATION??

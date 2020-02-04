@@ -35,13 +35,13 @@ static int		error_in_link(t_map *map, t_room *from, t_room *to)
 	return (0);
 }
 
-static t_link	*add_new_link(t_room *from, t_room *to)
+static t_link	*add_new_link(t_room *from, t_room *to, t_map *map)
 {
 	t_link		*new;
 	t_link		*tmp;
 
 	if (!(new = (t_link*)malloc(sizeof(t_link))))
-		man_err("Error in add_link_to_room\n", NULL, NULL);
+		man_err_map("Error in add_link_to_room\n", NULL, NULL, map);
 	new->to = to;
 	new->next = NULL;
 	new->prev = NULL;
@@ -61,13 +61,13 @@ static t_link	*add_new_link(t_room *from, t_room *to)
 	return (new);
 }
 
-void			add_links(t_room *from, t_room *to)
+void			add_links(t_room *from, t_room *to, t_map *map)
 {
 	t_link		*forward;
 	t_link		*back;
 
-	forward = add_new_link(from, to);
-	back = add_new_link(to, from);
+	forward = add_new_link(from, to, map);
+	back = add_new_link(to, from, map);
 	forward->mirror = back;
 	back->mirror = forward;
 }
@@ -83,17 +83,14 @@ void			add_link(char *buf, t_map *map)
 	while (*(num + map->splt) != NULL)
 		num++;
 	if (num != 2)
-	{
-		ft_del_splitter(map->splt);
-		man_err_map("Error\n", NULL, NULL, map);
-	}
+		man_err_map("Error: error in link line\n", buf, ft_strdel, map);
 	if (!(from = find_hashed_room(map, map->splt[0])))
-		man_err("Error finding from\n", NULL, NULL);
+		man_err_map("Error: finding from\n", buf, ft_strdel, map);
 	if (!(to = find_hashed_room(map, map->splt[1])))
-		man_err("Error finding to\n", NULL, NULL);
+		man_err_map("Error: finding to\n", buf, ft_strdel, map);
 	if (error_in_link(map, from, to))
-		man_err("Error\n", NULL, NULL);
-	add_links(from, to);
+		man_err_map("Error: link already exists\n", buf, ft_strdel, map);
+	add_links(from, to, map);
 	ft_del_splitter(map->splt);
 	map->splt = NULL;
 }

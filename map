@@ -7,8 +7,10 @@ room3 2 3
 room4 2 3
 ##end
 end 4 5
-start-i-room1
+start-room1
 room1-room2
 room2-room3
 room3-room4
 room1-end
+
+start-end

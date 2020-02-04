@@ -50,20 +50,22 @@ void			del_map(t_map *map)
 {
 	t_room		*tmp;
 	t_room		*tmp1;
+	uint64_t	i;
 
 	if(!map)
 		return ;
+	i = map->num_nodes;
 	if (map->splt)
 		ft_del_splitter(map->splt);
-	if (map->hashed_rooms)
-		free(map->hashed_rooms);
 	tmp = map->room_start;
-	while(tmp)
+	while(i--)
 	{
 		tmp1 = tmp;
-		del_room(tmp1);
 		tmp = tmp->next;
+		del_room(tmp1);
 	}
+	if (map->is_rooms_hashed)
+		free(map->hashed_rooms);
 }
 
 void			man_err(char *msg, void *data, void (*f_todel)(void**))
@@ -76,8 +78,8 @@ void			man_err(char *msg, void *data, void (*f_todel)(void**))
 }
 
 
-void			man_err_map(char *msg, void *data,
-				void (*f_todel)(void**), t_map *map)
+void			man_err_map(char *msg, char *data,
+				void (*f_todel)(char**), t_map *map)
 {
 	if (f_todel && data)
 		f_todel(&data);

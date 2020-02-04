@@ -10,10 +10,8 @@ int			main(void)
 	// parse map
 	parse_map(&map);
 	if (!map.start || !map.fin || !map.num_nodes)
-	{
-		del_map(&map);
-		man_err("Error: no start or end. Or just no rooms\n", NULL, NULL);
-	}
+		man_err_map("Error: no start or end. Or just no rooms\n",
+				NULL, NULL, &map);
 	//check ant farm
 	//algorithm processing
 	//output

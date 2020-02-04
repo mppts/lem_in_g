@@ -88,6 +88,8 @@ void			parse_map(t_map *map)
 	{
 		if (ret == -1)
 			break ;
+		ft_putstr(buf);
+		ft_putchar('\n');
 		if (!map->ants)
 			parse_ants(map, buf);
 		else if (parse_line(buf, &flag, map))
@@ -95,8 +97,6 @@ void			parse_map(t_map *map)
 			free(buf);
 			break ;
 		}
-		ft_putstr(buf);
-		ft_putchar('\n');
 		free(buf);
 	}
 }

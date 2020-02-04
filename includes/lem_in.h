@@ -101,7 +101,7 @@ void				del_map(t_map *map);
 void				del_room(t_room *room);
 
 void				man_err(char *msg, void *data, void (*f_todel)(void**));
-void				man_err_map(char *msg, void *data, void (*f_todel)(void**), t_map *map);
+void				man_err_map(char *msg, char *data, void (*f_todel)(char**), t_map *map);
 void				ft_del_splitter(char **pocket);
 
 

@@ -38,14 +38,14 @@ static void		set_start_and_fin(t_room *new, t_map *map, t_flag *flag)
 		if (!map->start)
 			map->start = new;
 		else
-			man_err("Error: too many entries\n", NULL, NULL);
+			man_err_map("Error: too many entries\n", NULL, NULL, map);
 	}
 	if (flag->flag_end == 1)
 	{
 		if (!map->fin)
 			map->fin = new;
 		else
-			man_err("Error: too many exits\n", NULL, NULL);
+			man_err_map("Error: too many exits\n", NULL, NULL, map);
 	}
 	flag->flag_start = 0;
 	flag->flag_end = 0;
@@ -69,22 +69,22 @@ static int		no_room_with_this_name(t_map *map)
 	return (1);
 }
 
-t_room			*new_room(char **splt, t_flag *flag)
+t_room			*new_room(char **splt, t_flag *flag, t_map *map)
 {
 	t_room		*new;
 	int64_t		coord_x;
 	int64_t		coord_y;
 
 	if (!(new = (t_room*)malloc(sizeof(t_room))))
-		man_err("Error: cant allocate room\n", NULL, NULL);
+		man_err_map("Error: cant allocate room\n", NULL, NULL, map);
 	new->name = ft_strdup(splt[0]);
 	if (!is_num(splt[1]) || !is_num(splt[2]))
-		man_err("Error: coords not numbers\n", NULL, NULL);
+		man_err_map("Error: coords not numbers\n", NULL, NULL, map);
 	coord_x = ft_atoli(splt[1]);
 	coord_y = ft_atoli(splt[2]);
 	if (coord_x > INT32_MAX || coord_y > INT32_MAX ||
 		coord_x < INT32_MIN || coord_y < INT32_MIN)
-		man_err("Error: coords bigger than int\n", NULL, NULL);
+		man_err_map("Error: coords bigger than int\n", NULL, NULL, map);
 	new->x = coord_x;
 	new->y = coord_y;
 	new->linked_to = NULL;
@@ -107,12 +107,9 @@ void			add_room(char *buf, t_flag *flag, t_map *map)
 	while (*(num + map->splt) != NULL)
 		num++;
 	if (num != 3)
-	{
-		ft_del_splitter(map->splt);
-		man_err("Error: wrong room line\n", NULL, NULL);
-	}
+		man_err_map("Error: wrong room line\n", buf, ft_strdel, map);
 	if (no_room_with_this_name(map))
-		new = new_room(map->splt, flag);
+		new = new_room(map->splt, flag, map);
 	set_start_and_fin(new, map, flag);
 	if (new)
 		link_rooms(map, new);

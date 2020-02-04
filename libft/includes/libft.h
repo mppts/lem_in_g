@@ -6,7 +6,7 @@
 /*   By: mschimme <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/24 17:02:42 by mschimme          #+#    #+#             */
-/*   Updated: 2019/03/17 17:18:03 by mschimme         ###   ########.fr       */
+/*   Updated: 2020/02/04 19:34:17 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,13 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
+typedef struct		s_lst
+{
+	struct s_lst	*next;
+	int				dn;
+	char			*str;
+}					t_lst;
+int					get_next_line(const int fd, char **line);
 /*
 ** Function prototypes taken in Mojave MacOS version (variable names slightly
 ** vary from version to version..

@@ -1,8 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   man_err.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/02/04 22:00:51 by limry             #+#    #+#             */
+/*   Updated: 2020/02/04 22:07:04 by limry            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include <lem_in.h>
 
 void			ft_del_splitter(char **pocket)
 {
-	uint64_t 	i;
+	uint64_t	i;
 
 	i = 0;
 	if (!pocket)
@@ -15,18 +27,29 @@ void			ft_del_splitter(char **pocket)
 	free(pocket);
 }
 
-void		ft_delroom(t_room *room)
+void			del_room(t_room *room)
 {
-	if (!room)
-		return ;
-	if(room->name)
+	t_link		*tmp;
+	t_link		*tmp1;
+
+	if (room)
+	{
+		tmp = room->linked_to;
+		while (tmp)
+		{
+			tmp1 = tmp;
+			tmp = tmp->next;
+			free(tmp1);
+		}
 		free(room->name);
-	free(room);
+		free(room);
+	}
 }
 
-void		ft_delmap(t_map *map)
+void			del_map(t_map *map)
 {
-	t_room	*tmp;
+	t_room		*tmp;
+	t_room		*tmp1;
 
 	if(!map)
 		return ;
@@ -34,15 +57,16 @@ void		ft_delmap(t_map *map)
 		ft_del_splitter(map->splt);
 	if (map->hashed_rooms)
 		free(map->hashed_rooms);
-	while(map->room_start)
+	tmp = map->room_start;
+	while(tmp)
 	{
-		tmp = map->room_start;
-		map->room_start = map->room_start->next;
-		ft_delroom(tmp);
+		tmp1 = tmp;
+		del_room(tmp1);
+		tmp = tmp->next;
 	}
 }
 
-void	man_err(char *msg, void *data, void (*f_todel)(void**))
+void			man_err(char *msg, void *data, void (*f_todel)(void**))
 {
 	if (f_todel && data)
 		f_todel(&data);
@@ -52,12 +76,13 @@ void	man_err(char *msg, void *data, void (*f_todel)(void**))
 }
 
 
-void	man_err_map(char *msg, void *data, void (*f_todel)(void**), t_map *map)
+void			man_err_map(char *msg, void *data,
+				void (*f_todel)(void**), t_map *map)
 {
 	if (f_todel && data)
 		f_todel(&data);
 	if (map)
-		ft_delmap(map);
+		del_map(map);
 	if (msg)
 		ft_putstr(msg);
 	exit(1);

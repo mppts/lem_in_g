@@ -6,7 +6,7 @@
 /*   By: mschimme <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/24 12:59:30 by mschimme          #+#    #+#             */
-/*   Updated: 2019/02/22 17:17:59 by mschimme         ###   ########.fr       */
+/*   Updated: 2020/02/04 19:08:27 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,41 +20,20 @@
 ** Preventing segfaults.
 */
 
-static UCC		*ft_memsync(UCC *str)
+size_t					ft_strlen(const char *str)
 {
-	if (((size_t)str & (sizeof(size_t) - 1)) != 0)
+	unsigned  char		*v;
+	size_t 				ret;
+
+	ret = 0;
+	v = (unsigned  char*)str;
+	while (*v != '\0')
 	{
-		while (((size_t)str & (sizeof(size_t) - 1)) != 0)
-		{
-			if (*str == '\0')
-				return (str);
-			str++;
-		}
-		return (str);
+		ret++;
+		v++;
 	}
-	return (str);
+	return (ret);
 }
 
-static UCC		*ft_memcrawl(UCC *str)
-{
-	while (*str != '\0')
-		str++;
-	return (str);
-}
 
-size_t			ft_strlen(const char *str)
-{
-	size_t		*monad;
-	UCC			*bogey;
 
-	bogey = (ft_memsync((UCC *)str));
-	monad = ((size_t *)bogey);
-	while (1)
-	{
-		if (((*monad + 0X7EFEFEFEFEFEFEFF) ^ ~*monad) & 0x8101010101010100)
-			if (((((*monad & 0x7F7F7F7F7F7F7F7F) + 0x7F7F7F7F7F7F7F7F) | *monad)
-				| 0x7F7F7F7F7F7F7F7F))
-				return (ft_memcrawl(((UCC *)(monad))) - (UCC *)str);
-		monad++;
-	}
-}

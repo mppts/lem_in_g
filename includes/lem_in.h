@@ -18,6 +18,8 @@ typedef struct 		s_link
 {
 	struct s_room	*to;
 	struct s_link	*next;
+	struct s_link	*prev;
+	struct s_link	*mirror;
 	int64_t 		path_id;
 }					t_link;
 /*
@@ -27,7 +29,6 @@ typedef struct		s_room
 {
 	int				x;
 	int				y;
-	char			type;
 	int 			checked;
 	uint64_t 		hash;
 	uint64_t 		hash_id;
@@ -67,6 +68,37 @@ typedef struct 		s_deq
 	int64_t 		rear;
 	int64_t 		begin;
 }					t_deq;
+
+/*
+** parse_map.c
+*/
+void				parse_map(t_map *map);
+void				init_map(t_map *map);
+/*
+** parse_room.c
+*/
+void				add_room(char *buf, t_flag *flag, t_map *map);
+void				link_rooms(t_map *map, t_room *new);
+/*
+** parse_links.c
+*/
+void				add_link(char *buf, t_map *map);
+
+/*
+** utils_utils.c
+*/
+int 				is_num(char *str);
+/*
+** parse_hash.c
+*/
+void				hash_rooms(t_map *map);
+uint64_t 			get_hash(char *str, uint64_t size);
+t_room				*find_hashed_room(t_map *map, char *name);
+/*
+** man_err.c
+*/
+void				del_map(t_map *map);
+void				del_room(t_room *room);
 
 void				man_err(char *msg, void *data, void (*f_todel)(void**));
 void				man_err_map(char *msg, void *data, void (*f_todel)(void**), t_map *map);

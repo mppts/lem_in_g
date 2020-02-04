@@ -1,4 +1,4 @@
-NAME = lem_in
+NAME = lem-in
 
 .PHONY : all clean fclean re directories
 
@@ -17,7 +17,12 @@ LIB_HEAP_INCLUDES = $(LIB_HEAP:.a=/includes/)
 SOURCE = \
          dijkstra.c\
          main.c\
-         man_err.c
+         man_err.c\
+         parse_hash.c\
+         parse_links.c\
+         parse_map.c\
+         parse_room.c\
+         parse_utils.c
 #         solver.c
 
 HEADERS = lem_in.h libft.h binary_heap.h

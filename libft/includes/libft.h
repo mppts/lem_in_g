@@ -6,7 +6,7 @@
 /*   By: mschimme <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/24 17:02:42 by mschimme          #+#    #+#             */
-/*   Updated: 2020/02/05 12:00:13 by limry            ###   ########.fr       */
+/*   Updated: 2020/02/05 14:38:52 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <unistd.h>
 # include <sys/types.h>
 # include <stdio.h>
+# include <inttypes.h>
 
 /*
 ** libFT defines
@@ -126,7 +127,7 @@ void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 void				ft_del(void *content, size_t size);
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
-long long			ft_atoli(const char *str);
+long 				ft_atoli(const char *str);
 int					get_next_line(const int fd, char **line);
 int					clean_all_gnl(t_lst *lst);
 

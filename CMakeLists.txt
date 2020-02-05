@@ -26,6 +26,6 @@ add_executable(lem_in srcs/main.c
                 #fibonacci_heap/srcs/fib_heap_union.c
                 #fibonacci_heap/srcs/fib_remove_min.c
                 srcs/dijkstra.c
-        srcs/parse_map.c srcs/parse_room.c srcs/parse_utils.c srcs/parse_links.c srcs/parse_hash.c libft/ft_get_next_line2.c)
+        srcs/parse_map.c srcs/parse_room.c srcs/parse_utils.c srcs/parse_links.c srcs/parse_hash.c libft/ft_get_next_line2.c srcs/parse_room2.c)
 target_link_libraries(lem_in ${CMAKE_SOURCE_DIR}/libft/libft.a ${CMAKE_SOURCE_DIR}/libbinheap/libbinheap.a)
 

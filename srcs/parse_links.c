@@ -6,7 +6,7 @@
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/04 20:37:39 by limry             #+#    #+#             */
-/*   Updated: 2020/02/05 13:08:19 by limry            ###   ########.fr       */
+/*   Updated: 2020/02/05 16:09:47 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,8 @@ static t_link	*add_new_link(t_room *from, t_room *to, t_map *map)
 	t_link		*tmp;
 
 	if (!(new = (t_link*)malloc(sizeof(t_link))))
-		man_err_map("Error in add_link_to_room\n", NULL, NULL, map);
+		man_err_map("Error: can't allocate new link\n",
+				map->buf, ft_strdel, map);
 	new->to = to;
 	new->next = NULL;
 	new->prev = NULL;
@@ -74,25 +75,20 @@ void			add_links(t_room *from, t_room *to, t_map *map)
 
 void			add_link(char *buf, t_map *map)
 {
-	int64_t		num;
 	t_room		*from;
 	t_room		*to;
+	char 		*b;
 
 	map->splt = ft_strsplit(buf, '-');
-	num = 0;
-	while (*(num + map->splt) != NULL)
-		num++;
-	if (num != 2)
-	{
-		ft_del_splitter(map->splt);
-		man_err_map("Error\n", NULL, NULL, map);
-	}
+	b = NULL;
+	if (!((b = ft_strchr(buf, '-')) && !ft_strchr(++b, '-')))
+		man_err_map("Error: link line error\n", &buf, ft_strdel, map);
 	if (!(from = find_hashed_room(map, map->splt[0])))
-		man_err_map("Error finding from\n", &buf, ft_strdel, map);
+		man_err_map("Error: can't find from\n", &buf, ft_strdel, map);
 	if (!(to = find_hashed_room(map, map->splt[1])))
-		man_err_map("Error finding to\n", &buf, ft_strdel, map);
+		man_err_map("Error: can't find to\n", &buf, ft_strdel, map);
 	if (error_in_link(map, from, to))
-		man_err_map("Error\n", &buf, ft_strdel, map);
+		man_err_map("Error: link already exists\n", &buf, ft_strdel, map);
 	add_links(from, to, map);
 	ft_del_splitter(map->splt);
 	map->splt = NULL;

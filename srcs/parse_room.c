@@ -6,7 +6,7 @@
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/04 20:14:21 by limry             #+#    #+#             */
-/*   Updated: 2020/02/05 13:45:50 by limry            ###   ########.fr       */
+/*   Updated: 2020/02/05 16:58:14 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,44 +80,36 @@ static int		no_room_with_this_name(t_map *map)
 t_room			*new_room(char **splt, t_flag *flag, t_map *map)
 {
 	t_room		*new;
+	int64_t	x;
+	int64_t	y;
 
-	if (!(new = (t_room*)malloc(sizeof(t_room))))
-	{
-		free(new);
-		man_err_map("Error: cant allocate room\n", map->buf, ft_strdel, map);
-	}
 	if (!is_num(splt[1]) || !is_num(splt[2]))
-	{
-		free(new);
 		man_err_map("Error: coords not numbers\n", map->buf, ft_strdel, map);
-	}
-	new->x = ft_atoli(splt[1]);
-	new->y = ft_atoli(splt[2]);
-	if (new->x > INT32_MAX || new->y > INT32_MAX ||
-	new->x < INT32_MIN || new->y < INT32_MIN)
-		man_err_map("Error: cords bigger not int\n", map->buf, ft_strdel, map);
-	new->name = ft_strdup(splt[0]);
-	new->linked_to = NULL;
-	new->next = NULL;
-	new->prev = NULL;
-	new->num_linked_to = 0;
-	new->level = -1;
-	new->path_id = 0;
+	x = ft_atoli(splt[1]);
+	y = ft_atoli(splt[2]);
+	if (x > INT32_MAX || y > INT32_MAX ||
+		x < INT32_MIN || y < INT32_MIN)
+		man_err_map("Error: coords bigger than int\n",
+				map->buf, ft_strdel, map);
+	if (ft_strchr(splt[0], '-'))
+		man_err_map("Error: dash in room name\n", map->buf, ft_strdel, map);
+	if (!(new = (t_room*)malloc(sizeof(t_room))))
+		man_err_map("Error: can't allocate room\n", map->buf, ft_strdel, map);
+	init_room(new, (int)x, (int)y, splt[0]);
 	return (new);
 }
 
 void			add_room(char *buf, t_flag *flag, t_map *map)
 {
-	int64_t		num;
 	t_room		*new;
+	char 		*b;
 
+	if (!((b = ft_strchr(buf, ' ')) &&
+	(*(++b) != '\0' && (b = ft_strchr(b , ' '))) &&
+	(*(++b) != '\0' &&!(ft_strchr(b, ' ')))))
+		man_err_map("Error: wrong room line\n", &buf, ft_strdel, map);
 	new = NULL;
 	map->splt = ft_strsplit(buf, ' ');
-	num = 0;
-	while (*(num + map->splt) != NULL)
-		num++;
-	if (num != 3)
-		man_err_map("Error: wrong room line\n", &buf, ft_strdel, map);
 	if (no_room_with_this_name(map))
 		new = new_room(map->splt, flag, map);
 	else

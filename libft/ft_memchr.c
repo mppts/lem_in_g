@@ -17,20 +17,6 @@
 ** Based on ft_strlen method.
 */
 
-static UCC	*ft_memsync_s(UCC *str, UCC logos, size_t *n)
-{
-	while ((((size_t)str & (sizeof(size_t) - 1)) != 0) && *n != 0)
-	{
-		if (*str == logos)
-			return (str);
-		str++;
-		*n -= 1;
-	}
-	if (*str == logos || n != 0)
-		return (str);
-	return (NULL);
-}
-
 static void	*ft_memcrawl_s(UCC *str, UCC logos, size_t n)
 {
 	while (n != 0)
@@ -51,9 +37,6 @@ void		*ft_memchr(const void *s, int c, size_t n)
 	if (n == 0)
 		return (NULL);
 	logos = (UC)c;
-	if (*(char *)(s = (ft_memsync_s((UCC *)s, (UCC)logos, &n))) == logos\
-					&& n != 0)
-		return ((void *)s);
 	if (n < (sizeof(size_t)))
 		return (ft_memcrawl_s((UCC *)s, (UCC)logos, n));
 	else

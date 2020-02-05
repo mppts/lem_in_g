@@ -6,7 +6,7 @@
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/05 12:03:07 by limry             #+#    #+#             */
-/*   Updated: 2020/02/05 13:24:16 by limry            ###   ########.fr       */
+/*   Updated: 2020/02/05 15:23:22 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,7 @@ void				init_map(t_map *map);
 */
 void				add_room(char *buf, t_flag *flag, t_map *map);
 void				link_rooms(t_map *map, t_room *new);
+void				init_room(t_room *new, int x, int y, char *name);
 /*
 ** parse_links.c
 */

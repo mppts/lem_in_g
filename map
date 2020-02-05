@@ -1,15 +1,13 @@
 10
 ##start
-start 1 2
+start 1 1
 room1 2 3
-room2 2 3S
-room3 2 3
+room2 2 3
+room3 4 3
+room4 3 6
 ##end
-room4 2 3
-end 4 5
-start-room1
+en 5 8
 room1-room2
 room2-room3
 room3-room4
-room1-end
-start-end
+room1-en

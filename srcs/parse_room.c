@@ -6,7 +6,7 @@
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/04 20:14:21 by limry             #+#    #+#             */
-/*   Updated: 2020/02/05 16:58:14 by limry            ###   ########.fr       */
+/*   Updated: 2020/02/05 17:35:38 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,8 +80,8 @@ static int		no_room_with_this_name(t_map *map)
 t_room			*new_room(char **splt, t_flag *flag, t_map *map)
 {
 	t_room		*new;
-	int64_t	x;
-	int64_t	y;
+	int64_t		x;
+	int64_t		y;
 
 	if (!is_num(splt[1]) || !is_num(splt[2]))
 		man_err_map("Error: coords not numbers\n", map->buf, ft_strdel, map);
@@ -102,11 +102,11 @@ t_room			*new_room(char **splt, t_flag *flag, t_map *map)
 void			add_room(char *buf, t_flag *flag, t_map *map)
 {
 	t_room		*new;
-	char 		*b;
+	char		*b;
 
 	if (!((b = ft_strchr(buf, ' ')) &&
-	(*(++b) != '\0' && (b = ft_strchr(b , ' '))) &&
-	(*(++b) != '\0' &&!(ft_strchr(b, ' ')))))
+	(*(++b) != '\0' && (b = ft_strchr(b, ' '))) &&
+	(*(++b) != '\0' && !(ft_strchr(b, ' ')))))
 		man_err_map("Error: wrong room line\n", &buf, ft_strdel, map);
 	new = NULL;
 	map->splt = ft_strsplit(buf, ' ');

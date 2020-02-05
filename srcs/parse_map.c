@@ -6,7 +6,7 @@
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/04 20:09:29 by limry             #+#    #+#             */
-/*   Updated: 2020/02/05 17:28:09 by limry            ###   ########.fr       */
+/*   Updated: 2020/02/05 17:28:15 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ static int		parse_line(char *buf, t_flag *flag, t_map *map)
 			flag->flag_end = 1;
 	}
 	else if (!map->ants)
-			parse_ants(map, buf);
+		parse_ants(map, buf);
 	else if (*buf != 'L')
 		add_room_or_path(buf, flag, map);
 	else

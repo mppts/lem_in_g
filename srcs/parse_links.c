@@ -6,7 +6,7 @@
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/04 20:37:39 by limry             #+#    #+#             */
-/*   Updated: 2020/02/05 16:09:47 by limry            ###   ########.fr       */
+/*   Updated: 2020/02/05 16:22:03 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ void			add_link(char *buf, t_map *map)
 {
 	t_room		*from;
 	t_room		*to;
-	char 		*b;
+	char		*b;
 
 	map->splt = ft_strsplit(buf, '-');
 	b = NULL;

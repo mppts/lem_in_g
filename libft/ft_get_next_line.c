@@ -6,7 +6,7 @@
 /*   By: limry <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/12 17:42:01 by limry             #+#    #+#             */
-/*   Updated: 2020/02/04 19:50:00 by limry            ###   ########.fr       */
+/*   Updated: 2020/02/05 12:15:12 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,8 +108,10 @@ int				get_next_line(const int fd, char **line)
 	t_lst			*hd1;
 	long int		ret;
 
-	if (!line || BUFF_SIZE <= 0 || fd < 0)
+	if (!line || BUFF_SIZE <= 0)
 		return (-1);
+	if (fd < 0)
+		return (clean_all_gnl(hd));
 	if (!hd)
 		hd = ft_get_or_add(hd, fd);
 	lst = ft_get_or_add(hd, fd);

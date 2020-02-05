@@ -6,7 +6,7 @@
 /*   By: mschimme <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/24 12:59:30 by mschimme          #+#    #+#             */
-/*   Updated: 2020/02/04 19:08:27 by limry            ###   ########.fr       */
+/*   Updated: 2020/02/05 12:00:45 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,13 @@
 ** Preventing segfaults.
 */
 
-size_t					ft_strlen(const char *str)
+size_t				ft_strlen(const char *str)
 {
-	unsigned  char		*v;
-	size_t 				ret;
+	unsigned char	*v;
+	size_t			ret;
 
 	ret = 0;
-	v = (unsigned  char*)str;
+	v = (unsigned char*)str;
 	while (*v != '\0')
 	{
 		ret++;
@@ -34,6 +34,3 @@ size_t					ft_strlen(const char *str)
 	}
 	return (ret);
 }
-
-
-

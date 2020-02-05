@@ -6,7 +6,7 @@
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/04 20:09:29 by limry             #+#    #+#             */
-/*   Updated: 2020/02/04 20:56:40 by limry            ###   ########.fr       */
+/*   Updated: 2020/02/05 13:22:57 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ static void		add_room_or_path(char *buf, t_flag *flag, t_map *map)
 		map->num_links++;
 	}
 	else
-		man_err("Error: non compliant line\n", NULL, NULL);
+		man_err_map("Error: non compliant line\n", &buf, ft_strdel, map);
 }
 
 static int		parse_line(char *buf, t_flag *flag, t_map *map)
@@ -44,7 +44,7 @@ static int		parse_line(char *buf, t_flag *flag, t_map *map)
 	else if (*buf != 'L')
 		add_room_or_path(buf, flag, map);
 	else
-		man_err("Room starts with L\n", NULL, NULL);
+		man_err_map("Room starts with L\n", &buf, ft_strdel, map);
 	return (0);
 }
 
@@ -53,10 +53,14 @@ static void		parse_ants(t_map *map, char *buf)
 	int64_t		ants;
 
 	if (!is_num(buf))
-		man_err("Error: not only numbers in first line\n", buf, ft_memdel);
+	{
+		man_err_map("Error: not only numbers in first line\n", &buf, ft_strdel, map);
+	}
 	ants = ft_atoli(buf);
 	if (ants < 1 || ants >= INT32_MAX)
-		man_err("Error: no or too many ants\n", buf, ft_memdel);
+	{
+		man_err_map("Error: no or too many ants\n", &buf, ft_strdel, map);
+	}
 	map->ants = ants;
 }
 
@@ -73,6 +77,7 @@ void			init_map(t_map *map)
 	map->ants = 0;
 	map->splt = NULL;
 	map->hashed_rooms = NULL;
+	map->buf = NULL;
 }
 
 void			parse_map(t_map *map)
@@ -86,6 +91,7 @@ void			parse_map(t_map *map)
 	buf = NULL;
 	while ((ret = get_next_line(0, &buf)))
 	{
+		map->buf = &buf;
 		if (ret == -1)
 			break ;
 		ft_putstr(buf);

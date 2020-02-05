@@ -6,7 +6,7 @@
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/04 22:00:51 by limry             #+#    #+#             */
-/*   Updated: 2020/02/04 22:07:04 by limry            ###   ########.fr       */
+/*   Updated: 2020/02/05 13:24:13 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,42 +50,33 @@ void			del_map(t_map *map)
 {
 	t_room		*tmp;
 	t_room		*tmp1;
-	uint64_t	i;
+	__uint64_t	i;
 
-	if(!map)
+	if (!map)
 		return ;
 	i = map->num_nodes;
 	if (map->splt)
 		ft_del_splitter(map->splt);
 	tmp = map->room_start;
-	while(i--)
+	if (map->is_rooms_hashed)
+		free(map->hashed_rooms);
+	while (i--)
 	{
 		tmp1 = tmp;
 		tmp = tmp->next;
 		del_room(tmp1);
 	}
-	if (map->is_rooms_hashed)
-		free(map->hashed_rooms);
 }
 
-void			man_err(char *msg, void *data, void (*f_todel)(void**))
-{
-	if (f_todel && data)
-		f_todel(&data);
-	if (msg)
-		ft_putstr(msg);
-	exit(1);
-}
-
-
-void			man_err_map(char *msg, char *data,
+void			man_err_map(char *msg, char **data,
 				void (*f_todel)(char**), t_map *map)
 {
 	if (f_todel && data)
-		f_todel(&data);
+		f_todel(data);
 	if (map)
 		del_map(map);
 	if (msg)
 		ft_putstr(msg);
+	get_next_line(-1, map->buf);
 	exit(1);
 }

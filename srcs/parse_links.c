@@ -6,7 +6,7 @@
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/04 20:37:39 by limry             #+#    #+#             */
-/*   Updated: 2020/02/04 21:36:55 by limry            ###   ########.fr       */
+/*   Updated: 2020/02/05 13:08:19 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,13 +83,16 @@ void			add_link(char *buf, t_map *map)
 	while (*(num + map->splt) != NULL)
 		num++;
 	if (num != 2)
-		man_err_map("Error: error in link line\n", buf, ft_strdel, map);
+	{
+		ft_del_splitter(map->splt);
+		man_err_map("Error\n", NULL, NULL, map);
+	}
 	if (!(from = find_hashed_room(map, map->splt[0])))
-		man_err_map("Error: finding from\n", buf, ft_strdel, map);
+		man_err_map("Error finding from\n", &buf, ft_strdel, map);
 	if (!(to = find_hashed_room(map, map->splt[1])))
-		man_err_map("Error: finding to\n", buf, ft_strdel, map);
+		man_err_map("Error finding to\n", &buf, ft_strdel, map);
 	if (error_in_link(map, from, to))
-		man_err_map("Error: link already exists\n", buf, ft_strdel, map);
+		man_err_map("Error\n", &buf, ft_strdel, map);
 	add_links(from, to, map);
 	ft_del_splitter(map->splt);
 	map->splt = NULL;

@@ -6,7 +6,7 @@
 /*   By: mschimme <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/24 17:02:42 by mschimme          #+#    #+#             */
-/*   Updated: 2020/02/04 19:34:17 by limry            ###   ########.fr       */
+/*   Updated: 2020/02/05 12:00:13 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,45 +17,6 @@
 # include <unistd.h>
 # include <sys/types.h>
 # include <stdio.h>
-
-// # define DEBst() printf("\t\033[0;31m%d\033[0m in:\t%s \t\t", __LINE__, __func__);
-// # define DEBend() printf("\n");
-// # define DEBit(name, x) printf("\033[1;35m%s\033[0m == %p ", (name), (x));
-// # define DEBintt(name, x) printf("\033[1;35m%s\033[0m == %d ", (name), (x));
-// # define DEBlt(name, x) printf("\033[1;35m%s\033[0m == %zu ", (name), (x));
-// # define DEBtextt(name, x) printf("[\033[1;35m%s\033[0m] == [%s] ", (name), (x));
-// # define DEBchart(name, x) printf("[\033[1;35m%s\033[0m] == [%c] ", (name), (x));
-// # define DEBmesst(name) printf("\033[1;36m%s\033[0m ", (name));
-// # define DEBfunc() printf("\033[0;33mEntering\033[0m MY:\t\033[0;33m%s\033[0m of file \"%s\"\n", __func__, __FILE__);
-// # define DEB() printf("\t\033[0;31m%d\033[0m in:\t%s\n", __LINE__, __func__);
-// # define DEBex(name) printf("\033[0;32mExiting \033[0m MY:\t\033[0;32m%s\033[0m,%s\n\n", __func__, (name));
-// # define DEBprog() printf("\n\nENTRANCE IN \033[0;33m~~~~~~~~~~~~~~~~%s~~~~~~~~~~~~~~~~\033[0m\n", __FILE__);
-// # define DEBm() printf("Malloc failed at line \033[0;31m%d\033[0m in function: %s\n", __LINE__, __func__);
-// # define DEBi(name, x) printf("\033[0;31m%d\033[0m str in func: %s, \"\033[1;35m%s\033[0m\" adress %p\n", __LINE__, __func__, (name), (x));
-// # define DEBtext(name, x) printf("\033[0;31m%d\033[0m str in func: %s, arr:[%s] == [%s]\n", __LINE__, __func__, (name), (x));
-// # define DEBpar(name, x) printf("\033[0;31m%d\033[0m str in func: %s, arr:[%s]:\n[\n%s\n]\n", __LINE__, __func__, (name), (x));
-// # define DEBl(name, x) printf("\033[0;31m%d\033[0m str in func: %s, %s == %zu\n", __LINE__, __func__, (name), (x));
-// # define DEBint(name, x) printf("\033[0;31m%d\033[0m str in func: %s, %s == %d\n", __LINE__, __func__, (name), (x));
-
-# define DEBst() {}
-# define DEBend() {}
-# define DEBit(name, x) {}
-# define DEBintt(name, x) {}
-# define DEBlt(name, x) {}
-# define DEBtextt(name, x) {}
-# define DEBchart(name, x) {}
-# define DEBmesst(name) {}
-# define DEBfunc() {}
-# define DEB() {}
-# define DEBex(name) {}
-# define DEBprog() {}
-# define DEBm() {}
-# define DEBi(name, x) {}
-# define DEBtext(name, x) {}
-# define DEBpar(name, x) {}
-# define DEBl(name, x) {}
-# define DEBint(name, x) {}
-
 
 /*
 ** libFT defines
@@ -78,9 +39,6 @@
 # define B_S BUFF_SIZE
 # define FDRSET &fdl, fd, fdl, fdl
 # define RSSET line, pl[0], &fdl
-# define SIZEOFSBSTR bgy[0] - rem->CNT - 1 - SZFINT
-# define content_size C_S
-# define content CNT
 # define SZFSZT sizeof(size_t)
 # define SZFINT sizeof(int)
 
@@ -102,7 +60,6 @@ int					get_next_line(const int fd, char **line);
 ** Function prototypes taken in Mojave MacOS version (variable names slightly
 ** vary from version to version..
 */
-
 
 void				*ft_memccpy(void *dst, const void *src, int c, size_t n);
 void				ft_putchar(char c);
@@ -170,7 +127,7 @@ void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 void				ft_del(void *content, size_t size);
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 long long			ft_atoli(const char *str);
-int					get_next_line(const int fd, char** line);
-
+int					get_next_line(const int fd, char **line);
+int					clean_all_gnl(t_lst *lst);
 
 #endif

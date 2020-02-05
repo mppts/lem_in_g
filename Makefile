@@ -15,7 +15,6 @@ LIB_INCLUDES = $(LIB:.a=/includes/)
 LIB_HEAP_INCLUDES = $(LIB_HEAP:.a=/includes/)
 
 SOURCE = \
-         dijkstra.c\
          main.c\
          man_err.c\
          parse_hash.c\

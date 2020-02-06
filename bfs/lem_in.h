@@ -6,6 +6,7 @@
 # define BLACK 2
 # define SOURCE 1
 # define SINK 2
+# define SOURCE_AND_SINK 3
 
 # include <inttypes.h>
 # include "libft/libft.h"
@@ -35,6 +36,8 @@ typedef struct		s_room
 	t_link			*linked_to;
 	struct s_room	*next;
 	struct s_room	*prev;
+	int				way_length;
+	int				current_ant_name;
 //    int				x;
 //    int				y;
 //    u_char			type;
@@ -56,5 +59,6 @@ typedef struct 		s_graph_inf
 }					t_graph_inf;
 
 int					dfs(t_room *room, t_graph_inf *inf);
+void				print(t_room ***ways, int total_number_of_ants, int ants_launched, int ants_in_sink);
 
 #endif

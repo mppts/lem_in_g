@@ -53,7 +53,7 @@ void		clear_flow(t_room *prev_room, t_room *current_room)
 int			dfs(t_room *room, t_graph_inf *inf)
 {
 	room->color = GRAY;
-	if (room->is_start_or_end == SOURCE)
+	if (room->is_start_or_end == SINK)
 		return (1);
 	inf->ways[inf->current_way_number][inf->position_in_way] = find_vertex(room->linked_to, inf);
 	if (inf->ways[inf->current_way_number][inf->position_in_way])
@@ -63,7 +63,7 @@ int			dfs(t_room *room, t_graph_inf *inf)
 	}
 	else
 	{
-		if (room->is_start_or_end == SINK)
+		if (room->is_start_or_end == SOURCE)
 			return (0);
 		else
 		{

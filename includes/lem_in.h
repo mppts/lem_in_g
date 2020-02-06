@@ -20,10 +20,18 @@
 # define FALSE 0
 # define TRUE 1
 
+
+typedef struct		s_path
+{
+	uint64_t		len;
+	struct s_room	**path;
+	struct s_path	*next;
+}					t_path;
+
 typedef struct		s_paths
 {
-	struct s_room	**path;
-	uint64_t		path_len;
+	uint64_t		num_paths;
+	t_path			*paths;
 }					t_paths;
 
 typedef struct		s_link
@@ -67,6 +75,7 @@ typedef struct		s_map
 	uint8_t			is_rooms_hashed;
 	t_room			**hashed_rooms;
 	char 			**buf;
+	t_paths			*paths;
 }					t_map;
 
 typedef struct		s_flag

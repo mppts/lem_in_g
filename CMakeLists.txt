@@ -33,7 +33,8 @@ add_executable(lem_in
                 srcs/parse_links.c
                 srcs/parse_hash.c
                 srcs/parse_room2.c
-        srcs/solver_bfs.c)
+                #srcs/solver_bfs.c
+        )
 
 target_link_libraries(lem_in ${CMAKE_SOURCE_DIR}/libft/libft.a)
 

@@ -31,7 +31,8 @@
 # define SST signed size_t
 # define MHZERO 0x0101010101010101UL
 # define DHZERO 0x8080808080808080UL
-
+# define FALSE 0
+# define TRUE 1
 /*
 ** GNL defines
 */

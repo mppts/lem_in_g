@@ -6,5 +6,5 @@ C_FLAGS = -g   -std=gnu11
 
 C_DEFINES = 
 
-C_INCLUDES = -I/Users/limry/CLionProjects/lem_in_g/libft/includes -I/Users/limry/CLionProjects/lem_in_g/includes -I/Users/limry/CLionProjects/lem_in_g/libbinheap -I/Users/limry/CLionProjects/lem_in_g/libbinheap/includes -I/Users/limry/CLionProjects/lem_in_g/fibonacci_heap -I/Users/limry/CLionProjects/lem_in_g/fibonacci_heap/includes 
+C_INCLUDES = -I/Users/limry/CLionProjects/li_writer/libft/includes -I/Users/limry/CLionProjects/li_writer/includes -I/Users/limry/CLionProjects/li_writer/libbinheap -I/Users/limry/CLionProjects/li_writer/libbinheap/includes -I/Users/limry/CLionProjects/li_writer/fibonacci_heap -I/Users/limry/CLionProjects/li_writer/fibonacci_heap/includes 
 

@@ -78,5 +78,6 @@ void			man_err_map(char *msg, char **data,
 	if (msg)
 		ft_putstr(msg);
 	get_next_line(-1, map->buf);
+	ft_putstr(map->out);
 	exit(1);
 }

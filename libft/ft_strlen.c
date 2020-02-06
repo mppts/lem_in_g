@@ -10,27 +10,27 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+
 #include "libft.h"
 
-/*
-** We use size_t, thus we need libft.h in order to include stdlib.h
-** Previously function had
-** if (bogey == '\0')
-**		return (bogey - (UCC *)str);
-** Preventing segfaults.
-*/
-
-size_t				ft_strlen(const char *str)
+size_t			ft_strlen(const char *s)
 {
-	unsigned char	*v;
-	size_t			ret;
+	uint64_t	*longword;
+	uint8_t		*byte;
 
-	ret = 0;
-	v = (unsigned char*)str;
-	while (*v != '\0')
+	byte = (uint8_t*)s;
+	while ((uint64_t)byte & 7ULL)
 	{
-		ret++;
-		v++;
+		if (*byte == '\0')
+			return ((size_t)byte - (size_t)s);
+		byte++;
 	}
-	return (ret);
+	longword = (uint64_t*)byte;
+	while ((((*longword) - MHZERO)
+	& ~(*longword) & DHZERO) == FALSE)
+		longword++;
+	byte = (uint8_t*)longword;
+	while (*byte)
+		byte++;
+	return ((size_t)byte - (size_t)s);
 }

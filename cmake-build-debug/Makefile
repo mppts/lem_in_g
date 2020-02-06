@@ -48,10 +48,10 @@ RM = "/Volumes/Storage/cache/limry/Library/Application Support/JetBrains/Toolbox
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/limry/CLionProjects/lem_in_g
+CMAKE_SOURCE_DIR = /Users/limry/CLionProjects/li_writer
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/limry/CLionProjects/lem_in_g/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/limry/CLionProjects/li_writer/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/limry/CLionProjects/lem_in_g/cmake-build-debug/CMakeFiles /Users/limry/CLionProjects/lem_in_g/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/limry/CLionProjects/li_writer/cmake-build-debug/CMakeFiles /Users/limry/CLionProjects/li_writer/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/limry/CLionProjects/lem_in_g/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/limry/CLionProjects/li_writer/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -339,32 +339,59 @@ srcs/parse_utils.c.s:
 	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/parse_utils.c.s
 .PHONY : srcs/parse_utils.c.s
 
-srcs/solver_bfs.o: srcs/solver_bfs.c.o
+srcs/writer_main.o: srcs/writer_main.c.o
 
-.PHONY : srcs/solver_bfs.o
+.PHONY : srcs/writer_main.o
 
 # target to build an object file
-srcs/solver_bfs.c.o:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_bfs.c.o
-.PHONY : srcs/solver_bfs.c.o
+srcs/writer_main.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/writer_main.c.o
+.PHONY : srcs/writer_main.c.o
 
-srcs/solver_bfs.i: srcs/solver_bfs.c.i
+srcs/writer_main.i: srcs/writer_main.c.i
 
-.PHONY : srcs/solver_bfs.i
+.PHONY : srcs/writer_main.i
 
 # target to preprocess a source file
-srcs/solver_bfs.c.i:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_bfs.c.i
-.PHONY : srcs/solver_bfs.c.i
+srcs/writer_main.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/writer_main.c.i
+.PHONY : srcs/writer_main.c.i
 
-srcs/solver_bfs.s: srcs/solver_bfs.c.s
+srcs/writer_main.s: srcs/writer_main.c.s
 
-.PHONY : srcs/solver_bfs.s
+.PHONY : srcs/writer_main.s
 
 # target to generate assembly for a file
-srcs/solver_bfs.c.s:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_bfs.c.s
-.PHONY : srcs/solver_bfs.c.s
+srcs/writer_main.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/writer_main.c.s
+.PHONY : srcs/writer_main.c.s
+
+srcs/writer_string.o: srcs/writer_string.c.o
+
+.PHONY : srcs/writer_string.o
+
+# target to build an object file
+srcs/writer_string.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/writer_string.c.o
+.PHONY : srcs/writer_string.c.o
+
+srcs/writer_string.i: srcs/writer_string.c.i
+
+.PHONY : srcs/writer_string.i
+
+# target to preprocess a source file
+srcs/writer_string.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/writer_string.c.i
+.PHONY : srcs/writer_string.c.i
+
+srcs/writer_string.s: srcs/writer_string.c.s
+
+.PHONY : srcs/writer_string.s
+
+# target to generate assembly for a file
+srcs/writer_string.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/writer_string.c.s
+.PHONY : srcs/writer_string.c.s
 
 # Help Target
 help:
@@ -399,9 +426,12 @@ help:
 	@echo "... srcs/parse_utils.o"
 	@echo "... srcs/parse_utils.i"
 	@echo "... srcs/parse_utils.s"
-	@echo "... srcs/solver_bfs.o"
-	@echo "... srcs/solver_bfs.i"
-	@echo "... srcs/solver_bfs.s"
+	@echo "... srcs/writer_main.o"
+	@echo "... srcs/writer_main.i"
+	@echo "... srcs/writer_main.s"
+	@echo "... srcs/writer_string.o"
+	@echo "... srcs/writer_string.i"
+	@echo "... srcs/writer_string.s"
 .PHONY : help
 
 

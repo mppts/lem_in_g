@@ -4,17 +4,16 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/Users/limry/CLionProjects/lem_in_g/libbinheap/srcs/bin_free.c" "/Users/limry/CLionProjects/lem_in_g/cmake-build-debug/CMakeFiles/lem_in.dir/libbinheap/srcs/bin_free.c.o"
-  "/Users/limry/CLionProjects/lem_in_g/libbinheap/srcs/bin_get_root.c" "/Users/limry/CLionProjects/lem_in_g/cmake-build-debug/CMakeFiles/lem_in.dir/libbinheap/srcs/bin_get_root.c.o"
-  "/Users/limry/CLionProjects/lem_in_g/libbinheap/srcs/bin_inc_key.c" "/Users/limry/CLionProjects/lem_in_g/cmake-build-debug/CMakeFiles/lem_in.dir/libbinheap/srcs/bin_inc_key.c.o"
-  "/Users/limry/CLionProjects/lem_in_g/libbinheap/srcs/bin_insert.c" "/Users/limry/CLionProjects/lem_in_g/cmake-build-debug/CMakeFiles/lem_in.dir/libbinheap/srcs/bin_insert.c.o"
-  "/Users/limry/CLionProjects/lem_in_g/libbinheap/srcs/bin_remove_root.c" "/Users/limry/CLionProjects/lem_in_g/cmake-build-debug/CMakeFiles/lem_in.dir/libbinheap/srcs/bin_remove_root.c.o"
-  "/Users/limry/CLionProjects/lem_in_g/libbinheap/srcs/bin_swap.c" "/Users/limry/CLionProjects/lem_in_g/cmake-build-debug/CMakeFiles/lem_in.dir/libbinheap/srcs/bin_swap.c.o"
-  "/Users/limry/CLionProjects/lem_in_g/libbinheap/srcs/binary_init.c" "/Users/limry/CLionProjects/lem_in_g/cmake-build-debug/CMakeFiles/lem_in.dir/libbinheap/srcs/binary_init.c.o"
-  "/Users/limry/CLionProjects/lem_in_g/srcs/deque.c" "/Users/limry/CLionProjects/lem_in_g/cmake-build-debug/CMakeFiles/lem_in.dir/srcs/deque.c.o"
-  "/Users/limry/CLionProjects/lem_in_g/srcs/dijkstra.c" "/Users/limry/CLionProjects/lem_in_g/cmake-build-debug/CMakeFiles/lem_in.dir/srcs/dijkstra.c.o"
-  "/Users/limry/CLionProjects/lem_in_g/srcs/main.c" "/Users/limry/CLionProjects/lem_in_g/cmake-build-debug/CMakeFiles/lem_in.dir/srcs/main.c.o"
-  "/Users/limry/CLionProjects/lem_in_g/srcs/man_err.c" "/Users/limry/CLionProjects/lem_in_g/cmake-build-debug/CMakeFiles/lem_in.dir/srcs/man_err.c.o"
+  "/Users/limry/CLionProjects/li_writer/srcs/main.c" "/Users/limry/CLionProjects/li_writer/cmake-build-debug/CMakeFiles/lem_in.dir/srcs/main.c.o"
+  "/Users/limry/CLionProjects/li_writer/srcs/man_err.c" "/Users/limry/CLionProjects/li_writer/cmake-build-debug/CMakeFiles/lem_in.dir/srcs/man_err.c.o"
+  "/Users/limry/CLionProjects/li_writer/srcs/parse_hash.c" "/Users/limry/CLionProjects/li_writer/cmake-build-debug/CMakeFiles/lem_in.dir/srcs/parse_hash.c.o"
+  "/Users/limry/CLionProjects/li_writer/srcs/parse_links.c" "/Users/limry/CLionProjects/li_writer/cmake-build-debug/CMakeFiles/lem_in.dir/srcs/parse_links.c.o"
+  "/Users/limry/CLionProjects/li_writer/srcs/parse_map.c" "/Users/limry/CLionProjects/li_writer/cmake-build-debug/CMakeFiles/lem_in.dir/srcs/parse_map.c.o"
+  "/Users/limry/CLionProjects/li_writer/srcs/parse_room.c" "/Users/limry/CLionProjects/li_writer/cmake-build-debug/CMakeFiles/lem_in.dir/srcs/parse_room.c.o"
+  "/Users/limry/CLionProjects/li_writer/srcs/parse_room2.c" "/Users/limry/CLionProjects/li_writer/cmake-build-debug/CMakeFiles/lem_in.dir/srcs/parse_room2.c.o"
+  "/Users/limry/CLionProjects/li_writer/srcs/parse_utils.c" "/Users/limry/CLionProjects/li_writer/cmake-build-debug/CMakeFiles/lem_in.dir/srcs/parse_utils.c.o"
+  "/Users/limry/CLionProjects/li_writer/srcs/writer_main.c" "/Users/limry/CLionProjects/li_writer/cmake-build-debug/CMakeFiles/lem_in.dir/srcs/writer_main.c.o"
+  "/Users/limry/CLionProjects/li_writer/srcs/writer_string.c" "/Users/limry/CLionProjects/li_writer/cmake-build-debug/CMakeFiles/lem_in.dir/srcs/writer_string.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 

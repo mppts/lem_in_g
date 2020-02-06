@@ -8,6 +8,7 @@ include_directories( libft/includes includes libbinheap libbinheap/includes fibo
 add_executable(lem_in
                 srcs/main.c
                 includes/lem_in.h
+                includes/ft_writer.h
                 libft/includes/libft.h
                 #srcs/solver.c
                 #srcs/deque.c
@@ -33,6 +34,8 @@ add_executable(lem_in
                 srcs/parse_links.c
                 srcs/parse_hash.c
                 srcs/parse_room2.c
+                srcs/writer_string.c
+                srcs/writer_main.c
                 #srcs/solver_bfs.c
         )
 

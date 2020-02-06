@@ -83,6 +83,7 @@ void			init_map(t_map *map)
 	map->splt = NULL;
 	map->hashed_rooms = NULL;
 	map->buf = NULL;
+	map->out = NULL;
 }
 
 void			parse_map(t_map *map)
@@ -97,10 +98,11 @@ void			parse_map(t_map *map)
 	while ((ret = get_next_line(0, &buf)))
 	{
 		map->buf = &buf;
+
 		if (ret == -1)
 			break ;
-		ft_putstr(buf);
-		ft_putchar('\n');
+		map->out = ft_strjoin(map->out, buf);
+		map->out = ft_strjoin(map->out, "\n");
 		if (parse_line(buf, &flag, map))
 		{
 			free(buf);

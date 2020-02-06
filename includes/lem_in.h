@@ -75,6 +75,7 @@ typedef struct		s_map
 	uint8_t			is_rooms_hashed;
 	t_room			**hashed_rooms;
 	char 			**buf;
+	char 			*out;
 	t_paths			*paths;
 }					t_map;
 

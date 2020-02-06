@@ -71,12 +71,13 @@ void			del_map(t_map *map)
 void			man_err_map(char *msg, char **data,
 				void (*f_todel)(char**), t_map *map)
 {
+	if (msg)
+		ft_putstr(msg);
 	if (f_todel && data)
 		f_todel(data);
 	if (map)
 		del_map(map);
-	if (msg)
-		ft_putstr(msg);
+
 	get_next_line(-1, map->buf);
 	ft_putstr(map->out);
 	exit(1);

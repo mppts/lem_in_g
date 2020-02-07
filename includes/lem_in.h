@@ -19,6 +19,9 @@
 
 # define FALSE 0
 # define TRUE 1
+# define WHITE 0
+# define GRAY 1
+# define BLACK 2
 
 
 typedef struct		s_path
@@ -33,6 +36,18 @@ typedef struct		s_paths
 	uint64_t		num_paths;
 	t_path			*paths;
 }					t_paths;
+/*
+** Пока что проще работать со своими структурами данных.
+*/
+typedef struct 		s_graph_inf
+{
+	struct s_room	***ways;
+	struct s_link	**mirror_links;
+	struct s_link	**links_to_gray_dot;
+	int				two_flows;
+	int				current_way_number;
+	int				position_in_way;
+}					t_graph_inf;
 
 typedef struct		s_link
 {
@@ -41,6 +56,7 @@ typedef struct		s_link
 	struct s_link	*prev;
 	struct s_link	*mirror;
 	int64_t			path_id;
+	int				flow;
 }					t_link;
 /*
 ** type: 1 is entrance; 2 is exit
@@ -59,6 +75,7 @@ typedef struct		s_room
 	struct s_room	*next;
 	struct s_room	*prev;
 	char			*name;
+	int				color;
 }					t_room;
 
 typedef struct		s_map
@@ -126,5 +143,27 @@ void				del_room(t_room *room);
 void				man_err_map(char *msg, char **data,
 					void (*f_todel)(char**), t_map *map);
 void				ft_del_splitter(char **pocket);
+
+/*
+** solver.c
+*/
+void				solver(t_map *map);
+void				make_color_white_again(t_room *source);
+int					rooms_calc(t_room *source);
+
+/*
+** solve_algorithm.c
+*/
+void				algo(t_map *map, t_graph_inf *inf);
+
+/*
+** solve_bfs.c
+*/
+t_room				*bfs(t_room *sink, t_map *map);
+
+/*
+** solve_dfs.c
+*/
+int			dfs(t_room *room, t_graph_inf *inf, t_map *map);
 
 #endif

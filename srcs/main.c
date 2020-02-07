@@ -14,9 +14,9 @@ int			main(void)
 				NULL, NULL, &map);
 	//check ant farm
 	//algorithm processing
-//	solver(&map);
+	solver(&map);
 	//output
 	// VISUALIZATION??
 	del_map(&map);
-	return 0;
+	return (0);
 }

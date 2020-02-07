@@ -4,17 +4,18 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-  "/Users/limry/CLionProjects/lem_in_g/libbinheap/srcs/bin_free.c" "/Users/limry/CLionProjects/lem_in_g/cmake-build-debug/CMakeFiles/lem_in.dir/libbinheap/srcs/bin_free.c.o"
-  "/Users/limry/CLionProjects/lem_in_g/libbinheap/srcs/bin_get_root.c" "/Users/limry/CLionProjects/lem_in_g/cmake-build-debug/CMakeFiles/lem_in.dir/libbinheap/srcs/bin_get_root.c.o"
-  "/Users/limry/CLionProjects/lem_in_g/libbinheap/srcs/bin_inc_key.c" "/Users/limry/CLionProjects/lem_in_g/cmake-build-debug/CMakeFiles/lem_in.dir/libbinheap/srcs/bin_inc_key.c.o"
-  "/Users/limry/CLionProjects/lem_in_g/libbinheap/srcs/bin_insert.c" "/Users/limry/CLionProjects/lem_in_g/cmake-build-debug/CMakeFiles/lem_in.dir/libbinheap/srcs/bin_insert.c.o"
-  "/Users/limry/CLionProjects/lem_in_g/libbinheap/srcs/bin_remove_root.c" "/Users/limry/CLionProjects/lem_in_g/cmake-build-debug/CMakeFiles/lem_in.dir/libbinheap/srcs/bin_remove_root.c.o"
-  "/Users/limry/CLionProjects/lem_in_g/libbinheap/srcs/bin_swap.c" "/Users/limry/CLionProjects/lem_in_g/cmake-build-debug/CMakeFiles/lem_in.dir/libbinheap/srcs/bin_swap.c.o"
-  "/Users/limry/CLionProjects/lem_in_g/libbinheap/srcs/binary_init.c" "/Users/limry/CLionProjects/lem_in_g/cmake-build-debug/CMakeFiles/lem_in.dir/libbinheap/srcs/binary_init.c.o"
-  "/Users/limry/CLionProjects/lem_in_g/srcs/deque.c" "/Users/limry/CLionProjects/lem_in_g/cmake-build-debug/CMakeFiles/lem_in.dir/srcs/deque.c.o"
-  "/Users/limry/CLionProjects/lem_in_g/srcs/dijkstra.c" "/Users/limry/CLionProjects/lem_in_g/cmake-build-debug/CMakeFiles/lem_in.dir/srcs/dijkstra.c.o"
-  "/Users/limry/CLionProjects/lem_in_g/srcs/main.c" "/Users/limry/CLionProjects/lem_in_g/cmake-build-debug/CMakeFiles/lem_in.dir/srcs/main.c.o"
-  "/Users/limry/CLionProjects/lem_in_g/srcs/man_err.c" "/Users/limry/CLionProjects/lem_in_g/cmake-build-debug/CMakeFiles/lem_in.dir/srcs/man_err.c.o"
+  "/Users/dorphan/Desktop/Projects/LI_works/algos/srcs/main.c" "/Users/dorphan/Desktop/Projects/LI_works/algos/cmake-build-debug/CMakeFiles/lem_in.dir/srcs/main.c.o"
+  "/Users/dorphan/Desktop/Projects/LI_works/algos/srcs/man_err.c" "/Users/dorphan/Desktop/Projects/LI_works/algos/cmake-build-debug/CMakeFiles/lem_in.dir/srcs/man_err.c.o"
+  "/Users/dorphan/Desktop/Projects/LI_works/algos/srcs/parse_hash.c" "/Users/dorphan/Desktop/Projects/LI_works/algos/cmake-build-debug/CMakeFiles/lem_in.dir/srcs/parse_hash.c.o"
+  "/Users/dorphan/Desktop/Projects/LI_works/algos/srcs/parse_links.c" "/Users/dorphan/Desktop/Projects/LI_works/algos/cmake-build-debug/CMakeFiles/lem_in.dir/srcs/parse_links.c.o"
+  "/Users/dorphan/Desktop/Projects/LI_works/algos/srcs/parse_map.c" "/Users/dorphan/Desktop/Projects/LI_works/algos/cmake-build-debug/CMakeFiles/lem_in.dir/srcs/parse_map.c.o"
+  "/Users/dorphan/Desktop/Projects/LI_works/algos/srcs/parse_room.c" "/Users/dorphan/Desktop/Projects/LI_works/algos/cmake-build-debug/CMakeFiles/lem_in.dir/srcs/parse_room.c.o"
+  "/Users/dorphan/Desktop/Projects/LI_works/algos/srcs/parse_room2.c" "/Users/dorphan/Desktop/Projects/LI_works/algos/cmake-build-debug/CMakeFiles/lem_in.dir/srcs/parse_room2.c.o"
+  "/Users/dorphan/Desktop/Projects/LI_works/algos/srcs/parse_utils.c" "/Users/dorphan/Desktop/Projects/LI_works/algos/cmake-build-debug/CMakeFiles/lem_in.dir/srcs/parse_utils.c.o"
+  "/Users/dorphan/Desktop/Projects/LI_works/algos/srcs/solver.c" "/Users/dorphan/Desktop/Projects/LI_works/algos/cmake-build-debug/CMakeFiles/lem_in.dir/srcs/solver.c.o"
+  "/Users/dorphan/Desktop/Projects/LI_works/algos/srcs/solver_algorithm.c" "/Users/dorphan/Desktop/Projects/LI_works/algos/cmake-build-debug/CMakeFiles/lem_in.dir/srcs/solver_algorithm.c.o"
+  "/Users/dorphan/Desktop/Projects/LI_works/algos/srcs/solver_bfs.c" "/Users/dorphan/Desktop/Projects/LI_works/algos/cmake-build-debug/CMakeFiles/lem_in.dir/srcs/solver_bfs.c.o"
+  "/Users/dorphan/Desktop/Projects/LI_works/algos/srcs/solver_dfs.c" "/Users/dorphan/Desktop/Projects/LI_works/algos/cmake-build-debug/CMakeFiles/lem_in.dir/srcs/solver_dfs.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 

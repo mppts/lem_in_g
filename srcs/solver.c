@@ -274,7 +274,7 @@ void		print_ways(t_graph_inf	*inf)
 	inf->current_way_number = 0;
 	ft_putchar('\n');
 	ft_putstr("So... we found:\n");
-	while (inf->ways[inf->current_way_number])
+	while (inf->ways[inf->current_way_number][0])
 	{
 		i = 0;
 		while (inf->ways[inf->current_way_number][i])

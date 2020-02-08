@@ -128,7 +128,7 @@ $(NAME): dirs
 dirs:
 				mkdir -p $(OBJ_DIR)
 
-%o:$(FILES_WITH_PATH)%c
+$(OBJ_DIR)%o:$(FILES_WITH_PATH)%c
 				gcc $(FLAGS) -o $@ -c $< -Iincludes/
 
 clean:

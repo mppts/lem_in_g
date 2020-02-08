@@ -17,6 +17,7 @@
 # include <libft.h>
 # include <dstr.h>
 # include <stdlib.h>
+# include <get_next_line.h>
 
 # define FALSE 0
 # define TRUE 1

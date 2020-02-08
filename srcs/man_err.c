@@ -12,21 +12,6 @@
 
 #include <lem_in.h>
 
-void			ft_del_splitter(char **pocket)
-{
-	uint64_t	i;
-
-	i = 0;
-	if (!pocket)
-		return ;
-	while (pocket[i])
-	{
-		free(pocket[i]);
-		i++;
-	}
-	free(pocket);
-}
-
 void			del_room(t_room *room)
 {
 	t_link		*tmp;

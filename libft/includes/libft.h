@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mschimme <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/24 17:02:42 by mschimme          #+#    #+#             */
-/*   Updated: 2020/02/07 20:03:40 by kona             ###   ########.fr       */
+/*   Created: 2020/02/08 16:48:10 by limry             #+#    #+#             */
+/*   Updated: 2020/02/08 18:08:21 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,6 @@
 ** GNL defines
 */
 
-# define BUFF_SIZE 128
-# define B_S BUFF_SIZE
-# define FDRSET &fdl, fd, fdl, fdl
-# define RSSET line, pl[0], &fdl
-# define SZFSZT sizeof(size_t)
-# define SZFINT sizeof(int)
-
 typedef struct		s_list
 {
 	void			*content;
@@ -46,13 +39,6 @@ typedef struct		s_list
 	struct s_list	*next;
 }					t_list;
 
-typedef struct		s_lst
-{
-	struct s_lst	*next;
-	int				dn;
-	char			*str;
-}					t_lst;
-int					get_next_line(const int fd, char **line);
 /*
 ** Function prototypes taken in Mojave MacOS version (variable names slightly
 ** vary from version to version..
@@ -96,7 +82,7 @@ size_t				ft_strlcpy(char *dst, const char *src, size_t size);
 char				*ft_strncpy(char *dst, const char *src, size_t len);
 char				*ft_strstr(const char *haystack, const char *needle);
 char				*ft_strnstr(const char *haystack, const char *needle,\
-									size_t len);
+					size_t len);
 char				*ft_strchr(const char *s, int c);
 char				*ft_strrchr(const char *s, int c);
 char				*ft_strsub(const char *s, unsigned int start, size_t len);
@@ -124,7 +110,5 @@ void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 void				ft_del(void *content, size_t size);
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
 long 				ft_atoli(const char *str);
-int					get_next_line(const int fd, char **line);
-int					clean_all_gnl(t_lst *lst);
 
 #endif

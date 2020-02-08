@@ -1,15 +1,34 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   dstr.c                                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/02/08 16:32:08 by limry             #+#    #+#             */
+/*   Updated: 2020/02/08 19:35:20 by limry            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "dstr.h"
 
 char			*dstr_pop_front(t_dstr *dstr, char **res, uint64_t l)
 {
-	if (l >= dstr->cap)
+	if (l <= dstr->cap)
 	{
-		res = ft_strdup(dstr->data);
-		free(dstr->data);
-		dstr->len = 0;
+		if (res)
+			*res = ft_strsub(dstr->data, 0, l);
+		ft_memmove(dstr->data, dstr->data + l, dstr->cap - l);
+		dstr->len = dstr->len - l;
+		if (res)
+			return (*res);
+		else
+			return (NULL);
 	}
-	res = ft_strsub(dstr->data, )
+	*res = dstr->data;
+	dstr->data = NULL;
+	dstr->len = 0;
+	return (*res);
 }
 
 t_dstr			*dstr_init(char *data, uint64_t cap)
@@ -24,6 +43,7 @@ t_dstr			*dstr_init(char *data, uint64_t cap)
 		cap <<=1;
 	new->cap = cap;
 	new->data = ft_strnew(new->cap);
+	new->data[0] = '\0';
 	if (data)
 		ft_strlcat(new->data, data, new->cap);
 	return (new);
@@ -55,17 +75,17 @@ t_dstr 			*dstr_joinstr(t_dstr *dstr, char *s)
 	if (len_s + dstr->len >= new_cap)
 	{
 		while (new_cap / 2 < len_s + dstr->len)
-			new_cap <<=1;
+			new_cap <<= 1;
 		new = ft_strnew(new_cap);
 		if (dstr->data)
-			ft_strlcat(new, dstr->data, new_cap);
-		ft_strlcat(new + dstr->len, s, new_cap - dstr->len);
+			ft_strlcat(new, dstr->data, dstr->len);
+		ft_strlcat(new + dstr->len, s, len_s);
 		free(dstr->data);
 		dstr->data = new;
 		dstr->cap = new_cap;
 		return (dstr);
 	}
-	ft_strlcat(dstr->data + dstr->len, s, dstr->cap - dstr->len);
+	ft_strlcat(dstr->data + dstr->len, s, len_s + 1);
 	dstr->len = len_s + dstr->len;
 	return (dstr);
 }

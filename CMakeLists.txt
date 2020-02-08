@@ -39,7 +39,7 @@ add_executable(lem_in
                 #srcs/writer_main.c
                 #srcs/solver_bfs.c
                 libft/includes/dstr.h
-        )
+        libft/includes/get_next_line.h)
 
 target_link_libraries(lem_in ${CMAKE_SOURCE_DIR}/libft/libft.a)
 

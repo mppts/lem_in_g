@@ -6,11 +6,11 @@
 /*   By: limry <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/12 17:42:01 by limry             #+#    #+#             */
-/*   Updated: 2020/02/07 20:02:11 by kona             ###   ########.fr       */
+/*   Updated: 2020/02/08 19:19:10 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "get_next_line.h"
 
 static t_lst	*ft_get_or_add(t_lst *hd, int fd)
 {
@@ -31,7 +31,7 @@ static t_lst	*ft_get_or_add(t_lst *hd, int fd)
 	{
 		new->dn = fd;
 		new->next = NULL;
-		new->str = NULL;
+		new->str = dstr_init(NULL, BUFF_SIZE << 2);
 		if (hd && last)
 			last->next = new;
 		return (new);
@@ -46,7 +46,7 @@ static void		ft_del_fd(t_lst *lst, t_lst *hd)
 	tmp = hd;
 	if (hd == lst)
 	{
-		free(lst->str);
+		dstr_del(lst->str);
 		lst->next = NULL;
 		free(lst);
 		lst = NULL;
@@ -57,7 +57,7 @@ static void		ft_del_fd(t_lst *lst, t_lst *hd)
 	if (tmp->next == lst)
 	{
 		tmp->next = tmp->next->next;
-		free(lst->str);
+		dstr_del(lst->str);
 		free(lst);
 		lst->next = NULL;
 	}
@@ -66,7 +66,6 @@ static void		ft_del_fd(t_lst *lst, t_lst *hd)
 static int		read_file(t_lst *lst, const int fd)
 {
 	char			buf[BUFF_SIZE + 1];
-	char			*tmp;
 	long int		ret;
 
 	while ((ret = read(fd, buf, BUFF_SIZE)))
@@ -74,10 +73,8 @@ static int		read_file(t_lst *lst, const int fd)
 		if (ret == -1)
 			return (-1);
 		buf[ret] = '\0';
-		tmp = ft_strjoin(lst->str, buf);
-		free(lst->str);
-		lst->str = tmp;
-		if (ft_strchr(lst->str, '\n'))
+		dstr_joinstr(lst->str, buf);
+		if (ft_strchr(lst->str->data, '\n'))
 			break ;
 	}
 	return (ret);
@@ -85,19 +82,16 @@ static int		read_file(t_lst *lst, const int fd)
 
 static int		show_line(t_lst *lst, char **line)
 {
-	char			*tmp;
+	char			*nl;
 
-	if (ft_strchr(lst->str, '\n'))
+	if ((nl = ft_strchr(lst->str->data, '\n')))
 	{
-		*line = ft_strsub(lst->str, 0, ft_strchr(lst->str, '\n') - lst->str);
-		tmp = ft_strdup(ft_strchr(lst->str, '\n') + 1);
-		free(lst->str);
-		lst->str = tmp;
+		dstr_pop_front(lst->str, line, nl - lst->str->data);
+		dstr_pop_front(lst->str, NULL, 1);
 		return (1);
 	}
-	*line = ft_strdup(lst->str);
-	free(lst->str);
-	lst->str = NULL;
+	dstr_pop_front(lst->str, line, lst->str->len);
+	lst->str->data = NULL;
 	return (1);
 }
 
@@ -115,10 +109,9 @@ int				get_next_line(const int fd, char **line)
 	if (!hd)
 		hd = ft_get_or_add(hd, fd);
 	lst = ft_get_or_add(hd, fd);
-	ret = read_file(lst, fd);
-	if (ret < 0)
+	if ((ret = read_file(lst, fd)) < 0)
 		return (-1);
-	if (!(lst->str) && !ret)
+	if (!(lst->str->len) && !ret)
 	{
 		hd1 = hd;
 		if (lst == hd)

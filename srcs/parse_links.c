@@ -6,7 +6,7 @@
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/04 20:37:39 by limry             #+#    #+#             */
-/*   Updated: 2020/02/07 18:45:15 by kona             ###   ########.fr       */
+/*   Updated: 2020/02/08 16:42:28 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,10 @@ void			add_link(char *buf, t_map *map)
 	if (!(to = find_hashed_room(map, r.to)))
 		man_err_map("Error: can't find to\n", &buf, ft_strdel, map);
 	if (error_in_link(map, from, to))
-		man_err_map("Error: link already exists\n", &buf, ft_strdel, map);
+	{
+		free(r.from);
+		return ;
+	}
 	add_links(from, to, map);
 	free(r.from);
 }

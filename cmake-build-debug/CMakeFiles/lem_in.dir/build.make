@@ -34,19 +34,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/kona/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/193.6015.37/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
 
 # The command to remove a file.
-RM = /home/kona/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/193.6015.37/bin/cmake/linux/bin/cmake -E remove -f
+RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/kona/CLionProjects/lem_in_g
+CMAKE_SOURCE_DIR = /Users/limry/CLionProjects/li_writer
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/kona/CLionProjects/lem_in_g/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/limry/CLionProjects/li_writer/cmake-build-debug
 
 # Include any dependencies generated for this target.
 include CMakeFiles/lem_in.dir/depend.make
@@ -59,120 +59,120 @@ include CMakeFiles/lem_in.dir/flags.make
 
 CMakeFiles/lem_in.dir/srcs/main.c.o: CMakeFiles/lem_in.dir/flags.make
 CMakeFiles/lem_in.dir/srcs/main.c.o: ../srcs/main.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kona/CLionProjects/lem_in_g/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/lem_in.dir/srcs/main.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/srcs/main.c.o   -c /home/kona/CLionProjects/lem_in_g/srcs/main.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/limry/CLionProjects/li_writer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building C object CMakeFiles/lem_in.dir/srcs/main.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/srcs/main.c.o   -c /Users/limry/CLionProjects/li_writer/srcs/main.c
 
 CMakeFiles/lem_in.dir/srcs/main.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lem_in.dir/srcs/main.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/kona/CLionProjects/lem_in_g/srcs/main.c > CMakeFiles/lem_in.dir/srcs/main.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/limry/CLionProjects/li_writer/srcs/main.c > CMakeFiles/lem_in.dir/srcs/main.c.i
 
 CMakeFiles/lem_in.dir/srcs/main.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lem_in.dir/srcs/main.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/kona/CLionProjects/lem_in_g/srcs/main.c -o CMakeFiles/lem_in.dir/srcs/main.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/limry/CLionProjects/li_writer/srcs/main.c -o CMakeFiles/lem_in.dir/srcs/main.c.s
 
 CMakeFiles/lem_in.dir/srcs/man_err.c.o: CMakeFiles/lem_in.dir/flags.make
 CMakeFiles/lem_in.dir/srcs/man_err.c.o: ../srcs/man_err.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kona/CLionProjects/lem_in_g/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/lem_in.dir/srcs/man_err.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/srcs/man_err.c.o   -c /home/kona/CLionProjects/lem_in_g/srcs/man_err.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/limry/CLionProjects/li_writer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building C object CMakeFiles/lem_in.dir/srcs/man_err.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/srcs/man_err.c.o   -c /Users/limry/CLionProjects/li_writer/srcs/man_err.c
 
 CMakeFiles/lem_in.dir/srcs/man_err.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lem_in.dir/srcs/man_err.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/kona/CLionProjects/lem_in_g/srcs/man_err.c > CMakeFiles/lem_in.dir/srcs/man_err.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/limry/CLionProjects/li_writer/srcs/man_err.c > CMakeFiles/lem_in.dir/srcs/man_err.c.i
 
 CMakeFiles/lem_in.dir/srcs/man_err.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lem_in.dir/srcs/man_err.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/kona/CLionProjects/lem_in_g/srcs/man_err.c -o CMakeFiles/lem_in.dir/srcs/man_err.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/limry/CLionProjects/li_writer/srcs/man_err.c -o CMakeFiles/lem_in.dir/srcs/man_err.c.s
 
 CMakeFiles/lem_in.dir/libft/srcs/dstr/dstr.c.o: CMakeFiles/lem_in.dir/flags.make
 CMakeFiles/lem_in.dir/libft/srcs/dstr/dstr.c.o: ../libft/srcs/dstr/dstr.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kona/CLionProjects/lem_in_g/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/lem_in.dir/libft/srcs/dstr/dstr.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/libft/srcs/dstr/dstr.c.o   -c /home/kona/CLionProjects/lem_in_g/libft/srcs/dstr/dstr.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/limry/CLionProjects/li_writer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building C object CMakeFiles/lem_in.dir/libft/srcs/dstr/dstr.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/libft/srcs/dstr/dstr.c.o   -c /Users/limry/CLionProjects/li_writer/libft/srcs/dstr/dstr.c
 
 CMakeFiles/lem_in.dir/libft/srcs/dstr/dstr.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lem_in.dir/libft/srcs/dstr/dstr.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/kona/CLionProjects/lem_in_g/libft/srcs/dstr/dstr.c > CMakeFiles/lem_in.dir/libft/srcs/dstr/dstr.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/limry/CLionProjects/li_writer/libft/srcs/dstr/dstr.c > CMakeFiles/lem_in.dir/libft/srcs/dstr/dstr.c.i
 
 CMakeFiles/lem_in.dir/libft/srcs/dstr/dstr.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lem_in.dir/libft/srcs/dstr/dstr.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/kona/CLionProjects/lem_in_g/libft/srcs/dstr/dstr.c -o CMakeFiles/lem_in.dir/libft/srcs/dstr/dstr.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/limry/CLionProjects/li_writer/libft/srcs/dstr/dstr.c -o CMakeFiles/lem_in.dir/libft/srcs/dstr/dstr.c.s
 
 CMakeFiles/lem_in.dir/srcs/parse_map.c.o: CMakeFiles/lem_in.dir/flags.make
 CMakeFiles/lem_in.dir/srcs/parse_map.c.o: ../srcs/parse_map.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kona/CLionProjects/lem_in_g/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/lem_in.dir/srcs/parse_map.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/srcs/parse_map.c.o   -c /home/kona/CLionProjects/lem_in_g/srcs/parse_map.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/limry/CLionProjects/li_writer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building C object CMakeFiles/lem_in.dir/srcs/parse_map.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/srcs/parse_map.c.o   -c /Users/limry/CLionProjects/li_writer/srcs/parse_map.c
 
 CMakeFiles/lem_in.dir/srcs/parse_map.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lem_in.dir/srcs/parse_map.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/kona/CLionProjects/lem_in_g/srcs/parse_map.c > CMakeFiles/lem_in.dir/srcs/parse_map.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/limry/CLionProjects/li_writer/srcs/parse_map.c > CMakeFiles/lem_in.dir/srcs/parse_map.c.i
 
 CMakeFiles/lem_in.dir/srcs/parse_map.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lem_in.dir/srcs/parse_map.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/kona/CLionProjects/lem_in_g/srcs/parse_map.c -o CMakeFiles/lem_in.dir/srcs/parse_map.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/limry/CLionProjects/li_writer/srcs/parse_map.c -o CMakeFiles/lem_in.dir/srcs/parse_map.c.s
 
 CMakeFiles/lem_in.dir/srcs/parse_room.c.o: CMakeFiles/lem_in.dir/flags.make
 CMakeFiles/lem_in.dir/srcs/parse_room.c.o: ../srcs/parse_room.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kona/CLionProjects/lem_in_g/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/lem_in.dir/srcs/parse_room.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/srcs/parse_room.c.o   -c /home/kona/CLionProjects/lem_in_g/srcs/parse_room.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/limry/CLionProjects/li_writer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building C object CMakeFiles/lem_in.dir/srcs/parse_room.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/srcs/parse_room.c.o   -c /Users/limry/CLionProjects/li_writer/srcs/parse_room.c
 
 CMakeFiles/lem_in.dir/srcs/parse_room.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lem_in.dir/srcs/parse_room.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/kona/CLionProjects/lem_in_g/srcs/parse_room.c > CMakeFiles/lem_in.dir/srcs/parse_room.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/limry/CLionProjects/li_writer/srcs/parse_room.c > CMakeFiles/lem_in.dir/srcs/parse_room.c.i
 
 CMakeFiles/lem_in.dir/srcs/parse_room.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lem_in.dir/srcs/parse_room.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/kona/CLionProjects/lem_in_g/srcs/parse_room.c -o CMakeFiles/lem_in.dir/srcs/parse_room.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/limry/CLionProjects/li_writer/srcs/parse_room.c -o CMakeFiles/lem_in.dir/srcs/parse_room.c.s
 
 CMakeFiles/lem_in.dir/srcs/parse_utils.c.o: CMakeFiles/lem_in.dir/flags.make
 CMakeFiles/lem_in.dir/srcs/parse_utils.c.o: ../srcs/parse_utils.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kona/CLionProjects/lem_in_g/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/lem_in.dir/srcs/parse_utils.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/srcs/parse_utils.c.o   -c /home/kona/CLionProjects/lem_in_g/srcs/parse_utils.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/limry/CLionProjects/li_writer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building C object CMakeFiles/lem_in.dir/srcs/parse_utils.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/srcs/parse_utils.c.o   -c /Users/limry/CLionProjects/li_writer/srcs/parse_utils.c
 
 CMakeFiles/lem_in.dir/srcs/parse_utils.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lem_in.dir/srcs/parse_utils.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/kona/CLionProjects/lem_in_g/srcs/parse_utils.c > CMakeFiles/lem_in.dir/srcs/parse_utils.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/limry/CLionProjects/li_writer/srcs/parse_utils.c > CMakeFiles/lem_in.dir/srcs/parse_utils.c.i
 
 CMakeFiles/lem_in.dir/srcs/parse_utils.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lem_in.dir/srcs/parse_utils.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/kona/CLionProjects/lem_in_g/srcs/parse_utils.c -o CMakeFiles/lem_in.dir/srcs/parse_utils.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/limry/CLionProjects/li_writer/srcs/parse_utils.c -o CMakeFiles/lem_in.dir/srcs/parse_utils.c.s
 
 CMakeFiles/lem_in.dir/srcs/parse_links.c.o: CMakeFiles/lem_in.dir/flags.make
 CMakeFiles/lem_in.dir/srcs/parse_links.c.o: ../srcs/parse_links.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kona/CLionProjects/lem_in_g/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/lem_in.dir/srcs/parse_links.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/srcs/parse_links.c.o   -c /home/kona/CLionProjects/lem_in_g/srcs/parse_links.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/limry/CLionProjects/li_writer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building C object CMakeFiles/lem_in.dir/srcs/parse_links.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/srcs/parse_links.c.o   -c /Users/limry/CLionProjects/li_writer/srcs/parse_links.c
 
 CMakeFiles/lem_in.dir/srcs/parse_links.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lem_in.dir/srcs/parse_links.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/kona/CLionProjects/lem_in_g/srcs/parse_links.c > CMakeFiles/lem_in.dir/srcs/parse_links.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/limry/CLionProjects/li_writer/srcs/parse_links.c > CMakeFiles/lem_in.dir/srcs/parse_links.c.i
 
 CMakeFiles/lem_in.dir/srcs/parse_links.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lem_in.dir/srcs/parse_links.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/kona/CLionProjects/lem_in_g/srcs/parse_links.c -o CMakeFiles/lem_in.dir/srcs/parse_links.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/limry/CLionProjects/li_writer/srcs/parse_links.c -o CMakeFiles/lem_in.dir/srcs/parse_links.c.s
 
 CMakeFiles/lem_in.dir/srcs/parse_hash.c.o: CMakeFiles/lem_in.dir/flags.make
 CMakeFiles/lem_in.dir/srcs/parse_hash.c.o: ../srcs/parse_hash.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kona/CLionProjects/lem_in_g/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/lem_in.dir/srcs/parse_hash.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/srcs/parse_hash.c.o   -c /home/kona/CLionProjects/lem_in_g/srcs/parse_hash.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/limry/CLionProjects/li_writer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building C object CMakeFiles/lem_in.dir/srcs/parse_hash.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/srcs/parse_hash.c.o   -c /Users/limry/CLionProjects/li_writer/srcs/parse_hash.c
 
 CMakeFiles/lem_in.dir/srcs/parse_hash.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lem_in.dir/srcs/parse_hash.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/kona/CLionProjects/lem_in_g/srcs/parse_hash.c > CMakeFiles/lem_in.dir/srcs/parse_hash.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/limry/CLionProjects/li_writer/srcs/parse_hash.c > CMakeFiles/lem_in.dir/srcs/parse_hash.c.i
 
 CMakeFiles/lem_in.dir/srcs/parse_hash.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lem_in.dir/srcs/parse_hash.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/kona/CLionProjects/lem_in_g/srcs/parse_hash.c -o CMakeFiles/lem_in.dir/srcs/parse_hash.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/limry/CLionProjects/li_writer/srcs/parse_hash.c -o CMakeFiles/lem_in.dir/srcs/parse_hash.c.s
 
 CMakeFiles/lem_in.dir/srcs/parse_room2.c.o: CMakeFiles/lem_in.dir/flags.make
 CMakeFiles/lem_in.dir/srcs/parse_room2.c.o: ../srcs/parse_room2.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kona/CLionProjects/lem_in_g/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/lem_in.dir/srcs/parse_room2.c.o"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/srcs/parse_room2.c.o   -c /home/kona/CLionProjects/lem_in_g/srcs/parse_room2.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/limry/CLionProjects/li_writer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building C object CMakeFiles/lem_in.dir/srcs/parse_room2.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/srcs/parse_room2.c.o   -c /Users/limry/CLionProjects/li_writer/srcs/parse_room2.c
 
 CMakeFiles/lem_in.dir/srcs/parse_room2.c.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lem_in.dir/srcs/parse_room2.c.i"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/kona/CLionProjects/lem_in_g/srcs/parse_room2.c > CMakeFiles/lem_in.dir/srcs/parse_room2.c.i
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/limry/CLionProjects/li_writer/srcs/parse_room2.c > CMakeFiles/lem_in.dir/srcs/parse_room2.c.i
 
 CMakeFiles/lem_in.dir/srcs/parse_room2.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lem_in.dir/srcs/parse_room2.c.s"
-	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/kona/CLionProjects/lem_in_g/srcs/parse_room2.c -o CMakeFiles/lem_in.dir/srcs/parse_room2.c.s
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/limry/CLionProjects/li_writer/srcs/parse_room2.c -o CMakeFiles/lem_in.dir/srcs/parse_room2.c.s
 
 # Object files for target lem_in
 lem_in_OBJECTS = \
@@ -201,7 +201,7 @@ lem_in: CMakeFiles/lem_in.dir/srcs/parse_room2.c.o
 lem_in: CMakeFiles/lem_in.dir/build.make
 lem_in: ../libft/libft.a
 lem_in: CMakeFiles/lem_in.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/kona/CLionProjects/lem_in_g/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking C executable lem_in"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/limry/CLionProjects/li_writer/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Linking C executable lem_in"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/lem_in.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -214,6 +214,6 @@ CMakeFiles/lem_in.dir/clean:
 .PHONY : CMakeFiles/lem_in.dir/clean
 
 CMakeFiles/lem_in.dir/depend:
-	cd /home/kona/CLionProjects/lem_in_g/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/kona/CLionProjects/lem_in_g /home/kona/CLionProjects/lem_in_g /home/kona/CLionProjects/lem_in_g/cmake-build-debug /home/kona/CLionProjects/lem_in_g/cmake-build-debug /home/kona/CLionProjects/lem_in_g/cmake-build-debug/CMakeFiles/lem_in.dir/DependInfo.cmake --color=$(COLOR)
+	cd /Users/limry/CLionProjects/li_writer/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /Users/limry/CLionProjects/li_writer /Users/limry/CLionProjects/li_writer /Users/limry/CLionProjects/li_writer/cmake-build-debug /Users/limry/CLionProjects/li_writer/cmake-build-debug /Users/limry/CLionProjects/li_writer/cmake-build-debug/CMakeFiles/lem_in.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/lem_in.dir/depend
 

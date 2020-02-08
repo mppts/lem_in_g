@@ -1,24 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strsub.c                                        :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/08 16:36:01 by limry             #+#    #+#             */
-/*   Updated: 2020/02/08 16:36:01 by limry            ###   ########.fr       */
+/*   Created: 2020/02/08 18:06:29 by limry             #+#    #+#             */
+/*   Updated: 2020/02/08 18:07:17 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#ifndef LEM_IN_GET_NEXT_LINE_H
+#define LEM_IN_GET_NEXT_LINE_H
 
-char		*ft_strsub(char const *s, unsigned int start, size_t len)
+# include "libft.h"
+# include "dstr.h"
+
+# define BUFF_SIZE 128
+
+
+typedef struct		s_lst
 {
-	char	*sub_s;
+	struct s_lst	*next;
+	int				dn;
+	t_dstr			*str;
+}					t_lst;
 
-	if (!s || !(sub_s = ft_strnew(len)))
-		return (NULL);
-	s = s + start;
-	ft_memcpy((void *)sub_s, (const void *)s, len);
-	return (sub_s);
-}
+int					get_next_line(const int fd, char **line);
+int					clean_all_gnl(t_lst *lst);
+
+#endif

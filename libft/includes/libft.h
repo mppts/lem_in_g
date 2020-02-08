@@ -6,7 +6,7 @@
 /*   By: mschimme <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/24 17:02:42 by mschimme          #+#    #+#             */
-/*   Updated: 2020/02/05 14:38:52 by limry            ###   ########.fr       */
+/*   Updated: 2020/02/07 20:03:40 by kona             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,17 +18,12 @@
 # include <sys/types.h>
 # include <stdio.h>
 # include <inttypes.h>
+# include "dstr.h"
 
 /*
 ** libFT defines
 */
 
-# define ULL unsigned long long
-# define UCC unsigned const char
-# define CC const char
-# define UC unsigned char
-# define CV const void
-# define SST signed size_t
 # define MHZERO 0x0101010101010101UL
 # define DHZERO 0x8080808080808080UL
 # define FALSE 0

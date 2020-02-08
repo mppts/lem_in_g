@@ -13,6 +13,7 @@ add_executable(lem_in
                 #srcs/solver.c
                 #srcs/deque.c
                 srcs/man_err.c
+                libft/srcs/dstr/dstr.c
                 #libbinheap/srcs/binary_init.c
                 #libbinheap/includes/binary_heap.h
                 #fibonacci_heap/includes/fibonacci_heap.h
@@ -34,9 +35,10 @@ add_executable(lem_in
                 srcs/parse_links.c
                 srcs/parse_hash.c
                 srcs/parse_room2.c
-                srcs/writer_string.c
-                srcs/writer_main.c
+                #srcs/writer_string.c
+                #srcs/writer_main.c
                 #srcs/solver_bfs.c
+                libft/includes/dstr.h
         )
 
 target_link_libraries(lem_in ${CMAKE_SOURCE_DIR}/libft/libft.a)

@@ -19,15 +19,16 @@ FLAGS = -Wall -Wextra -Werror
 OBJ = $(SOURCE:%.c=%.o)
 OBJS = $(SOURCE:%.c=$(DIR_OBJ)%.o)
 SRCS = $(SOURCE:%.c=$(DIR_SRC)%.c)
+MKDIR_P = mkdir -p
 
 all: $(NAME)
 
 $(NAME): directories $(OBJS)
-	ar rc $(NAME) $(OBJS)
-	ranlib $(NAME)
+	@ar rc $(NAME) $(OBJS)
+	@ranlib $(NAME)
 
 directories:
-	mkdir -p $(DIR_OBJ)
+	@$(MKDIR_P)  -p $(DIR_OBJ)
 
 $(DIR_OBJ)%.o: $(DIR_SRC)%.c
 	gcc $(FLAGS) -o $@ -c $< -I$(DIR_INC)

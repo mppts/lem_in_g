@@ -6,7 +6,7 @@
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/05 12:03:07 by limry             #+#    #+#             */
-/*   Updated: 2020/02/05 15:23:22 by limry            ###   ########.fr       */
+/*   Updated: 2020/02/07 18:50:06 by kona             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,11 +15,20 @@
 
 # include <inttypes.h>
 # include <libft.h>
+# include <dstr.h>
 # include <stdlib.h>
 
 # define FALSE 0
 # define TRUE 1
 
+typedef struct		s_r_reader
+{
+	char 			*name_room;
+	char 			*sx;
+	char 			*sy;
+	char 			*from;
+	char 			*to;
+}					t_r_reader;
 
 typedef struct		s_path
 {
@@ -71,12 +80,12 @@ typedef struct		s_map
 	uint64_t		num_nodes;
 	uint64_t		num_links;
 	int64_t			ants;
-	char			**splt;
 	uint8_t			is_rooms_hashed;
 	t_room			**hashed_rooms;
 	char 			**buf;
 	char 			*out;
 	t_paths			*paths;
+	t_dstr 			*dstr;
 }					t_map;
 
 typedef struct		s_flag
@@ -126,6 +135,5 @@ void				del_room(t_room *room);
 
 void				man_err_map(char *msg, char **data,
 					void (*f_todel)(char**), t_map *map);
-void				ft_del_splitter(char **pocket);
 
 #endif

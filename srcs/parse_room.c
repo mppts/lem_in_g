@@ -6,7 +6,7 @@
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/04 20:14:21 by limry             #+#    #+#             */
-/*   Updated: 2020/02/05 17:35:38 by limry            ###   ########.fr       */
+/*   Updated: 2020/02/07 16:20:06 by kona             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ static void		set_start_and_fin(t_room *new, t_map *map, t_flag *flag)
 		else
 		{
 			del_room(new);
-			man_err_map("Error: too many entries\n", map->buf, ft_strdel, map);
+			man_err_map("Error: too many entries\n", NULL, NULL, map);
 		}
 	}
 	if (flag->flag_end == 1)
@@ -50,14 +50,14 @@ static void		set_start_and_fin(t_room *new, t_map *map, t_flag *flag)
 		else
 		{
 			del_room(new);
-			man_err_map("Error: too many exits\n", map->buf, ft_strdel, map);
+			man_err_map("Error: too many exits\n", NULL, NULL, map);
 		}
 	}
 	flag->flag_start = 0;
 	flag->flag_end = 0;
 }
 
-static int		no_room_with_this_name(t_map *map)
+static int		no_room_with_this_name(t_map *map, t_r_reader r)
 {
 	t_room		*tmp;
 	uint64_t	i;
@@ -70,53 +70,54 @@ static int		no_room_with_this_name(t_map *map)
 		tmp = map->room_start;
 	while (i-- && tmp)
 	{
-		if (!ft_strcmp(tmp->name, map->splt[0]))
+		if (!ft_strcmp(tmp->name,r.name_room))
 			return (0);
 		tmp = tmp->next;
 	}
 	return (1);
 }
 
-t_room			*new_room(char **splt, t_flag *flag, t_map *map)
+static t_room	*new_room(t_r_reader r, t_flag *flag, t_map *map)
 {
 	t_room		*new;
 	int64_t		x;
 	int64_t		y;
 
-	if (!is_num(splt[1]) || !is_num(splt[2]))
+	if (!is_num(r.sx) || !is_num(r.sy))
 		man_err_map("Error: coords not numbers\n", map->buf, ft_strdel, map);
-	x = ft_atoli(splt[1]);
-	y = ft_atoli(splt[2]);
+	x = ft_atoli(r.sx);
+	y = ft_atoli(r.sy);
 	if (x > INT32_MAX || y > INT32_MAX ||
 		x < INT32_MIN || y < INT32_MIN)
 		man_err_map("Error: coords bigger than int\n",
 				map->buf, ft_strdel, map);
-	if (ft_strchr(splt[0], '-'))
+	if (ft_strchr(r.name_room, '-'))
 		man_err_map("Error: dash in room name\n", map->buf, ft_strdel, map);
 	if (!(new = (t_room*)malloc(sizeof(t_room))))
 		man_err_map("Error: can't allocate room\n", map->buf, ft_strdel, map);
-	init_room(new, (int)x, (int)y, splt[0]);
+	init_room(new, (int)x, (int)y, r.name_room);
 	return (new);
 }
 
 void			add_room(char *buf, t_flag *flag, t_map *map)
 {
 	t_room		*new;
-	char		*b;
+	char 		*b;
+	t_r_reader	r;
 
+	r.name_room = buf;
 	if (!((b = ft_strchr(buf, ' ')) &&
-	(*(++b) != '\0' && (b = ft_strchr(b, ' '))) &&
-	(*(++b) != '\0' && !(ft_strchr(b, ' ')))))
+	(*(r.sx = ++b) != '\0' && (b = ft_strchr(b, ' '))) &&
+	(*(r.sy = ++b) != '\0' && !(ft_strchr(b, ' ')))))
 		man_err_map("Error: wrong room line\n", &buf, ft_strdel, map);
+	*(r.sx - 1) = '\0';
+	*(r.sy - 1) = '\0';
 	new = NULL;
-	map->splt = ft_strsplit(buf, ' ');
-	if (no_room_with_this_name(map))
-		new = new_room(map->splt, flag, map);
+	if (no_room_with_this_name(map, r))
+		new = new_room(r, flag, map);
 	else
 		man_err_map("Error: this room already exists\n", &buf, ft_strdel, map);
 	set_start_and_fin(new, map, flag);
 	if (new)
 		link_rooms(map, new);
-	ft_del_splitter(map->splt);
-	map->splt = NULL;
 }

@@ -16,7 +16,7 @@ void	init_room(t_room *new, int x, int y, char *name)
 {
 	new->x = x;
 	new->y = y;
-	new->name = ft_strdup(name);
+	new->name = name;
 	new->linked_to = NULL;
 	new->next = NULL;
 	new->prev = NULL;

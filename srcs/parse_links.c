@@ -6,7 +6,7 @@
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/04 20:37:39 by limry             #+#    #+#             */
-/*   Updated: 2020/02/05 16:22:03 by limry            ###   ########.fr       */
+/*   Updated: 2020/02/07 18:45:15 by kona             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,18 +78,18 @@ void			add_link(char *buf, t_map *map)
 	t_room		*from;
 	t_room		*to;
 	char		*b;
+	t_r_reader	r;
 
-	map->splt = ft_strsplit(buf, '-');
-	b = NULL;
-	if (!((b = ft_strchr(buf, '-')) && !ft_strchr(++b, '-')))
+	r.from = buf;
+	if (!((b = ft_strchr(buf, '-')) && !ft_strchr(r.to = ++b, '-')))
 		man_err_map("Error: link line error\n", &buf, ft_strdel, map);
-	if (!(from = find_hashed_room(map, map->splt[0])))
+	*(r.to - 1) = '\0';
+	if (!(from = find_hashed_room(map, r.from)))
 		man_err_map("Error: can't find from\n", &buf, ft_strdel, map);
-	if (!(to = find_hashed_room(map, map->splt[1])))
+	if (!(to = find_hashed_room(map, r.to)))
 		man_err_map("Error: can't find to\n", &buf, ft_strdel, map);
 	if (error_in_link(map, from, to))
 		man_err_map("Error: link already exists\n", &buf, ft_strdel, map);
 	add_links(from, to, map);
-	ft_del_splitter(map->splt);
-	map->splt = NULL;
+	free(r.from);
 }

@@ -7,11 +7,11 @@ DIR_INC = includes/
 DIR_OBJ = obj/
 
 LIB = libft.a
-LIB_HEAP = libbinheap.a
-DIR_OBJ = obj/
 DIR_LIB	= $(LIB:.a=/)
-DIR_LIB_HEAP = $(LIB_HEAP:.a=/)
 LIB_INCLUDES = $(LIB:.a=/includes/)
+
+LIB_HEAP = libbinheap.a
+DIR_LIB_HEAP = $(LIB_HEAP:.a=/)
 LIB_HEAP_INCLUDES = $(LIB_HEAP:.a=/includes/)
 
 SOURCE = \
@@ -25,7 +25,10 @@ SOURCE = \
          parse_utils.c
 #         solver.c
 
-HEADERS = lem_in.h libft.h binary_heap.h
+HEADERS =	lem_in.h \
+			libft.h \
+			binary_heap.h
+
 #FLAGS = -Wall -Wextra -Werror
 FLAGS = 
 OBJ = $(SOURCE:%.c=%.o)

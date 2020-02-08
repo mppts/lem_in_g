@@ -6,11 +6,13 @@
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/04 20:09:29 by limry             #+#    #+#             */
-/*   Updated: 2020/02/05 17:28:15 by limry            ###   ########.fr       */
+/*   Updated: 2020/02/07 19:13:26 by kona             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
+#include "../libft/srcs/get_next_line/ft_get_next_line.c"
+#include "../libft/srcs/get_next_line/ft_get_next_line2.c"
 
 static void		add_room_or_path(char *buf, t_flag *flag, t_map *map)
 {
@@ -43,10 +45,10 @@ static void		parse_ants(t_map *map, char *buf)
 	}
 	ants = ft_atoli(buf);
 	if (ants < 1 || ants >= INT32_MAX)
-	{
 		man_err_map("Error: no or too many ants\n", &buf, ft_strdel, map);
-	}
 	map->ants = ants;
+	free(buf);
+
 }
 
 static int		parse_line(char *buf, t_flag *flag, t_map *map)
@@ -59,6 +61,7 @@ static int		parse_line(char *buf, t_flag *flag, t_map *map)
 			flag->flag_start = 1;
 		else if (!ft_strcmp(buf, "##end"))
 			flag->flag_end = 1;
+		free(buf);
 	}
 	else if (!map->ants)
 		parse_ants(map, buf);
@@ -80,10 +83,10 @@ void			init_map(t_map *map)
 	map->fin = NULL;
 	map->no_path_exists = 1;
 	map->ants = 0;
-	map->splt = NULL;
 	map->hashed_rooms = NULL;
 	map->buf = NULL;
 	map->out = NULL;
+	map->dstr = dstr_init(NULL, 500);
 }
 
 void			parse_map(t_map *map)
@@ -97,17 +100,15 @@ void			parse_map(t_map *map)
 	buf = NULL;
 	while ((ret = get_next_line(0, &buf)))
 	{
-		map->buf = &buf;
-
 		if (ret == -1)
 			break ;
-		map->out = ft_strjoin(map->out, buf);
-		map->out = ft_strjoin(map->out, "\n");
+		dstr_joinstr(map->dstr, buf);
+		dstr_joinstr(map->dstr, "\n");
 		if (parse_line(buf, &flag, map))
 		{
 			free(buf);
 			break ;
 		}
-		free(buf);
 	}
+	get_next_line(-1, &buf);
 }

@@ -305,7 +305,7 @@ void		solver(t_map *map)
 
 	make_color_white_again(map->room_start);
 	put_zero_to_flows(map->room_start);
-//	print_list(map->room_start);
+//	print_list(map->start);
 	inf.ways = memory_for_ways(map, inf.ways);
 	inf.mirror_links = memory_for_mirror_links(map->room_start, inf.mirror_links);
 	inf.links_to_gray_dot = memory_for_bad_links(map->room_start, inf.links_to_gray_dot);

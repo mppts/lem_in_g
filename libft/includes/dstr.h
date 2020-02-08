@@ -6,7 +6,7 @@
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/08 16:48:01 by limry             #+#    #+#             */
-/*   Updated: 2020/02/08 16:48:01 by limry            ###   ########.fr       */
+/*   Updated: 2020/02/08 22:21:51 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,9 @@
 typedef struct		s_dstr
 {
 	char			*data;
+	char			*start;
 	uint64_t		len;
+	uint64_t		len_data;
 	uint64_t		cap;
 }					t_dstr;
 

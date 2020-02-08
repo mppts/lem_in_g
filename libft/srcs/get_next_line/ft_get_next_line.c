@@ -6,7 +6,7 @@
 /*   By: limry <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/12 17:42:01 by limry             #+#    #+#             */
-/*   Updated: 2020/02/08 19:19:10 by limry            ###   ########.fr       */
+/*   Updated: 2020/02/08 23:07:22 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,7 @@ static int		read_file(t_lst *lst, const int fd)
 			return (-1);
 		buf[ret] = '\0';
 		dstr_joinstr(lst->str, buf);
-		if (ft_strchr(lst->str->data, '\n'))
+		if (ft_strchr(buf, '\n'))
 			break ;
 	}
 	return (ret);
@@ -84,14 +84,13 @@ static int		show_line(t_lst *lst, char **line)
 {
 	char			*nl;
 
-	if ((nl = ft_strchr(lst->str->data, '\n')))
+	if ((nl = ft_strchr(lst->str->start, '\n')))
 	{
-		dstr_pop_front(lst->str, line, nl - lst->str->data);
+		dstr_pop_front(lst->str, line, nl - lst->str->start);
 		dstr_pop_front(lst->str, NULL, 1);
 		return (1);
 	}
-	dstr_pop_front(lst->str, line, lst->str->len);
-	lst->str->data = NULL;
+	dstr_pop_front(lst->str, line, lst->str->len_data);
 	return (1);
 }
 
@@ -111,7 +110,7 @@ int				get_next_line(const int fd, char **line)
 	lst = ft_get_or_add(hd, fd);
 	if ((ret = read_file(lst, fd)) < 0)
 		return (-1);
-	if (!(lst->str->len) && !ret)
+	if (!(lst->str->len_data) && !ret)
 	{
 		hd1 = hd;
 		if (lst == hd)

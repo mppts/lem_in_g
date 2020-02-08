@@ -6,7 +6,7 @@
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/05 12:03:07 by limry             #+#    #+#             */
-/*   Updated: 2020/02/07 18:50:06 by kona             ###   ########.fr       */
+/*   Updated: 2020/02/08 21:12:36 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,6 +82,7 @@ typedef struct		s_map
 	uint64_t		num_links;
 	int64_t			ants;
 	uint8_t			is_rooms_hashed;
+	uint64_t		len_rh;
 	t_room			**hashed_rooms;
 	char 			**buf;
 	char 			*out;

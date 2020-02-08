@@ -2,6 +2,7 @@
 
 int			main(void)
 {
+
 	t_map	map;
 
 	init_map(&map);
@@ -21,4 +22,5 @@ int			main(void)
 	// VISUALIZATION??
 	del_map(&map);
 	return 0;
+
 }

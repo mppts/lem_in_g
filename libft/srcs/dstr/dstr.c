@@ -6,7 +6,7 @@
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/08 16:32:08 by limry             #+#    #+#             */
-/*   Updated: 2020/02/08 19:35:20 by limry            ###   ########.fr       */
+/*   Updated: 2020/02/08 23:39:51 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,20 +14,22 @@
 
 char			*dstr_pop_front(t_dstr *dstr, char **res, uint64_t l)
 {
-	if (l <= dstr->cap)
+	if (l <= dstr->len_data)
 	{
 		if (res)
-			*res = ft_strsub(dstr->data, 0, l);
-		ft_memmove(dstr->data, dstr->data + l, dstr->cap - l);
-		dstr->len = dstr->len - l;
+			*res = ft_strsub(dstr->start, 0, l);
+		dstr->start += l;
+		dstr->len_data -= l;
 		if (res)
 			return (*res);
 		else
 			return (NULL);
 	}
-	*res = dstr->data;
-	dstr->data = NULL;
+	*res = ft_strsub(dstr->start, 0, dstr->len_data);
+	ft_bzero(dstr->data, dstr->cap);
 	dstr->len = 0;
+	dstr->start = dstr->data;
+	dstr->len_data = 0;
 	return (*res);
 }
 
@@ -44,6 +46,8 @@ t_dstr			*dstr_init(char *data, uint64_t cap)
 	new->cap = cap;
 	new->data = ft_strnew(new->cap);
 	new->data[0] = '\0';
+	new->start = new->data;
+	new->len_data = 0;
 	if (data)
 		ft_strlcat(new->data, data, new->cap);
 	return (new);
@@ -62,30 +66,50 @@ void			dstr_del(t_dstr *str)
 	str = NULL;
 }
 
+static void			dstr_expand(t_dstr *dstr, uint64_t len_s, char *s)
+{
+	uint64_t	new_cap;
+	char		*new;
+
+	new_cap = dstr->cap;
+	while (new_cap <= len_s + dstr->len)
+		new_cap <<= 1;
+	new = ft_strnew(new_cap);
+	ft_bzero(new, new_cap);
+	if (dstr->data)
+		ft_strlcat(new, dstr->start, new_cap);
+	ft_strlcat(new + dstr->len_data, s, new_cap - dstr->len_data);
+	free(dstr->data);
+	dstr->data = new;
+	dstr->cap = new_cap;
+	dstr->start = dstr->data;
+	dstr->len_data = dstr->len_data + len_s;
+	dstr->len = dstr->len_data;
+}
+
 t_dstr 			*dstr_joinstr(t_dstr *dstr, char *s)
 {
 	uint64_t	len_s;
-	uint64_t	new_cap;
-	char		*new;
 
 	if (!s)
 		return (dstr);
 	len_s  = ft_strlen(s);
-	new_cap = dstr->cap;
-	if (len_s + dstr->len >= new_cap)
+	if (len_s + dstr->len >= dstr->cap)
 	{
-		while (new_cap / 2 < len_s + dstr->len)
-			new_cap <<= 1;
-		new = ft_strnew(new_cap);
-		if (dstr->data)
-			ft_strlcat(new, dstr->data, dstr->len);
-		ft_strlcat(new + dstr->len, s, len_s);
-		free(dstr->data);
-		dstr->data = new;
-		dstr->cap = new_cap;
+		if (len_s < dstr->len - dstr->len_data)
+		{
+			ft_memmove(dstr->data, dstr->start, dstr->len_data + 1);
+			ft_bzero(dstr->data + dstr->len_data + 1, dstr->cap - dstr->len_data);
+			dstr->start = dstr->data;
+			dstr->len_data += len_s;
+			dstr->len = dstr->len_data;
+		}
+		else
+			dstr_expand(dstr, len_s, s);
 		return (dstr);
 	}
-	ft_strlcat(dstr->data + dstr->len, s, len_s + 1);
-	dstr->len = len_s + dstr->len;
+	ft_strlcat(dstr->start + dstr->len_data, s, dstr->cap - dstr->len);
+	dstr->len += len_s;
+	dstr->len_data += len_s;
 	return (dstr);
 }

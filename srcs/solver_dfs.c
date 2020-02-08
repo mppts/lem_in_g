@@ -52,7 +52,7 @@ t_room		*find_vertex(t_link *link, t_graph_inf *inf, t_map *map)
 		link = tmp;
 		while (link)
 		{
-			if (!link->flow && link->to->color == GRAY)
+			if (!link->flow && link->to->color == GRAY && link->to != inf->ways[inf->current_way_number][inf->position_in_way - 2])
 				break ;
 			link = link->next;
 		}
@@ -61,15 +61,28 @@ t_room		*find_vertex(t_link *link, t_graph_inf *inf, t_map *map)
 	}
 	min_level = link;
 	link = link->next;
-	while (link)
+
+	if (min_level->to->color == WHITE)
 	{
-		if (!link->flow && link->to->color == min_level->to->color && link->to->level < min_level->to->level)
-			min_level = link;
-		link = link->next;
+		while (link)
+		{
+			if (!link->flow && link->to->color == WHITE && link->to->level < min_level->to->level)
+				min_level = link;
+			link = link->next;
+		}
+	}
+	else
+	{
+		while (link)
+		{
+			if (!link->flow && link->to->color == GRAY && link->to->level < min_level->to->level && link->to != inf->ways[inf->current_way_number][inf->position_in_way - 2])
+				min_level = link;
+			link = link->next;
+		}
 	}
 
-	if ((inf->position_in_way >= 2 && min_level->to == inf->ways[inf->current_way_number][inf->position_in_way - 2]) || (inf->position_in_way == 1 && min_level->to == inf->ways[inf->current_way_number][inf->position_in_way - 1]))
-		return (NULL);
+//	if ((inf->position_in_way >= 2 && min_level->to == inf->ways[inf->current_way_number][inf->position_in_way - 2]) || (inf->position_in_way == 1 && min_level->to == inf->ways[inf->current_way_number][inf->position_in_way - 1]))
+//		return (NULL);
 
 	min_level->flow = 1;
 
@@ -77,7 +90,7 @@ t_room		*find_vertex(t_link *link, t_graph_inf *inf, t_map *map)
 	int i;
 
 	i = 0;
-	if (min_level->to != map->room_end && min_level->to->color == GRAY)
+	if (min_level->to != map->fin && min_level->to->color == GRAY)
 	{
 		while (inf->links_to_gray_dot[i])
 			i++;
@@ -129,7 +142,7 @@ int			dfs(t_room *room, t_graph_inf *inf, t_map *map)
 {
 	if (room->color == WHITE)
 		room->color = GRAY;
-	if (room == map->room_end)
+	if (room == map->fin)
 	{
 		if (!inf->mirror_links[0] && inf->links_to_gray_dot[0])
 		{
@@ -154,7 +167,7 @@ int			dfs(t_room *room, t_graph_inf *inf, t_map *map)
 	}
 	else
 	{
-		if (room == map->room_start)
+		if (room == map->start)
 			return (0);
 		else
 		{

@@ -75,29 +75,29 @@ void		time_to_do_some_cleaning(t_map *map, t_graph_inf *inf)
 {
 	if (inf->mirror_links[0])
 		delite_mirror_links(inf);
-	make_color_white_again(map->room_start);
+	make_color_white_again(map->start);
 	clean_ways(inf->ways);
-	clean_levels_and_flows(map->room_start);
+	clean_levels_and_flows(map->start);
 	clean_links_to_gray_dots(inf->links_to_gray_dot);
 }
 
 void		algo(t_map *map, t_graph_inf *inf)
 {
-	while (bfs(map->room_end, map))
+	while (bfs(map->fin, map))
 	{
 		inf->two_flows = 0;
 		inf->current_way_number = 0;
 		inf->position_in_way = 1;
-		inf->ways[inf->current_way_number][0] = map->room_start;
-		while ((dfs(map->room_start, inf, map)))
+		inf->ways[inf->current_way_number][0] = map->start;
+		while ((dfs(map->start, inf, map)))
 		{
 			inf->position_in_way = 1;
 			(inf->current_way_number)++;
-			inf->ways[inf->current_way_number][0] = map->room_start;
+			inf->ways[inf->current_way_number][0] = map->start;
 		}
 		if (!inf->two_flows)
 		{
-			if (inf->ways[inf->current_way_number][0] == map->room_start && !inf->ways[inf->current_way_number][1])
+			if (inf->ways[inf->current_way_number][0] == map->start && !inf->ways[inf->current_way_number][1])
 				inf->ways[inf->current_way_number][0] = NULL;
 			break ;
 		}

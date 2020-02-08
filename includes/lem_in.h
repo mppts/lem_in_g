@@ -63,6 +63,12 @@ typedef struct		s_link
 */
 typedef struct		s_room
 {
+	char			*name;
+	int64_t			level;
+	int				color;
+	t_link			*linked_to;
+	struct s_room	*next;
+	struct s_room	*prev;
 	int				x;
 	int				y;
 	int				checked;
@@ -70,12 +76,6 @@ typedef struct		s_room
 	uint64_t		hash_id;
 	uint64_t		path_id;
 	uint64_t		num_linked_to;
-	int64_t			level;
-	t_link			*linked_to;
-	struct s_room	*next;
-	struct s_room	*prev;
-	char			*name;
-	int				color;
 }					t_room;
 
 typedef struct		s_map

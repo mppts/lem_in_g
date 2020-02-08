@@ -47,7 +47,7 @@ t_room			*bfs(t_room *sink, t_map *map)
 		{
 			if (tmp_link->to->level == 0 && tmp_link->to != sink)
 			{
-				if (!find_source && (tmp_link->to == map->room_start))
+				if (!find_source && (tmp_link->to == map->start))
 					find_source = tmp_link->to;
 				line[current_addition_to_line++] = tmp_link->to;
 				tmp_link->to->level = line[current_pos_in_line]->level + 1;

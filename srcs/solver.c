@@ -224,7 +224,7 @@ t_room		***memory_for_ways(t_map *map, t_room ***ways)
 	int		e;
 	int		rooms;
 
-	rooms = rooms_calc(map->room_start);
+	rooms = rooms_calc(map->start);
 	i = 0;
 	ways = (t_room ***)malloc(sizeof(t_room**) * (rooms + 1));
 	ways[rooms] = NULL;
@@ -313,7 +313,7 @@ void		solver(t_map *map)
 	print_ways(&inf);
 
 
-	free_ways(inf.ways, map->room_start);
+	free_ways(inf.ways, map->start);
 	free(inf.mirror_links);
 	free(inf.links_to_gray_dot);
 }

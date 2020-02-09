@@ -6,7 +6,7 @@
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/08 16:32:08 by limry             #+#    #+#             */
-/*   Updated: 2020/02/09 03:33:06 by kona             ###   ########.fr       */
+/*   Updated: 2020/02/09 04:22:43 by kona             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,9 +97,9 @@ t_dstr 			*dstr_joinstr(t_dstr *dstr, char *s)
 		if (len_s < dstr->len - dstr->len_data)
 		{
 			ft_memmove(dstr->data, dstr->start, dstr->len_data + 1);
-			ft_bzero(dstr->data + dstr->len_data + 1, dstr->cap - dstr->len_data);
 			dstr->start = dstr->data;
-			ft_strlcat(dstr->data + dstr->len_data, s, dstr->cap - dstr->len_data);
+			ft_strlcat(dstr->data + dstr->len_data, s,
+					dstr->cap - dstr->len_data);
 			dstr->len_data += len_s;
 			dstr->len = dstr->len_data;
 		}

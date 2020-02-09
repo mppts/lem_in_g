@@ -6,7 +6,7 @@
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/04 20:37:39 by limry             #+#    #+#             */
-/*   Updated: 2020/02/08 16:42:28 by limry            ###   ########.fr       */
+/*   Updated: 2020/02/09 01:02:50 by kona             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ static t_link	*add_new_link(t_room *from, t_room *to, t_map *map)
 
 	if (!(new = (t_link*)malloc(sizeof(t_link))))
 		man_err_map("Error: can't allocate new link\n",
-				map->buf, ft_strdel, map);
+				&map->buf, ft_strdel, map);
 	new->to = to;
 	new->next = NULL;
 	new->prev = NULL;

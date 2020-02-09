@@ -6,7 +6,7 @@
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/05 12:03:07 by limry             #+#    #+#             */
-/*   Updated: 2020/02/08 21:12:36 by limry            ###   ########.fr       */
+/*   Updated: 2020/02/09 03:20:19 by kona             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 # include <inttypes.h>
 # include <libft.h>
 # include <dstr.h>
-# include <stdlib.h>
 # include <get_next_line.h>
+# include <stdlib.h>
 
 # define FALSE 0
 # define TRUE 1
@@ -82,9 +82,9 @@ typedef struct		s_map
 	uint64_t		num_links;
 	int64_t			ants;
 	uint8_t			is_rooms_hashed;
-	uint64_t		len_rh;
+	uint64_t			len_rh;
 	t_room			**hashed_rooms;
-	char 			**buf;
+	char 			*buf;
 	char 			*out;
 	t_paths			*paths;
 	t_dstr 			*dstr;

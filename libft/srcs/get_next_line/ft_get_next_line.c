@@ -6,13 +6,13 @@
 /*   By: limry <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/05/12 17:42:01 by limry             #+#    #+#             */
-/*   Updated: 2020/02/08 23:07:22 by limry            ###   ########.fr       */
+/*   Updated: 2020/02/09 03:09:00 by kona             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-static t_lst	*ft_get_or_add(t_lst *hd, int fd)
+static t_lst		*ft_get_or_add(t_lst *hd, int fd)
 {
 	t_lst			*new;
 	t_lst			*lst;
@@ -31,6 +31,8 @@ static t_lst	*ft_get_or_add(t_lst *hd, int fd)
 	{
 		new->dn = fd;
 		new->next = NULL;
+		new->rot = 0;
+		new->nl = NULL;
 		new->str = dstr_init(NULL, BUFF_SIZE << 2);
 		if (hd && last)
 			last->next = new;
@@ -39,9 +41,9 @@ static t_lst	*ft_get_or_add(t_lst *hd, int fd)
 	return (NULL);
 }
 
-static void		ft_del_fd(t_lst *lst, t_lst *hd)
+static void			ft_del_fd(t_lst *lst, t_lst *hd)
 {
-	t_lst	*tmp;
+	t_lst			*tmp;
 
 	tmp = hd;
 	if (hd == lst)
@@ -63,52 +65,56 @@ static void		ft_del_fd(t_lst *lst, t_lst *hd)
 	}
 }
 
-static int		read_file(t_lst *lst, const int fd)
+static int			read_file(t_lst *lst, const int fd)
 {
 	char			buf[BUFF_SIZE + 1];
 	long int		ret;
 
+	lst->rot = 0;
 	while ((ret = read(fd, buf, BUFF_SIZE)))
 	{
 		if (ret == -1)
 			return (-1);
 		buf[ret] = '\0';
 		dstr_joinstr(lst->str, buf);
-		if (ft_strchr(buf, '\n'))
+		if ((lst->nl = ft_strchr(lst->str->start + lst->rot, '\n')))
 			break ;
+		lst->rot += BUFF_SIZE;
 	}
 	return (ret);
 }
 
-static int		show_line(t_lst *lst, char **line)
+static int			show_line(t_lst *lst, char **line)
 {
 	char			*nl;
 
-	if ((nl = ft_strchr(lst->str->start, '\n')))
+	if ((nl = ft_strchr(lst->str->start + lst->rot, '\n')))
 	{
 		dstr_pop_front(lst->str, line, nl - lst->str->start);
 		dstr_pop_front(lst->str, NULL, 1);
+		lst->rot = 0;
 		return (1);
 	}
-	dstr_pop_front(lst->str, line, lst->str->len_data);
+	dstr_pop_front(lst->str, line, lst->str->cap);
 	return (1);
 }
 
-int				get_next_line(const int fd, char **line)
+int					get_next_line(const int fd, char **line)
 {
 	static t_lst	*hd;
 	t_lst			*lst;
 	t_lst			*hd1;
 	long int		ret;
 
-	if (!line || BUFF_SIZE <= 0)
-		return (-1);
 	if (fd < 0)
 		return (clean_all_gnl(hd));
+	if (!line || BUFF_SIZE <= 0)
+		return (-1);
 	if (!hd)
 		hd = ft_get_or_add(hd, fd);
 	lst = ft_get_or_add(hd, fd);
-	if ((ret = read_file(lst, fd)) < 0)
+	ret = read_file(lst, fd);
+	if (ret < 0)
 		return (-1);
 	if (!(lst->str->len_data) && !ret)
 	{

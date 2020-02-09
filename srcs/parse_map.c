@@ -6,7 +6,7 @@
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/04 20:09:29 by limry             #+#    #+#             */
-/*   Updated: 2020/02/08 21:12:50 by limry            ###   ########.fr       */
+/*   Updated: 2020/02/09 03:59:21 by kona             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,6 @@ void			init_map(t_map *map)
 	map->buf = NULL;
 	map->out = NULL;
 	map->dstr = dstr_init(NULL, 500);
-	map->len_rh = 0;
 }
 
 void			parse_map(t_map *map)
@@ -105,6 +104,7 @@ void			parse_map(t_map *map)
 			break ;
 		dstr_joinstr(map->dstr, buf);
 		dstr_joinstr(map->dstr, "\n");
+		map->buf = buf;
 		if (parse_line(buf, &flag, map))
 		{
 			free(buf);

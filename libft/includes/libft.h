@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
+/*   By: mschimme <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/08 16:48:10 by limry             #+#    #+#             */
-/*   Updated: 2020/02/08 18:08:21 by limry            ###   ########.fr       */
+/*   Created: 2018/11/24 17:02:42 by mschimme          #+#    #+#             */
+/*   Updated: 2020/02/09 01:07:39 by kona             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,13 @@
 /*
 ** GNL defines
 */
+
+# define BUFF_SIZE 128
+# define B_S BUFF_SIZE
+# define FDRSET &fdl, fd, fdl, fdl
+# define RSSET line, pl[0], &fdl
+# define SZFSZT sizeof(size_t)
+# define SZFINT sizeof(int)
 
 typedef struct		s_list
 {
@@ -82,7 +89,7 @@ size_t				ft_strlcpy(char *dst, const char *src, size_t size);
 char				*ft_strncpy(char *dst, const char *src, size_t len);
 char				*ft_strstr(const char *haystack, const char *needle);
 char				*ft_strnstr(const char *haystack, const char *needle,\
-					size_t len);
+									size_t len);
 char				*ft_strchr(const char *s, int c);
 char				*ft_strrchr(const char *s, int c);
 char				*ft_strsub(const char *s, unsigned int start, size_t len);

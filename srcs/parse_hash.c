@@ -6,7 +6,7 @@
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/04 20:40:26 by limry             #+#    #+#             */
-/*   Updated: 2020/02/08 21:17:07 by limry            ###   ########.fr       */
+/*   Updated: 2020/02/09 03:55:41 by kona             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ void			hash_rooms(t_map *map)
 	uint64_t	num;
 	uint64_t	i;
 
+	if(!map->room_start)
+		man_err_map("Error: no rooms\n", &map->buf, ft_strdel, map);
 	map->len_rh = map->num_nodes * 3;
 	map->hashed_rooms = (t_room**)malloc(map->len_rh * sizeof(t_room*));
 	ft_bzero(map->hashed_rooms, map->len_rh * sizeof(t_room*));

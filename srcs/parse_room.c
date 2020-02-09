@@ -1,15 +1,14 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parse_room.c                                       :+:      :+:    :+:   */
+/*   utils_room.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/08 18:35:14 by limry             #+#    #+#             */
-/*   Updated: 2020/02/08 18:35:14 by limry            ###   ########.fr       */
+/*   Created: 2020/02/04 20:14:21 by limry             #+#    #+#             */
+/*   Updated: 2020/02/09 03:53:25 by kona             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
 
 #include "lem_in.h"
 
@@ -85,17 +84,17 @@ static t_room	*new_room(t_r_reader r, t_flag *flag, t_map *map)
 	int64_t		y;
 
 	if (!is_num(r.sx) || !is_num(r.sy))
-		man_err_map("Error: coords not numbers\n", map->buf, ft_strdel, map);
+		man_err_map("Error: coords not numbers\n", &r.name_room, ft_strdel, map);
 	x = ft_atoli(r.sx);
 	y = ft_atoli(r.sy);
 	if (x > INT32_MAX || y > INT32_MAX ||
 		x < INT32_MIN || y < INT32_MIN)
 		man_err_map("Error: coords bigger than int\n",
-				map->buf, ft_strdel, map);
+				&map->buf, ft_strdel, map);
 	if (ft_strchr(r.name_room, '-'))
-		man_err_map("Error: dash in room name\n", map->buf, ft_strdel, map);
+		man_err_map("Error: dash in room name\n", &map->buf, ft_strdel, map);
 	if (!(new = (t_room*)malloc(sizeof(t_room))))
-		man_err_map("Error: can't allocate room\n", map->buf, ft_strdel, map);
+		man_err_map("Error: can't allocate room\n", &map->buf, ft_strdel, map);
 	init_room(new, (int)x, (int)y, r.name_room);
 	return (new);
 }

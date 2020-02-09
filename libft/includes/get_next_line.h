@@ -6,7 +6,7 @@
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/08 18:06:29 by limry             #+#    #+#             */
-/*   Updated: 2020/02/08 18:07:17 by limry            ###   ########.fr       */
+/*   Updated: 2020/02/09 01:13:02 by kona             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ typedef struct		s_lst
 {
 	struct s_lst	*next;
 	int				dn;
+	uint64_t 		rot;
+	char 			*nl;
 	t_dstr			*str;
 }					t_lst;
 

@@ -6,7 +6,7 @@
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/05 11:52:19 by limry             #+#    #+#             */
-/*   Updated: 2020/02/08 18:03:08 by limry            ###   ########.fr       */
+/*   Updated: 2020/02/09 03:32:24 by kona             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,7 @@ void		del_lsts(t_lst *lst)
 
 int			clean_all_gnl(t_lst *lst)
 {
-	del_lsts(lst);
+	if (lst)
+		del_lsts(lst);
 	return (-1);
 }

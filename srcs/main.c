@@ -14,6 +14,9 @@ int			main(void)
 	if (!map.start || !map.fin || !map.num_nodes)
 		man_err_map("Error: no start or end...or no rooms or map is empty\n",
 				NULL, NULL, &map);
+	if (!map.num_links)
+		man_err_map("Error: map has no links\n",
+					NULL, NULL, &map);
 	if (map.dstr->data)
 		write(1, map.dstr->data, map.dstr->len);
 	//algorithm processing

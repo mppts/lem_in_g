@@ -6,7 +6,7 @@
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/04 20:14:21 by limry             #+#    #+#             */
-/*   Updated: 2020/02/09 03:53:25 by kona             ###   ########.fr       */
+/*   Updated: 2020/02/10 12:09:31 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ static int		no_room_with_this_name(t_map *map, t_r_reader r)
 		tmp = map->room_start;
 	while (i-- && tmp)
 	{
-		if (!ft_strcmp(tmp->name,r.name_room))
+		if (!ft_strcmp(tmp->name, r.name_room))
 			return (0);
 		tmp = tmp->next;
 	}
@@ -84,7 +84,8 @@ static t_room	*new_room(t_r_reader r, t_flag *flag, t_map *map)
 	int64_t		y;
 
 	if (!is_num(r.sx) || !is_num(r.sy))
-		man_err_map("Error: coords not numbers\n", &r.name_room, ft_strdel, map);
+		man_err_map("Error: coords not numbers\n",
+		&r.name_room, ft_strdel, map);
 	x = ft_atoli(r.sx);
 	y = ft_atoli(r.sy);
 	if (x > INT32_MAX || y > INT32_MAX ||
@@ -102,12 +103,13 @@ static t_room	*new_room(t_r_reader r, t_flag *flag, t_map *map)
 void			add_room(char *buf, t_flag *flag, t_map *map)
 {
 	t_room		*new;
-	char 		*b;
+	char		*b;
 	t_r_reader	r;
 
 	r.name_room = buf;
 	if (!((b = ft_strchr(buf, ' ')) &&
-	(*(r.sx = ++b) != '\0' && (b = ft_strchr(b, ' '))) &&
+	(*(r.sx = ++b) != '\0' &&
+	(b = ft_strchr(b, ' '))) &&
 	(*(r.sy = ++b) != '\0' && !(ft_strchr(b, ' ')))))
 		man_err_map("Error: wrong room line\n", &buf, ft_strdel, map);
 	*(r.sx - 1) = '\0';

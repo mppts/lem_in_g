@@ -6,7 +6,7 @@
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/04 20:37:39 by limry             #+#    #+#             */
-/*   Updated: 2020/02/09 01:02:50 by kona             ###   ########.fr       */
+/*   Updated: 2020/02/10 11:35:56 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,8 @@ void			add_link(char *buf, t_map *map)
 	t_r_reader	r;
 
 	r.from = buf;
-	if (!((b = ft_strchr(buf, '-')) && !ft_strchr(r.to = ++b, '-')))
+	if (!((b = ft_strchr(buf, '-')) &&
+	!ft_strchr(r.to = ++b, '-')))
 		man_err_map("Error: link line error\n", &buf, ft_strdel, map);
 	*(r.to - 1) = '\0';
 	if (!(from = find_hashed_room(map, r.from)))

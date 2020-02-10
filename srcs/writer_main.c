@@ -1,55 +1,70 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   writer_main.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/02/10 17:42:37 by limry             #+#    #+#             */
+/*   Updated: 2020/02/10 17:42:39 by limry            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
 #include "lem_in.h"
-#include "ft_writer.h"
 
-void		generate_paths(t_map *map, t_path *paths[map->ants + 1], int offset[map->ants + 1])
+void				join_ant_move(t_map *map, t_positioner paths[map->ants],
+					int ants, int offset)
 {
-	int		i;
-	int		ants;
-	int		filling;
+	dstr_joinstr(map->dstr, "L");
+	dstr_joinstr(map->dstr, ft_itoa(ants + 1));
+	dstr_joinstr(map->dstr, "-");
+	dstr_joinstr(map->dstr, (paths[ants].path->path[offset])->name);
+}
 
-	i = 0;
-	filling = TRUE;
-	while (filling)
+void				generate_paths(t_map *map, t_positioner paths[map->ants])
+{
+	int				offset;
+	int				ants;
+	int				ants_out;
+
+	offset = 0;
+	ants_out = 0;
+	while (ants_out != map->ants)
 	{
-		ants = 1;
-		filling = FALSE;
-		while (offset[ants] == i && paths[ants]->len > offset[ants])
+		ants = ants_out;
+		while (paths[ants].offset == offset &&
+		paths[ants].path->len > paths[ants].offset)
 		{
-			dstr_joinstr(map->dstr, "L");
-			dstr_joinstr(map->dstr, ft_itoa(ants));
-			dstr_joinstr(map->dstr, "-");
-			dstr_joinstr(map->dstr, paths[ants]->path[offset[ants]]->name);
+			join_ant_move(map, paths, ants, offset);
+			if (++(paths[ants].offset) > paths[ants].path->len)
+				ants_out++;
 			ants++;
-			offset[ants]++;
-			filling = TRUE;
 		}
-		i++;
+		offset++;
+		dstr_joinstr(map->dstr, "\n");
 	}
 }
 
- void		writer(t_map *map)
- {
-	int		i;
-	int		ants;
-	t_path	*paths_q[map->ants + 1];
-	int 	offset[map->ants + 1];
-	t_path	*tmp;
+void				writer(t_map *map)
+{
+	int				i;
+	int				ants;
+	t_positioner	paths[map->ants];
+	t_path			*tmp;
 
 	i = 0;
-	ants = 1;
+	ants = 0;
 	while (map->ants - ants)
 	{
-		tmp = map->paths->paths;
-		while(tmp && ants <= map->ants)
+		tmp = map->paths;
+		while (tmp && ants < map->ants)
 		{
-			paths_q[ants] = tmp->path;
-			offset[ants] = i;
-			tmp = tmp->next;
+			paths[ants].path = tmp;
+			paths[ants].offset = i;
 			ants++;
+			tmp = tmp->next;
 		}
 		i++;
 	}
-	generate_paths(map, paths_q, offset);
- }
-
+	generate_paths(map, paths);
+}

@@ -6,7 +6,7 @@
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/05 12:03:07 by limry             #+#    #+#             */
-/*   Updated: 2020/02/12 13:56:08 by limry            ###   ########.fr       */
+/*   Updated: 2020/02/12 18:55:35 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,9 @@ typedef struct		s_r_reader
 
 typedef struct		s_path
 {
+	int 			id;
 	uint64_t		len;
+	uint64_t		ants;
 	struct s_room	**path;
 	struct s_path	*next;
 }					t_path;
@@ -71,6 +73,7 @@ typedef struct		s_link
 */
 typedef struct		s_room
 {
+	int 			ant;
 	char			*name;
 	int64_t			level;
 	int				color;

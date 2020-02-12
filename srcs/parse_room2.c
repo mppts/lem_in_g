@@ -23,4 +23,5 @@ void	init_room(t_room *new, int x, int y, char *name)
 	new->num_linked_to = 0;
 	new->level = 0;
 	new->path_id = 0;
+	new->ant = 0;
 }

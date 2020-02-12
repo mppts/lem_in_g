@@ -39,33 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-<<<<<<< HEAD
-CMAKE_COMMAND = /home/kona/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/193.6015.37/bin/cmake/linux/bin/cmake
-
-# The command to remove a file.
-RM = /home/kona/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/193.6015.37/bin/cmake/linux/bin/cmake -E remove -f
-=======
 CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
 
 # The command to remove a file.
 RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
->>>>>>> 5d5479432defdc0bf35108a473fc689b7aa9102e
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-<<<<<<< HEAD
-CMAKE_SOURCE_DIR = /home/kona/CLionProjects/lem_in_g
+CMAKE_SOURCE_DIR = /Users/limry/CLionProjects/lm_full
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/kona/CLionProjects/lem_in_g/cmake-build-debug
-=======
-CMAKE_SOURCE_DIR = /Users/dorphan/Desktop/Projects/LI_works/algos
-
-# The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/dorphan/Desktop/Projects/LI_works/algos/cmake-build-debug
->>>>>>> 5d5479432defdc0bf35108a473fc689b7aa9102e
+CMAKE_BINARY_DIR = /Users/limry/CLionProjects/lm_full/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -73,11 +59,7 @@ CMAKE_BINARY_DIR = /Users/dorphan/Desktop/Projects/LI_works/algos/cmake-build-de
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-<<<<<<< HEAD
-	/home/kona/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/193.6015.37/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-=======
 	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
->>>>>>> 5d5479432defdc0bf35108a473fc689b7aa9102e
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -88,11 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-<<<<<<< HEAD
-	/home/kona/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/193.6015.37/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
-=======
 	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
->>>>>>> 5d5479432defdc0bf35108a473fc689b7aa9102e
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -102,15 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-<<<<<<< HEAD
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/kona/CLionProjects/lem_in_g/cmake-build-debug/CMakeFiles /home/kona/CLionProjects/lem_in_g/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/limry/CLionProjects/lm_full/cmake-build-debug/CMakeFiles /Users/limry/CLionProjects/lm_full/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/kona/CLionProjects/lem_in_g/cmake-build-debug/CMakeFiles 0
-=======
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/dorphan/Desktop/Projects/LI_works/algos/cmake-build-debug/CMakeFiles /Users/dorphan/Desktop/Projects/LI_works/algos/cmake-build-debug/CMakeFiles/progress.marks
-	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/dorphan/Desktop/Projects/LI_works/algos/cmake-build-debug/CMakeFiles 0
->>>>>>> 5d5479432defdc0bf35108a473fc689b7aa9102e
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/limry/CLionProjects/lm_full/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -394,8 +366,6 @@ srcs/parse_utils.c.s:
 	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/parse_utils.c.s
 .PHONY : srcs/parse_utils.c.s
 
-<<<<<<< HEAD
-=======
 srcs/solver.o: srcs/solver.c.o
 
 .PHONY : srcs/solver.o
@@ -504,7 +474,33 @@ srcs/solver_dfs.c.s:
 	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_dfs.c.s
 .PHONY : srcs/solver_dfs.c.s
 
->>>>>>> 5d5479432defdc0bf35108a473fc689b7aa9102e
+srcs/writer_main.o: srcs/writer_main.c.o
+
+.PHONY : srcs/writer_main.o
+
+# target to build an object file
+srcs/writer_main.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/writer_main.c.o
+.PHONY : srcs/writer_main.c.o
+
+srcs/writer_main.i: srcs/writer_main.c.i
+
+.PHONY : srcs/writer_main.i
+
+# target to preprocess a source file
+srcs/writer_main.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/writer_main.c.i
+.PHONY : srcs/writer_main.c.i
+
+srcs/writer_main.s: srcs/writer_main.c.s
+
+.PHONY : srcs/writer_main.s
+
+# target to generate assembly for a file
+srcs/writer_main.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/writer_main.c.s
+.PHONY : srcs/writer_main.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -512,8 +508,8 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... lem_in"
 	@echo "... edit_cache"
+	@echo "... lem_in"
 	@echo "... libft/srcs/dstr/dstr.o"
 	@echo "... libft/srcs/dstr/dstr.i"
 	@echo "... libft/srcs/dstr/dstr.s"
@@ -541,8 +537,6 @@ help:
 	@echo "... srcs/parse_utils.o"
 	@echo "... srcs/parse_utils.i"
 	@echo "... srcs/parse_utils.s"
-<<<<<<< HEAD
-=======
 	@echo "... srcs/solver.o"
 	@echo "... srcs/solver.i"
 	@echo "... srcs/solver.s"
@@ -555,7 +549,9 @@ help:
 	@echo "... srcs/solver_dfs.o"
 	@echo "... srcs/solver_dfs.i"
 	@echo "... srcs/solver_dfs.s"
->>>>>>> 5d5479432defdc0bf35108a473fc689b7aa9102e
+	@echo "... srcs/writer_main.o"
+	@echo "... srcs/writer_main.i"
+	@echo "... srcs/writer_main.s"
 .PHONY : help
 
 

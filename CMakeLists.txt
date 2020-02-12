@@ -8,44 +8,24 @@ include_directories( libft/includes includes libbinheap libbinheap/includes fibo
 add_executable(lem_in
                 srcs/main.c
                 includes/lem_in.h
-                includes/ft_writer.h
                 libft/includes/libft.h
-                #srcs/solver.c
-                #srcs/deque.c
+                libft/includes/get_next_line.h
+                libft/includes/dstr.h
+
                 srcs/man_err.c
                 libft/srcs/dstr/dstr.c
-                #libbinheap/srcs/binary_init.c
-                #libbinheap/includes/binary_heap.h
-                #fibonacci_heap/includes/fibonacci_heap.h
-                #fibonacci_heap/srcs/fib_init.c
-                #libbinheap/srcs/bin_free.c
-                #libbinheap/srcs/bin_swap.c
-                #libbinheap/srcs/bin_get_root.c
-                #libbinheap/srcs/bin_insert.c
-                #libbinheap/srcs/bin_remove_root.c
-                #libbinheap/srcs/bin_inc_key.c
-                #fibonacci_heap/srcs/fib_create_node.c
-                #fibonacci_heap/srcs/fib_insert_node.c
-                #fibonacci_heap/srcs/fib_heap_union.c
-                #fibonacci_heap/srcs/fib_remove_min.c
-                #srcs/dijkstra.c
                 srcs/parse_map.c
                 srcs/parse_room.c
                 srcs/parse_utils.c
                 srcs/parse_links.c
                 srcs/parse_hash.c
                 srcs/parse_room2.c
-<<<<<<< HEAD
-                #srcs/writer_string.c
-                #srcs/writer_main.c
-                #srcs/solver_bfs.c
-                libft/includes/dstr.h
-        libft/includes/get_next_line.h)
-=======
                 srcs/solver.c
                 srcs/solver_bfs.c
-        srcs/solver_algorithm.c srcs/solver_dfs.c)
->>>>>>> 5d5479432defdc0bf35108a473fc689b7aa9102e
+                srcs/solver_algorithm.c
+                srcs/solver_dfs.c
+                srcs/writer_main.c
+        )
 
 target_link_libraries(lem_in ${CMAKE_SOURCE_DIR}/libft/libft.a)
 

@@ -6,7 +6,7 @@
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/05 12:03:07 by limry             #+#    #+#             */
-/*   Updated: 2020/02/12 13:46:00 by limry            ###   ########.fr       */
+/*   Updated: 2020/02/12 13:56:08 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,7 +101,6 @@ typedef struct		s_map
 	t_room			**hashed_rooms;
 	char 			*buf;
 	char 			*out;
-	t_paths			*paths;
 	t_dstr 			*dstr;
 	struct s_path	*path;
 }					t_map;
@@ -119,6 +118,11 @@ typedef struct		s_deq
 	int64_t			begin;
 }					t_deq;
 
+typedef struct		s_positioner
+{
+	uint64_t		offset;
+	t_path 			*path;
+}					t_positioner;
 /*
 ** parse_map.c
 */
@@ -175,6 +179,8 @@ t_room				*bfs(t_room *sink, t_map *map);
 /*
 ** solve_dfs.c
 */
-int			dfs(t_room *room, t_graph_inf *inf, t_map *map);
+int					dfs(t_room *room, t_graph_inf *inf, t_map *map);
+
+void				writer(t_map *map);
 
 #endif

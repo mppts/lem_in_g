@@ -17,11 +17,12 @@ int			main(void)
 	if (!map.num_links)
 		man_err_map("Error: map has no links\n",
 					NULL, NULL, &map);
-	if (map.dstr->data)
-		write(1, map.dstr->data, map.dstr->len);
 	//algorithm processing
 	solver(&map);
+	writer(&map);
 	//output
+	if (map.dstr->data)
+		write(1, map.dstr->data, map.dstr->len);
 	// VISUALIZATION??
 	del_map(&map);
 	return 0;

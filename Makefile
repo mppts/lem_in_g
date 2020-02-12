@@ -22,11 +22,12 @@ SOURCE = \
          parse_map.c\
          parse_room.c\
          parse_room2.c\
-		parse_utils.c\
+		 parse_utils.c\
          solver.c\
          solver_algorithm.c\
          solver_bfs.c\
-         solver_dfs.c
+         solver_dfs.c\
+         writer_main.c
 
 
 HEADERS =	lem_in.h \

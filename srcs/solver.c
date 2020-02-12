@@ -6,39 +6,12 @@
 /*   By: limry <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/28 19:23:42 by limry             #+#    #+#             */
-/*   Updated: 2020/01/29 16:30:26 by limry            ###   ########.fr       */
+/*   Updated: 2020/02/12 14:44:27 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <lem_in.h>
 #include "deque.c"
-
-//void		print_list(t_room *source)
-//{
-//	t_room	*tmp_r;
-//	t_link	*tmp_l;
-//	int		indicator;
-//
-//	tmp_r = source;
-//	indicator = 0;
-//	ft_putstr("\n\n");
-//	while (!indicator || tmp_r != source)
-//	{
-//		ft_putstr("room ~~~[");
-//		ft_putstr(tmp_r->name);
-//		ft_putstr("]~~~ linked to:  ");
-//		tmp_l = tmp_r->linked_to;
-//		while (tmp_l)
-//		{
-//			ft_putstr(tmp_l->to->name);
-//			ft_putstr("  ");
-//			tmp_l = tmp_l->next;
-//		}
-//		ft_putchar('\n');
-//		tmp_r = tmp_r->next;
-//		indicator++;
-//	}
-//}
 
 void		make_color_white_again(t_room *source)
 {
@@ -180,40 +153,6 @@ t_link 		**memory_for_mirror_links(t_room *source, t_link **mirror_links)
 	return (mirror_links);
 }
 
-//t_link		**memory_for_bad_links(t_room *source, t_link **links_to_gray_dot)
-//{
-//	int		links;
-//	int		i;
-//
-//	links = links_calc(source);
-//	i = 0;
-//	links_to_gray_dot = malloc(sizeof(t_link) * (links + 1));
-//	links_to_gray_dot[links] = NULL;
-//	while (i < links)
-//		links_to_gray_dot[i++] = NULL;
-//	return (links_to_gray_dot);
-//}
-
-//void		print_ways(t_graph_inf	*inf)
-//{
-//	int 	i;
-//
-//	inf->current_way_number = 0;
-//	ft_putchar('\n');
-//	ft_putstr("So... we found:\n");
-//	while (inf->ways[inf->current_way_number])
-//	{
-//		i = 0;
-//		while (inf->ways[inf->current_way_number][i])
-//		{
-//			ft_putstr((inf->ways[inf->current_way_number][i++])->name);
-//			ft_putstr("  ");
-//		}
-//		ft_putchar('\n');
-//		inf->current_way_number++;
-//	}
-//}
-
 void		free_ways(t_graph_inf *inf)
 {
 	int		i;
@@ -246,15 +185,15 @@ void		put_ways_to_list(t_graph_inf *inf, t_map *map)
 
 	i = 0;
 	head = malloc(sizeof(t_path));
-	head->len = way_len_calc(inf->ways[i]);
-	head->path = inf->ways[i++];
+	head->len = way_len_calc((inf->ways[i]));
+	head->path = (inf->ways[i++]);
 	head->next = NULL;
 	current = head;
 	while (inf->ways[i] && inf->ways[i][0])
 	{
 		tmp = malloc(sizeof(t_path));
-		tmp->len = way_len_calc(inf->ways[i]);
-		tmp->path = inf->ways[i++];
+		tmp->len = way_len_calc((inf->ways[i]));
+		tmp->path = (inf->ways[i++]);
 		tmp->next = NULL;
 		current->next = tmp;
 		current = current->next;

@@ -6,7 +6,7 @@
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/04 22:00:51 by limry             #+#    #+#             */
-/*   Updated: 2020/02/10 17:40:29 by limry            ###   ########.fr       */
+/*   Updated: 2020/02/12 14:45:13 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void			del_map(t_map *map)
 		tmp = tmp->next;
 		del_room(tmp1);
 	}
-	del_paths(map->paths);
+	del_paths(map->path);
 	dstr_del(map->dstr);
 }
 

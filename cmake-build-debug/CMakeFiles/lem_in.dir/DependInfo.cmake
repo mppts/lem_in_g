@@ -4,32 +4,22 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_C
-<<<<<<< HEAD
-  "/home/kona/CLionProjects/lem_in_g/libft/srcs/dstr/dstr.c" "/home/kona/CLionProjects/lem_in_g/cmake-build-debug/CMakeFiles/lem_in.dir/libft/srcs/dstr/dstr.c.o"
-  "/home/kona/CLionProjects/lem_in_g/srcs/main.c" "/home/kona/CLionProjects/lem_in_g/cmake-build-debug/CMakeFiles/lem_in.dir/srcs/main.c.o"
-  "/home/kona/CLionProjects/lem_in_g/srcs/man_err.c" "/home/kona/CLionProjects/lem_in_g/cmake-build-debug/CMakeFiles/lem_in.dir/srcs/man_err.c.o"
-  "/home/kona/CLionProjects/lem_in_g/srcs/parse_hash.c" "/home/kona/CLionProjects/lem_in_g/cmake-build-debug/CMakeFiles/lem_in.dir/srcs/parse_hash.c.o"
-  "/home/kona/CLionProjects/lem_in_g/srcs/parse_links.c" "/home/kona/CLionProjects/lem_in_g/cmake-build-debug/CMakeFiles/lem_in.dir/srcs/parse_links.c.o"
-  "/home/kona/CLionProjects/lem_in_g/srcs/parse_map.c" "/home/kona/CLionProjects/lem_in_g/cmake-build-debug/CMakeFiles/lem_in.dir/srcs/parse_map.c.o"
-  "/home/kona/CLionProjects/lem_in_g/srcs/parse_room.c" "/home/kona/CLionProjects/lem_in_g/cmake-build-debug/CMakeFiles/lem_in.dir/srcs/parse_room.c.o"
-  "/home/kona/CLionProjects/lem_in_g/srcs/parse_room2.c" "/home/kona/CLionProjects/lem_in_g/cmake-build-debug/CMakeFiles/lem_in.dir/srcs/parse_room2.c.o"
-  "/home/kona/CLionProjects/lem_in_g/srcs/parse_utils.c" "/home/kona/CLionProjects/lem_in_g/cmake-build-debug/CMakeFiles/lem_in.dir/srcs/parse_utils.c.o"
-=======
-  "/Users/dorphan/Desktop/Projects/LI_works/algos/srcs/main.c" "/Users/dorphan/Desktop/Projects/LI_works/algos/cmake-build-debug/CMakeFiles/lem_in.dir/srcs/main.c.o"
-  "/Users/dorphan/Desktop/Projects/LI_works/algos/srcs/man_err.c" "/Users/dorphan/Desktop/Projects/LI_works/algos/cmake-build-debug/CMakeFiles/lem_in.dir/srcs/man_err.c.o"
-  "/Users/dorphan/Desktop/Projects/LI_works/algos/srcs/parse_hash.c" "/Users/dorphan/Desktop/Projects/LI_works/algos/cmake-build-debug/CMakeFiles/lem_in.dir/srcs/parse_hash.c.o"
-  "/Users/dorphan/Desktop/Projects/LI_works/algos/srcs/parse_links.c" "/Users/dorphan/Desktop/Projects/LI_works/algos/cmake-build-debug/CMakeFiles/lem_in.dir/srcs/parse_links.c.o"
-  "/Users/dorphan/Desktop/Projects/LI_works/algos/srcs/parse_map.c" "/Users/dorphan/Desktop/Projects/LI_works/algos/cmake-build-debug/CMakeFiles/lem_in.dir/srcs/parse_map.c.o"
-  "/Users/dorphan/Desktop/Projects/LI_works/algos/srcs/parse_room.c" "/Users/dorphan/Desktop/Projects/LI_works/algos/cmake-build-debug/CMakeFiles/lem_in.dir/srcs/parse_room.c.o"
-  "/Users/dorphan/Desktop/Projects/LI_works/algos/srcs/parse_room2.c" "/Users/dorphan/Desktop/Projects/LI_works/algos/cmake-build-debug/CMakeFiles/lem_in.dir/srcs/parse_room2.c.o"
-  "/Users/dorphan/Desktop/Projects/LI_works/algos/srcs/parse_utils.c" "/Users/dorphan/Desktop/Projects/LI_works/algos/cmake-build-debug/CMakeFiles/lem_in.dir/srcs/parse_utils.c.o"
-  "/Users/dorphan/Desktop/Projects/LI_works/algos/srcs/solver.c" "/Users/dorphan/Desktop/Projects/LI_works/algos/cmake-build-debug/CMakeFiles/lem_in.dir/srcs/solver.c.o"
-  "/Users/dorphan/Desktop/Projects/LI_works/algos/srcs/solver_algorithm.c" "/Users/dorphan/Desktop/Projects/LI_works/algos/cmake-build-debug/CMakeFiles/lem_in.dir/srcs/solver_algorithm.c.o"
-  "/Users/dorphan/Desktop/Projects/LI_works/algos/srcs/solver_bfs.c" "/Users/dorphan/Desktop/Projects/LI_works/algos/cmake-build-debug/CMakeFiles/lem_in.dir/srcs/solver_bfs.c.o"
-  "/Users/dorphan/Desktop/Projects/LI_works/algos/srcs/solver_dfs.c" "/Users/dorphan/Desktop/Projects/LI_works/algos/cmake-build-debug/CMakeFiles/lem_in.dir/srcs/solver_dfs.c.o"
->>>>>>> 5d5479432defdc0bf35108a473fc689b7aa9102e
+  "/Users/limry/CLionProjects/lm_full/libft/srcs/dstr/dstr.c" "/Users/limry/CLionProjects/lm_full/cmake-build-debug/CMakeFiles/lem_in.dir/libft/srcs/dstr/dstr.c.o"
+  "/Users/limry/CLionProjects/lm_full/srcs/main.c" "/Users/limry/CLionProjects/lm_full/cmake-build-debug/CMakeFiles/lem_in.dir/srcs/main.c.o"
+  "/Users/limry/CLionProjects/lm_full/srcs/man_err.c" "/Users/limry/CLionProjects/lm_full/cmake-build-debug/CMakeFiles/lem_in.dir/srcs/man_err.c.o"
+  "/Users/limry/CLionProjects/lm_full/srcs/parse_hash.c" "/Users/limry/CLionProjects/lm_full/cmake-build-debug/CMakeFiles/lem_in.dir/srcs/parse_hash.c.o"
+  "/Users/limry/CLionProjects/lm_full/srcs/parse_links.c" "/Users/limry/CLionProjects/lm_full/cmake-build-debug/CMakeFiles/lem_in.dir/srcs/parse_links.c.o"
+  "/Users/limry/CLionProjects/lm_full/srcs/parse_map.c" "/Users/limry/CLionProjects/lm_full/cmake-build-debug/CMakeFiles/lem_in.dir/srcs/parse_map.c.o"
+  "/Users/limry/CLionProjects/lm_full/srcs/parse_room.c" "/Users/limry/CLionProjects/lm_full/cmake-build-debug/CMakeFiles/lem_in.dir/srcs/parse_room.c.o"
+  "/Users/limry/CLionProjects/lm_full/srcs/parse_room2.c" "/Users/limry/CLionProjects/lm_full/cmake-build-debug/CMakeFiles/lem_in.dir/srcs/parse_room2.c.o"
+  "/Users/limry/CLionProjects/lm_full/srcs/parse_utils.c" "/Users/limry/CLionProjects/lm_full/cmake-build-debug/CMakeFiles/lem_in.dir/srcs/parse_utils.c.o"
+  "/Users/limry/CLionProjects/lm_full/srcs/solver.c" "/Users/limry/CLionProjects/lm_full/cmake-build-debug/CMakeFiles/lem_in.dir/srcs/solver.c.o"
+  "/Users/limry/CLionProjects/lm_full/srcs/solver_algorithm.c" "/Users/limry/CLionProjects/lm_full/cmake-build-debug/CMakeFiles/lem_in.dir/srcs/solver_algorithm.c.o"
+  "/Users/limry/CLionProjects/lm_full/srcs/solver_bfs.c" "/Users/limry/CLionProjects/lm_full/cmake-build-debug/CMakeFiles/lem_in.dir/srcs/solver_bfs.c.o"
+  "/Users/limry/CLionProjects/lm_full/srcs/solver_dfs.c" "/Users/limry/CLionProjects/lm_full/cmake-build-debug/CMakeFiles/lem_in.dir/srcs/solver_dfs.c.o"
+  "/Users/limry/CLionProjects/lm_full/srcs/writer_main.c" "/Users/limry/CLionProjects/lm_full/cmake-build-debug/CMakeFiles/lem_in.dir/srcs/writer_main.c.o"
   )
-set(CMAKE_C_COMPILER_ID "GNU")
+set(CMAKE_C_COMPILER_ID "AppleClang")
 
 # The include file search paths:
 set(CMAKE_C_TARGET_INCLUDE_PATH

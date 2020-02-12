@@ -31,11 +31,6 @@ typedef struct		s_path
 	struct s_path	*next;
 }					t_path;
 
-typedef struct		s_paths
-{
-	uint64_t		num_paths;
-	t_path			*paths;
-}					t_paths;
 /*
 ** Пока что проще работать со своими структурами данных.
 */
@@ -43,10 +38,13 @@ typedef struct 		s_graph_inf
 {
 	struct s_room	***ways;
 	struct s_link	**mirror_links;
-	struct s_link	**links_to_gray_dot;
 	int				two_flows;
 	int				current_way_number;
+	int 			current_pos_in_way;
 	int				position_in_way;
+	int				total_ways_len;
+	double			are_enough_ways_current;
+	double			are_enough_ways_new;
 }					t_graph_inf;
 
 typedef struct		s_link
@@ -92,7 +90,7 @@ typedef struct		s_map
 	uint8_t			is_rooms_hashed;
 	t_room			**hashed_rooms;
 	char 			**buf;
-	t_paths			*paths;
+	struct s_path	*path;
 }					t_map;
 
 typedef struct		s_flag
@@ -150,6 +148,7 @@ void				ft_del_splitter(char **pocket);
 void				solver(t_map *map);
 void				make_color_white_again(t_room *source);
 int					rooms_calc(t_room *source);
+int					way_len_calc(t_room **way);
 
 /*
 ** solve_algorithm.c

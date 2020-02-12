@@ -1,26 +1,5 @@
 #include "lem_in.h"
 
-void		delite_links_for_gray_dots(t_graph_inf *inf)
-{
-	int		i;
-	t_link	*tmp;
-
-	i = 0;
-	while (inf->links_to_gray_dot[i])
-	{
-		tmp = inf->links_to_gray_dot[i];
-		if (!tmp->prev)
-			tmp->mirror->to->linked_to = tmp->next;
-		if (tmp->next)
-			tmp->next->prev = tmp->prev;
-		if (tmp->prev)
-			tmp->prev->next = tmp->next;
-		free(tmp);
-		inf->links_to_gray_dot[i] = NULL;
-		i++;
-	}
-}
-
 static void	add_mirror_links(t_link *link, t_graph_inf *inf)
 {
 	int		i;
@@ -33,72 +12,126 @@ static void	add_mirror_links(t_link *link, t_graph_inf *inf)
 	inf->two_flows++;
 }
 
-t_room		*find_vertex(t_link *link, t_graph_inf *inf, t_map *map)
+int			check_links_to_white(t_room *current_room, t_room *checking_room, t_map *map)
 {
-	t_link	*min_level;
 	t_link	*tmp;
+
+	if (checking_room->color != GRAY)
+		return (0);
+	tmp = checking_room->linked_to;
+	while (tmp)
+	{
+		if (tmp->to->color == WHITE && tmp->to != map->fin && tmp->to != current_room)
+			return (1);
+		tmp = tmp->next;
+	}
+	return (0);
+}
+
+t_room		*find_vertex(t_room *room, t_graph_inf *inf, t_map *map)
+{
+	t_link *link;
+	t_link *min_level;
+	t_link *tmp_white;
+	t_link *tmp_gray;
+
+	link = room->linked_to;
+	if (!link)
+		return (NULL);
+	tmp_white = NULL;
+	tmp_gray = NULL;
+	if (!inf->current_pos_in_way)
+		while (link && (link->to->color != WHITE || link->flow))
+			link = link->next;
+	else
+		while (link && (link->flow || link->to->color == BLACK || link->to == inf->ways[inf->current_way_number][inf->current_pos_in_way - 1] || check_links_to_white(room, link->to, map)))
+			link = link->next;
 
 	if (!link)
 		return (NULL);
-	tmp = link;
+	if (link->to->color == WHITE)
+		tmp_white = link;
+	else
+		tmp_gray = link;
+	link = link->next;
 	while (link)
 	{
-		if (!link->flow && link->to->color == WHITE)
-			break ;
+		if (link->to->color == WHITE)
+		{
+			if (!tmp_white || (!link->flow && link->to->level < tmp_white->to->level))
+				tmp_white = link;
+		}
+		else if (link->to->color == GRAY && !tmp_white)
+		{
+			if (!inf->current_pos_in_way)
+			{
+				if (!link->flow && link->to != map->start && link->to->level < tmp_gray->to->level  && !check_links_to_white(room, link->to, map))
+					tmp_gray = link;
+			}
+			else if (!link->flow && link->to != inf->ways[inf->current_way_number][inf->current_pos_in_way - 1] && link->to->level < tmp_gray->to->level  && !check_links_to_white(room, link->to, map))
+				tmp_gray = link;
+		}
 		link = link->next;
 	}
-	if (!link)
-	{
-		link = tmp;
-		while (link)
-		{
-			if (!link->flow && link->to->color == GRAY && link->to != inf->ways[inf->current_way_number][inf->position_in_way - 2])
-				break ;
-			link = link->next;
-		}
-		if (!link)
-			return (NULL);
-	}
-	min_level = link;
-	link = link->next;
-
-	if (min_level->to->color == WHITE)
-	{
-		while (link)
-		{
-			if (!link->flow && link->to->color == WHITE && link->to->level < min_level->to->level)
-				min_level = link;
-			link = link->next;
-		}
-	}
+	if (tmp_white)
+		min_level = tmp_white;
 	else
-	{
-		while (link)
-		{
-			if (!link->flow && link->to->color == GRAY && link->to->level < min_level->to->level && link->to != inf->ways[inf->current_way_number][inf->position_in_way - 2])
-				min_level = link;
-			link = link->next;
-		}
-	}
-
-//	if ((inf->position_in_way >= 2 && min_level->to == inf->ways[inf->current_way_number][inf->position_in_way - 2]) || (inf->position_in_way == 1 && min_level->to == inf->ways[inf->current_way_number][inf->position_in_way - 1]))
-//		return (NULL);
-
+		min_level = tmp_gray;
 	min_level->flow = 1;
+	if (min_level->mirror->flow)
+		add_mirror_links(min_level, inf);
+	return (min_level->to);
+}
 
+t_room		*find_vertex_from_gray(t_room *room, t_graph_inf *inf, t_map *map)
+{
+	t_link *link;
+	t_link *min_level;
+	t_link *tmp_white;
+	t_link *tmp_gray;
 
-	int i;
-
-	i = 0;
-	if (min_level->to != map->fin && min_level->to->color == GRAY)
+	link = room->linked_to;
+	if (!link)
+		return (NULL);
+	tmp_white = NULL;
+	tmp_gray = NULL;
+	if (!inf->current_pos_in_way)
+		while (link && (link->to->color != WHITE || link->flow))
+			link = link->next;
+	else
+		while (link && (link->flow || link->to->color == BLACK || link->to == inf->ways[inf->current_way_number][inf->current_pos_in_way - 1]))
+			link = link->next;
+	if (!link)
+		return (NULL);
+	if (link->to->color == WHITE)
+		tmp_white = link;
+	else
+		tmp_gray = link;
+	link = link->next;
+	while (link)
 	{
-		while (inf->links_to_gray_dot[i])
-			i++;
-		inf->links_to_gray_dot[i++] = min_level;
-		inf->links_to_gray_dot[i] = min_level->mirror;
+		if (link->to->color == WHITE && !link->flow)
+		{
+			if (!tmp_white || (!link->flow && link->to->level < tmp_white->to->level))
+				tmp_white = link;
+		}
+		else if (link->to->color == GRAY && !tmp_white)
+		{
+//			if (!inf->current_pos_in_way)
+//			{
+//				if (!link->flow && link->to != map->start && link->to->level < tmp_gray->to->level)
+//					tmp_gray = link;
+//			}
+			if (!link->flow && link->to != inf->ways[inf->current_way_number][inf->current_pos_in_way - 1] && link->to->level < tmp_gray->to->level)
+				tmp_gray = link;
+		}
+		link = link->next;
 	}
-
-
+	if (tmp_white)
+		min_level = tmp_white;
+	else
+		min_level = tmp_gray;
+	min_level->flow = 1;
 	if (min_level->mirror->flow)
 		add_mirror_links(min_level, inf);
 	return (min_level->to);
@@ -114,53 +147,23 @@ void		clear_flow(t_room *prev_room, t_room *current_room)
 	tmp->flow = 0;
 }
 
-void		clear_way(t_graph_inf *inf)
-{
-	int		i;
-	t_link	*tmp;
-
-	i = 1;
-	while (inf->ways[inf->current_way_number][i])
-	{
-		tmp = inf->ways[inf->current_way_number][i - 1]->linked_to;
-		while (tmp && tmp->to != inf->ways[inf->current_way_number][i])
-			tmp = tmp->next;
-		if (tmp)
-			tmp->flow = 0;
-		i++;
-	}
-	i = 1;
-	while (inf->ways[inf->current_way_number][i])
-	{
-		inf->ways[inf->current_way_number][i]->color = WHITE;
-		inf->ways[inf->current_way_number][i++] = NULL;
-	}
-	inf->position_in_way = 1;
-}
-
 int			dfs(t_room *room, t_graph_inf *inf, t_map *map)
 {
-	if (room->color == WHITE)
-		room->color = GRAY;
+	if (!inf->ways[inf->current_way_number])
+		return (0);
 	if (room == map->fin)
-	{
-		if (!inf->mirror_links[0] && inf->links_to_gray_dot[0])
-		{
-			delite_links_for_gray_dots(inf);
-			clear_way(inf);
-			if (!dfs(inf->ways[inf->current_way_number][0], inf, map))
-				return (0);
-			else
-				return (1);
-		}
-		else
-			return (1);
-	}
-	inf->ways[inf->current_way_number][inf->position_in_way] = find_vertex(room->linked_to, inf, map);
+		return (1);
+	if (room->color == GRAY)
+		inf->ways[inf->current_way_number][inf->position_in_way] = find_vertex_from_gray(room, inf, map);
+	else
+		inf->ways[inf->current_way_number][inf->position_in_way] = find_vertex(room, inf, map);
 	if (inf->ways[inf->current_way_number][inf->position_in_way])
 	{
+		if (room != map->fin && room->color == WHITE)
+			room->color = GRAY;
 		inf->position_in_way++;
-		if (!dfs(inf->ways[inf->current_way_number][inf->position_in_way - 1], inf, map))
+		inf->current_pos_in_way++;
+		if (!dfs(inf->ways[inf->current_way_number][inf->current_pos_in_way], inf, map))
 			return (0);
 		else
 			return (1);
@@ -172,9 +175,10 @@ int			dfs(t_room *room, t_graph_inf *inf, t_map *map)
 		else
 		{
 			room->color = BLACK;
-			clear_flow(inf->ways[inf->current_way_number][inf->position_in_way - 2], room);
+			inf->current_pos_in_way--;
+			clear_flow(inf->ways[inf->current_way_number][inf->current_pos_in_way], room);
 			inf->position_in_way--;
-			if (!dfs(inf->ways[inf->current_way_number][inf->position_in_way - 1], inf, map))
+			if (!dfs(inf->ways[inf->current_way_number][inf->current_pos_in_way], inf, map))
 				return (0);
 			else
 				return (1);

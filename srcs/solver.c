@@ -13,103 +13,272 @@
 #include <lem_in.h>
 #include "deque.c"
 
-void	path_is_founded(t_deq *deq, t_paths *paths);
-{
-	deq->
-}
+//void		print_list(t_room *source)
+//{
+//	t_room	*tmp_r;
+//	t_link	*tmp_l;
+//	int		indicator;
+//
+//	tmp_r = source;
+//	indicator = 0;
+//	ft_putstr("\n\n");
+//	while (!indicator || tmp_r != source)
+//	{
+//		ft_putstr("room ~~~[");
+//		ft_putstr(tmp_r->name);
+//		ft_putstr("]~~~ linked to:  ");
+//		tmp_l = tmp_r->linked_to;
+//		while (tmp_l)
+//		{
+//			ft_putstr(tmp_l->to->name);
+//			ft_putstr("  ");
+//			tmp_l = tmp_l->next;
+//		}
+//		ft_putchar('\n');
+//		tmp_r = tmp_r->next;
+//		indicator++;
+//	}
+//}
 
-void	dfs(t_map *g, t_deq *deq, int64_t levs[g->num_nodes], t_paths *paths)
+void		make_color_white_again(t_room *source)
 {
 	t_room	*tmp;
-	t_link	*link;
 
-	while(-1 != deq->rear)
+	tmp = source->next;
+	while (tmp != source)
 	{
-		tmp = pop_rear(g, deq);
-		link = tmp->linked_to;
-		while (link)
+		tmp->color = WHITE;
+		tmp = tmp->next;
+	}
+	tmp->color = WHITE;
+}
+
+void		put_zero_to_flows(t_room *source)
+{
+	t_room	*tmp_r;
+	t_link	*tmp_link;
+
+	tmp_link = source->linked_to;
+	while  (tmp_link)
+	{
+		tmp_link->flow = 0;
+		tmp_link = tmp_link->next;
+	}
+	tmp_r = source->next;
+	while (tmp_r != source)
+	{
+		tmp_link = tmp_r->linked_to;
+		while  (tmp_link)
 		{
-			if (levs[tmp->hash_id] + 1 ==  levs[link->to->hash_id] && link->to->path_id != 0)
-			{
-				if (link->to == g->fin)
-					path_is_founded(deq, paths);
-				else if (!link->to->num_linked_to)
-					link->to->path_id = 0;
-				else
-				{
-					push_back(g, tmp, deq);
-					dfs (g, deq, levs, paths);
-				}
-			}
-			link = link->next;
+			tmp_link->flow = 0;
+			tmp_link = tmp_link->next;
 		}
+		tmp_r = tmp_r->next;
 	}
 }
 
-int		bfs(t_map *g, t_room *start, t_deq *deq, int64_t levs[g->num_nodes])
+int				rooms_calc(t_room *source)
 {
-	int64_t lev;
-	t_room	*tmp;
-	t_link	*link;
+	t_room		*tmp_room;
+	int			rooms_calc;
 
-	lev = 0;
-	init_dequeue(g, deq);
-	push_back(g, start, deq);
-	levs[start->hash_id] = lev;
-	g->fin->level = INT64_MAX - 2;
-	while(deq->begin != deq->rear)
+	if (!source)
+		return (0);
+	rooms_calc = 1;
+	tmp_room = source->next;
+	while (tmp_room != source)
 	{
-		tmp = pop_front(g, deq);
-		lev = levs[tmp->hash_id] + 1;
-		link = tmp->linked_to;
-		while (link)
-		{
-			while (link && link->to->path_id)
-				link = link->next;
-			if (link && levs[link->to->hash_id] == -1)
-			{
-				levs[link->to->hash_id]= lev;
-				push_back(g, link->to, deq);
-			}
-			else if (link && link->to == g->fin)
-				g->no_path_exists = FALSE;
-		}
+		rooms_calc++;
+		tmp_room = tmp_room->next;
 	}
+	return (rooms_calc);
 }
 
-void			dinic(t_map *g, int ants, t_deq *deq, t_paths *paths)
+int				links_calc(t_room *source)
 {
-	int64_t		lev[g->num_nodes];
-	uint64_t	n;
+	t_link		*tmp_link;
+	t_room		*tmp_room;
+	int			link_calc;
+	int			i;
 
-	n = 0;
-	while (n < g->num_nodes)
-		lev[n++] = -1;
-	g->no_path_exists = FALSE;
-	while (!g->no_path_exists)
+	link_calc = 0;
+	i = 0;
+	tmp_room = source->next;
+	while (tmp_room != source || !i)
 	{
-		g->no_path_exists = TRUE;
-		bfs(g, g->start, deq, lev);
-		if (!g->no_path_exists)
-			break ;
-		else
+		tmp_link = tmp_room->linked_to;
+		while (tmp_link)
 		{
-			init_dequeue(g, deq);
-			push_back(g, g->start, deq);
-			dfs(g, deq, lev, paths);
+			link_calc++;
+			tmp_link = tmp_link->next;
 		}
+		tmp_room = tmp_room->next;
+		i++;
 	}
+	return (link_calc);
 }
 
-void		prep_for_solver(t_map *g, int ants)
+int			find_num_of_ways(t_map *map)
 {
-	t_deq	deq;
-	t_room	*q[g->num_nodes];
-	t_paths *paths;
+	int		links_start;
+	int		links_end;
+	t_link	*tmp;
 
-	deq.deq = q;
-	init_paths(g, paths);
-	init_dequeue(g, &deq);
-	dinic(g, ants, &deq, paths);
+	links_end = 0;
+	links_start = 0;
+	tmp = map->start->linked_to;
+	while (tmp)
+	{
+		links_start++;
+		tmp = tmp->next;
+	}
+	tmp = map->fin->linked_to;
+	while (tmp)
+	{
+		links_end++;
+		tmp = tmp->next;
+	}
+	if (links_end > links_start)
+		return (links_end);
+	return (links_start);
 }
+
+t_room		***memory_for_ways(t_map *map, t_room ***ways)
+{
+	int		i;
+	int		e;
+	int		rooms;
+	int		max_ways;
+
+	rooms = rooms_calc(map->start);
+	i = 0;
+	max_ways = find_num_of_ways(map);
+	ways = (t_room ***)malloc(sizeof(t_room**) * (max_ways + 1));
+	ways[max_ways] = NULL;
+	while (i < max_ways)
+	{
+		e = 0;
+		ways[i] = (t_room **)malloc(sizeof(t_room *) * (rooms + 1));
+		while (e <= rooms)
+			ways[i][e++] = NULL;
+		i++;
+	}
+	return (ways);
+}
+
+t_link 		**memory_for_mirror_links(t_room *source, t_link **mirror_links)
+{
+	int		links;
+	int		i;
+
+	links = links_calc(source);
+	i = 0;
+	mirror_links = malloc(sizeof(t_link) * (links + 1));
+	mirror_links[links] = NULL;
+	while (i < links)
+		mirror_links[i++] = NULL;
+	return (mirror_links);
+}
+
+//t_link		**memory_for_bad_links(t_room *source, t_link **links_to_gray_dot)
+//{
+//	int		links;
+//	int		i;
+//
+//	links = links_calc(source);
+//	i = 0;
+//	links_to_gray_dot = malloc(sizeof(t_link) * (links + 1));
+//	links_to_gray_dot[links] = NULL;
+//	while (i < links)
+//		links_to_gray_dot[i++] = NULL;
+//	return (links_to_gray_dot);
+//}
+
+//void		print_ways(t_graph_inf	*inf)
+//{
+//	int 	i;
+//
+//	inf->current_way_number = 0;
+//	ft_putchar('\n');
+//	ft_putstr("So... we found:\n");
+//	while (inf->ways[inf->current_way_number])
+//	{
+//		i = 0;
+//		while (inf->ways[inf->current_way_number][i])
+//		{
+//			ft_putstr((inf->ways[inf->current_way_number][i++])->name);
+//			ft_putstr("  ");
+//		}
+//		ft_putchar('\n');
+//		inf->current_way_number++;
+//	}
+//}
+
+void		free_ways(t_graph_inf *inf)
+{
+	int		i;
+
+	if (inf->ways[inf->current_way_number])
+		i = inf->current_way_number + 1;
+	else
+		i = inf->current_way_number;
+	while (inf->ways[i])
+		free(inf->ways[i++]);
+	free(inf->ways);
+}
+
+int			way_len_calc(t_room **way)
+{
+	int		i;
+
+	i = 0;
+	while (way[i])
+		i++;
+	return (i);
+}
+
+void		put_ways_to_list(t_graph_inf *inf, t_map *map)
+{
+	int		i;
+	t_path	*tmp;
+	t_path	*current;
+	t_path	*head;
+
+	i = 0;
+	head = malloc(sizeof(t_path));
+	head->len = way_len_calc(inf->ways[i]);
+	head->path = inf->ways[i++];
+	head->next = NULL;
+	current = head;
+	while (inf->ways[i] && inf->ways[i][0])
+	{
+		tmp = malloc(sizeof(t_path));
+		tmp->len = way_len_calc(inf->ways[i]);
+		tmp->path = inf->ways[i++];
+		tmp->next = NULL;
+		current->next = tmp;
+		current = current->next;
+	}
+	map->path = head;
+}
+
+void		solver(t_map *map)
+{
+	t_graph_inf	inf;
+
+	make_color_white_again(map->room_start);
+	put_zero_to_flows(map->room_start);
+	inf.ways = memory_for_ways(map, inf.ways);
+	inf.mirror_links = memory_for_mirror_links(map->room_start, inf.mirror_links);
+	inf.total_ways_len = 0;
+	inf.are_enough_ways_current = 0;
+	inf.are_enough_ways_new = 0;
+	algo(map, &inf);
+	put_ways_to_list(&inf, map);
+//	print_ways(&inf);
+
+	free_ways(&inf);
+	free(inf.mirror_links);
+}
+
 

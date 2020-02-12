@@ -20,10 +20,9 @@ int			main(void)
 	if (map.dstr->data)
 		write(1, map.dstr->data, map.dstr->len);
 	//algorithm processing
-//	solver(&map);
+	solver(&map);
 	//output
 	// VISUALIZATION??
 	del_map(&map);
 	return 0;
-
 }

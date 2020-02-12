@@ -39,19 +39,33 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
+<<<<<<< HEAD
 CMAKE_COMMAND = /home/kona/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/193.6015.37/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
 RM = /home/kona/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/193.6015.37/bin/cmake/linux/bin/cmake -E remove -f
+=======
+CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
+
+# The command to remove a file.
+RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
+>>>>>>> 5d5479432defdc0bf35108a473fc689b7aa9102e
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
+<<<<<<< HEAD
 CMAKE_SOURCE_DIR = /home/kona/CLionProjects/lem_in_g
 
 # The top-level build directory on which CMake was run.
 CMAKE_BINARY_DIR = /home/kona/CLionProjects/lem_in_g/cmake-build-debug
+=======
+CMAKE_SOURCE_DIR = /Users/dorphan/Desktop/Projects/LI_works/algos
+
+# The top-level build directory on which CMake was run.
+CMAKE_BINARY_DIR = /Users/dorphan/Desktop/Projects/LI_works/algos/cmake-build-debug
+>>>>>>> 5d5479432defdc0bf35108a473fc689b7aa9102e
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +73,11 @@ CMAKE_BINARY_DIR = /home/kona/CLionProjects/lem_in_g/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+<<<<<<< HEAD
 	/home/kona/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/193.6015.37/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+=======
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+>>>>>>> 5d5479432defdc0bf35108a473fc689b7aa9102e
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +88,11 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
+<<<<<<< HEAD
 	/home/kona/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/193.6015.37/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+=======
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+>>>>>>> 5d5479432defdc0bf35108a473fc689b7aa9102e
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -80,9 +102,15 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
+<<<<<<< HEAD
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/kona/CLionProjects/lem_in_g/cmake-build-debug/CMakeFiles /home/kona/CLionProjects/lem_in_g/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/kona/CLionProjects/lem_in_g/cmake-build-debug/CMakeFiles 0
+=======
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/dorphan/Desktop/Projects/LI_works/algos/cmake-build-debug/CMakeFiles /Users/dorphan/Desktop/Projects/LI_works/algos/cmake-build-debug/CMakeFiles/progress.marks
+	$(MAKE) -f CMakeFiles/Makefile2 all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/dorphan/Desktop/Projects/LI_works/algos/cmake-build-debug/CMakeFiles 0
+>>>>>>> 5d5479432defdc0bf35108a473fc689b7aa9102e
 .PHONY : all
 
 # The main clean target
@@ -366,6 +394,117 @@ srcs/parse_utils.c.s:
 	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/parse_utils.c.s
 .PHONY : srcs/parse_utils.c.s
 
+<<<<<<< HEAD
+=======
+srcs/solver.o: srcs/solver.c.o
+
+.PHONY : srcs/solver.o
+
+# target to build an object file
+srcs/solver.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver.c.o
+.PHONY : srcs/solver.c.o
+
+srcs/solver.i: srcs/solver.c.i
+
+.PHONY : srcs/solver.i
+
+# target to preprocess a source file
+srcs/solver.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver.c.i
+.PHONY : srcs/solver.c.i
+
+srcs/solver.s: srcs/solver.c.s
+
+.PHONY : srcs/solver.s
+
+# target to generate assembly for a file
+srcs/solver.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver.c.s
+.PHONY : srcs/solver.c.s
+
+srcs/solver_algorithm.o: srcs/solver_algorithm.c.o
+
+.PHONY : srcs/solver_algorithm.o
+
+# target to build an object file
+srcs/solver_algorithm.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_algorithm.c.o
+.PHONY : srcs/solver_algorithm.c.o
+
+srcs/solver_algorithm.i: srcs/solver_algorithm.c.i
+
+.PHONY : srcs/solver_algorithm.i
+
+# target to preprocess a source file
+srcs/solver_algorithm.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_algorithm.c.i
+.PHONY : srcs/solver_algorithm.c.i
+
+srcs/solver_algorithm.s: srcs/solver_algorithm.c.s
+
+.PHONY : srcs/solver_algorithm.s
+
+# target to generate assembly for a file
+srcs/solver_algorithm.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_algorithm.c.s
+.PHONY : srcs/solver_algorithm.c.s
+
+srcs/solver_bfs.o: srcs/solver_bfs.c.o
+
+.PHONY : srcs/solver_bfs.o
+
+# target to build an object file
+srcs/solver_bfs.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_bfs.c.o
+.PHONY : srcs/solver_bfs.c.o
+
+srcs/solver_bfs.i: srcs/solver_bfs.c.i
+
+.PHONY : srcs/solver_bfs.i
+
+# target to preprocess a source file
+srcs/solver_bfs.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_bfs.c.i
+.PHONY : srcs/solver_bfs.c.i
+
+srcs/solver_bfs.s: srcs/solver_bfs.c.s
+
+.PHONY : srcs/solver_bfs.s
+
+# target to generate assembly for a file
+srcs/solver_bfs.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_bfs.c.s
+.PHONY : srcs/solver_bfs.c.s
+
+srcs/solver_dfs.o: srcs/solver_dfs.c.o
+
+.PHONY : srcs/solver_dfs.o
+
+# target to build an object file
+srcs/solver_dfs.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_dfs.c.o
+.PHONY : srcs/solver_dfs.c.o
+
+srcs/solver_dfs.i: srcs/solver_dfs.c.i
+
+.PHONY : srcs/solver_dfs.i
+
+# target to preprocess a source file
+srcs/solver_dfs.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_dfs.c.i
+.PHONY : srcs/solver_dfs.c.i
+
+srcs/solver_dfs.s: srcs/solver_dfs.c.s
+
+.PHONY : srcs/solver_dfs.s
+
+# target to generate assembly for a file
+srcs/solver_dfs.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_dfs.c.s
+.PHONY : srcs/solver_dfs.c.s
+
+>>>>>>> 5d5479432defdc0bf35108a473fc689b7aa9102e
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -402,6 +541,21 @@ help:
 	@echo "... srcs/parse_utils.o"
 	@echo "... srcs/parse_utils.i"
 	@echo "... srcs/parse_utils.s"
+<<<<<<< HEAD
+=======
+	@echo "... srcs/solver.o"
+	@echo "... srcs/solver.i"
+	@echo "... srcs/solver.s"
+	@echo "... srcs/solver_algorithm.o"
+	@echo "... srcs/solver_algorithm.i"
+	@echo "... srcs/solver_algorithm.s"
+	@echo "... srcs/solver_bfs.o"
+	@echo "... srcs/solver_bfs.i"
+	@echo "... srcs/solver_bfs.s"
+	@echo "... srcs/solver_dfs.o"
+	@echo "... srcs/solver_dfs.i"
+	@echo "... srcs/solver_dfs.s"
+>>>>>>> 5d5479432defdc0bf35108a473fc689b7aa9102e
 .PHONY : help
 
 

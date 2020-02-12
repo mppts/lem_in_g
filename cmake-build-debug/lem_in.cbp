@@ -8,6 +8,7 @@
 		<Option virtualFolders="CMake Files\;"/>
 		<Build>
 			<Target title="all">
+<<<<<<< HEAD
 				<Option working_dir="/home/kona/CLionProjects/lem_in_g/cmake-build-debug"/>
 				<Option type="4"/>
 				<MakeCommands>
@@ -30,10 +31,45 @@
 			<Target title="lem_in">
 				<Option output="/home/kona/CLionProjects/lem_in_g/cmake-build-debug/lem_in" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/home/kona/CLionProjects/lem_in_g/cmake-build-debug"/>
+=======
+				<Option working_dir="/Users/dorphan/Desktop/Projects/LI_works/algos/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/dorphan/Desktop/Projects/LI_works/algos/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/dorphan/Desktop/Projects/LI_works/algos/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/dorphan/Desktop/Projects/LI_works/algos/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/dorphan/Desktop/Projects/LI_works/algos/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="/Users/dorphan/Desktop/Projects/LI_works/algos/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/dorphan/Desktop/Projects/LI_works/algos/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/dorphan/Desktop/Projects/LI_works/algos/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/dorphan/Desktop/Projects/LI_works/algos/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/dorphan/Desktop/Projects/LI_works/algos/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="/Users/dorphan/Desktop/Projects/LI_works/algos/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/dorphan/Desktop/Projects/LI_works/algos/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/dorphan/Desktop/Projects/LI_works/algos/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/dorphan/Desktop/Projects/LI_works/algos/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/dorphan/Desktop/Projects/LI_works/algos/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="lem_in">
+				<Option output="/Users/dorphan/Desktop/Projects/LI_works/algos/cmake-build-debug/lem_in" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/dorphan/Desktop/Projects/LI_works/algos/cmake-build-debug"/>
+>>>>>>> 5d5479432defdc0bf35108a473fc689b7aa9102e
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+<<<<<<< HEAD
 					<Add directory="/home/kona/CLionProjects/lem_in_g/libft/includes"/>
 					<Add directory="/home/kona/CLionProjects/lem_in_g/includes"/>
 					<Add directory="/home/kona/CLionProjects/lem_in_g/libbinheap"/>
@@ -41,12 +77,21 @@
 					<Add directory="/home/kona/CLionProjects/lem_in_g/fibonacci_heap"/>
 					<Add directory="/home/kona/CLionProjects/lem_in_g/fibonacci_heap/includes"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+=======
+					<Add directory="/Users/dorphan/Desktop/Projects/LI_works/algos/libft/includes"/>
+					<Add directory="/Users/dorphan/Desktop/Projects/LI_works/algos/includes"/>
+					<Add directory="/Users/dorphan/Desktop/Projects/LI_works/algos/libbinheap"/>
+					<Add directory="/Users/dorphan/Desktop/Projects/LI_works/algos/libbinheap/includes"/>
+					<Add directory="/Users/dorphan/Desktop/Projects/LI_works/algos/fibonacci_heap"/>
+					<Add directory="/Users/dorphan/Desktop/Projects/LI_works/algos/fibonacci_heap/includes"/>
+>>>>>>> 5d5479432defdc0bf35108a473fc689b7aa9102e
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
+<<<<<<< HEAD
 					<Build command="/usr/bin/make -j4 -f &quot;/home/kona/CLionProjects/lem_in_g/cmake-build-debug/Makefile&quot;  VERBOSE=1 lem_in"/>
 					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/kona/CLionProjects/lem_in_g/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j4 -f &quot;/home/kona/CLionProjects/lem_in_g/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
@@ -56,10 +101,22 @@
 			<Target title="lem_in/fast">
 				<Option output="/home/kona/CLionProjects/lem_in_g/cmake-build-debug/lem_in" prefix_auto="0" extension_auto="0"/>
 				<Option working_dir="/home/kona/CLionProjects/lem_in_g/cmake-build-debug"/>
+=======
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/dorphan/Desktop/Projects/LI_works/algos/cmake-build-debug/Makefile&quot;  VERBOSE=1 lem_in"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/dorphan/Desktop/Projects/LI_works/algos/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/dorphan/Desktop/Projects/LI_works/algos/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/dorphan/Desktop/Projects/LI_works/algos/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="lem_in/fast">
+				<Option output="/Users/dorphan/Desktop/Projects/LI_works/algos/cmake-build-debug/lem_in" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="/Users/dorphan/Desktop/Projects/LI_works/algos/cmake-build-debug"/>
+>>>>>>> 5d5479432defdc0bf35108a473fc689b7aa9102e
 				<Option object_output="./"/>
 				<Option type="1"/>
 				<Option compiler="gcc"/>
 				<Compiler>
+<<<<<<< HEAD
 					<Add directory="/home/kona/CLionProjects/lem_in_g/libft/includes"/>
 					<Add directory="/home/kona/CLionProjects/lem_in_g/includes"/>
 					<Add directory="/home/kona/CLionProjects/lem_in_g/libbinheap"/>
@@ -67,12 +124,21 @@
 					<Add directory="/home/kona/CLionProjects/lem_in_g/fibonacci_heap"/>
 					<Add directory="/home/kona/CLionProjects/lem_in_g/fibonacci_heap/includes"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include"/>
+=======
+					<Add directory="/Users/dorphan/Desktop/Projects/LI_works/algos/libft/includes"/>
+					<Add directory="/Users/dorphan/Desktop/Projects/LI_works/algos/includes"/>
+					<Add directory="/Users/dorphan/Desktop/Projects/LI_works/algos/libbinheap"/>
+					<Add directory="/Users/dorphan/Desktop/Projects/LI_works/algos/libbinheap/includes"/>
+					<Add directory="/Users/dorphan/Desktop/Projects/LI_works/algos/fibonacci_heap"/>
+					<Add directory="/Users/dorphan/Desktop/Projects/LI_works/algos/fibonacci_heap/includes"/>
+>>>>>>> 5d5479432defdc0bf35108a473fc689b7aa9102e
 					<Add directory="/usr/local/include"/>
 					<Add directory="/usr/lib/gcc/x86_64-linux-gnu/7/include-fixed"/>
 					<Add directory="/usr/include/x86_64-linux-gnu"/>
 					<Add directory="/usr/include"/>
 				</Compiler>
 				<MakeCommands>
+<<<<<<< HEAD
 					<Build command="/usr/bin/make -j4 -f &quot;/home/kona/CLionProjects/lem_in_g/cmake-build-debug/Makefile&quot;  VERBOSE=1 lem_in/fast"/>
 					<CompileFile command="/usr/bin/make -j4 -f &quot;/home/kona/CLionProjects/lem_in_g/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
 					<Clean command="/usr/bin/make -j4 -f &quot;/home/kona/CLionProjects/lem_in_g/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
@@ -133,6 +199,58 @@
 			<Option target="lem_in"/>
 		</Unit>
 		<Unit filename="/home/kona/CLionProjects/lem_in_g/CMakeLists.txt">
+=======
+					<Build command="/usr/bin/make -j4 -f &quot;/Users/dorphan/Desktop/Projects/LI_works/algos/cmake-build-debug/Makefile&quot;  VERBOSE=1 lem_in/fast"/>
+					<CompileFile command="/usr/bin/make -j4 -f &quot;/Users/dorphan/Desktop/Projects/LI_works/algos/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="/usr/bin/make -j4 -f &quot;/Users/dorphan/Desktop/Projects/LI_works/algos/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="/usr/bin/make -j4 -f &quot;/Users/dorphan/Desktop/Projects/LI_works/algos/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="/Users/dorphan/Desktop/Projects/LI_works/algos/includes/lem_in.h">
+			<Option target="lem_in"/>
+		</Unit>
+		<Unit filename="/Users/dorphan/Desktop/Projects/LI_works/algos/libft/includes/libft.h">
+			<Option target="lem_in"/>
+		</Unit>
+		<Unit filename="/Users/dorphan/Desktop/Projects/LI_works/algos/srcs/main.c">
+			<Option target="lem_in"/>
+		</Unit>
+		<Unit filename="/Users/dorphan/Desktop/Projects/LI_works/algos/srcs/man_err.c">
+			<Option target="lem_in"/>
+		</Unit>
+		<Unit filename="/Users/dorphan/Desktop/Projects/LI_works/algos/srcs/parse_hash.c">
+			<Option target="lem_in"/>
+		</Unit>
+		<Unit filename="/Users/dorphan/Desktop/Projects/LI_works/algos/srcs/parse_links.c">
+			<Option target="lem_in"/>
+		</Unit>
+		<Unit filename="/Users/dorphan/Desktop/Projects/LI_works/algos/srcs/parse_map.c">
+			<Option target="lem_in"/>
+		</Unit>
+		<Unit filename="/Users/dorphan/Desktop/Projects/LI_works/algos/srcs/parse_room.c">
+			<Option target="lem_in"/>
+		</Unit>
+		<Unit filename="/Users/dorphan/Desktop/Projects/LI_works/algos/srcs/parse_room2.c">
+			<Option target="lem_in"/>
+		</Unit>
+		<Unit filename="/Users/dorphan/Desktop/Projects/LI_works/algos/srcs/parse_utils.c">
+			<Option target="lem_in"/>
+		</Unit>
+		<Unit filename="/Users/dorphan/Desktop/Projects/LI_works/algos/srcs/solver.c">
+			<Option target="lem_in"/>
+		</Unit>
+		<Unit filename="/Users/dorphan/Desktop/Projects/LI_works/algos/srcs/solver_algorithm.c">
+			<Option target="lem_in"/>
+		</Unit>
+		<Unit filename="/Users/dorphan/Desktop/Projects/LI_works/algos/srcs/solver_bfs.c">
+			<Option target="lem_in"/>
+		</Unit>
+		<Unit filename="/Users/dorphan/Desktop/Projects/LI_works/algos/srcs/solver_dfs.c">
+			<Option target="lem_in"/>
+		</Unit>
+		<Unit filename="/Users/dorphan/Desktop/Projects/LI_works/algos/CMakeLists.txt">
+>>>>>>> 5d5479432defdc0bf35108a473fc689b7aa9102e
 			<Option virtualFolder="CMake Files\"/>
 		</Unit>
 	</Project>

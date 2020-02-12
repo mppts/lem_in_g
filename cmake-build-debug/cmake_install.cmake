@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 # Install script for directory: /home/kona/CLionProjects/lem_in_g
+=======
+# Install script for directory: /Users/dorphan/Desktop/Projects/LI_works/algos
+>>>>>>> 5d5479432defdc0bf35108a473fc689b7aa9102e
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -45,5 +49,9 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
+<<<<<<< HEAD
 file(WRITE "/home/kona/CLionProjects/lem_in_g/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+=======
+file(WRITE "/Users/dorphan/Desktop/Projects/LI_works/algos/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+>>>>>>> 5d5479432defdc0bf35108a473fc689b7aa9102e
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

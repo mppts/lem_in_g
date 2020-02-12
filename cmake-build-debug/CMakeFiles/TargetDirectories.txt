@@ -1,3 +1,9 @@
+<<<<<<< HEAD
 /home/kona/CLionProjects/lem_in_g/cmake-build-debug/CMakeFiles/rebuild_cache.dir
 /home/kona/CLionProjects/lem_in_g/cmake-build-debug/CMakeFiles/lem_in.dir
 /home/kona/CLionProjects/lem_in_g/cmake-build-debug/CMakeFiles/edit_cache.dir
+=======
+/Users/dorphan/Desktop/Projects/LI_works/algos/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Users/dorphan/Desktop/Projects/LI_works/algos/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Users/dorphan/Desktop/Projects/LI_works/algos/cmake-build-debug/CMakeFiles/lem_in.dir
+>>>>>>> 5d5479432defdc0bf35108a473fc689b7aa9102e

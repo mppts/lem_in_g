@@ -6,5 +6,9 @@ C_FLAGS = -g   -std=gnu11
 
 C_DEFINES = 
 
+<<<<<<< HEAD
 C_INCLUDES = -I/home/kona/CLionProjects/lem_in_g/libft/includes -I/home/kona/CLionProjects/lem_in_g/includes -I/home/kona/CLionProjects/lem_in_g/libbinheap -I/home/kona/CLionProjects/lem_in_g/libbinheap/includes -I/home/kona/CLionProjects/lem_in_g/fibonacci_heap -I/home/kona/CLionProjects/lem_in_g/fibonacci_heap/includes 
+=======
+C_INCLUDES = -I/Users/dorphan/Desktop/Projects/LI_works/algos/libft/includes -I/Users/dorphan/Desktop/Projects/LI_works/algos/includes -I/Users/dorphan/Desktop/Projects/LI_works/algos/libbinheap -I/Users/dorphan/Desktop/Projects/LI_works/algos/libbinheap/includes -I/Users/dorphan/Desktop/Projects/LI_works/algos/fibonacci_heap -I/Users/dorphan/Desktop/Projects/LI_works/algos/fibonacci_heap/includes 
+>>>>>>> 5d5479432defdc0bf35108a473fc689b7aa9102e
 

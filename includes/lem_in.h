@@ -6,7 +6,7 @@
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/05 12:03:07 by limry             #+#    #+#             */
-/*   Updated: 2020/02/09 03:20:19 by kona             ###   ########.fr       */
+/*   Updated: 2020/02/12 13:46:00 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,9 @@
 
 # define FALSE 0
 # define TRUE 1
+# define WHITE 0
+# define GRAY 1
+# define BLACK 2
 
 typedef struct		s_r_reader
 {
@@ -38,11 +41,21 @@ typedef struct		s_path
 	struct s_path	*next;
 }					t_path;
 
-typedef struct		s_paths
+/*
+** Пока что проще работать со своими структурами данных.
+*/
+typedef struct 		s_graph_inf
 {
-	uint64_t		num_paths;
-	t_path			*paths;
-}					t_paths;
+	struct s_room	***ways;
+	struct s_link	**mirror_links;
+	int				two_flows;
+	int				current_way_number;
+	int 			current_pos_in_way;
+	int				position_in_way;
+	int				total_ways_len;
+	double			are_enough_ways_current;
+	double			are_enough_ways_new;
+}					t_graph_inf;
 
 typedef struct		s_link
 {
@@ -51,12 +64,19 @@ typedef struct		s_link
 	struct s_link	*prev;
 	struct s_link	*mirror;
 	int64_t			path_id;
+	int				flow;
 }					t_link;
 /*
 ** type: 1 is entrance; 2 is exit
 */
 typedef struct		s_room
 {
+	char			*name;
+	int64_t			level;
+	int				color;
+	t_link			*linked_to;
+	struct s_room	*next;
+	struct s_room	*prev;
 	int				x;
 	int				y;
 	int				checked;
@@ -64,11 +84,6 @@ typedef struct		s_room
 	uint64_t		hash_id;
 	uint64_t		path_id;
 	uint64_t		num_linked_to;
-	int64_t			level;
-	t_link			*linked_to;
-	struct s_room	*next;
-	struct s_room	*prev;
-	char			*name;
 }					t_room;
 
 typedef struct		s_map
@@ -82,12 +97,13 @@ typedef struct		s_map
 	uint64_t		num_links;
 	int64_t			ants;
 	uint8_t			is_rooms_hashed;
-	uint64_t			len_rh;
+	uint64_t		len_rh;
 	t_room			**hashed_rooms;
 	char 			*buf;
 	char 			*out;
 	t_paths			*paths;
 	t_dstr 			*dstr;
+	struct s_path	*path;
 }					t_map;
 
 typedef struct		s_flag
@@ -137,5 +153,28 @@ void				del_room(t_room *room);
 
 void				man_err_map(char *msg, char **data,
 					void (*f_todel)(char**), t_map *map);
+
+/*
+** solver.c
+*/
+void				solver(t_map *map);
+void				make_color_white_again(t_room *source);
+int					rooms_calc(t_room *source);
+int					way_len_calc(t_room **way);
+
+/*
+** solve_algorithm.c
+*/
+void				algo(t_map *map, t_graph_inf *inf);
+
+/*
+** solve_bfs.c
+*/
+t_room				*bfs(t_room *sink, t_map *map);
+
+/*
+** solve_dfs.c
+*/
+int			dfs(t_room *room, t_graph_inf *inf, t_map *map);
 
 #endif

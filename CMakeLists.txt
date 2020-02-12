@@ -35,11 +35,17 @@ add_executable(lem_in
                 srcs/parse_links.c
                 srcs/parse_hash.c
                 srcs/parse_room2.c
+<<<<<<< HEAD
                 #srcs/writer_string.c
                 #srcs/writer_main.c
                 #srcs/solver_bfs.c
                 libft/includes/dstr.h
         libft/includes/get_next_line.h)
+=======
+                srcs/solver.c
+                srcs/solver_bfs.c
+        srcs/solver_algorithm.c srcs/solver_dfs.c)
+>>>>>>> 5d5479432defdc0bf35108a473fc689b7aa9102e
 
 target_link_libraries(lem_in ${CMAKE_SOURCE_DIR}/libft/libft.a)
 

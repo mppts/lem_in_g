@@ -1,62 +1,54 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   solver_bfs.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: dorphan <marvin@42.fr>                     +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/02/12 16:43:01 by dorphan           #+#    #+#             */
+/*   Updated: 2020/02/12 16:43:07 by dorphan          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "lem_in.h"
 
-void			print_result(t_room **line, int size_of_line)
+void			initialization_bfs(t_room **find_source, int *c_a, int *c_p)
 {
-	u_int64_t	level;
-	int			i;
-
-	i = 0;
-	level = 0;
-	while (i < size_of_line)
-	{
-		ft_putstr("level ");
-		ft_putnbr(level);
-		ft_putstr(":   ");
-		while (i < size_of_line && line[i]->level == level)
-		{
-			ft_putstr(line[i++]->name);
-			ft_putstr("  ");
-		}
-		level++;
-		ft_putstr("\n");
-	}
+	*find_source = NULL;
+	*c_a = 1;
+	*c_p = 0;
 }
 
 t_room			*bfs(t_room *sink, t_map *map)
 {
 	t_link		*tmp_link;
 	t_room		**line;
-	int 		current_pos_in_line;
-	int			current_addition_to_line;
-	int			rooms_num;
+	int			current_pos;
+	int			current_addition;
 	t_room		*find_source;
 
 	if (!sink)
 		return (NULL);
-	find_source = NULL;
-	current_addition_to_line = 1;
-	current_pos_in_line = 0;
-	rooms_num = rooms_calc(sink);
-	line = (t_room **)malloc(sizeof(t_room *) * (rooms_num + 1));
-	line[rooms_num] = NULL;
-	line[current_pos_in_line] = sink;
-	while (current_pos_in_line < rooms_num)
+	initialization_bfs(&find_source, &current_addition, &current_pos);
+	line = (t_room **)malloc(sizeof(t_room *) * (map->num_nodes + 1));
+	line[map->num_nodes] = NULL;
+	line[current_pos] = sink;
+	while (current_pos < map->num_nodes)
 	{
-		tmp_link = line[current_pos_in_line]->linked_to;
+		tmp_link = line[current_pos]->linked_to;
 		while (tmp_link)
 		{
 			if (tmp_link->to->level == 0 && tmp_link->to != sink)
 			{
 				if (!find_source && (tmp_link->to == map->start))
 					find_source = tmp_link->to;
-				line[current_addition_to_line++] = tmp_link->to;
-				tmp_link->to->level = line[current_pos_in_line]->level + 1;
+				line[current_addition++] = tmp_link->to;
+				tmp_link->to->level = line[current_pos]->level + 1;
 			}
 			tmp_link = tmp_link->next;
 		}
-		current_pos_in_line++;
+		current_pos++;
 	}
-//	print_result(line, rooms_calc(sink));
 	free(line);
 	return (find_source);
 }

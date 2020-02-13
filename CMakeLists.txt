@@ -11,7 +11,6 @@ add_executable(lem_in
                 libft/includes/libft.h
                 libft/includes/get_next_line.h
                 libft/includes/dstr.h
-
                 srcs/man_err.c
                 libft/srcs/dstr/dstr.c
                 srcs/parse_map.c
@@ -25,7 +24,7 @@ add_executable(lem_in
                 srcs/solver_algorithm.c
                 srcs/solver_dfs.c
                 srcs/writer_main.c
-        )
+        srcs/solver_algorithm_cleaning.c)
 
 target_link_libraries(lem_in ${CMAKE_SOURCE_DIR}/libft/libft.a)
 

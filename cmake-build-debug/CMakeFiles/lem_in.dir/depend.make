@@ -66,6 +66,12 @@ CMakeFiles/lem_in.dir/srcs/solver_algorithm.c.o: ../libft/includes/get_next_line
 CMakeFiles/lem_in.dir/srcs/solver_algorithm.c.o: ../libft/includes/libft.h
 CMakeFiles/lem_in.dir/srcs/solver_algorithm.c.o: ../srcs/solver_algorithm.c
 
+CMakeFiles/lem_in.dir/srcs/solver_algorithm_cleaning.c.o: ../includes/lem_in.h
+CMakeFiles/lem_in.dir/srcs/solver_algorithm_cleaning.c.o: ../libft/includes/dstr.h
+CMakeFiles/lem_in.dir/srcs/solver_algorithm_cleaning.c.o: ../libft/includes/get_next_line.h
+CMakeFiles/lem_in.dir/srcs/solver_algorithm_cleaning.c.o: ../libft/includes/libft.h
+CMakeFiles/lem_in.dir/srcs/solver_algorithm_cleaning.c.o: ../srcs/solver_algorithm_cleaning.c
+
 CMakeFiles/lem_in.dir/srcs/solver_bfs.c.o: ../includes/lem_in.h
 CMakeFiles/lem_in.dir/srcs/solver_bfs.c.o: ../libft/includes/dstr.h
 CMakeFiles/lem_in.dir/srcs/solver_bfs.c.o: ../libft/includes/get_next_line.h

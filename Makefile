@@ -27,6 +27,7 @@ SOURCE = \
          solver_algorithm.c\
          solver_bfs.c\
          solver_dfs.c\
+         solver_algorithm_cleaning.c\
          writer_main.c
 
 

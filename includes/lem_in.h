@@ -39,6 +39,7 @@ typedef struct		s_path
 	int 			id;
 	uint64_t		len;
 	uint64_t		ants;
+	uint64_t		ants_on;
 	struct s_room	**path;
 	struct s_path	*next;
 }					t_path;

@@ -6,7 +6,7 @@
 /*   By: limry <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/28 19:23:42 by limry             #+#    #+#             */
-/*   Updated: 2020/02/12 14:44:27 by limry            ###   ########.fr       */
+/*   Updated: 2020/02/13 21:48:53 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -188,43 +188,25 @@ void		put_ways_to_list(t_graph_inf *inf, t_map *map)
 	head->len = way_len_calc((inf->ways[i]));
 	head->path = (inf->ways[i++]);
 	head->next = NULL;
-	current = head;
-	while (inf->ways[i] && inf->ways[i][0])
+	tmp = head;
+	while (i < inf->current_way_number)
 	{
-		tmp = malloc(sizeof(t_path));
-		tmp->len = way_len_calc((inf->ways[i]));
-		tmp->path = (inf->ways[i++]);
-		tmp->next = NULL;
-		current->next = tmp;
-		current = current->next;
+		current = malloc(sizeof(t_path));
+		current->len = way_len_calc((inf->ways[i]));
+		current->path = (inf->ways[i++]);
+		tmp->next = current;
+		tmp = tmp->next;
 	}
+	tmp->next = NULL;
 	map->path = head;
-}
-
-void		print_ways(t_graph_inf	*inf)
-{
-	int 	i;
-
-	inf->current_way_number = 0;
-	ft_putchar('\n');
-	ft_putstr("So... we found:\n");
-	while (inf->ways[inf->current_way_number] && inf->ways[inf->current_way_number][0])
-	{
-		i = 0;
-		while (inf->ways[inf->current_way_number][i])
-		{
-			ft_putstr((inf->ways[inf->current_way_number][i++])->name);
-			ft_putstr("  ");
-		}
-		ft_putchar('\n');
-		inf->current_way_number++;
-	}
 }
 
 void		solver(t_map *map)
 {
 	t_graph_inf	inf;
+	t_graph_inf	inf_min;
 
+	inf_min.are_enough_ways_current = 9999999999999.0;
 	make_color_white_again(map->room_start);
 	put_zero_to_flows(map->room_start);
 	inf.ways = memory_for_ways(map, inf.ways);
@@ -232,10 +214,8 @@ void		solver(t_map *map)
 	inf.total_ways_len = 0;
 	inf.are_enough_ways_current = 0;
 	inf.are_enough_ways_new = 0;
-	algo(map, &inf);
-	put_ways_to_list(&inf, map);
-//	print_ways(&inf);
-
+	algo2(map, &inf, &inf_min);
+	put_ways_to_list(&inf_min, map);
 	free_ways(&inf);
 	free(inf.mirror_links);
 }

@@ -31,9 +31,10 @@ t_room			*bfs(t_room *sink, t_map *map)
 		return (NULL);
 	initialization_bfs(&find_source, &current_addition, &current_pos);
 	line = (t_room **)malloc(sizeof(t_room *) * (map->num_nodes + 1));
+	ft_bzero(line, sizeof(t_room *) * (map->num_nodes + 1));
 	line[map->num_nodes] = NULL;
 	line[current_pos] = sink;
-	while (current_pos < map->num_nodes)
+	while (line[current_pos])
 	{
 		tmp_link = line[current_pos]->linked_to;
 		while (tmp_link)

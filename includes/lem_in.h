@@ -6,7 +6,7 @@
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/05 12:03:07 by limry             #+#    #+#             */
-/*   Updated: 2020/02/12 18:55:35 by limry            ###   ########.fr       */
+/*   Updated: 2020/02/13 21:56:05 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -174,14 +174,8 @@ int					way_len_calc(t_room **way);
 ** solve_algorithm.c
 */
 void				algo(t_map *map, t_graph_inf *inf);
-
-/*
-** solve_algorithm_cleaning.c
-*/
-void		delite_mirror_links(t_graph_inf *inf);
-void		clean_ways(t_room ***ways);
-void		clean_levels_and_flows(t_room *source);
-void		time_to_do_some_cleaning(t_map *map, t_graph_inf *inf);
+void				algo2(t_map *map, t_graph_inf *inf, t_graph_inf *inf_min);
+t_room				***memory_for_ways(t_map *map, t_room ***ways);
 
 
 /*
@@ -195,5 +189,7 @@ t_room				*bfs(t_room *sink, t_map *map);
 int					dfs(t_room *room, t_graph_inf *inf, t_map *map);
 
 void				writer(t_map *map);
+void				time_to_do_some_cleaning(t_map *map, t_graph_inf *inf);
+
 
 #endif

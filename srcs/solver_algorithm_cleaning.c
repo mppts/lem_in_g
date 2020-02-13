@@ -6,7 +6,7 @@
 /*   By: dorphan <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/12 15:47:57 by dorphan           #+#    #+#             */
-/*   Updated: 2020/02/12 16:25:57 by dorphan          ###   ########.fr       */
+/*   Updated: 2020/02/13 19:27:55 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,10 @@ void		delite_mirror_links(t_graph_inf *inf)
 	t_link	*tmp;
 
 	i = 0;
-	while (inf->mirror_links[i])
+	while (i < inf->two_flows)
 	{
 		tmp = inf->mirror_links[i];
+		tmp->to->num_linked_to--;
 		if (!tmp->prev)
 			tmp->mirror->to->linked_to = tmp->next;
 		if (tmp->next)
@@ -78,8 +79,8 @@ void		time_to_do_some_cleaning(t_map *map, t_graph_inf *inf)
 {
 	if (inf->mirror_links[0])
 		delite_mirror_links(inf);
-	make_color_white_again(map->start);
-	clean_ways(inf->ways);
+	make_color_white_again(map->start->next);
+	clean_ways(inf->ways); // set right bounds
 	clean_levels_and_flows(map->start);
 	inf->are_enough_ways_current = 0;
 	inf->are_enough_ways_new = 0;

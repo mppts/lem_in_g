@@ -116,14 +116,14 @@ void				log_ant_move(t_room *room, t_map *map, t_path *path)
 	int 			color;
 
 	color = path->id % 8 + 30;
-	dstr_joinstr(map->dstr, "\033[1;");
-	dstr_joinstr(map->dstr, ft_itoa(color));
+	//dstr_joinstr(map->dstr, "\033[1;");
+	//dstr_joinstr(map->dstr, ft_itoa(color));
 	dstr_joinstr(map->dstr, "m");
 	dstr_joinstr(map->dstr, "L");
 	dstr_joinstr(map->dstr, ft_itoa(room->ant));
 	dstr_joinstr(map->dstr, "-");
 	dstr_joinstr(map->dstr, room->name);
-	dstr_joinstr(map->dstr, "\033[0m");
+	//dstr_joinstr(map->dstr, "\033[0m");
 }
 
 int				move_ant(t_path *path, int cur_pos, int *ants_out, int *cur_ant, t_map *map)
@@ -265,6 +265,7 @@ void				prep_paths(t_path *p)
 
 void				writer(t_map *map)
 {
+	dstr_joinstr(map->dstr, "\n");
 	sort_paths(map);
 	//print_paths(map->path);
 	prep_paths(map->path);

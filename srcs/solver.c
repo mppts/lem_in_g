@@ -234,7 +234,7 @@ void		solver(t_map *map)
 	inf.are_enough_ways_new = 0;
 	algo(map, &inf);
 	put_ways_to_list(&inf, map);
-	print_ways(&inf);
+//	print_ways(&inf);
 
 	free_ways(&inf);
 	free(inf.mirror_links);

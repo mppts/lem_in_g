@@ -201,6 +201,26 @@ void		put_ways_to_list(t_graph_inf *inf, t_map *map)
 	map->path = head;
 }
 
+void		print_ways(t_graph_inf	*inf)
+{
+	int 	i;
+
+	inf->current_way_number = 0;
+	ft_putchar('\n');
+	ft_putstr("So... we found:\n");
+	while (inf->ways[inf->current_way_number] && inf->ways[inf->current_way_number][0])
+	{
+		i = 0;
+		while (inf->ways[inf->current_way_number][i])
+		{
+			ft_putstr((inf->ways[inf->current_way_number][i++])->name);
+			ft_putstr("  ");
+		}
+		ft_putchar('\n');
+		inf->current_way_number++;
+	}
+}
+
 void		solver(t_map *map)
 {
 	t_graph_inf	inf;
@@ -214,7 +234,7 @@ void		solver(t_map *map)
 	inf.are_enough_ways_new = 0;
 	algo(map, &inf);
 	put_ways_to_list(&inf, map);
-//	print_ways(&inf);
+	print_ways(&inf);
 
 	free_ways(&inf);
 	free(inf.mirror_links);

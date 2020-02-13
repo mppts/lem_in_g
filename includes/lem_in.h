@@ -172,6 +172,15 @@ int					way_len_calc(t_room **way);
 void				algo(t_map *map, t_graph_inf *inf);
 
 /*
+** solve_algorithm_cleaning.c
+*/
+void		delite_mirror_links(t_graph_inf *inf);
+void		clean_ways(t_room ***ways);
+void		clean_levels_and_flows(t_room *source);
+void		time_to_do_some_cleaning(t_map *map, t_graph_inf *inf);
+
+
+/*
 ** solve_bfs.c
 */
 t_room				*bfs(t_room *sink, t_map *map);

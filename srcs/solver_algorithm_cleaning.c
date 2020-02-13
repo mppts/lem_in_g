@@ -35,7 +35,7 @@ void		delite_mirror_links(t_graph_inf *inf)
 
 void		clean_ways(t_room ***ways)
 {
-	int 	y;
+	int		y;
 	int		x;
 
 	y = 0;

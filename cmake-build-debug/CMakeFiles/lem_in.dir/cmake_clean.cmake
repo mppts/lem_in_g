@@ -10,6 +10,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/lem_in.dir/srcs/parse_utils.c.o"
   "CMakeFiles/lem_in.dir/srcs/solver.c.o"
   "CMakeFiles/lem_in.dir/srcs/solver_algorithm.c.o"
+  "CMakeFiles/lem_in.dir/srcs/solver_algorithm_cleaning.c.o"
   "CMakeFiles/lem_in.dir/srcs/solver_bfs.c.o"
   "CMakeFiles/lem_in.dir/srcs/solver_dfs.c.o"
   "CMakeFiles/lem_in.dir/srcs/writer_main.c.o"

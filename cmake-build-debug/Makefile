@@ -48,10 +48,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/limry/CLionProjects/lm_full
+CMAKE_SOURCE_DIR = /Users/dorphan/Desktop/Projects/LI_works/full
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/limry/CLionProjects/lm_full/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/dorphan/Desktop/Projects/LI_works/full/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/limry/CLionProjects/lm_full/cmake-build-debug/CMakeFiles /Users/limry/CLionProjects/lm_full/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/dorphan/Desktop/Projects/LI_works/full/cmake-build-debug/CMakeFiles /Users/dorphan/Desktop/Projects/LI_works/full/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/limry/CLionProjects/lm_full/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/dorphan/Desktop/Projects/LI_works/full/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -420,6 +420,33 @@ srcs/solver_algorithm.c.s:
 	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_algorithm.c.s
 .PHONY : srcs/solver_algorithm.c.s
 
+srcs/solver_algorithm_cleaning.o: srcs/solver_algorithm_cleaning.c.o
+
+.PHONY : srcs/solver_algorithm_cleaning.o
+
+# target to build an object file
+srcs/solver_algorithm_cleaning.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_algorithm_cleaning.c.o
+.PHONY : srcs/solver_algorithm_cleaning.c.o
+
+srcs/solver_algorithm_cleaning.i: srcs/solver_algorithm_cleaning.c.i
+
+.PHONY : srcs/solver_algorithm_cleaning.i
+
+# target to preprocess a source file
+srcs/solver_algorithm_cleaning.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_algorithm_cleaning.c.i
+.PHONY : srcs/solver_algorithm_cleaning.c.i
+
+srcs/solver_algorithm_cleaning.s: srcs/solver_algorithm_cleaning.c.s
+
+.PHONY : srcs/solver_algorithm_cleaning.s
+
+# target to generate assembly for a file
+srcs/solver_algorithm_cleaning.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_algorithm_cleaning.c.s
+.PHONY : srcs/solver_algorithm_cleaning.c.s
+
 srcs/solver_bfs.o: srcs/solver_bfs.c.o
 
 .PHONY : srcs/solver_bfs.o
@@ -543,6 +570,9 @@ help:
 	@echo "... srcs/solver_algorithm.o"
 	@echo "... srcs/solver_algorithm.i"
 	@echo "... srcs/solver_algorithm.s"
+	@echo "... srcs/solver_algorithm_cleaning.o"
+	@echo "... srcs/solver_algorithm_cleaning.i"
+	@echo "... srcs/solver_algorithm_cleaning.s"
 	@echo "... srcs/solver_bfs.o"
 	@echo "... srcs/solver_bfs.i"
 	@echo "... srcs/solver_bfs.s"

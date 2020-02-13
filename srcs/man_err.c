@@ -6,7 +6,7 @@
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/04 22:00:51 by limry             #+#    #+#             */
-/*   Updated: 2020/02/12 14:45:13 by limry            ###   ########.fr       */
+/*   Updated: 2020/02/12 15:32:50 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void			del_paths(t_path *path)
 	{
 		tmp1 = tmp;
 		tmp = tmp->next;
-		free(tmp1->path);
+		//free(tmp1->path);
 		tmp1->path = NULL;
 		free(tmp1);
 	}
@@ -67,7 +67,8 @@ void			del_map(t_map *map)
 		tmp = tmp->next;
 		del_room(tmp1);
 	}
-	del_paths(map->path);
+	if (map->path)
+		del_paths(map->path);
 	dstr_del(map->dstr);
 }
 

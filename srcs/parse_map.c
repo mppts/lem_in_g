@@ -42,7 +42,7 @@ static void		parse_ants(t_map *map, char *buf)
 					&buf, ft_strdel, map);
 	}
 	ants = ft_atoli(buf);
-	if (ants < 1 || ants >= INT32_MAX)
+	if (ants < 1 || ants > INT32_MAX)
 		man_err_map("Error: no or too many ants\n", &buf, ft_strdel, map);
 	map->ants = ants;
 	free(buf);
@@ -85,6 +85,7 @@ void			init_map(t_map *map)
 	map->out = NULL;
 	map->dstr = dstr_init(NULL, 500);
 	map->len_rh = 0;
+	map->path = NULL;
 }
 
 void			parse_map(t_map *map)

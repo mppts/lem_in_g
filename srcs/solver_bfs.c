@@ -6,7 +6,7 @@
 /*   By: dorphan <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/12 16:43:01 by dorphan           #+#    #+#             */
-/*   Updated: 2020/02/12 16:43:07 by dorphan          ###   ########.fr       */
+/*   Updated: 2020/02/14 17:32:35 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,9 @@ t_room			*bfs(t_room *sink, t_map *map)
 			if (tmp_link->to->level == 0 && tmp_link->to != sink)
 			{
 				if (!find_source && (tmp_link->to == map->start))
-					find_source = tmp_link->to;
-				line[current_addition++] = tmp_link->to;
+					 find_source = tmp_link->to;
+				if (tmp_link->to != map->start)
+					line[current_addition++] = tmp_link->to;
 				tmp_link->to->level = line[current_pos]->level + 1;
 			}
 			tmp_link = tmp_link->next;

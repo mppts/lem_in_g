@@ -6,7 +6,7 @@
 /*   By: limry <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/28 19:23:42 by limry             #+#    #+#             */
-/*   Updated: 2020/02/13 21:48:53 by limry            ###   ########.fr       */
+/*   Updated: 2020/02/14 21:05:05 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -206,17 +206,21 @@ void		solver(t_map *map)
 	t_graph_inf	inf;
 	t_graph_inf	inf_min;
 
-	inf_min.are_enough_ways_current = 9999999999999.0;
+	inf_min.are_enough_ways_current = INT32_MAX;
 	make_color_white_again(map->room_start);
 	put_zero_to_flows(map->room_start);
 	inf.ways = memory_for_ways(map, inf.ways);
-	inf.mirror_links = memory_for_mirror_links(map->room_start, inf.mirror_links);
+	inf_min.ways = memory_for_ways(map, inf.ways);
+	//inf.mirror_links = memory_for_mirror_links(map->room_start, inf.mirror_links);
+	inf.mirror_links = malloc((map->num_links + 1 ) * sizeof(t_link));
+	//ft_bzero(&(inf.mirror_links), (map->num_links ) * sizeof(t_link));
 	inf.total_ways_len = 0;
 	inf.are_enough_ways_current = 0;
 	inf.are_enough_ways_new = 0;
 	algo2(map, &inf, &inf_min);
 	put_ways_to_list(&inf_min, map);
 	free_ways(&inf);
+	free_ways(&inf_min);
 	free(inf.mirror_links);
 }
 

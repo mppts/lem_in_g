@@ -56,8 +56,8 @@ typedef struct 		s_graph_inf
 	int 			current_pos_in_way;
 	int				position_in_way;
 	int				total_ways_len;
-	double			are_enough_ways_current;
-	double			are_enough_ways_new;
+	int				are_enough_ways_current;
+	int				are_enough_ways_new;
 }					t_graph_inf;
 
 typedef struct		s_link

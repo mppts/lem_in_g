@@ -6,7 +6,7 @@
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/05 12:03:07 by limry             #+#    #+#             */
-/*   Updated: 2020/02/13 21:56:05 by limry            ###   ########.fr       */
+/*   Updated: 2020/02/16 04:38:40 by kona             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,6 +77,8 @@ typedef struct		s_room
 	int 			ant;
 	char			*name;
 	int64_t			level;
+	int64_t			potential;
+	int64_t			lev_m_pot;
 	int				color;
 	t_link			*linked_to;
 	struct s_room	*next;
@@ -166,7 +168,7 @@ void				man_err_map(char *msg, char **data,
 ** solver.c
 */
 void				solver(t_map *map);
-void				make_color_white_again(t_room *source);
+void				restore_meta_graph_info(t_room *source);
 int					rooms_calc(t_room *source);
 int					way_len_calc(t_room **way);
 
@@ -190,6 +192,14 @@ int					dfs(t_room *room, t_graph_inf *inf, t_map *map);
 
 void				writer(t_map *map);
 void				time_to_do_some_cleaning(t_map *map, t_graph_inf *inf);
+int					dfs_pl(t_room *start, t_graph_inf *inf, t_map *map);
+t_room				*bfs_level(t_room *sink, t_map *map);
+t_room				*bfs_potential(t_room *start, t_map *map);
+void				put_zero_to_flows(t_room *source);
+void				restore_meta_graph_info(t_room *source);
+void				algo3(t_map *map, t_graph_inf *inf, t_graph_inf *inf_min);
+
+
 
 
 #endif

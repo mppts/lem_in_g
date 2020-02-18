@@ -6,14 +6,14 @@
 /*   By: limry <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/28 19:23:42 by limry             #+#    #+#             */
-/*   Updated: 2020/02/14 21:05:05 by limry            ###   ########.fr       */
+/*   Updated: 2020/02/16 04:38:40 by kona             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <lem_in.h>
 #include "deque.c"
 
-void		make_color_white_again(t_room *source)
+void		restore_meta_graph_info(t_room *source)
 {
 	t_room	*tmp;
 
@@ -21,9 +21,15 @@ void		make_color_white_again(t_room *source)
 	while (tmp != source)
 	{
 		tmp->color = WHITE;
+		tmp->level = 0;
+		tmp->potential = 0;
+		tmp->lev_m_pot = 0;
 		tmp = tmp->next;
 	}
 	tmp->color = WHITE;
+	tmp->level = 0;
+	tmp->potential = 0;
+	tmp->lev_m_pot = 0;
 }
 
 void		put_zero_to_flows(t_room *source)
@@ -207,7 +213,7 @@ void		solver(t_map *map)
 	t_graph_inf	inf_min;
 
 	inf_min.are_enough_ways_current = INT32_MAX;
-	make_color_white_again(map->room_start);
+	restore_meta_graph_info(map->room_start);
 	put_zero_to_flows(map->room_start);
 	inf.ways = memory_for_ways(map, inf.ways);
 	inf_min.ways = memory_for_ways(map, inf.ways);
@@ -217,8 +223,8 @@ void		solver(t_map *map)
 	inf.total_ways_len = 0;
 	inf.are_enough_ways_current = 0;
 	inf.are_enough_ways_new = 0;
-	algo2(map, &inf, &inf_min);
-	put_ways_to_list(&inf_min, map);
+	algo3(map, &inf, &inf_min);
+	put_ways_to_list(&inf, map);
 	free_ways(&inf);
 	free_ways(&inf_min);
 	free(inf.mirror_links);

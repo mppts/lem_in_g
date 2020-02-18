@@ -35,7 +35,7 @@ HEADERS =	lem_in.h \
 			libft.h \
 			binary_heap.h
 
-#FLAGS = -Wall -Wextra -Werror
+#FLAGS = -Wall -Wextra -Werror -g3
 FLAGS = 
 OBJ = $(SOURCE:%.c=%.o)
 OBJS = $(SOURCE:%.c=$(DIR_OBJ)%.o)
@@ -44,7 +44,7 @@ SRCS = $(SOURCE:%.c=$(DIR_SRC)%.c)
 all: $(NAME)
 
 $(NAME): $(LIB) $(LIB_HEAP) directories $(OBJS)
-	gcc $(FLAGS) -o $(NAME) $(OBJS) -L$(DIR_LIB) -lft -L$(DIR_LIB_HEAP) -lbinheap
+	gcc -g3 $(FLAGS) -o $(NAME) $(OBJS) -L$(DIR_LIB) -lft -L$(DIR_LIB_HEAP) -lbinheap
 
 directories:
 	mkdir -p $(DIR_OBJ)
@@ -56,7 +56,7 @@ $(LIB_HEAP):
 	$(MAKE) -C $(DIR_LIB_HEAP)
 
 $(DIR_OBJ)%.o: $(DIR_SRC)%.c
-	gcc $(FLAGS) -o $@ -c $< -I$(DIR_INC) -I$(LIB_INCLUDES) -I$(LIB_HEAP_INCLUDES)
+	gcc -g3 $(FLAGS) -o $@ -c $< -I$(DIR_INC) -I$(LIB_INCLUDES) -I$(LIB_HEAP_INCLUDES)
 
 clean:
 	rm -f $(DIR_OBJ)*.o

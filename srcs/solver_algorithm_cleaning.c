@@ -79,7 +79,7 @@ void		time_to_do_some_cleaning(t_map *map, t_graph_inf *inf)
 {
 	if (inf->mirror_links[0])
 		delite_mirror_links(inf);
-	make_color_white_again(map->start->next);
+	restore_meta_graph_info(map->start->next);
 	clean_ways(inf->ways); // set right bounds
 	clean_levels_and_flows(map->start);
 	inf->are_enough_ways_current = 0;

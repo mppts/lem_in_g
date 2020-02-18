@@ -11,7 +11,7 @@ void 		find_min_white_gray(t_link	*link, t_graph_inf *inf, t_link	**tmp_white, t
 	}
 	else if (link->flow)
 		return ;
-	else if (link->to != inf->ways[inf->current_way_number][inf->current_pos_in_way - 2])
+	else if (link->to != inf->ways[inf->current_way_number][inf->current_pos_in_way - 1])
 	{
 		if(*tmp_white && link->to->color == WHITE)
 			*tmp_white = (*tmp_white)->to->level > link->to->level ? link : *tmp_white;
@@ -67,7 +67,7 @@ t_room		*find_vertex(t_room *room, t_graph_inf *inf, t_map *map)
 	link = room->linked_to;
 	while (link)
 	{
-		if (link->to != inf->ways[inf->current_way_number][inf->current_pos_in_way - 2] && link->flow == 0)
+		if (link->to != inf->ways[inf->current_way_number][inf->current_pos_in_way - 1] && link->flow == 0)
 			find_min_white_gray(link, inf, &tmp_white, &tmp_gray);
 		link = link->next;
 	}

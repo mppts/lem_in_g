@@ -55,7 +55,7 @@ void		initialization_algo(t_graph_inf *inf, t_map *map, t_graph_inf *inf_min)
 	map->start->level = 0;
 	map->fin->level = 0;
 	map->start->color = WHITE;
-	//restore_meta_graph_info(map->room_start);
+	restore_meta_graph_info(map->room_start);
 	//put_zero_to_flows(map->room_start);
 	if (inf_min->are_enough_ways_current > inf->are_enough_ways_current && inf->are_enough_ways_current != 0)
 	{
@@ -93,7 +93,7 @@ void		algo2(t_map *map, t_graph_inf *inf, t_graph_inf *inf_min)
 		while (dfs(map->start, inf, map))
 		{
 			map->start->color = WHITE;
-			if (enough_ways(map, inf) || inf->two_flows)
+			if (/*enough_ways(map, inf) ||*/ inf->two_flows)
 				break ;
 			(inf->current_way_number)++;
 		}

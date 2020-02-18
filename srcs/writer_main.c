@@ -263,11 +263,12 @@ void				prep_paths(t_path *p)
 	}
 }
 
+
 void				writer(t_map *map)
 {
-	sort_paths(map);
+	//sort_paths(map);
 	//print_paths(map->path);
-	prep_paths(map->path);
-	count_ants_for_paths(map);
+	//prep_paths(map->path);
+	//count_ants_for_paths(map);
 	push_ants(map);
 }

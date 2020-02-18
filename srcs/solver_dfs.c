@@ -48,7 +48,6 @@ t_room		*find_vertex(t_room *room, t_graph_inf *inf, t_map *map)
 			find_min_white_gray(link, inf, &tmp_white, &tmp_gray);
 		link = link->next;
 	}
-	link = NULL;
 	if (tmp_white && tmp_gray)
 		link = ((tmp_white->to->level) <= (tmp_gray->to->level)) ? tmp_white : tmp_gray;
 	else if (tmp_gray && !tmp_white)
@@ -57,7 +56,10 @@ t_room		*find_vertex(t_room *room, t_graph_inf *inf, t_map *map)
 		link = tmp_white;
 	if (link)
 	{
-		link->flow = 1;
+		if (link->mirror->flow)
+			link->mirror->flow = 0;
+		else
+			link->flow = 1;
 		return (link->to);
 	}
 	return (NULL);
@@ -86,7 +88,6 @@ t_room		*find_vertex_from_gray(t_room *room, t_graph_inf *inf, t_map *map)
 	tmp_white = NULL;
 	tmp_gray = NULL;
 	link = room->linked_to;
-	/*
 	while (link)
 	{
 		find_min_white_gray(link, inf, &tmp_white, &tmp_gray);
@@ -103,13 +104,7 @@ t_room		*find_vertex_from_gray(t_room *room, t_graph_inf *inf, t_map *map)
 	if (link->mirror->flow)
 		link->mirror->flow = 0;
 	return (link->to);
-	*/
-	if((tmp_gray = find_link_with_mirror_flow(room)))
-	{
-		//add_mirror_links(tmp_gray, inf);
-		tmp_gray->mirror->flow = 0;
-		return (tmp_gray->to);
-	}
+	
 
 }
 
@@ -117,14 +112,15 @@ int 		push_vertex(t_room *room, t_graph_inf *inf, t_map *map)
 {
 	if (room->color == GRAY)
 	{
-		find_vertex_from_gray(room, inf, map);
-		return (1);
+		inf->ways[inf->current_way_number][inf->current_pos_in_way] = find_vertex(room, inf, map);
+		room->color = BLACK;
+		return (0);
 	}
 	else if (room->color == WHITE)
 	{
+		inf->ways[inf->current_way_number][inf->current_pos_in_way] = find_vertex(room, inf, map);
 		if (room != map->start)
 			room->color = GRAY;
-		inf->ways[inf->current_way_number][inf->current_pos_in_way] = find_vertex(room, inf, map);
 		return (0);
 	}
 	else

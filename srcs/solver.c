@@ -21,15 +21,15 @@ void		restore_meta_graph_info(t_room *source)
 	while (tmp != source)
 	{
 		tmp->color = WHITE;
-		tmp->level = 0;
-		tmp->potential = 0;
-		tmp->lev_m_pot = 0;
+		//tmp->level = 0;
+		//tmp->potential = 0;
+		//tmp->lev_m_pot = 0;
 		tmp = tmp->next;
 	}
 	tmp->color = WHITE;
-	tmp->level = 0;
-	tmp->potential = 0;
-	tmp->lev_m_pot = 0;
+	//tmp->level = 0;
+	//tmp->potential = 0;
+	//tmp->lev_m_pot = 0;
 }
 
 void		put_zero_to_flows(t_room *source)
@@ -207,6 +207,56 @@ void		put_ways_to_list(t_graph_inf *inf, t_map *map)
 	map->path = head;
 }
 
+void		add_path(t_map *map, t_link *link)
+{
+	t_path	tmp;
+	t_room	*r;
+	t_link	*l;
+	int		i;
+
+	//tmp.path = malloc(sizeof(t_room) * map->num_nodes);
+	r = link->to;
+	l = link;
+	i = 0;
+	while(r != map->start)
+	{
+
+		while (l && l->mirror->flow == 0)
+			l = l->next;
+		if (!l)
+			break;
+		if (l->mirror->flow == 1)
+		{
+			i++;
+			printf("[%s] - %ld", l->mirror->to->name, l->mirror->to->level);
+			l->mirror->flow = 0;
+		}
+		r = l->to;
+		l = r->linked_to;
+	}
+	printf("len is %d\n", i);
+}
+
+void		find_paths(t_graph_inf *inf, t_map *map)
+{
+	int		i;
+	t_link	*l;
+
+	i = 0;
+	l = map->fin->linked_to;
+	while (i < inf->current_way_number)
+	{
+		while (l && l->mirror->flow == 0)
+			l = l->next;
+		if (l && l->mirror->flow)
+			{
+				add_path(map, l);
+				i++;
+			}
+		l = l->next;
+	}
+}
+
 void		solver(t_map *map)
 {
 	t_graph_inf	inf;
@@ -223,8 +273,9 @@ void		solver(t_map *map)
 	inf.total_ways_len = 0;
 	inf.are_enough_ways_current = 0;
 	inf.are_enough_ways_new = 0;
-	algo3(map, &inf, &inf_min);
-	put_ways_to_list(&inf, map);
+	algo2(map, &inf, &inf_min);
+	find_paths(&inf, map);
+	//put_ways_to_list(&inf, map);
 	free_ways(&inf);
 	free_ways(&inf_min);
 	free(inf.mirror_links);

@@ -6,7 +6,7 @@
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/13 15:38:25 by limry             #+#    #+#             */
-/*   Updated: 2020/02/13 15:38:25 by limry            ###   ########.fr       */
+/*   Updated: 2020/02/19 16:31:26 by kona             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,16 @@ void		parse_errors(t_map *map)
 					NULL, NULL, map);
 }
 
-int			main(void)
+int			main(int ac, char *av[])
 {
 	t_map	map;
+	int		fd;
 
+	fd = open(av[1], O_RDONLY);
 	init_map(&map);
-	parse_map(&map);
+	parse_map(&map, fd);
 	parse_errors(&map);
-	solver(&map);
+	solver_edmonds_karp(&map);
 	if (map.path == NULL)
 		man_err_map("Error: no way for the honest ant...=(\n",
 					NULL, NULL, &map);
@@ -44,5 +46,6 @@ int			main(void)
 	if (map.dstr->data)
 		write(1, map.dstr->data, map.dstr->len);
 	del_map(&map);
+	close(fd);
 	return 0;
 }

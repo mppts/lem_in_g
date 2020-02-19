@@ -123,6 +123,195 @@ lem_in/fast:
 	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/build
 .PHONY : lem_in/fast
 
+libbinheap/srcs/bin_free.o: libbinheap/srcs/bin_free.c.o
+
+.PHONY : libbinheap/srcs/bin_free.o
+
+# target to build an object file
+libbinheap/srcs/bin_free.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libbinheap/srcs/bin_free.c.o
+.PHONY : libbinheap/srcs/bin_free.c.o
+
+libbinheap/srcs/bin_free.i: libbinheap/srcs/bin_free.c.i
+
+.PHONY : libbinheap/srcs/bin_free.i
+
+# target to preprocess a source file
+libbinheap/srcs/bin_free.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libbinheap/srcs/bin_free.c.i
+.PHONY : libbinheap/srcs/bin_free.c.i
+
+libbinheap/srcs/bin_free.s: libbinheap/srcs/bin_free.c.s
+
+.PHONY : libbinheap/srcs/bin_free.s
+
+# target to generate assembly for a file
+libbinheap/srcs/bin_free.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libbinheap/srcs/bin_free.c.s
+.PHONY : libbinheap/srcs/bin_free.c.s
+
+libbinheap/srcs/bin_get_root.o: libbinheap/srcs/bin_get_root.c.o
+
+.PHONY : libbinheap/srcs/bin_get_root.o
+
+# target to build an object file
+libbinheap/srcs/bin_get_root.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libbinheap/srcs/bin_get_root.c.o
+.PHONY : libbinheap/srcs/bin_get_root.c.o
+
+libbinheap/srcs/bin_get_root.i: libbinheap/srcs/bin_get_root.c.i
+
+.PHONY : libbinheap/srcs/bin_get_root.i
+
+# target to preprocess a source file
+libbinheap/srcs/bin_get_root.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libbinheap/srcs/bin_get_root.c.i
+.PHONY : libbinheap/srcs/bin_get_root.c.i
+
+libbinheap/srcs/bin_get_root.s: libbinheap/srcs/bin_get_root.c.s
+
+.PHONY : libbinheap/srcs/bin_get_root.s
+
+# target to generate assembly for a file
+libbinheap/srcs/bin_get_root.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libbinheap/srcs/bin_get_root.c.s
+.PHONY : libbinheap/srcs/bin_get_root.c.s
+
+libbinheap/srcs/bin_inc_key.o: libbinheap/srcs/bin_inc_key.c.o
+
+.PHONY : libbinheap/srcs/bin_inc_key.o
+
+# target to build an object file
+libbinheap/srcs/bin_inc_key.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libbinheap/srcs/bin_inc_key.c.o
+.PHONY : libbinheap/srcs/bin_inc_key.c.o
+
+libbinheap/srcs/bin_inc_key.i: libbinheap/srcs/bin_inc_key.c.i
+
+.PHONY : libbinheap/srcs/bin_inc_key.i
+
+# target to preprocess a source file
+libbinheap/srcs/bin_inc_key.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libbinheap/srcs/bin_inc_key.c.i
+.PHONY : libbinheap/srcs/bin_inc_key.c.i
+
+libbinheap/srcs/bin_inc_key.s: libbinheap/srcs/bin_inc_key.c.s
+
+.PHONY : libbinheap/srcs/bin_inc_key.s
+
+# target to generate assembly for a file
+libbinheap/srcs/bin_inc_key.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libbinheap/srcs/bin_inc_key.c.s
+.PHONY : libbinheap/srcs/bin_inc_key.c.s
+
+libbinheap/srcs/bin_insert.o: libbinheap/srcs/bin_insert.c.o
+
+.PHONY : libbinheap/srcs/bin_insert.o
+
+# target to build an object file
+libbinheap/srcs/bin_insert.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libbinheap/srcs/bin_insert.c.o
+.PHONY : libbinheap/srcs/bin_insert.c.o
+
+libbinheap/srcs/bin_insert.i: libbinheap/srcs/bin_insert.c.i
+
+.PHONY : libbinheap/srcs/bin_insert.i
+
+# target to preprocess a source file
+libbinheap/srcs/bin_insert.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libbinheap/srcs/bin_insert.c.i
+.PHONY : libbinheap/srcs/bin_insert.c.i
+
+libbinheap/srcs/bin_insert.s: libbinheap/srcs/bin_insert.c.s
+
+.PHONY : libbinheap/srcs/bin_insert.s
+
+# target to generate assembly for a file
+libbinheap/srcs/bin_insert.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libbinheap/srcs/bin_insert.c.s
+.PHONY : libbinheap/srcs/bin_insert.c.s
+
+libbinheap/srcs/bin_remove_root.o: libbinheap/srcs/bin_remove_root.c.o
+
+.PHONY : libbinheap/srcs/bin_remove_root.o
+
+# target to build an object file
+libbinheap/srcs/bin_remove_root.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libbinheap/srcs/bin_remove_root.c.o
+.PHONY : libbinheap/srcs/bin_remove_root.c.o
+
+libbinheap/srcs/bin_remove_root.i: libbinheap/srcs/bin_remove_root.c.i
+
+.PHONY : libbinheap/srcs/bin_remove_root.i
+
+# target to preprocess a source file
+libbinheap/srcs/bin_remove_root.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libbinheap/srcs/bin_remove_root.c.i
+.PHONY : libbinheap/srcs/bin_remove_root.c.i
+
+libbinheap/srcs/bin_remove_root.s: libbinheap/srcs/bin_remove_root.c.s
+
+.PHONY : libbinheap/srcs/bin_remove_root.s
+
+# target to generate assembly for a file
+libbinheap/srcs/bin_remove_root.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libbinheap/srcs/bin_remove_root.c.s
+.PHONY : libbinheap/srcs/bin_remove_root.c.s
+
+libbinheap/srcs/bin_swap.o: libbinheap/srcs/bin_swap.c.o
+
+.PHONY : libbinheap/srcs/bin_swap.o
+
+# target to build an object file
+libbinheap/srcs/bin_swap.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libbinheap/srcs/bin_swap.c.o
+.PHONY : libbinheap/srcs/bin_swap.c.o
+
+libbinheap/srcs/bin_swap.i: libbinheap/srcs/bin_swap.c.i
+
+.PHONY : libbinheap/srcs/bin_swap.i
+
+# target to preprocess a source file
+libbinheap/srcs/bin_swap.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libbinheap/srcs/bin_swap.c.i
+.PHONY : libbinheap/srcs/bin_swap.c.i
+
+libbinheap/srcs/bin_swap.s: libbinheap/srcs/bin_swap.c.s
+
+.PHONY : libbinheap/srcs/bin_swap.s
+
+# target to generate assembly for a file
+libbinheap/srcs/bin_swap.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libbinheap/srcs/bin_swap.c.s
+.PHONY : libbinheap/srcs/bin_swap.c.s
+
+libbinheap/srcs/binary_init.o: libbinheap/srcs/binary_init.c.o
+
+.PHONY : libbinheap/srcs/binary_init.o
+
+# target to build an object file
+libbinheap/srcs/binary_init.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libbinheap/srcs/binary_init.c.o
+.PHONY : libbinheap/srcs/binary_init.c.o
+
+libbinheap/srcs/binary_init.i: libbinheap/srcs/binary_init.c.i
+
+.PHONY : libbinheap/srcs/binary_init.i
+
+# target to preprocess a source file
+libbinheap/srcs/binary_init.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libbinheap/srcs/binary_init.c.i
+.PHONY : libbinheap/srcs/binary_init.c.i
+
+libbinheap/srcs/binary_init.s: libbinheap/srcs/binary_init.c.s
+
+.PHONY : libbinheap/srcs/binary_init.s
+
+# target to generate assembly for a file
+libbinheap/srcs/binary_init.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libbinheap/srcs/binary_init.c.s
+.PHONY : libbinheap/srcs/binary_init.c.s
+
 libft/srcs/dstr/dstr.o: libft/srcs/dstr/dstr.c.o
 
 .PHONY : libft/srcs/dstr/dstr.o
@@ -149,6 +338,33 @@ libft/srcs/dstr/dstr.s: libft/srcs/dstr/dstr.c.s
 libft/srcs/dstr/dstr.c.s:
 	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libft/srcs/dstr/dstr.c.s
 .PHONY : libft/srcs/dstr/dstr.c.s
+
+srcs/dijkstra.o: srcs/dijkstra.c.o
+
+.PHONY : srcs/dijkstra.o
+
+# target to build an object file
+srcs/dijkstra.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/dijkstra.c.o
+.PHONY : srcs/dijkstra.c.o
+
+srcs/dijkstra.i: srcs/dijkstra.c.i
+
+.PHONY : srcs/dijkstra.i
+
+# target to preprocess a source file
+srcs/dijkstra.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/dijkstra.c.i
+.PHONY : srcs/dijkstra.c.i
+
+srcs/dijkstra.s: srcs/dijkstra.c.s
+
+.PHONY : srcs/dijkstra.s
+
+# target to generate assembly for a file
+srcs/dijkstra.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/dijkstra.c.s
+.PHONY : srcs/dijkstra.c.s
 
 srcs/main.o: srcs/main.c.o
 
@@ -501,6 +717,60 @@ srcs/solver_dfs.c.s:
 	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_dfs.c.s
 .PHONY : srcs/solver_dfs.c.s
 
+srcs/solver_ek.o: srcs/solver_ek.c.o
+
+.PHONY : srcs/solver_ek.o
+
+# target to build an object file
+srcs/solver_ek.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_ek.c.o
+.PHONY : srcs/solver_ek.c.o
+
+srcs/solver_ek.i: srcs/solver_ek.c.i
+
+.PHONY : srcs/solver_ek.i
+
+# target to preprocess a source file
+srcs/solver_ek.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_ek.c.i
+.PHONY : srcs/solver_ek.c.i
+
+srcs/solver_ek.s: srcs/solver_ek.c.s
+
+.PHONY : srcs/solver_ek.s
+
+# target to generate assembly for a file
+srcs/solver_ek.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_ek.c.s
+.PHONY : srcs/solver_ek.c.s
+
+srcs/solver_tools.o: srcs/solver_tools.c.o
+
+.PHONY : srcs/solver_tools.o
+
+# target to build an object file
+srcs/solver_tools.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_tools.c.o
+.PHONY : srcs/solver_tools.c.o
+
+srcs/solver_tools.i: srcs/solver_tools.c.i
+
+.PHONY : srcs/solver_tools.i
+
+# target to preprocess a source file
+srcs/solver_tools.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_tools.c.i
+.PHONY : srcs/solver_tools.c.i
+
+srcs/solver_tools.s: srcs/solver_tools.c.s
+
+.PHONY : srcs/solver_tools.s
+
+# target to generate assembly for a file
+srcs/solver_tools.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_tools.c.s
+.PHONY : srcs/solver_tools.c.s
+
 srcs/writer_main.o: srcs/writer_main.c.o
 
 .PHONY : srcs/writer_main.o
@@ -537,9 +807,33 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... lem_in"
 	@echo "... edit_cache"
+	@echo "... libbinheap/srcs/bin_free.o"
+	@echo "... libbinheap/srcs/bin_free.i"
+	@echo "... libbinheap/srcs/bin_free.s"
+	@echo "... libbinheap/srcs/bin_get_root.o"
+	@echo "... libbinheap/srcs/bin_get_root.i"
+	@echo "... libbinheap/srcs/bin_get_root.s"
+	@echo "... libbinheap/srcs/bin_inc_key.o"
+	@echo "... libbinheap/srcs/bin_inc_key.i"
+	@echo "... libbinheap/srcs/bin_inc_key.s"
+	@echo "... libbinheap/srcs/bin_insert.o"
+	@echo "... libbinheap/srcs/bin_insert.i"
+	@echo "... libbinheap/srcs/bin_insert.s"
+	@echo "... libbinheap/srcs/bin_remove_root.o"
+	@echo "... libbinheap/srcs/bin_remove_root.i"
+	@echo "... libbinheap/srcs/bin_remove_root.s"
+	@echo "... libbinheap/srcs/bin_swap.o"
+	@echo "... libbinheap/srcs/bin_swap.i"
+	@echo "... libbinheap/srcs/bin_swap.s"
+	@echo "... libbinheap/srcs/binary_init.o"
+	@echo "... libbinheap/srcs/binary_init.i"
+	@echo "... libbinheap/srcs/binary_init.s"
 	@echo "... libft/srcs/dstr/dstr.o"
 	@echo "... libft/srcs/dstr/dstr.i"
 	@echo "... libft/srcs/dstr/dstr.s"
+	@echo "... srcs/dijkstra.o"
+	@echo "... srcs/dijkstra.i"
+	@echo "... srcs/dijkstra.s"
 	@echo "... srcs/main.o"
 	@echo "... srcs/main.i"
 	@echo "... srcs/main.s"
@@ -579,6 +873,12 @@ help:
 	@echo "... srcs/solver_dfs.o"
 	@echo "... srcs/solver_dfs.i"
 	@echo "... srcs/solver_dfs.s"
+	@echo "... srcs/solver_ek.o"
+	@echo "... srcs/solver_ek.i"
+	@echo "... srcs/solver_ek.s"
+	@echo "... srcs/solver_tools.o"
+	@echo "... srcs/solver_tools.i"
+	@echo "... srcs/solver_tools.s"
 	@echo "... srcs/writer_main.o"
 	@echo "... srcs/writer_main.i"
 	@echo "... srcs/writer_main.s"

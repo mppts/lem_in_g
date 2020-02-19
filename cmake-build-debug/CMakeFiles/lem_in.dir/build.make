@@ -252,6 +252,136 @@ CMakeFiles/lem_in.dir/srcs/solver_algorithm_cleaning.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lem_in.dir/srcs/solver_algorithm_cleaning.c.s"
 	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/kona/CLionProjects/lm_full/srcs/solver_algorithm_cleaning.c -o CMakeFiles/lem_in.dir/srcs/solver_algorithm_cleaning.c.s
 
+CMakeFiles/lem_in.dir/srcs/solver_ek.c.o: CMakeFiles/lem_in.dir/flags.make
+CMakeFiles/lem_in.dir/srcs/solver_ek.c.o: ../srcs/solver_ek.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kona/CLionProjects/lm_full/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/lem_in.dir/srcs/solver_ek.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/srcs/solver_ek.c.o   -c /home/kona/CLionProjects/lm_full/srcs/solver_ek.c
+
+CMakeFiles/lem_in.dir/srcs/solver_ek.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lem_in.dir/srcs/solver_ek.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/kona/CLionProjects/lm_full/srcs/solver_ek.c > CMakeFiles/lem_in.dir/srcs/solver_ek.c.i
+
+CMakeFiles/lem_in.dir/srcs/solver_ek.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lem_in.dir/srcs/solver_ek.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/kona/CLionProjects/lm_full/srcs/solver_ek.c -o CMakeFiles/lem_in.dir/srcs/solver_ek.c.s
+
+CMakeFiles/lem_in.dir/srcs/dijkstra.c.o: CMakeFiles/lem_in.dir/flags.make
+CMakeFiles/lem_in.dir/srcs/dijkstra.c.o: ../srcs/dijkstra.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kona/CLionProjects/lm_full/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/lem_in.dir/srcs/dijkstra.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/srcs/dijkstra.c.o   -c /home/kona/CLionProjects/lm_full/srcs/dijkstra.c
+
+CMakeFiles/lem_in.dir/srcs/dijkstra.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lem_in.dir/srcs/dijkstra.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/kona/CLionProjects/lm_full/srcs/dijkstra.c > CMakeFiles/lem_in.dir/srcs/dijkstra.c.i
+
+CMakeFiles/lem_in.dir/srcs/dijkstra.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lem_in.dir/srcs/dijkstra.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/kona/CLionProjects/lm_full/srcs/dijkstra.c -o CMakeFiles/lem_in.dir/srcs/dijkstra.c.s
+
+CMakeFiles/lem_in.dir/libbinheap/srcs/binary_init.c.o: CMakeFiles/lem_in.dir/flags.make
+CMakeFiles/lem_in.dir/libbinheap/srcs/binary_init.c.o: ../libbinheap/srcs/binary_init.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kona/CLionProjects/lm_full/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/lem_in.dir/libbinheap/srcs/binary_init.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/libbinheap/srcs/binary_init.c.o   -c /home/kona/CLionProjects/lm_full/libbinheap/srcs/binary_init.c
+
+CMakeFiles/lem_in.dir/libbinheap/srcs/binary_init.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lem_in.dir/libbinheap/srcs/binary_init.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/kona/CLionProjects/lm_full/libbinheap/srcs/binary_init.c > CMakeFiles/lem_in.dir/libbinheap/srcs/binary_init.c.i
+
+CMakeFiles/lem_in.dir/libbinheap/srcs/binary_init.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lem_in.dir/libbinheap/srcs/binary_init.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/kona/CLionProjects/lm_full/libbinheap/srcs/binary_init.c -o CMakeFiles/lem_in.dir/libbinheap/srcs/binary_init.c.s
+
+CMakeFiles/lem_in.dir/libbinheap/srcs/bin_swap.c.o: CMakeFiles/lem_in.dir/flags.make
+CMakeFiles/lem_in.dir/libbinheap/srcs/bin_swap.c.o: ../libbinheap/srcs/bin_swap.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kona/CLionProjects/lm_full/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/lem_in.dir/libbinheap/srcs/bin_swap.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/libbinheap/srcs/bin_swap.c.o   -c /home/kona/CLionProjects/lm_full/libbinheap/srcs/bin_swap.c
+
+CMakeFiles/lem_in.dir/libbinheap/srcs/bin_swap.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lem_in.dir/libbinheap/srcs/bin_swap.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/kona/CLionProjects/lm_full/libbinheap/srcs/bin_swap.c > CMakeFiles/lem_in.dir/libbinheap/srcs/bin_swap.c.i
+
+CMakeFiles/lem_in.dir/libbinheap/srcs/bin_swap.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lem_in.dir/libbinheap/srcs/bin_swap.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/kona/CLionProjects/lm_full/libbinheap/srcs/bin_swap.c -o CMakeFiles/lem_in.dir/libbinheap/srcs/bin_swap.c.s
+
+CMakeFiles/lem_in.dir/libbinheap/srcs/bin_remove_root.c.o: CMakeFiles/lem_in.dir/flags.make
+CMakeFiles/lem_in.dir/libbinheap/srcs/bin_remove_root.c.o: ../libbinheap/srcs/bin_remove_root.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kona/CLionProjects/lm_full/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/lem_in.dir/libbinheap/srcs/bin_remove_root.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/libbinheap/srcs/bin_remove_root.c.o   -c /home/kona/CLionProjects/lm_full/libbinheap/srcs/bin_remove_root.c
+
+CMakeFiles/lem_in.dir/libbinheap/srcs/bin_remove_root.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lem_in.dir/libbinheap/srcs/bin_remove_root.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/kona/CLionProjects/lm_full/libbinheap/srcs/bin_remove_root.c > CMakeFiles/lem_in.dir/libbinheap/srcs/bin_remove_root.c.i
+
+CMakeFiles/lem_in.dir/libbinheap/srcs/bin_remove_root.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lem_in.dir/libbinheap/srcs/bin_remove_root.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/kona/CLionProjects/lm_full/libbinheap/srcs/bin_remove_root.c -o CMakeFiles/lem_in.dir/libbinheap/srcs/bin_remove_root.c.s
+
+CMakeFiles/lem_in.dir/libbinheap/srcs/bin_free.c.o: CMakeFiles/lem_in.dir/flags.make
+CMakeFiles/lem_in.dir/libbinheap/srcs/bin_free.c.o: ../libbinheap/srcs/bin_free.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kona/CLionProjects/lm_full/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/lem_in.dir/libbinheap/srcs/bin_free.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/libbinheap/srcs/bin_free.c.o   -c /home/kona/CLionProjects/lm_full/libbinheap/srcs/bin_free.c
+
+CMakeFiles/lem_in.dir/libbinheap/srcs/bin_free.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lem_in.dir/libbinheap/srcs/bin_free.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/kona/CLionProjects/lm_full/libbinheap/srcs/bin_free.c > CMakeFiles/lem_in.dir/libbinheap/srcs/bin_free.c.i
+
+CMakeFiles/lem_in.dir/libbinheap/srcs/bin_free.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lem_in.dir/libbinheap/srcs/bin_free.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/kona/CLionProjects/lm_full/libbinheap/srcs/bin_free.c -o CMakeFiles/lem_in.dir/libbinheap/srcs/bin_free.c.s
+
+CMakeFiles/lem_in.dir/libbinheap/srcs/bin_insert.c.o: CMakeFiles/lem_in.dir/flags.make
+CMakeFiles/lem_in.dir/libbinheap/srcs/bin_insert.c.o: ../libbinheap/srcs/bin_insert.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kona/CLionProjects/lm_full/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/lem_in.dir/libbinheap/srcs/bin_insert.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/libbinheap/srcs/bin_insert.c.o   -c /home/kona/CLionProjects/lm_full/libbinheap/srcs/bin_insert.c
+
+CMakeFiles/lem_in.dir/libbinheap/srcs/bin_insert.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lem_in.dir/libbinheap/srcs/bin_insert.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/kona/CLionProjects/lm_full/libbinheap/srcs/bin_insert.c > CMakeFiles/lem_in.dir/libbinheap/srcs/bin_insert.c.i
+
+CMakeFiles/lem_in.dir/libbinheap/srcs/bin_insert.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lem_in.dir/libbinheap/srcs/bin_insert.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/kona/CLionProjects/lm_full/libbinheap/srcs/bin_insert.c -o CMakeFiles/lem_in.dir/libbinheap/srcs/bin_insert.c.s
+
+CMakeFiles/lem_in.dir/libbinheap/srcs/bin_inc_key.c.o: CMakeFiles/lem_in.dir/flags.make
+CMakeFiles/lem_in.dir/libbinheap/srcs/bin_inc_key.c.o: ../libbinheap/srcs/bin_inc_key.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kona/CLionProjects/lm_full/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/lem_in.dir/libbinheap/srcs/bin_inc_key.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/libbinheap/srcs/bin_inc_key.c.o   -c /home/kona/CLionProjects/lm_full/libbinheap/srcs/bin_inc_key.c
+
+CMakeFiles/lem_in.dir/libbinheap/srcs/bin_inc_key.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lem_in.dir/libbinheap/srcs/bin_inc_key.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/kona/CLionProjects/lm_full/libbinheap/srcs/bin_inc_key.c > CMakeFiles/lem_in.dir/libbinheap/srcs/bin_inc_key.c.i
+
+CMakeFiles/lem_in.dir/libbinheap/srcs/bin_inc_key.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lem_in.dir/libbinheap/srcs/bin_inc_key.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/kona/CLionProjects/lm_full/libbinheap/srcs/bin_inc_key.c -o CMakeFiles/lem_in.dir/libbinheap/srcs/bin_inc_key.c.s
+
+CMakeFiles/lem_in.dir/libbinheap/srcs/bin_get_root.c.o: CMakeFiles/lem_in.dir/flags.make
+CMakeFiles/lem_in.dir/libbinheap/srcs/bin_get_root.c.o: ../libbinheap/srcs/bin_get_root.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kona/CLionProjects/lm_full/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/lem_in.dir/libbinheap/srcs/bin_get_root.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/libbinheap/srcs/bin_get_root.c.o   -c /home/kona/CLionProjects/lm_full/libbinheap/srcs/bin_get_root.c
+
+CMakeFiles/lem_in.dir/libbinheap/srcs/bin_get_root.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lem_in.dir/libbinheap/srcs/bin_get_root.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/kona/CLionProjects/lm_full/libbinheap/srcs/bin_get_root.c > CMakeFiles/lem_in.dir/libbinheap/srcs/bin_get_root.c.i
+
+CMakeFiles/lem_in.dir/libbinheap/srcs/bin_get_root.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lem_in.dir/libbinheap/srcs/bin_get_root.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/kona/CLionProjects/lm_full/libbinheap/srcs/bin_get_root.c -o CMakeFiles/lem_in.dir/libbinheap/srcs/bin_get_root.c.s
+
+CMakeFiles/lem_in.dir/srcs/solver_tools.c.o: CMakeFiles/lem_in.dir/flags.make
+CMakeFiles/lem_in.dir/srcs/solver_tools.c.o: ../srcs/solver_tools.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/kona/CLionProjects/lm_full/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/lem_in.dir/srcs/solver_tools.c.o"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/srcs/solver_tools.c.o   -c /home/kona/CLionProjects/lm_full/srcs/solver_tools.c
+
+CMakeFiles/lem_in.dir/srcs/solver_tools.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lem_in.dir/srcs/solver_tools.c.i"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /home/kona/CLionProjects/lm_full/srcs/solver_tools.c > CMakeFiles/lem_in.dir/srcs/solver_tools.c.i
+
+CMakeFiles/lem_in.dir/srcs/solver_tools.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lem_in.dir/srcs/solver_tools.c.s"
+	/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /home/kona/CLionProjects/lm_full/srcs/solver_tools.c -o CMakeFiles/lem_in.dir/srcs/solver_tools.c.s
+
 # Object files for target lem_in
 lem_in_OBJECTS = \
 "CMakeFiles/lem_in.dir/srcs/main.c.o" \
@@ -268,7 +398,17 @@ lem_in_OBJECTS = \
 "CMakeFiles/lem_in.dir/srcs/solver_algorithm.c.o" \
 "CMakeFiles/lem_in.dir/srcs/solver_dfs.c.o" \
 "CMakeFiles/lem_in.dir/srcs/writer_main.c.o" \
-"CMakeFiles/lem_in.dir/srcs/solver_algorithm_cleaning.c.o"
+"CMakeFiles/lem_in.dir/srcs/solver_algorithm_cleaning.c.o" \
+"CMakeFiles/lem_in.dir/srcs/solver_ek.c.o" \
+"CMakeFiles/lem_in.dir/srcs/dijkstra.c.o" \
+"CMakeFiles/lem_in.dir/libbinheap/srcs/binary_init.c.o" \
+"CMakeFiles/lem_in.dir/libbinheap/srcs/bin_swap.c.o" \
+"CMakeFiles/lem_in.dir/libbinheap/srcs/bin_remove_root.c.o" \
+"CMakeFiles/lem_in.dir/libbinheap/srcs/bin_free.c.o" \
+"CMakeFiles/lem_in.dir/libbinheap/srcs/bin_insert.c.o" \
+"CMakeFiles/lem_in.dir/libbinheap/srcs/bin_inc_key.c.o" \
+"CMakeFiles/lem_in.dir/libbinheap/srcs/bin_get_root.c.o" \
+"CMakeFiles/lem_in.dir/srcs/solver_tools.c.o"
 
 # External object files for target lem_in
 lem_in_EXTERNAL_OBJECTS =
@@ -288,10 +428,20 @@ lem_in: CMakeFiles/lem_in.dir/srcs/solver_algorithm.c.o
 lem_in: CMakeFiles/lem_in.dir/srcs/solver_dfs.c.o
 lem_in: CMakeFiles/lem_in.dir/srcs/writer_main.c.o
 lem_in: CMakeFiles/lem_in.dir/srcs/solver_algorithm_cleaning.c.o
+lem_in: CMakeFiles/lem_in.dir/srcs/solver_ek.c.o
+lem_in: CMakeFiles/lem_in.dir/srcs/dijkstra.c.o
+lem_in: CMakeFiles/lem_in.dir/libbinheap/srcs/binary_init.c.o
+lem_in: CMakeFiles/lem_in.dir/libbinheap/srcs/bin_swap.c.o
+lem_in: CMakeFiles/lem_in.dir/libbinheap/srcs/bin_remove_root.c.o
+lem_in: CMakeFiles/lem_in.dir/libbinheap/srcs/bin_free.c.o
+lem_in: CMakeFiles/lem_in.dir/libbinheap/srcs/bin_insert.c.o
+lem_in: CMakeFiles/lem_in.dir/libbinheap/srcs/bin_inc_key.c.o
+lem_in: CMakeFiles/lem_in.dir/libbinheap/srcs/bin_get_root.c.o
+lem_in: CMakeFiles/lem_in.dir/srcs/solver_tools.c.o
 lem_in: CMakeFiles/lem_in.dir/build.make
 lem_in: ../libft/libft.a
 lem_in: CMakeFiles/lem_in.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/kona/CLionProjects/lm_full/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Linking C executable lem_in"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/kona/CLionProjects/lm_full/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Linking C executable lem_in"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/lem_in.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

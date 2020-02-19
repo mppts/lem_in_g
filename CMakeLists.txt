@@ -24,7 +24,17 @@ add_executable(lem_in
                 srcs/solver_algorithm.c
                 srcs/solver_dfs.c
                 srcs/writer_main.c
-                srcs/solver_algorithm_cleaning.c)
+                srcs/solver_algorithm_cleaning.c
+                srcs/solver_ek.c
+                srcs/dijkstra.c
+        libbinheap/srcs/binary_init.c
+        libbinheap/srcs/bin_swap.c
+        libbinheap/srcs/bin_remove_root.c
+        libbinheap/srcs/bin_free.c
+        libbinheap/srcs/bin_insert.c
+        libbinheap/srcs/bin_inc_key.c
+        libbinheap/srcs/bin_get_root.c
+        srcs/solver_tools.c)
 
 target_link_libraries(lem_in ${CMAKE_SOURCE_DIR}/libft/libft.a)
 

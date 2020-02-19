@@ -6,7 +6,7 @@
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/05 12:03:07 by limry             #+#    #+#             */
-/*   Updated: 2020/02/16 04:38:40 by kona             ###   ########.fr       */
+/*   Updated: 2020/02/19 18:46:47 by kona             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 # include <dstr.h>
 # include <get_next_line.h>
 # include <stdlib.h>
+# include <fcntl.h>
+# include <binary_heap.h>
 
 # define FALSE 0
 # define TRUE 1
@@ -67,6 +69,7 @@ typedef struct		s_link
 	struct s_link	*prev;
 	struct s_link	*mirror;
 	int64_t			path_id;
+	int32_t			w;
 	int				flow;
 }					t_link;
 /*
@@ -119,20 +122,37 @@ typedef struct		s_flag
 
 typedef struct		s_deq
 {
-	t_room			**deq;
+	void			**deq;
 	int64_t			rear;
+	size_t			num_elems;
+	size_t			size_of_elem;
 	int64_t			begin;
 }					t_deq;
 
-typedef struct		s_positioner
+typedef struct		s_paths_arr
 {
-	uint64_t		offset;
-	t_path 			*path;
-}					t_positioner;
+	int				amt_steps_cost;
+	int				current_path;
+	t_room			**path;
+	t_room			***path_starts;
+	int				*path_lens;
+
+}					t_paths_arr;
+
+
+typedef struct		s_solver
+{
+	t_map			*map;
+	t_bin_heap 		*heap;
+	t_deq			*deq;
+	t_paths_arr		*paths_arr;
+	t_paths_arr		*paths_arr_solution;
+}					t_solver;
+
 /*
 ** parse_map.c
 */
-void				parse_map(t_map *map);
+void				parse_map(t_map *map, int fd);
 void				init_map(t_map *map);
 /*
 ** parse_room.c
@@ -194,10 +214,27 @@ void				writer(t_map *map);
 void				time_to_do_some_cleaning(t_map *map, t_graph_inf *inf);
 int					dfs_pl(t_room *start, t_graph_inf *inf, t_map *map);
 t_room				*bfs_level(t_room *sink, t_map *map);
-t_room				*bfs_potential(t_room *start, t_map *map);
 void				put_zero_to_flows(t_room *source);
 void				restore_meta_graph_info(t_room *source);
 void				algo3(t_map *map, t_graph_inf *inf, t_graph_inf *inf_min);
+
+/*
+** dequeue.c
+*/
+t_deq				*deq_init_malloc(size_t num_elems, size_t size_of_elem);
+void				*deq_pop_rear(t_deq *sdeq);
+t_room				*deq_pop_front(t_deq *sdeq);
+void				deq_push_back(void *room, t_deq *sdeq);
+void				deq_remove_unsafe(t_deq *deq);
+/*
+** solver_tools.c
+*/
+void				init_solver(t_solver	*slv, t_map *g);
+
+
+int					bin_dijkstra(t_map *g, t_bin_heap *heap);
+void				solver_edmonds_karp(t_map *g);
+t_room				*bfs_potential(t_room *start, t_room *final, t_map *map, t_deq *deq);
 
 
 

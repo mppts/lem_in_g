@@ -93,6 +93,27 @@
 		<Unit filename="/home/kona/CLionProjects/lm_full/includes/lem_in.h">
 			<Option target="lem_in"/>
 		</Unit>
+		<Unit filename="/home/kona/CLionProjects/lm_full/libbinheap/srcs/bin_free.c">
+			<Option target="lem_in"/>
+		</Unit>
+		<Unit filename="/home/kona/CLionProjects/lm_full/libbinheap/srcs/bin_get_root.c">
+			<Option target="lem_in"/>
+		</Unit>
+		<Unit filename="/home/kona/CLionProjects/lm_full/libbinheap/srcs/bin_inc_key.c">
+			<Option target="lem_in"/>
+		</Unit>
+		<Unit filename="/home/kona/CLionProjects/lm_full/libbinheap/srcs/bin_insert.c">
+			<Option target="lem_in"/>
+		</Unit>
+		<Unit filename="/home/kona/CLionProjects/lm_full/libbinheap/srcs/bin_remove_root.c">
+			<Option target="lem_in"/>
+		</Unit>
+		<Unit filename="/home/kona/CLionProjects/lm_full/libbinheap/srcs/bin_swap.c">
+			<Option target="lem_in"/>
+		</Unit>
+		<Unit filename="/home/kona/CLionProjects/lm_full/libbinheap/srcs/binary_init.c">
+			<Option target="lem_in"/>
+		</Unit>
 		<Unit filename="/home/kona/CLionProjects/lm_full/libft/includes/dstr.h">
 			<Option target="lem_in"/>
 		</Unit>
@@ -103,6 +124,9 @@
 			<Option target="lem_in"/>
 		</Unit>
 		<Unit filename="/home/kona/CLionProjects/lm_full/libft/srcs/dstr/dstr.c">
+			<Option target="lem_in"/>
+		</Unit>
+		<Unit filename="/home/kona/CLionProjects/lm_full/srcs/dijkstra.c">
 			<Option target="lem_in"/>
 		</Unit>
 		<Unit filename="/home/kona/CLionProjects/lm_full/srcs/main.c">
@@ -142,6 +166,12 @@
 			<Option target="lem_in"/>
 		</Unit>
 		<Unit filename="/home/kona/CLionProjects/lm_full/srcs/solver_dfs.c">
+			<Option target="lem_in"/>
+		</Unit>
+		<Unit filename="/home/kona/CLionProjects/lm_full/srcs/solver_ek.c">
+			<Option target="lem_in"/>
+		</Unit>
+		<Unit filename="/home/kona/CLionProjects/lm_full/srcs/solver_tools.c">
 			<Option target="lem_in"/>
 		</Unit>
 		<Unit filename="/home/kona/CLionProjects/lm_full/srcs/writer_main.c">

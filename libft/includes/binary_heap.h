@@ -23,8 +23,9 @@ void				bin_heap_swap(t_bin_node *a, t_bin_node *b);
 t_bin_node			*bin_get_root(t_bin_heap *heap);
 int					bin_heap_insert(t_bin_heap *heap, void *data, uint64_t key);
 void				bin_remove_root(t_bin_heap *heap);
-int 				bin_inc_key(t_bin_heap *heap, uint64_t i, uint64_t key);
-int 				bin_decr_key(t_bin_heap *heap, uint64_t i, uint64_t key);
+int					bin_inc_key(t_bin_heap *heap, uint64_t i, uint64_t key);
+int					bin_decr_key(t_bin_heap *heap, uint64_t i, uint64_t key);
 void				*bin_pop_root(void *new_min, t_bin_heap *heap);
+void				bin_clean_heap_data(t_bin_heap* heap);
 
 #endif

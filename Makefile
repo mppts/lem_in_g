@@ -10,10 +10,6 @@ LIB = libft.a
 DIR_LIB	= $(LIB:.a=/)
 LIB_INCLUDES = $(LIB:.a=/includes/)
 
-LIB_HEAP = libbinheap.a
-DIR_LIB_HEAP = $(LIB_HEAP:.a=/)
-LIB_HEAP_INCLUDES = $(LIB_HEAP:.a=/includes/)
-
 SOURCE = \
          main.c\
          man_err.c\
@@ -43,8 +39,8 @@ SRCS = $(SOURCE:%.c=$(DIR_SRC)%.c)
 
 all: $(NAME)
 
-$(NAME): $(LIB) $(LIB_HEAP) directories $(OBJS)
-	gcc -g3 $(FLAGS) -o $(NAME) $(OBJS) -L$(DIR_LIB) -lft -L$(DIR_LIB_HEAP) -lbinheap
+$(NAME): $(LIB) directories $(OBJS)
+	gcc -g3 $(FLAGS) -o $(NAME) $(OBJS) -L$(DIR_LIB) -lft
 
 directories:
 	mkdir -p $(DIR_OBJ)
@@ -52,11 +48,8 @@ directories:
 $(LIB):
 	$(MAKE) -C $(DIR_LIB)
 
-$(LIB_HEAP):
-	$(MAKE) -C $(DIR_LIB_HEAP)
-
 $(DIR_OBJ)%.o: $(DIR_SRC)%.c
-	gcc -g3 $(FLAGS) -o $@ -c $< -I$(DIR_INC) -I$(LIB_INCLUDES) -I$(LIB_HEAP_INCLUDES)
+	gcc -g3 $(FLAGS) -o $@ -c $< -I$(DIR_INC) -I$(LIB_INCLUDES)
 
 clean:
 	rm -f $(DIR_OBJ)*.o

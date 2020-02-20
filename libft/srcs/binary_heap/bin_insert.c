@@ -16,10 +16,10 @@ void			heapify_up(t_bin_heap *heap)
 int				bin_heap_insert(t_bin_heap *heap, void *data, uint64_t key)
 {
 	if (heap->num_nodes > heap->capacity)
-		return (-1);
+		return (0);
 	(heap->nodes + heap->num_nodes)->data = data;
 	(heap->nodes + heap->num_nodes)->key = key;
 	heapify_up(heap);
 	heap->num_nodes++;
-	return (0);
+	return (1);
 }

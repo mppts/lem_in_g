@@ -11,6 +11,7 @@ STRCH_DIR		=	str_change
 STR_DIR			=	string
 TONUM_DIR		=	to_num
 DSTR_DIR		=	dstr
+BINHEAP_DIR		=	binary_heap
 
 CHK		=	ft_isalnum.c \
 			ft_isalpha.c \
@@ -89,6 +90,14 @@ TONUM	=	ft_atoli.c \
 
 DSTR	=	dstr.c
 
+BIN_HEAP = bin_free.c\
+		 bin_get_root.c\
+         bin_inc_key.c\
+         bin_insert.c\
+         bin_remove_root.c\
+         bin_swap.c\
+         binary_init.c\
+
 FILES			+=	$(CHK) \
 					$(GNL) \
 					$(LST) \
@@ -97,7 +106,8 @@ FILES			+=	$(CHK) \
 					$(STRCH) \
 					$(STR) \
 					$(TONUM) \
-					$(DSTR)
+					$(DSTR) \
+					$(BIN_HEAP)
 
 FILES_WITH_PATH	=	$(addprefix ./$(SRC_DIR)/$(CHK_DIR)/, $(CHK))\
 					$(addprefix ./$(SRC_DIR)/$(GNL_DIR)/, $(GNL))\
@@ -107,7 +117,8 @@ FILES_WITH_PATH	=	$(addprefix ./$(SRC_DIR)/$(CHK_DIR)/, $(CHK))\
 					$(addprefix ./$(SRC_DIR)/$(STRCH_DIR)/, $(STRCH))\
 					$(addprefix ./$(SRC_DIR)/$(STR_DIR)/, $(STR))\
 					$(addprefix ./$(SRC_DIR)/$(TONUM_DIR)/, $(TONUM))\
-					$(addprefix ./$(SRC_DIR)/$(DSTR_DIR)/, $(DSTR))
+					$(addprefix ./$(SRC_DIR)/$(DSTR_DIR)/, $(DSTR)) \
+					$(addprefix ./$(SRC_DIR)/$(BINHEAP_DIR)/, $(BIN_HEAP))
 
 OBJ				=	$(FILES:%.c=%.o)
 OBJS			=	$(FILES:%.c=./$(OBJ_DIR)/%.o)

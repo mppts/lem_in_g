@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /home/kona/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/193.6015.37/bin/cmake/linux/bin/cmake
+CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
 
 # The command to remove a file.
-RM = /home/kona/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/193.6015.37/bin/cmake/linux/bin/cmake -E remove -f
+RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/kona/CLionProjects/lm_full
+CMAKE_SOURCE_DIR = /Users/limry/CLionProjects/lm_full
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/kona/CLionProjects/lm_full/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/limry/CLionProjects/lm_full/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /home/kona/CLionProjects/lm_full/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/home/kona/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/193.6015.37/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/home/kona/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/193.6015.37/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/kona/CLionProjects/lm_full/cmake-build-debug/CMakeFiles /home/kona/CLionProjects/lm_full/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/limry/CLionProjects/lm_full/cmake-build-debug/CMakeFiles /Users/limry/CLionProjects/lm_full/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/kona/CLionProjects/lm_full/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/limry/CLionProjects/lm_full/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -123,194 +123,194 @@ lem_in/fast:
 	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/build
 .PHONY : lem_in/fast
 
-libbinheap/srcs/bin_free.o: libbinheap/srcs/bin_free.c.o
+libft/srcs/binary_heap/bin_free.o: libft/srcs/binary_heap/bin_free.c.o
 
-.PHONY : libbinheap/srcs/bin_free.o
-
-# target to build an object file
-libbinheap/srcs/bin_free.c.o:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libbinheap/srcs/bin_free.c.o
-.PHONY : libbinheap/srcs/bin_free.c.o
-
-libbinheap/srcs/bin_free.i: libbinheap/srcs/bin_free.c.i
-
-.PHONY : libbinheap/srcs/bin_free.i
-
-# target to preprocess a source file
-libbinheap/srcs/bin_free.c.i:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libbinheap/srcs/bin_free.c.i
-.PHONY : libbinheap/srcs/bin_free.c.i
-
-libbinheap/srcs/bin_free.s: libbinheap/srcs/bin_free.c.s
-
-.PHONY : libbinheap/srcs/bin_free.s
-
-# target to generate assembly for a file
-libbinheap/srcs/bin_free.c.s:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libbinheap/srcs/bin_free.c.s
-.PHONY : libbinheap/srcs/bin_free.c.s
-
-libbinheap/srcs/bin_get_root.o: libbinheap/srcs/bin_get_root.c.o
-
-.PHONY : libbinheap/srcs/bin_get_root.o
+.PHONY : libft/srcs/binary_heap/bin_free.o
 
 # target to build an object file
-libbinheap/srcs/bin_get_root.c.o:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libbinheap/srcs/bin_get_root.c.o
-.PHONY : libbinheap/srcs/bin_get_root.c.o
+libft/srcs/binary_heap/bin_free.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_free.c.o
+.PHONY : libft/srcs/binary_heap/bin_free.c.o
 
-libbinheap/srcs/bin_get_root.i: libbinheap/srcs/bin_get_root.c.i
+libft/srcs/binary_heap/bin_free.i: libft/srcs/binary_heap/bin_free.c.i
 
-.PHONY : libbinheap/srcs/bin_get_root.i
+.PHONY : libft/srcs/binary_heap/bin_free.i
 
 # target to preprocess a source file
-libbinheap/srcs/bin_get_root.c.i:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libbinheap/srcs/bin_get_root.c.i
-.PHONY : libbinheap/srcs/bin_get_root.c.i
+libft/srcs/binary_heap/bin_free.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_free.c.i
+.PHONY : libft/srcs/binary_heap/bin_free.c.i
 
-libbinheap/srcs/bin_get_root.s: libbinheap/srcs/bin_get_root.c.s
+libft/srcs/binary_heap/bin_free.s: libft/srcs/binary_heap/bin_free.c.s
 
-.PHONY : libbinheap/srcs/bin_get_root.s
+.PHONY : libft/srcs/binary_heap/bin_free.s
 
 # target to generate assembly for a file
-libbinheap/srcs/bin_get_root.c.s:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libbinheap/srcs/bin_get_root.c.s
-.PHONY : libbinheap/srcs/bin_get_root.c.s
+libft/srcs/binary_heap/bin_free.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_free.c.s
+.PHONY : libft/srcs/binary_heap/bin_free.c.s
 
-libbinheap/srcs/bin_inc_key.o: libbinheap/srcs/bin_inc_key.c.o
+libft/srcs/binary_heap/bin_get_root.o: libft/srcs/binary_heap/bin_get_root.c.o
 
-.PHONY : libbinheap/srcs/bin_inc_key.o
+.PHONY : libft/srcs/binary_heap/bin_get_root.o
 
 # target to build an object file
-libbinheap/srcs/bin_inc_key.c.o:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libbinheap/srcs/bin_inc_key.c.o
-.PHONY : libbinheap/srcs/bin_inc_key.c.o
+libft/srcs/binary_heap/bin_get_root.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_get_root.c.o
+.PHONY : libft/srcs/binary_heap/bin_get_root.c.o
 
-libbinheap/srcs/bin_inc_key.i: libbinheap/srcs/bin_inc_key.c.i
+libft/srcs/binary_heap/bin_get_root.i: libft/srcs/binary_heap/bin_get_root.c.i
 
-.PHONY : libbinheap/srcs/bin_inc_key.i
+.PHONY : libft/srcs/binary_heap/bin_get_root.i
 
 # target to preprocess a source file
-libbinheap/srcs/bin_inc_key.c.i:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libbinheap/srcs/bin_inc_key.c.i
-.PHONY : libbinheap/srcs/bin_inc_key.c.i
+libft/srcs/binary_heap/bin_get_root.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_get_root.c.i
+.PHONY : libft/srcs/binary_heap/bin_get_root.c.i
 
-libbinheap/srcs/bin_inc_key.s: libbinheap/srcs/bin_inc_key.c.s
+libft/srcs/binary_heap/bin_get_root.s: libft/srcs/binary_heap/bin_get_root.c.s
 
-.PHONY : libbinheap/srcs/bin_inc_key.s
+.PHONY : libft/srcs/binary_heap/bin_get_root.s
 
 # target to generate assembly for a file
-libbinheap/srcs/bin_inc_key.c.s:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libbinheap/srcs/bin_inc_key.c.s
-.PHONY : libbinheap/srcs/bin_inc_key.c.s
+libft/srcs/binary_heap/bin_get_root.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_get_root.c.s
+.PHONY : libft/srcs/binary_heap/bin_get_root.c.s
 
-libbinheap/srcs/bin_insert.o: libbinheap/srcs/bin_insert.c.o
+libft/srcs/binary_heap/bin_inc_key.o: libft/srcs/binary_heap/bin_inc_key.c.o
 
-.PHONY : libbinheap/srcs/bin_insert.o
+.PHONY : libft/srcs/binary_heap/bin_inc_key.o
 
 # target to build an object file
-libbinheap/srcs/bin_insert.c.o:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libbinheap/srcs/bin_insert.c.o
-.PHONY : libbinheap/srcs/bin_insert.c.o
+libft/srcs/binary_heap/bin_inc_key.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_inc_key.c.o
+.PHONY : libft/srcs/binary_heap/bin_inc_key.c.o
 
-libbinheap/srcs/bin_insert.i: libbinheap/srcs/bin_insert.c.i
+libft/srcs/binary_heap/bin_inc_key.i: libft/srcs/binary_heap/bin_inc_key.c.i
 
-.PHONY : libbinheap/srcs/bin_insert.i
+.PHONY : libft/srcs/binary_heap/bin_inc_key.i
 
 # target to preprocess a source file
-libbinheap/srcs/bin_insert.c.i:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libbinheap/srcs/bin_insert.c.i
-.PHONY : libbinheap/srcs/bin_insert.c.i
+libft/srcs/binary_heap/bin_inc_key.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_inc_key.c.i
+.PHONY : libft/srcs/binary_heap/bin_inc_key.c.i
 
-libbinheap/srcs/bin_insert.s: libbinheap/srcs/bin_insert.c.s
+libft/srcs/binary_heap/bin_inc_key.s: libft/srcs/binary_heap/bin_inc_key.c.s
 
-.PHONY : libbinheap/srcs/bin_insert.s
+.PHONY : libft/srcs/binary_heap/bin_inc_key.s
 
 # target to generate assembly for a file
-libbinheap/srcs/bin_insert.c.s:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libbinheap/srcs/bin_insert.c.s
-.PHONY : libbinheap/srcs/bin_insert.c.s
+libft/srcs/binary_heap/bin_inc_key.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_inc_key.c.s
+.PHONY : libft/srcs/binary_heap/bin_inc_key.c.s
 
-libbinheap/srcs/bin_remove_root.o: libbinheap/srcs/bin_remove_root.c.o
+libft/srcs/binary_heap/bin_insert.o: libft/srcs/binary_heap/bin_insert.c.o
 
-.PHONY : libbinheap/srcs/bin_remove_root.o
+.PHONY : libft/srcs/binary_heap/bin_insert.o
 
 # target to build an object file
-libbinheap/srcs/bin_remove_root.c.o:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libbinheap/srcs/bin_remove_root.c.o
-.PHONY : libbinheap/srcs/bin_remove_root.c.o
+libft/srcs/binary_heap/bin_insert.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_insert.c.o
+.PHONY : libft/srcs/binary_heap/bin_insert.c.o
 
-libbinheap/srcs/bin_remove_root.i: libbinheap/srcs/bin_remove_root.c.i
+libft/srcs/binary_heap/bin_insert.i: libft/srcs/binary_heap/bin_insert.c.i
 
-.PHONY : libbinheap/srcs/bin_remove_root.i
+.PHONY : libft/srcs/binary_heap/bin_insert.i
 
 # target to preprocess a source file
-libbinheap/srcs/bin_remove_root.c.i:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libbinheap/srcs/bin_remove_root.c.i
-.PHONY : libbinheap/srcs/bin_remove_root.c.i
+libft/srcs/binary_heap/bin_insert.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_insert.c.i
+.PHONY : libft/srcs/binary_heap/bin_insert.c.i
 
-libbinheap/srcs/bin_remove_root.s: libbinheap/srcs/bin_remove_root.c.s
+libft/srcs/binary_heap/bin_insert.s: libft/srcs/binary_heap/bin_insert.c.s
 
-.PHONY : libbinheap/srcs/bin_remove_root.s
+.PHONY : libft/srcs/binary_heap/bin_insert.s
 
 # target to generate assembly for a file
-libbinheap/srcs/bin_remove_root.c.s:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libbinheap/srcs/bin_remove_root.c.s
-.PHONY : libbinheap/srcs/bin_remove_root.c.s
+libft/srcs/binary_heap/bin_insert.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_insert.c.s
+.PHONY : libft/srcs/binary_heap/bin_insert.c.s
 
-libbinheap/srcs/bin_swap.o: libbinheap/srcs/bin_swap.c.o
+libft/srcs/binary_heap/bin_remove_root.o: libft/srcs/binary_heap/bin_remove_root.c.o
 
-.PHONY : libbinheap/srcs/bin_swap.o
+.PHONY : libft/srcs/binary_heap/bin_remove_root.o
 
 # target to build an object file
-libbinheap/srcs/bin_swap.c.o:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libbinheap/srcs/bin_swap.c.o
-.PHONY : libbinheap/srcs/bin_swap.c.o
+libft/srcs/binary_heap/bin_remove_root.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_remove_root.c.o
+.PHONY : libft/srcs/binary_heap/bin_remove_root.c.o
 
-libbinheap/srcs/bin_swap.i: libbinheap/srcs/bin_swap.c.i
+libft/srcs/binary_heap/bin_remove_root.i: libft/srcs/binary_heap/bin_remove_root.c.i
 
-.PHONY : libbinheap/srcs/bin_swap.i
+.PHONY : libft/srcs/binary_heap/bin_remove_root.i
 
 # target to preprocess a source file
-libbinheap/srcs/bin_swap.c.i:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libbinheap/srcs/bin_swap.c.i
-.PHONY : libbinheap/srcs/bin_swap.c.i
+libft/srcs/binary_heap/bin_remove_root.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_remove_root.c.i
+.PHONY : libft/srcs/binary_heap/bin_remove_root.c.i
 
-libbinheap/srcs/bin_swap.s: libbinheap/srcs/bin_swap.c.s
+libft/srcs/binary_heap/bin_remove_root.s: libft/srcs/binary_heap/bin_remove_root.c.s
 
-.PHONY : libbinheap/srcs/bin_swap.s
+.PHONY : libft/srcs/binary_heap/bin_remove_root.s
 
 # target to generate assembly for a file
-libbinheap/srcs/bin_swap.c.s:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libbinheap/srcs/bin_swap.c.s
-.PHONY : libbinheap/srcs/bin_swap.c.s
+libft/srcs/binary_heap/bin_remove_root.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_remove_root.c.s
+.PHONY : libft/srcs/binary_heap/bin_remove_root.c.s
 
-libbinheap/srcs/binary_init.o: libbinheap/srcs/binary_init.c.o
+libft/srcs/binary_heap/bin_swap.o: libft/srcs/binary_heap/bin_swap.c.o
 
-.PHONY : libbinheap/srcs/binary_init.o
+.PHONY : libft/srcs/binary_heap/bin_swap.o
 
 # target to build an object file
-libbinheap/srcs/binary_init.c.o:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libbinheap/srcs/binary_init.c.o
-.PHONY : libbinheap/srcs/binary_init.c.o
+libft/srcs/binary_heap/bin_swap.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_swap.c.o
+.PHONY : libft/srcs/binary_heap/bin_swap.c.o
 
-libbinheap/srcs/binary_init.i: libbinheap/srcs/binary_init.c.i
+libft/srcs/binary_heap/bin_swap.i: libft/srcs/binary_heap/bin_swap.c.i
 
-.PHONY : libbinheap/srcs/binary_init.i
+.PHONY : libft/srcs/binary_heap/bin_swap.i
 
 # target to preprocess a source file
-libbinheap/srcs/binary_init.c.i:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libbinheap/srcs/binary_init.c.i
-.PHONY : libbinheap/srcs/binary_init.c.i
+libft/srcs/binary_heap/bin_swap.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_swap.c.i
+.PHONY : libft/srcs/binary_heap/bin_swap.c.i
 
-libbinheap/srcs/binary_init.s: libbinheap/srcs/binary_init.c.s
+libft/srcs/binary_heap/bin_swap.s: libft/srcs/binary_heap/bin_swap.c.s
 
-.PHONY : libbinheap/srcs/binary_init.s
+.PHONY : libft/srcs/binary_heap/bin_swap.s
 
 # target to generate assembly for a file
-libbinheap/srcs/binary_init.c.s:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libbinheap/srcs/binary_init.c.s
-.PHONY : libbinheap/srcs/binary_init.c.s
+libft/srcs/binary_heap/bin_swap.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_swap.c.s
+.PHONY : libft/srcs/binary_heap/bin_swap.c.s
+
+libft/srcs/binary_heap/binary_init.o: libft/srcs/binary_heap/binary_init.c.o
+
+.PHONY : libft/srcs/binary_heap/binary_init.o
+
+# target to build an object file
+libft/srcs/binary_heap/binary_init.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libft/srcs/binary_heap/binary_init.c.o
+.PHONY : libft/srcs/binary_heap/binary_init.c.o
+
+libft/srcs/binary_heap/binary_init.i: libft/srcs/binary_heap/binary_init.c.i
+
+.PHONY : libft/srcs/binary_heap/binary_init.i
+
+# target to preprocess a source file
+libft/srcs/binary_heap/binary_init.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libft/srcs/binary_heap/binary_init.c.i
+.PHONY : libft/srcs/binary_heap/binary_init.c.i
+
+libft/srcs/binary_heap/binary_init.s: libft/srcs/binary_heap/binary_init.c.s
+
+.PHONY : libft/srcs/binary_heap/binary_init.s
+
+# target to generate assembly for a file
+libft/srcs/binary_heap/binary_init.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libft/srcs/binary_heap/binary_init.c.s
+.PHONY : libft/srcs/binary_heap/binary_init.c.s
 
 libft/srcs/dstr/dstr.o: libft/srcs/dstr/dstr.c.o
 
@@ -805,29 +805,29 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... lem_in"
 	@echo "... edit_cache"
-	@echo "... libbinheap/srcs/bin_free.o"
-	@echo "... libbinheap/srcs/bin_free.i"
-	@echo "... libbinheap/srcs/bin_free.s"
-	@echo "... libbinheap/srcs/bin_get_root.o"
-	@echo "... libbinheap/srcs/bin_get_root.i"
-	@echo "... libbinheap/srcs/bin_get_root.s"
-	@echo "... libbinheap/srcs/bin_inc_key.o"
-	@echo "... libbinheap/srcs/bin_inc_key.i"
-	@echo "... libbinheap/srcs/bin_inc_key.s"
-	@echo "... libbinheap/srcs/bin_insert.o"
-	@echo "... libbinheap/srcs/bin_insert.i"
-	@echo "... libbinheap/srcs/bin_insert.s"
-	@echo "... libbinheap/srcs/bin_remove_root.o"
-	@echo "... libbinheap/srcs/bin_remove_root.i"
-	@echo "... libbinheap/srcs/bin_remove_root.s"
-	@echo "... libbinheap/srcs/bin_swap.o"
-	@echo "... libbinheap/srcs/bin_swap.i"
-	@echo "... libbinheap/srcs/bin_swap.s"
-	@echo "... libbinheap/srcs/binary_init.o"
-	@echo "... libbinheap/srcs/binary_init.i"
-	@echo "... libbinheap/srcs/binary_init.s"
+	@echo "... lem_in"
+	@echo "... libft/srcs/binary_heap/bin_free.o"
+	@echo "... libft/srcs/binary_heap/bin_free.i"
+	@echo "... libft/srcs/binary_heap/bin_free.s"
+	@echo "... libft/srcs/binary_heap/bin_get_root.o"
+	@echo "... libft/srcs/binary_heap/bin_get_root.i"
+	@echo "... libft/srcs/binary_heap/bin_get_root.s"
+	@echo "... libft/srcs/binary_heap/bin_inc_key.o"
+	@echo "... libft/srcs/binary_heap/bin_inc_key.i"
+	@echo "... libft/srcs/binary_heap/bin_inc_key.s"
+	@echo "... libft/srcs/binary_heap/bin_insert.o"
+	@echo "... libft/srcs/binary_heap/bin_insert.i"
+	@echo "... libft/srcs/binary_heap/bin_insert.s"
+	@echo "... libft/srcs/binary_heap/bin_remove_root.o"
+	@echo "... libft/srcs/binary_heap/bin_remove_root.i"
+	@echo "... libft/srcs/binary_heap/bin_remove_root.s"
+	@echo "... libft/srcs/binary_heap/bin_swap.o"
+	@echo "... libft/srcs/binary_heap/bin_swap.i"
+	@echo "... libft/srcs/binary_heap/bin_swap.s"
+	@echo "... libft/srcs/binary_heap/binary_init.o"
+	@echo "... libft/srcs/binary_heap/binary_init.i"
+	@echo "... libft/srcs/binary_heap/binary_init.s"
 	@echo "... libft/srcs/dstr/dstr.o"
 	@echo "... libft/srcs/dstr/dstr.i"
 	@echo "... libft/srcs/dstr/dstr.s"

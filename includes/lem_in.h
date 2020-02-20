@@ -6,7 +6,7 @@
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/05 12:03:07 by limry             #+#    #+#             */
-/*   Updated: 2020/02/20 03:17:15 by kona             ###   ########.fr       */
+/*   Updated: 2020/02/20 16:47:29 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,26 +125,24 @@ typedef struct		s_deq
 {
 	void			**deq;
 	int64_t			rear;
-	size_t			num_elems;
-	size_t			size_of_elem;
+	int64_t			num_elems;
+	int64_t			size_of_elem;
 	int64_t			begin;
 }					t_deq;
 
 typedef struct		s_paths_arr
 {
-	int				amt_steps_cost;
+	uint64_t		amt_steps_cost;
 	int				current_path;
 	int				num_paths;
 	t_room			**path;
 	t_room			***path_starts;
 	int				*path_lens;
-
 }					t_paths_arr;
 
 
 typedef struct		s_solver
 {
-	t_map			*map;
 	t_bin_heap 		*heap;
 	t_deq			*deq;
 	t_paths_arr		*paths_arr;
@@ -240,7 +238,6 @@ void				remove_solver(t_solver *slv);
 int					bin_dijkstra(t_map *g, t_bin_heap *heap, t_paths_arr *path_arr);
 void				solver_edmonds_karp(t_map *g);
 t_room				*bfs_potential(t_room *start, t_room *final, t_map *map, t_deq *deq);
-
 
 
 #endif

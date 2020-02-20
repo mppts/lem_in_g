@@ -256,7 +256,7 @@ void		find_paths(t_graph_inf *inf, t_map *map)
 		l = l->next;
 	}
 }
-
+/*
 void		solver(t_map *map)
 {
 	t_graph_inf	inf;
@@ -280,5 +280,5 @@ void		solver(t_map *map)
 	free_ways(&inf_min);
 	free(inf.mirror_links);
 }
-
+*/
 

@@ -88,7 +88,7 @@ void			init_map(t_map *map)
 	map->path = NULL;
 }
 
-void			parse_map(t_map *map)
+void			parse_map(t_map *map, int fd)
 {
 	char		*buf;
 	t_flag		flag;
@@ -97,7 +97,7 @@ void			parse_map(t_map *map)
 	flag.flag_end = 0;
 	flag.flag_start = 0;
 	buf = NULL;
-	while ((ret = get_next_line(0, &buf)))
+	while ((ret = get_next_line(fd, &buf)))
 	{
 		if (ret == -1)
 			break ;

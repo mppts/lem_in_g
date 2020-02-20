@@ -43,7 +43,7 @@ void		deq_remove_unsafe(t_deq *deq)
 	}
 }
 
-t_deq		*deq_init_malloc(size_t num_elems, size_t size_of_elem)
+t_deq		*deq_init_malloc(uint64_t num_elems, size_t size_of_elem)
 {
 	t_deq	*new;
 

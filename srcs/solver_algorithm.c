@@ -6,7 +6,7 @@
 /*   By: dorphan <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/12 16:38:24 by dorphan           #+#    #+#             */
-/*   Updated: 2020/02/16 04:38:41 by kona             ###   ########.fr       */
+/*   Updated: 2020/02/20 02:44:22 by kona             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,8 +83,7 @@ int		save_prev_result(t_graph_inf *inf, t_map *map, t_graph_inf *inf_min)
 	}
 	return (0);
 }
-
-
+/*
 void		algo2(t_map *map, t_graph_inf *inf, t_graph_inf *inf_min)
 {
 	while (bfs_level(map->fin, map))
@@ -93,7 +92,7 @@ void		algo2(t_map *map, t_graph_inf *inf, t_graph_inf *inf_min)
 		while (dfs(map->start, inf, map))
 		{
 			map->start->color = WHITE;
-			if (/*enough_ways(map, inf) ||*/ inf->two_flows)
+			if ( inf->two_flows)
 				break ;
 			(inf->current_way_number)++;
 		}
@@ -134,4 +133,4 @@ void		algo3(t_map *map, t_graph_inf *inf, t_graph_inf *inf_min)
 		}
 	}
 }
-
+*/

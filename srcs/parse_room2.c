@@ -26,4 +26,5 @@ void	init_room(t_room *new, int x, int y, char *name)
 	new->path_id = 0;
 	new->ant = 0;
 	new->color = WHITE;
+	new->pred = NULL;
 }

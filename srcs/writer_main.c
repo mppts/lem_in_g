@@ -12,48 +12,6 @@
 
 #include "lem_in.h"
 
-void				ant_move(t_room *from, t_room *to)
-{
-
-}
-
-
-
-void				join_ant_move(t_map *map, t_positioner paths[map->ants],
-					int ants, int step)
-{
-	dstr_joinstr(map->dstr, "L");
-	dstr_joinstr(map->dstr, ft_itoa(ants + 1));
-	dstr_joinstr(map->dstr, "-");
-	dstr_joinstr(map->dstr, (paths[ants].path->path[step])->name);
-}
-
-void				generate_paths(t_map *map, t_positioner *paths)
-{
-	int				step;
-	int				ants;
-	int				ants_out;
-
-	step = 0;
-	ants_out = 0;
-	while (ants_out != map->ants)
-	{
-		ants = ants_out;
-		while (paths[ants].offset <= step)
-		{
-			if (step - paths[ants].offset != 0 && paths[ants].path->len > step - (int)paths[ants].offset)
-				join_ant_move(map, paths, ants, step - paths[ants].offset);
-			if (step - (paths[ants].offset) >= paths[ants].path->len - 1)
-				ants_out++;
-			if (++ants >= map->ants)
-				break ;
-			dstr_joinstr(map->dstr, " ");
-		}
-		step++;
-		dstr_joinstr(map->dstr, "\n");
-	}
-}
-
 /*
 void				writer(t_map *map)
 {

@@ -6,7 +6,7 @@
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/05 12:03:07 by limry             #+#    #+#             */
-/*   Updated: 2020/02/19 18:46:47 by kona             ###   ########.fr       */
+/*   Updated: 2020/02/20 03:17:15 by kona             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,6 +84,7 @@ typedef struct		s_room
 	int64_t			lev_m_pot;
 	int				color;
 	t_link			*linked_to;
+	struct s_room	*pred;
 	struct s_room	*next;
 	struct s_room	*prev;
 	int				x;
@@ -133,6 +134,7 @@ typedef struct		s_paths_arr
 {
 	int				amt_steps_cost;
 	int				current_path;
+	int				num_paths;
 	t_room			**path;
 	t_room			***path_starts;
 	int				*path_lens;
@@ -192,6 +194,7 @@ void				restore_meta_graph_info(t_room *source);
 int					rooms_calc(t_room *source);
 int					way_len_calc(t_room **way);
 
+
 /*
 ** solve_algorithm.c
 */
@@ -221,7 +224,7 @@ void				algo3(t_map *map, t_graph_inf *inf, t_graph_inf *inf_min);
 /*
 ** dequeue.c
 */
-t_deq				*deq_init_malloc(size_t num_elems, size_t size_of_elem);
+t_deq				*deq_init_malloc(uint64_t num_elems, size_t size_of_elem);
 void				*deq_pop_rear(t_deq *sdeq);
 t_room				*deq_pop_front(t_deq *sdeq);
 void				deq_push_back(void *room, t_deq *sdeq);
@@ -229,13 +232,14 @@ void				deq_remove_unsafe(t_deq *deq);
 /*
 ** solver_tools.c
 */
-void				init_solver(t_solver	*slv, t_map *g);
+t_solver			*init_solver(t_map *g);
+void				slv_clean_paths(t_paths_arr *solution, t_map *g);
+void				remove_solver(t_solver *slv);
 
 
-int					bin_dijkstra(t_map *g, t_bin_heap *heap);
+int					bin_dijkstra(t_map *g, t_bin_heap *heap, t_paths_arr *path_arr);
 void				solver_edmonds_karp(t_map *g);
 t_room				*bfs_potential(t_room *start, t_room *final, t_map *map, t_deq *deq);
-
 
 
 

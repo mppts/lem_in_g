@@ -339,6 +339,33 @@ libft/srcs/dstr/dstr.c.s:
 	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libft/srcs/dstr/dstr.c.s
 .PHONY : libft/srcs/dstr/dstr.c.s
 
+srcs/deque2.o: srcs/deque2.c.o
+
+.PHONY : srcs/deque2.o
+
+# target to build an object file
+srcs/deque2.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/deque2.c.o
+.PHONY : srcs/deque2.c.o
+
+srcs/deque2.i: srcs/deque2.c.i
+
+.PHONY : srcs/deque2.i
+
+# target to preprocess a source file
+srcs/deque2.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/deque2.c.i
+.PHONY : srcs/deque2.c.i
+
+srcs/deque2.s: srcs/deque2.c.s
+
+.PHONY : srcs/deque2.s
+
+# target to generate assembly for a file
+srcs/deque2.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/deque2.c.s
+.PHONY : srcs/deque2.c.s
+
 srcs/dijkstra.o: srcs/dijkstra.c.o
 
 .PHONY : srcs/dijkstra.o
@@ -831,6 +858,9 @@ help:
 	@echo "... libft/srcs/dstr/dstr.o"
 	@echo "... libft/srcs/dstr/dstr.i"
 	@echo "... libft/srcs/dstr/dstr.s"
+	@echo "... srcs/deque2.o"
+	@echo "... srcs/deque2.i"
+	@echo "... srcs/deque2.s"
 	@echo "... srcs/dijkstra.o"
 	@echo "... srcs/dijkstra.i"
 	@echo "... srcs/dijkstra.s"

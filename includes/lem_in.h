@@ -6,7 +6,7 @@
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/05 12:03:07 by limry             #+#    #+#             */
-/*   Updated: 2020/02/20 16:47:29 by limry            ###   ########.fr       */
+/*   Updated: 2020/02/20 20:51:21 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -227,15 +227,16 @@ void				*deq_pop_rear(t_deq *sdeq);
 t_room				*deq_pop_front(t_deq *sdeq);
 void				deq_push_back(void *room, t_deq *sdeq);
 void				deq_remove_unsafe(t_deq *deq);
+void				deq_clear_data(t_deq *deq, uint64_t num_elems, size_t size_of_elem);
 /*
 ** solver_tools.c
 */
 t_solver			*init_solver(t_map *g);
-void				slv_clean_paths(t_paths_arr *solution, t_map *g);
+void				slv_clean_paths(t_paths_arr *path, t_map *g);
 void				remove_solver(t_solver *slv);
 
 
-int					bin_dijkstra(t_map *g, t_bin_heap *heap, t_paths_arr *path_arr);
+int					bin_dijkstra(t_map *g, t_bin_heap *heap);
 void				solver_edmonds_karp(t_map *g);
 t_room				*bfs_potential(t_room *start, t_room *final, t_map *map, t_deq *deq);
 

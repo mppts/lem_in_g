@@ -35,7 +35,7 @@ add_executable(lem_in
         libft/srcs/binary_heap/bin_inc_key.c
         libft/srcs/binary_heap/bin_get_root.c
         srcs/solver_tools.c
-        )
+        srcs/deque2.c)
 
 target_link_libraries(lem_in ${CMAKE_SOURCE_DIR}/libft/libft.a)
 

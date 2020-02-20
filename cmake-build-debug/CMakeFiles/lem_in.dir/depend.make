@@ -28,6 +28,13 @@ CMakeFiles/lem_in.dir/libft/srcs/dstr/dstr.c.o: ../libft/includes/dstr.h
 CMakeFiles/lem_in.dir/libft/srcs/dstr/dstr.c.o: ../libft/includes/libft.h
 CMakeFiles/lem_in.dir/libft/srcs/dstr/dstr.c.o: ../libft/srcs/dstr/dstr.c
 
+CMakeFiles/lem_in.dir/srcs/deque2.c.o: ../includes/lem_in.h
+CMakeFiles/lem_in.dir/srcs/deque2.c.o: ../libft/includes/binary_heap.h
+CMakeFiles/lem_in.dir/srcs/deque2.c.o: ../libft/includes/dstr.h
+CMakeFiles/lem_in.dir/srcs/deque2.c.o: ../libft/includes/get_next_line.h
+CMakeFiles/lem_in.dir/srcs/deque2.c.o: ../libft/includes/libft.h
+CMakeFiles/lem_in.dir/srcs/deque2.c.o: ../srcs/deque2.c
+
 CMakeFiles/lem_in.dir/srcs/dijkstra.c.o: ../includes/lem_in.h
 CMakeFiles/lem_in.dir/srcs/dijkstra.c.o: ../libft/includes/binary_heap.h
 CMakeFiles/lem_in.dir/srcs/dijkstra.c.o: ../libft/includes/dstr.h

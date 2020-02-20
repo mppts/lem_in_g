@@ -6,7 +6,7 @@
 /*   By: dorphan <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/12 16:43:01 by dorphan           #+#    #+#             */
-/*   Updated: 2020/02/20 14:31:21 by limry            ###   ########.fr       */
+/*   Updated: 2020/02/20 14:48:57 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,8 +33,6 @@ t_room			*bfs_potential(t_room *start, t_room *final,
 				if (link->to != final)
 					deq_push_back(link->to, deq);
 				link->to->potential = room->potential + 1;
-				//link->to->lev_m_pot = link->to->level - link->to->potential;
-				//link->w = room->potential - link->to->potential + link->w;
 			}
 			link = link->next;
 		}

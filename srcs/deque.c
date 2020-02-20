@@ -51,15 +51,11 @@ t_deq		*deq_init_malloc(uint64_t num_elems, size_t size_of_elem)
 		return (NULL);
 	if (!(new = malloc(sizeof(t_deq))))
 		return (NULL);
-	if (!(new->deq = malloc(sizeof(num_elems * size_of_elem))))
+	if (!(new->deq = malloc(num_elems * size_of_elem)))
 	{
 		free(new);
 		return (NULL);
 	}
-	ft_bzero(new->deq, num_elems * size_of_elem);
-	new->rear = -1;
-	new->begin = 0;
-	new->num_elems = num_elems;
-	new->size_of_elem = size_of_elem;
+	deq_clear_data(new, num_elems, size_of_elem);
 	return (new);
 }

@@ -25,18 +25,19 @@ t_paths_arr		*slv_error_cleaning(int step, t_paths_arr *solution)
 	return (NULL);
 }
 
-void			slv_clean_paths(t_paths_arr *solution, t_map *g)
+void			slv_clean_paths(t_paths_arr *path, t_map *g)
 {
 	int			max_path_num;
 
 	max_path_num = g->start->num_linked_to > g->fin->num_linked_to ?
 				   g->start->num_linked_to : g->fin->num_linked_to;
-	ft_bzero(solution->path, sizeof(t_room*) * g->num_nodes);
-	ft_bzero(solution->path_starts, sizeof(t_room**) * max_path_num);
-	ft_bzero(solution->path_lens, sizeof(int) * max_path_num);
-	solution->path_starts = &solution->path;
-	solution->amt_steps_cost = 0;
-	solution->num_paths = 0;
+	ft_bzero(path->path, sizeof(t_room*) * g->num_nodes);
+	ft_bzero(path->path_starts, sizeof(t_room**) * max_path_num);
+	ft_bzero(path->path_lens, sizeof(int) * max_path_num);
+	*path->path_starts = path->path;
+	path->amt_steps_cost = 0;
+	path->num_paths = 0;
+	path->current_path = 0;
 }
 
 t_paths_arr		*slv_init_solution(t_map *g)

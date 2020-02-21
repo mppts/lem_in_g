@@ -42,7 +42,7 @@ t_dstr			*dstr_init(char *data, uint64_t cap)
 	if (!cap)
 		cap = 4;
 	while (cap < new->len)
-		cap <<=1;
+		cap <<=1UL;
 	new->cap = cap;
 	new->data = ft_strnew(new->cap);
 	new->data[0] = '\0';
@@ -71,7 +71,7 @@ static void			dstr_expand(t_dstr *dstr, uint64_t len_s, char *s)
 
 	new_cap = dstr->cap;
 	while (new_cap <= len_s + dstr->len)
-		new_cap <<= 1;
+		new_cap <<= 1UL;
 	new = ft_strnew(new_cap);
 	ft_bzero(new, new_cap);
 	if (dstr->data)

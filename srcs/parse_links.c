@@ -48,7 +48,7 @@ static t_link	*add_new_link(t_room *from, t_room *to, t_map *map)
 	new->prev = NULL;
 	new->mirror = NULL;
 	new->path_id = 0;
-	new->flow = 0;
+	new->flow = 1;
 	if (!from->linked_to)
 		from->linked_to = new;
 	else

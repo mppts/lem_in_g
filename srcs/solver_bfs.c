@@ -26,7 +26,7 @@ t_room			*bfs_potential(t_room *start, t_room *final,
 		link = room->linked_to;
 		while (link)
 		{
-			if (link && link->to->potential == 0 && link->to != room && link->flow == 0)
+			if (link && link->to->potential == 0 && link->to != room && link->flow == 1)
 			{
 				if (!find_source && (link->to == final))
 					 find_source = link->to;

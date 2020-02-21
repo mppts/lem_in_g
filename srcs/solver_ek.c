@@ -1,5 +1,6 @@
 #include "lem_in.h"
 
+
 void		slv_copy_to_solution(t_solver *slv, t_map *g)
 {
 	int		max_path_num;
@@ -43,13 +44,15 @@ void			fill_link_from_to(t_room *from, t_room *to)
 	{
 		if (ln->to == to)
 		{
-			if (ln->mirror->flow)
+			if (ln->mirror->flow == 0)
 			{
-				ln->mirror->flow = 0;
-				ln->flow = 0;
+				ln->mirror->flow = 1;
 			}
 			else
-				ln->flow = 1;
+			{
+				ln->flow = 0;
+				ln->mirror->flow = -1;
+			}
 			break ;
 		}
 		ln = ln->next;
@@ -63,6 +66,7 @@ void			fulfill_path(t_paths_arr *path, t_map *g)
 	rm = g->fin;
 	while (rm != g->start)
 	{
+		rm->level = 1;
 		fill_link_from_to(rm->pred, rm);
 		rm = rm->pred;
 	}
@@ -73,10 +77,13 @@ void			refresh_potentials(t_room *start)
 	t_room		*tmp;
 
 	start->potential = 0;
+	start->level = 0;
+	start->sign = 0;
 	tmp = start->next;
 	while (tmp != start)
 	{
 		tmp->potential = INT64_MAX;
+		tmp->sign = 0;
 		tmp = tmp->next;
 	}
 }
@@ -91,7 +98,7 @@ void			push_path(t_paths_arr *path, t_map *g, t_deq *deq, t_link *lf)
 	link = lf->to->linked_to;
 	while(link)
 	{
-		if(link->flow)
+		if(link->flow == 0)
 		{
 			path->path_starts[path->current_path][path->path_lens[path->current_path]++] = link->to;
 			link = link->to->linked_to;
@@ -106,11 +113,10 @@ void			find_all_paths(t_paths_arr *path, t_map *g, t_deq *deq)
 {
 	t_link		*link;
 
-	deq_push_back(g->start, deq);
 	link = g->start->linked_to;
 	while (link)
 	{
-		if (link->flow)
+		if (link->flow  == 0)
 		{
 			push_path(path, g, deq, link);
 			path->amt_steps_cost += path->path_lens[path->current_path];
@@ -120,6 +126,26 @@ void			find_all_paths(t_paths_arr *path, t_map *g, t_deq *deq)
 			path->path_lens[path->current_path - 1];
 		}
 		link = link->next;
+	}
+}
+
+void			print_desc(t_paths_arr *pArr)
+{
+	int 		i;
+	int 		j;
+
+	i = 0;
+	while (i < pArr->current_path)
+	{
+		j = 0;
+		printf("%d: ",pArr->path_lens[i]);
+		while (j < pArr->path_lens[i])
+		{
+			printf("[%s] ", pArr->path_starts[i][j]->name);
+			j++;
+		}
+		printf("\n");
+		i++;
 	}
 }
 
@@ -133,14 +159,18 @@ void			solver_edmonds_karp(t_map *g)
 		g->start->potential = 0;
 		while (bin_dijkstra(g, slv->heap))
 		{
+			printf("\n");
 			fulfill_path(slv->paths_arr, g);
 			find_all_paths(slv->paths_arr, g, slv->deq);
+			print_desc(slv->paths_arr);
 			if (enough_solutions(slv, g))
 				break;
 			bin_clean_heap_data(slv->heap);
 			refresh_potentials(g->start);
+			g->fin->level = 1;
 		}
 	}
 	remove_solver(slv);
 }
+
 

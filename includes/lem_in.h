@@ -6,7 +6,7 @@
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/05 12:03:07 by limry             #+#    #+#             */
-/*   Updated: 2020/02/20 20:51:21 by limry            ###   ########.fr       */
+/*   Updated: 2020/02/21 22:56:24 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ typedef struct		s_room
 	char			*name;
 	int64_t			level;
 	int64_t			potential;
-	int64_t			lev_m_pot;
+	int64_t			sign;
 	int				color;
 	t_link			*linked_to;
 	struct s_room	*pred;

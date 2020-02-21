@@ -164,7 +164,7 @@ void		find_min_lev_m_pot_vertex(t_graph_inf *inf, t_link *link, t_link **min)
 		if (*min == NULL)
 			*min = link;
 		else
-			*min = link->to->lev_m_pot < (*min)->to->lev_m_pot ? link : *min;
+			*min = link->to->sign < (*min)->to->sign ? link : *min;
 	}
 }
 

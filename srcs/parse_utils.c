@@ -6,7 +6,7 @@
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/04 20:33:33 by limry             #+#    #+#             */
-/*   Updated: 2020/02/04 20:57:03 by limry            ###   ########.fr       */
+/*   Updated: 2020/02/21 22:51:27 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ int				is_num(char *str)
 	char		*tmp;
 
 	tmp = str;
+	if (*tmp == '-' || *tmp == '+')
+		tmp++;
 	while (*tmp)
 	{
 		if (!ft_isdigit(*tmp))

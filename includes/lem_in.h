@@ -81,6 +81,7 @@ typedef struct		s_room
 	char			*name;
 	int64_t			level;
 	int64_t			potential;
+	int64_t			delta;
 	int64_t			sign;
 	int				color;
 	t_link			*linked_to;
@@ -105,7 +106,7 @@ typedef struct		s_map
 	t_room			*fin;
 	uint64_t		num_nodes;
 	uint64_t		num_links;
-	int64_t			ants;
+	int				ants;
 	uint8_t			is_rooms_hashed;
 	uint64_t		len_rh;
 	t_room			**hashed_rooms;
@@ -113,6 +114,7 @@ typedef struct		s_map
 	char 			*out;
 	t_dstr 			*dstr;
 	struct s_path	*path;
+	struct s_paths_arr		*paths;
 }					t_map;
 
 typedef struct		s_flag
@@ -138,6 +140,7 @@ typedef struct		s_paths_arr
 	t_room			**path;
 	t_room			***path_starts;
 	int				*path_lens;
+	int				*num_ants;
 }					t_paths_arr;
 
 
@@ -216,7 +219,6 @@ void				time_to_do_some_cleaning(t_map *map, t_graph_inf *inf);
 int					dfs_pl(t_room *start, t_graph_inf *inf, t_map *map);
 t_room				*bfs_level(t_room *sink, t_map *map);
 void				put_zero_to_flows(t_room *source);
-void				restore_meta_graph_info(t_room *source);
 void				algo3(t_map *map, t_graph_inf *inf, t_graph_inf *inf_min);
 
 /*

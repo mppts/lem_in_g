@@ -4,19 +4,27 @@ t_paths_arr		*slv_error_cleaning(int step, t_paths_arr *solution)
 {
 	if (step  == 1)
 		free(solution);
-	else if (step  == 2)
+	if (step  == 2)
 	{
 		free(solution->path);
 		free(solution);
 	}
-	else if (step  == 3)
+	if (step  == 3)
 	{
+		free(solution->path_starts);
+		free(solution->path);
+		free(solution);
+	}
+	if (step  == 4)
+	{
+		free(solution->path_lens);
 		free(solution->path_starts);
 		free(solution->path);
 		free(solution);
 	}
 	else if (step  == -1)
 	{
+		free(solution->num_ants);
 		free(solution->path_lens);
 		free(solution->path_starts);
 		free(solution->path);
@@ -27,13 +35,14 @@ t_paths_arr		*slv_error_cleaning(int step, t_paths_arr *solution)
 
 void			slv_clean_paths(t_paths_arr *path, t_map *g)
 {
-	int			max_path_num;
+	uint64_t	max_path_num;
 
 	max_path_num = g->start->num_linked_to > g->fin->num_linked_to ?
 				   g->start->num_linked_to : g->fin->num_linked_to;
 	ft_bzero(path->path, sizeof(t_room*) * g->num_nodes);
 	ft_bzero(path->path_starts, sizeof(t_room**) * max_path_num);
 	ft_bzero(path->path_lens, sizeof(int) * max_path_num);
+	ft_bzero(path->num_ants, sizeof(int) * max_path_num);
 	*path->path_starts = path->path;
 	path->amt_steps_cost = 0;
 	path->num_paths = 0;
@@ -43,7 +52,7 @@ void			slv_clean_paths(t_paths_arr *path, t_map *g)
 t_paths_arr		*slv_init_solution(t_map *g)
 {
 	t_paths_arr	*path;
-	int			max_path_num;
+	uint64_t	max_path_num;
 	int			err;
 
 	err = 0;
@@ -56,6 +65,8 @@ t_paths_arr		*slv_init_solution(t_map *g)
 	if (++err && !(path->path_starts = malloc(sizeof(t_room**) * max_path_num)))
 		return (slv_error_cleaning(err, path));
 	if (++err && !(path->path_lens = malloc(sizeof(int) * max_path_num)))
+		return (slv_error_cleaning(err, path));
+	if (++err && !(path->num_ants = malloc(sizeof(int) * max_path_num)))
 		return (slv_error_cleaning(err, path));
 	slv_clean_paths(path, g);
 	return (path);
@@ -80,8 +91,8 @@ void	remove_solver(t_solver *slv)
 	{
 		bin_heap_free(slv->heap);
 		deq_remove_unsafe(slv->deq);
-		slv_error_cleaning(-1, slv->paths_arr);
-		slv_error_cleaning(-1, slv->paths_arr_solution);
+		//slv_error_cleaning(-1, slv->paths_arr);
+		//slv_error_cleaning(-1, slv->paths_arr_solution);
 	}
 	free(slv);
 }

@@ -19,6 +19,7 @@ t_room			*bfs_potential(t_room *start, t_room *final,
 	t_room		*room;
 	t_room		*find_source;
 
+	find_source = NULL;
 	deq_push_back(start, deq);
 	while (deq->begin <= deq->rear)
 	{
@@ -32,9 +33,10 @@ t_room			*bfs_potential(t_room *start, t_room *final,
 					 find_source = link->to;
 				if (link->to != final)
 					deq_push_back(link->to, deq);
-				link->to->potential = room->potential + 1;
+				link->to->potential = room->potential + link->flow;
 			}
-			link = link->next;
+			if (link)
+				link = link->next;
 		}
 	}
 	return (find_source);

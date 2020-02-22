@@ -179,7 +179,7 @@
 		<Unit filename="/Users/limry/CLionProjects/lm_full/srcs/solver_tools.c">
 			<Option target="lem_in"/>
 		</Unit>
-		<Unit filename="/Users/limry/CLionProjects/lm_full/srcs/writer_main.c">
+		<Unit filename="/Users/limry/CLionProjects/lm_full/srcs/writer_main_new.c">
 			<Option target="lem_in"/>
 		</Unit>
 		<Unit filename="/Users/limry/CLionProjects/lm_full/CMakeLists.txt">

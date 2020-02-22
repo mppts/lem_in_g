@@ -29,7 +29,7 @@ set(CMAKE_DEPENDS_CHECK_C
   "/Users/limry/CLionProjects/lm_full/srcs/solver_dfs.c" "/Users/limry/CLionProjects/lm_full/cmake-build-debug/CMakeFiles/lem_in.dir/srcs/solver_dfs.c.o"
   "/Users/limry/CLionProjects/lm_full/srcs/solver_ek.c" "/Users/limry/CLionProjects/lm_full/cmake-build-debug/CMakeFiles/lem_in.dir/srcs/solver_ek.c.o"
   "/Users/limry/CLionProjects/lm_full/srcs/solver_tools.c" "/Users/limry/CLionProjects/lm_full/cmake-build-debug/CMakeFiles/lem_in.dir/srcs/solver_tools.c.o"
-  "/Users/limry/CLionProjects/lm_full/srcs/writer_main.c" "/Users/limry/CLionProjects/lm_full/cmake-build-debug/CMakeFiles/lem_in.dir/srcs/writer_main.c.o"
+  "/Users/limry/CLionProjects/lm_full/srcs/writer_main_new.c" "/Users/limry/CLionProjects/lm_full/cmake-build-debug/CMakeFiles/lem_in.dir/srcs/writer_main_new.c.o"
   )
 set(CMAKE_C_COMPILER_ID "AppleClang")
 

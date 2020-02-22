@@ -1,7 +1,7 @@
 
 #include "binary_heap.h"
 
-int 				bin_inc_key(t_bin_heap *heap, uint64_t i, uint64_t key)
+int 				bin_inc_key(t_bin_heap *heap, int64_t i, int64_t key)
 {
 	if (heap->nodes[i].key > key)
 		return (-1);
@@ -14,7 +14,7 @@ int 				bin_inc_key(t_bin_heap *heap, uint64_t i, uint64_t key)
 	return (i);
 }
 
-int 				bin_decr_key(t_bin_heap *heap, uint64_t i, uint64_t key)
+int 				bin_decr_key(t_bin_heap *heap, int64_t i, int64_t key)
 {
 	if (heap->nodes[i].key < key)
 		return (-1);

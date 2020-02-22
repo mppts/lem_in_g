@@ -3,7 +3,7 @@
 
 void			heapify_up(t_bin_heap *heap)
 {
-	uint64_t 	i;
+	int64_t 	i;
 
 	i = heap->num_nodes;
 	while (i > 1 && heap->nodes[i].key < heap->nodes[i / 2].key)
@@ -13,7 +13,7 @@ void			heapify_up(t_bin_heap *heap)
 	}
 }
 
-int				bin_heap_insert(t_bin_heap *heap, void *data, uint64_t key)
+int				bin_heap_insert(t_bin_heap *heap, void *data, int64_t key)
 {
 	if (heap->num_nodes > heap->capacity)
 		return (0);

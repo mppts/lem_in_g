@@ -40,40 +40,38 @@ void				writer(t_map *map)
 }
 */
 
-void 				count_ants_for_paths(t_map *map)
+void 			count_ants_for_paths(t_map *map)
 {
-	t_path			*tmp;
-	t_path			*head;
-	int64_t 		to_div;
-	int64_t 		spreaded;
-	int64_t 		iter;
+	t_paths_arr	*path;
+	int			to_div;
+	int			spreaded;
+	int			iter;
+	int			i;
 
-	head = map->path;
 	spreaded = 0;
-	while (head)
+	path = map->paths;
+	i = 0;
+	while (i < path->current_path)
 	{
 		to_div = map->ants - spreaded;
-		iter = 0;
-		tmp = head->next;
-		while (tmp)
+		iter = i;
+		while (++iter < map->paths->current_path)
 		{
-			to_div -= (head->len - tmp->len);
-			iter++;
-			tmp = tmp->next;
+			to_div -= (path->path_lens[i] - path->path_lens[iter]);
 		}
-		head->ants = to_div > 0 ? to_div / (iter + 1) : 0;
-		head->ants = head->ants > (map->ants - spreaded) ?
-		map->ants - spreaded : head->ants;
-		spreaded += head->ants;
-		head = head->next;
+		path->num_ants[i] = to_div > 0 ? to_div / (iter - i) : 0;
+		//path->num_ants[i] = path->num_ants[i] > (map->ants - spreaded) ?
+		//		(int)map->ants - spreaded : path->num_ants[i];
+		spreaded += path->num_ants[i];
+		i++;
 	}
 }
 
-void				log_ant_move(t_room *room, t_map *map, t_path *path)
+void				log_ant_move(t_room *room, t_map *map, int path_id)
 {
 	int 			color;
 
-	color = path->id % 8 + 30;
+	color = path_id % 8 + 30;
 	dstr_joinstr(map->dstr, "\033[1;");
 	dstr_joinstr(map->dstr, ft_itoa(color));
 	dstr_joinstr(map->dstr, "m");
@@ -84,34 +82,34 @@ void				log_ant_move(t_room *room, t_map *map, t_path *path)
 	dstr_joinstr(map->dstr, "\033[0m");
 }
 
-int				move_ant(t_path *path, int cur_pos, int *ants_out, int *cur_ant, t_map *map)
+int				move_ant(int path_id, int cur_pos, int *ants_out, int *cur_ant, t_map *map)
 {
 
-	if (path->path[cur_pos]->ant ||
-	(cur_pos != 0 && path->path[cur_pos - 1]->ant == 0))
+	if (map->paths->path_starts[path_id][cur_pos]->ant ||
+		(cur_pos != 0 && map->paths->path_starts[path_id][cur_pos - 1]->ant == 0))
 		return (0);
-	else if (cur_pos == 0 && path->ants)
+	else if (cur_pos == 0 && map->paths->num_ants[path_id] > 0)
 	{
-		path->path[cur_pos]->ant = *cur_ant;
+		map->paths->path_starts[path_id][0]->ant = *cur_ant;
 		(*cur_ant)++;
-		path->ants--;
-		log_ant_move(path->path[cur_pos], map, path);
+		map->paths->num_ants[path_id] -= 1;
+		log_ant_move(map->paths->path_starts[path_id][cur_pos], map, path_id);
 		return (1);
 	}
-	else if (path->path[cur_pos] == map->fin && path->path[cur_pos - 1]->ant != 0)
+	else if (map->paths->path_starts[path_id][cur_pos] == map->fin && map->paths->path_starts[path_id][cur_pos - 1]->ant != 0)
 	{
-		path->path[cur_pos]->ant = path->path[cur_pos - 1]->ant;
-		log_ant_move(path->path[cur_pos], map, path);
+		map->paths->path_starts[path_id][cur_pos]->ant = map->paths->path_starts[path_id][cur_pos - 1]->ant;
+		log_ant_move(map->paths->path_starts[path_id][cur_pos], map, path_id);
 		(*ants_out)++;
-		path->path[cur_pos - 1]->ant = 0;
-		path->path[cur_pos]->ant = 0;
+		map->paths->path_starts[path_id][cur_pos - 1]->ant = 0;
+		map->paths->path_starts[path_id][cur_pos]->ant = 0;
 		return (1);
 	}
-	else if (path->path[cur_pos - 1]->ant != 0)
+	else if (map->paths->path_starts[path_id][cur_pos - 1]->ant != 0)
 	{
-		path->path[cur_pos]->ant = path->path[cur_pos - 1]->ant;
-		path->path[cur_pos - 1]->ant = 0;
-		log_ant_move(path->path[cur_pos], map, path);
+		map->paths->path_starts[path_id][cur_pos]->ant = map->paths->path_starts[path_id][cur_pos - 1]->ant;
+		map->paths->path_starts[path_id][cur_pos - 1]->ant = 0;
+		log_ant_move(map->paths->path_starts[path_id][cur_pos], map, path_id);
 		return (1);
 	}
 	return (0);
@@ -123,7 +121,7 @@ void				push_ants(t_map *map)
 	int				step_iter;
 	int				ants_out;
 	int				cur_ant;
-	t_path			*cur_path;
+	int				cur_path;
 
 	ants_out = 0;
 	step = 1;
@@ -133,12 +131,12 @@ void				push_ants(t_map *map)
 		step_iter = step;
 		while (step_iter--)
 		{
-			cur_path = map->path;
-			while (cur_path)
+			cur_path = 0;
+			while (cur_path < map->paths->current_path)
 			{
-				if (move_ant(cur_path, step_iter % cur_path->len, &ants_out, &cur_ant, map))
+				if (move_ant(cur_path, step_iter % map->paths->path_lens[cur_path], &ants_out, &cur_ant, map))
 					dstr_joinstr(map->dstr, " ");
-				cur_path = cur_path->next;
+				cur_path++;
 			}
 		}
 		dstr_joinstr(map->dstr, "\n");
@@ -204,20 +202,18 @@ void				print_paths(t_path *p)
 	}
 }
 
-void				prep_paths(t_path *p)
+void				prep_paths(t_paths_arr *p)
 {
-	t_path			*tmp;
-	t_path			*tmp1;
+	t_paths_arr			*tmp;
 	int 			i;
 
 	tmp = p;
 	i = 0;
-	while(tmp)
+	while(i < tmp->current_path)
 	{
-		tmp->path = tmp->path + 1;
-		tmp->len = tmp->len - 1;
-		tmp->id = i++;
-		tmp = tmp->next;
+		tmp->path_starts[i]++;
+		tmp->path_lens[i]--;
+		i++;
 	}
 }
 
@@ -226,7 +222,7 @@ void				writer(t_map *map)
 {
 	//sort_paths(map);
 	//print_paths(map->path);
-	//prep_paths(map->path);
-	//count_ants_for_paths(map);
+	count_ants_for_paths(map);
+	prep_paths(map->paths);
 	push_ants(map);
 }

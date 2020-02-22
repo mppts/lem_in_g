@@ -7,7 +7,7 @@ void			bin_clean_heap_data(t_bin_heap* heap)
 	heap->num_nodes = 1;
 }
 
-t_bin_heap		*bin_heap_init(uint64_t size)
+t_bin_heap		*bin_heap_init(int64_t size)
 {
 	t_bin_heap	*heap;
 
@@ -15,13 +15,12 @@ t_bin_heap		*bin_heap_init(uint64_t size)
 	if (!heap)
 		return (NULL);
 	heap->capacity = size;
-	heap->num_nodes = 1;
 	heap->nodes = (t_bin_node*)malloc(sizeof(t_bin_node) * (size + 1));
 	if (!heap->nodes)
 	{
 		free(heap);
 		return (NULL);
 	}
-	ft_bzero(heap->nodes, sizeof(t_bin_node) * (size + 1));
+	bin_clean_heap_data(heap);
 	return (heap);
 }

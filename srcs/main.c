@@ -39,7 +39,7 @@ int			main(int ac, char *av[])
 	parse_map(&map, fd);
 	parse_errors(&map);
 	solver_edmonds_karp(&map);
-	if (map.path == NULL)
+	if (map.paths == NULL)
 		man_err_map("Error: no way for the honest ant...=(\n",
 					NULL, NULL, &map);
 	writer(&map);

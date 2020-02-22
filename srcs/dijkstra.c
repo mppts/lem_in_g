@@ -12,51 +12,53 @@
 
 #include <lem_in.h>
 #include "binary_heap.h"
-
-int 			pass_qrit(t_room *tmp, t_link *ln)
+/*
+int				pass_qrit(t_room *tmp, t_link *ln)
 {
 	if (ln->to->sign == 0 && ln->to->potential >= tmp->potential + ln->flow)
 		return (1);
-	//else if (ln->flow < 0)
-	//	return (1);
 	else if (ln->to->sign == 1 && ln->to->potential > tmp->potential + ln->flow)
 		return (1);
 	return (0);
-	/*if (ln->to->potential < tmp->potential + 1)
-		return (0);
-	if (tmp->level == 1 && ln->to->level == 0)
-		return (0);
-	return (1);*/
+}*/
+
+int				pass_qrit(t_room *tmp, t_link *ln)
+{
+	if (ln->to->delta > tmp->potential - ln->to->potential + ln->flow + tmp->delta)
+		return (1);
+	//else if (ln->to->sign == 1 && ln->to->delta > tmp->potential - ln->to->potential + ln->flow + tmp->delta)
+	//	return (1);
+	return (0);
 }
 
 int				bin_dijkstra(t_map *g, t_bin_heap *heap)
 {
 	t_room		*tmp;
-	t_link		*link;
+	t_link		*ln;
+	int			flag;
 
-	bin_heap_insert(heap, g->start, g->start->potential);
+	flag = 0;
+	bin_heap_insert(heap, g->start, g->start->delta);
 	while(heap->num_nodes > 1)
 	{
 		tmp = (t_room*)bin_pop_root(tmp, heap);
 		tmp->sign = 1;
-		link = tmp->linked_to;
-		//if (link && (!ft_strcmp(tmp->name, "H_y7")))
-		//	5;
-		while (link)
+		ln = tmp->linked_to;
+		while (ln)
 		{
-			while (link && (link->to == tmp || link->flow == 0))
-				link = link->next;
-			if (link && ((pass_qrit(tmp, link))))
+			while (ln && (ln->to == tmp || ln->flow == 0))
+				ln = ln->next;
+			if (ln && ((pass_qrit(tmp, ln))))
 			{
-				link->to->pred = tmp;
-				link->to->potential = tmp->potential + link->flow;
-				bin_heap_insert(heap, link->to, link->to->potential);
+				ln->to->pred = tmp;
+				ln->to->delta = tmp->potential - ln->to->potential + ln->flow + tmp->delta;
+				bin_heap_insert(heap, ln->to, ln->to->delta);
 			}
-			if (link && link->to == g->fin)
-				return (1);
-			if (link)
-				link = link->next;
+			if (ln && ln->to == g->fin)
+				flag = 1;
+			if (ln)
+				ln = ln->next;
 		}
 	}
-	return (0);
+	return (flag);
 }

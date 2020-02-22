@@ -1,11 +1,11 @@
 
 #include "binary_heap.h"
 
-void			heap_heapify(t_bin_heap *heap, uint64_t i)
+void			heap_heapify(t_bin_heap *heap, int64_t i)
 {
-	uint64_t 	l;
-	uint64_t 	r;
-	uint64_t 	min;
+	int64_t 	l;
+	int64_t 	r;
+	int64_t 	min;
 
 	while (1)
 	{

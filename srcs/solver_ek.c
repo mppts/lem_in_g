@@ -1,29 +1,32 @@
 #include "lem_in.h"
 
 
-void		slv_copy_to_solution(t_solver *slv, t_map *g)
+void			slv_copy_to_solution(t_solver *slv, t_map *g)
 {
-	int		max_path_num;
+	uint64_t	max_path_num;
+	t_room		**tmp_path;
+	t_room		***tmp_starts;
+	int			*tmp_lens;
 
 	max_path_num = g->start->num_linked_to > g->fin->num_linked_to ?
 				   g->start->num_linked_to : g->fin->num_linked_to;
 	slv->paths_arr_solution->num_paths = slv->paths_arr->num_paths;
 	slv->paths_arr_solution->amt_steps_cost = slv->paths_arr->amt_steps_cost;
 	slv->paths_arr_solution->current_path = slv->paths_arr->current_path;
-	ft_memcpy(slv->paths_arr_solution->path, slv->paths_arr->path,
-			sizeof(t_room*) * g->num_nodes);
-	ft_memcpy(slv->paths_arr_solution->path_starts, slv->paths_arr->path_starts,
-			sizeof(t_room**) * max_path_num);
-	ft_memcpy(slv->paths_arr_solution->path_lens, slv->paths_arr->path_lens,
-			sizeof(int) * max_path_num);
 	slv->paths_arr_solution->num_paths = slv->paths_arr->num_paths;
+	tmp_path = slv->paths_arr->path;
+	tmp_starts = slv->paths_arr->path_starts;
+	tmp_lens = slv->paths_arr->path_lens;
+	slv->paths_arr->path = slv->paths_arr_solution->path;
+	slv->paths_arr->path_starts = slv->paths_arr_solution->path_starts;
+	slv->paths_arr->path_lens = slv->paths_arr_solution->path_lens;
+	slv->paths_arr_solution->path = tmp_path;
+	slv->paths_arr_solution->path_starts = tmp_starts;
+	slv->paths_arr_solution->path_lens = tmp_lens;
 }
 
-int			enough_solutions(t_solver *slv, t_map *g)
+int				enough_solutions(t_solver *slv, t_map *g)
 {
-	int 	first;
-
-	first = slv->paths_arr_solution->current_path;
 	if (slv->paths_arr_solution->current_path == 0 ||
 	(slv->paths_arr_solution->amt_steps_cost + g->ants) / (slv->paths_arr_solution->current_path)
 	> (slv->paths_arr->amt_steps_cost + g->ants) / (slv->paths_arr->current_path))
@@ -44,8 +47,9 @@ void			fill_link_from_to(t_room *from, t_room *to)
 	{
 		if (ln->to == to)
 		{
-			if (ln->mirror->flow == 0)
+			if (ln->flow == -1)
 			{
+				ln->flow = 1;
 				ln->mirror->flow = 1;
 			}
 			else
@@ -76,13 +80,15 @@ void			refresh_potentials(t_room *start)
 {
 	t_room		*tmp;
 
-	start->potential = 0;
+	start->potential = start->delta;
 	start->level = 0;
+	start->delta = 0;
 	start->sign = 0;
 	tmp = start->next;
 	while (tmp != start)
 	{
-		tmp->potential = INT64_MAX;
+		tmp->potential = tmp->delta;
+		tmp->delta = INT64_MAX;
 		tmp->sign = 0;
 		tmp = tmp->next;
 	}
@@ -157,12 +163,12 @@ void			solver_edmonds_karp(t_map *g)
 	if (bfs_potential(g->start, g->fin, g, slv->deq))
 	{
 		g->start->potential = 0;
+		g->start->delta = 0;
 		while (bin_dijkstra(g, slv->heap))
 		{
-			printf("\n");
 			fulfill_path(slv->paths_arr, g);
 			find_all_paths(slv->paths_arr, g, slv->deq);
-			print_desc(slv->paths_arr);
+			//print_desc(slv->paths_arr);
 			if (enough_solutions(slv, g))
 				break;
 			bin_clean_heap_data(slv->heap);
@@ -170,6 +176,7 @@ void			solver_edmonds_karp(t_map *g)
 			g->fin->level = 1;
 		}
 	}
+	g->paths = slv->paths_arr_solution;
 	remove_solver(slv);
 }
 

@@ -148,10 +148,10 @@ CMakeFiles/lem_in.dir/srcs/solver_tools.c.o: ../libft/includes/get_next_line.h
 CMakeFiles/lem_in.dir/srcs/solver_tools.c.o: ../libft/includes/libft.h
 CMakeFiles/lem_in.dir/srcs/solver_tools.c.o: ../srcs/solver_tools.c
 
-CMakeFiles/lem_in.dir/srcs/writer_main.c.o: ../includes/lem_in.h
-CMakeFiles/lem_in.dir/srcs/writer_main.c.o: ../libft/includes/binary_heap.h
-CMakeFiles/lem_in.dir/srcs/writer_main.c.o: ../libft/includes/dstr.h
-CMakeFiles/lem_in.dir/srcs/writer_main.c.o: ../libft/includes/get_next_line.h
-CMakeFiles/lem_in.dir/srcs/writer_main.c.o: ../libft/includes/libft.h
-CMakeFiles/lem_in.dir/srcs/writer_main.c.o: ../srcs/writer_main.c
+CMakeFiles/lem_in.dir/srcs/writer_main_new.c.o: ../includes/lem_in.h
+CMakeFiles/lem_in.dir/srcs/writer_main_new.c.o: ../libft/includes/binary_heap.h
+CMakeFiles/lem_in.dir/srcs/writer_main_new.c.o: ../libft/includes/dstr.h
+CMakeFiles/lem_in.dir/srcs/writer_main_new.c.o: ../libft/includes/get_next_line.h
+CMakeFiles/lem_in.dir/srcs/writer_main_new.c.o: ../libft/includes/libft.h
+CMakeFiles/lem_in.dir/srcs/writer_main_new.c.o: ../srcs/writer_main_new.c
 

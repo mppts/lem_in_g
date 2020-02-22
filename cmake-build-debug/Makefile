@@ -798,32 +798,32 @@ srcs/solver_tools.c.s:
 	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_tools.c.s
 .PHONY : srcs/solver_tools.c.s
 
-srcs/writer_main.o: srcs/writer_main.c.o
+srcs/writer_main_new.o: srcs/writer_main_new.c.o
 
-.PHONY : srcs/writer_main.o
+.PHONY : srcs/writer_main_new.o
 
 # target to build an object file
-srcs/writer_main.c.o:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/writer_main.c.o
-.PHONY : srcs/writer_main.c.o
+srcs/writer_main_new.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/writer_main_new.c.o
+.PHONY : srcs/writer_main_new.c.o
 
-srcs/writer_main.i: srcs/writer_main.c.i
+srcs/writer_main_new.i: srcs/writer_main_new.c.i
 
-.PHONY : srcs/writer_main.i
+.PHONY : srcs/writer_main_new.i
 
 # target to preprocess a source file
-srcs/writer_main.c.i:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/writer_main.c.i
-.PHONY : srcs/writer_main.c.i
+srcs/writer_main_new.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/writer_main_new.c.i
+.PHONY : srcs/writer_main_new.c.i
 
-srcs/writer_main.s: srcs/writer_main.c.s
+srcs/writer_main_new.s: srcs/writer_main_new.c.s
 
-.PHONY : srcs/writer_main.s
+.PHONY : srcs/writer_main_new.s
 
 # target to generate assembly for a file
-srcs/writer_main.c.s:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/writer_main.c.s
-.PHONY : srcs/writer_main.c.s
+srcs/writer_main_new.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/writer_main_new.c.s
+.PHONY : srcs/writer_main_new.c.s
 
 # Help Target
 help:
@@ -909,9 +909,9 @@ help:
 	@echo "... srcs/solver_tools.o"
 	@echo "... srcs/solver_tools.i"
 	@echo "... srcs/solver_tools.s"
-	@echo "... srcs/writer_main.o"
-	@echo "... srcs/writer_main.i"
-	@echo "... srcs/writer_main.s"
+	@echo "... srcs/writer_main_new.o"
+	@echo "... srcs/writer_main_new.i"
+	@echo "... srcs/writer_main_new.s"
 .PHONY : help
 
 

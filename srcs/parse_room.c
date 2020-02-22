@@ -88,8 +88,8 @@ static t_room	*new_room(t_r_reader r, t_flag *flag, t_map *map)
 		&r.name_room, ft_strdel, map);
 	x = ft_atoli(r.sx);
 	y = ft_atoli(r.sy);
-	if (x >= INT32_MAX || y >= INT32_MAX ||
-		x <= INT32_MIN || y <= INT32_MIN)
+	if (x > INT32_MAX || y > INT32_MAX ||
+		x < INT32_MIN || y < INT32_MIN)
 		man_err_map("Error: coords bigger than int\n",
 				&map->buf, ft_strdel, map);
 	if (ft_strchr(r.name_room, '-'))

@@ -24,7 +24,7 @@ void		deq_clear_data(t_deq *deq, uint64_t num_elems, size_t size_of_elem)
 void		*deq_get_rear(t_deq *sdeq)
 {
 	if (sdeq->rear > - 1)
-		return (sdeq->deq[(sdeq->rear) * sdeq->size_of_elem]);
+		return (sdeq->deq[(sdeq->rear)]);
 	else
 		return (NULL);
 }

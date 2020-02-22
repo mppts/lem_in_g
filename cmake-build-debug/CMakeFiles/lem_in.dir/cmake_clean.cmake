@@ -24,7 +24,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/lem_in.dir/srcs/solver_dfs.c.o"
   "CMakeFiles/lem_in.dir/srcs/solver_ek.c.o"
   "CMakeFiles/lem_in.dir/srcs/solver_tools.c.o"
-  "CMakeFiles/lem_in.dir/srcs/writer_main.c.o"
+  "CMakeFiles/lem_in.dir/srcs/writer_main_new.c.o"
   "lem_in"
   "lem_in.pdb"
 )

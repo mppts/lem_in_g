@@ -425,6 +425,7 @@ void	 		put_null_to_precessor(t_map *map)
 	indicator = 0;
 	while (!indicator || tmp != map->start)
 	{
+		tmp->level_rev = 0;
 		tmp->room_from_we_came = NULL;
 		tmp = tmp->next;
 		indicator++;
@@ -439,12 +440,12 @@ void			initialization(t_map *map, t_graph_inf	*inf)
 	inf->max_ways = find_num_of_ways(map);
 	inf->ways = malloc(sizeof(t_way *) * (inf->max_ways + 1));
 	inf->current_way_number = 0;
-	inf->current_pos_in_way = 0;
-	inf->position_in_way = 0;
+//	inf->current_pos_in_way = 0;
+//	inf->position_in_way = 0;
 	inf->total_ways_len = 0;
 	inf->are_enough_ways_current = 0;
 	inf->are_enough_ways_new = 0;
-	inf->two_flows = 0;
+//	inf->two_flows = 0;
 	inf->common_rooms = malloc(sizeof(t_room *) * (map->num_nodes + 1));
 	while (i <= inf->max_ways)
 		inf->ways[i++] = NULL;

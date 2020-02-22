@@ -420,59 +420,59 @@ srcs/solver_algorithm.c.s:
 	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_algorithm.c.s
 .PHONY : srcs/solver_algorithm.c.s
 
-srcs/solver_algorithm_cleaning.o: srcs/solver_algorithm_cleaning.c.o
+srcs/solver_bellman_ford_end_start.o: srcs/solver_bellman_ford_end_start.c.o
 
-.PHONY : srcs/solver_algorithm_cleaning.o
-
-# target to build an object file
-srcs/solver_algorithm_cleaning.c.o:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_algorithm_cleaning.c.o
-.PHONY : srcs/solver_algorithm_cleaning.c.o
-
-srcs/solver_algorithm_cleaning.i: srcs/solver_algorithm_cleaning.c.i
-
-.PHONY : srcs/solver_algorithm_cleaning.i
-
-# target to preprocess a source file
-srcs/solver_algorithm_cleaning.c.i:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_algorithm_cleaning.c.i
-.PHONY : srcs/solver_algorithm_cleaning.c.i
-
-srcs/solver_algorithm_cleaning.s: srcs/solver_algorithm_cleaning.c.s
-
-.PHONY : srcs/solver_algorithm_cleaning.s
-
-# target to generate assembly for a file
-srcs/solver_algorithm_cleaning.c.s:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_algorithm_cleaning.c.s
-.PHONY : srcs/solver_algorithm_cleaning.c.s
-
-srcs/solver_bfs.o: srcs/solver_bfs.c.o
-
-.PHONY : srcs/solver_bfs.o
+.PHONY : srcs/solver_bellman_ford_end_start.o
 
 # target to build an object file
-srcs/solver_bfs.c.o:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_bfs.c.o
-.PHONY : srcs/solver_bfs.c.o
+srcs/solver_bellman_ford_end_start.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_bellman_ford_end_start.c.o
+.PHONY : srcs/solver_bellman_ford_end_start.c.o
 
-srcs/solver_bfs.i: srcs/solver_bfs.c.i
+srcs/solver_bellman_ford_end_start.i: srcs/solver_bellman_ford_end_start.c.i
 
-.PHONY : srcs/solver_bfs.i
+.PHONY : srcs/solver_bellman_ford_end_start.i
 
 # target to preprocess a source file
-srcs/solver_bfs.c.i:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_bfs.c.i
-.PHONY : srcs/solver_bfs.c.i
+srcs/solver_bellman_ford_end_start.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_bellman_ford_end_start.c.i
+.PHONY : srcs/solver_bellman_ford_end_start.c.i
 
-srcs/solver_bfs.s: srcs/solver_bfs.c.s
+srcs/solver_bellman_ford_end_start.s: srcs/solver_bellman_ford_end_start.c.s
 
-.PHONY : srcs/solver_bfs.s
+.PHONY : srcs/solver_bellman_ford_end_start.s
 
 # target to generate assembly for a file
-srcs/solver_bfs.c.s:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_bfs.c.s
-.PHONY : srcs/solver_bfs.c.s
+srcs/solver_bellman_ford_end_start.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_bellman_ford_end_start.c.s
+.PHONY : srcs/solver_bellman_ford_end_start.c.s
+
+srcs/solver_bellman_ford_start_end.o: srcs/solver_bellman_ford_start_end.c.o
+
+.PHONY : srcs/solver_bellman_ford_start_end.o
+
+# target to build an object file
+srcs/solver_bellman_ford_start_end.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_bellman_ford_start_end.c.o
+.PHONY : srcs/solver_bellman_ford_start_end.c.o
+
+srcs/solver_bellman_ford_start_end.i: srcs/solver_bellman_ford_start_end.c.i
+
+.PHONY : srcs/solver_bellman_ford_start_end.i
+
+# target to preprocess a source file
+srcs/solver_bellman_ford_start_end.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_bellman_ford_start_end.c.i
+.PHONY : srcs/solver_bellman_ford_start_end.c.i
+
+srcs/solver_bellman_ford_start_end.s: srcs/solver_bellman_ford_start_end.c.s
+
+.PHONY : srcs/solver_bellman_ford_start_end.s
+
+# target to generate assembly for a file
+srcs/solver_bellman_ford_start_end.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_bellman_ford_start_end.c.s
+.PHONY : srcs/solver_bellman_ford_start_end.c.s
 
 srcs/solver_dfs.o: srcs/solver_dfs.c.o
 
@@ -500,6 +500,33 @@ srcs/solver_dfs.s: srcs/solver_dfs.c.s
 srcs/solver_dfs.c.s:
 	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_dfs.c.s
 .PHONY : srcs/solver_dfs.c.s
+
+srcs/solver_find_best_current_way.o: srcs/solver_find_best_current_way.c.o
+
+.PHONY : srcs/solver_find_best_current_way.o
+
+# target to build an object file
+srcs/solver_find_best_current_way.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_find_best_current_way.c.o
+.PHONY : srcs/solver_find_best_current_way.c.o
+
+srcs/solver_find_best_current_way.i: srcs/solver_find_best_current_way.c.i
+
+.PHONY : srcs/solver_find_best_current_way.i
+
+# target to preprocess a source file
+srcs/solver_find_best_current_way.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_find_best_current_way.c.i
+.PHONY : srcs/solver_find_best_current_way.c.i
+
+srcs/solver_find_best_current_way.s: srcs/solver_find_best_current_way.c.s
+
+.PHONY : srcs/solver_find_best_current_way.s
+
+# target to generate assembly for a file
+srcs/solver_find_best_current_way.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_find_best_current_way.c.s
+.PHONY : srcs/solver_find_best_current_way.c.s
 
 srcs/writer_main.o: srcs/writer_main.c.o
 
@@ -570,15 +597,18 @@ help:
 	@echo "... srcs/solver_algorithm.o"
 	@echo "... srcs/solver_algorithm.i"
 	@echo "... srcs/solver_algorithm.s"
-	@echo "... srcs/solver_algorithm_cleaning.o"
-	@echo "... srcs/solver_algorithm_cleaning.i"
-	@echo "... srcs/solver_algorithm_cleaning.s"
-	@echo "... srcs/solver_bfs.o"
-	@echo "... srcs/solver_bfs.i"
-	@echo "... srcs/solver_bfs.s"
+	@echo "... srcs/solver_bellman_ford_end_start.o"
+	@echo "... srcs/solver_bellman_ford_end_start.i"
+	@echo "... srcs/solver_bellman_ford_end_start.s"
+	@echo "... srcs/solver_bellman_ford_start_end.o"
+	@echo "... srcs/solver_bellman_ford_start_end.i"
+	@echo "... srcs/solver_bellman_ford_start_end.s"
 	@echo "... srcs/solver_dfs.o"
 	@echo "... srcs/solver_dfs.i"
 	@echo "... srcs/solver_dfs.s"
+	@echo "... srcs/solver_find_best_current_way.o"
+	@echo "... srcs/solver_find_best_current_way.i"
+	@echo "... srcs/solver_find_best_current_way.s"
 	@echo "... srcs/writer_main.o"
 	@echo "... srcs/writer_main.i"
 	@echo "... srcs/writer_main.s"

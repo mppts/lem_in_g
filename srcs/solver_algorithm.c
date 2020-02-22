@@ -90,11 +90,13 @@ void		clear_levels(t_room *source)
 	t_room	*tmp_r;
 
 	source->level = 0;
+	source->level_rev = 0;
 	source->room_from_we_came = NULL;
 	tmp_r = source->next;
 	while (tmp_r != source)
 	{
 		tmp_r->level = 0;
+		tmp_r->level_rev = 0;
 		tmp_r->room_from_we_came = NULL;
 		tmp_r = tmp_r->next;
 	}
@@ -193,7 +195,6 @@ void		clear_line(t_room **line)
 	int		i;
 
 	i = 0;
-	line[i]->way_number = -1;
 	while (line[i])
 		line[i++] = NULL;
 }
@@ -517,7 +518,7 @@ void		algo(t_map *map, t_graph_inf *inf)
 	way_2 = (t_room **)malloc(sizeof(t_room) * (map->num_nodes + 1));
 	nulls_to_ways(way_1, way_2, map->num_nodes);
 	indicator = 0;
-	while (!indicator && (bellman_ford(map, way_1, inf)))
+	while (!indicator && (find_best_current_way(map, way_1, way_2, inf)))
 	{
 		find_way_1(map, way_1, inf);
 //		if (sufficienty_c(inf, map))

@@ -28,19 +28,19 @@ CMakeFiles/lem_in.dir/libft/srcs/dstr/dstr.c.o: ../libft/includes/dstr.h
 CMakeFiles/lem_in.dir/libft/srcs/dstr/dstr.c.o: ../libft/includes/libft.h
 CMakeFiles/lem_in.dir/libft/srcs/dstr/dstr.c.o: ../libft/srcs/dstr/dstr.c
 
+CMakeFiles/lem_in.dir/srcs/deque.c.o: ../includes/lem_in.h
+CMakeFiles/lem_in.dir/srcs/deque.c.o: ../libft/includes/binary_heap.h
+CMakeFiles/lem_in.dir/srcs/deque.c.o: ../libft/includes/dstr.h
+CMakeFiles/lem_in.dir/srcs/deque.c.o: ../libft/includes/get_next_line.h
+CMakeFiles/lem_in.dir/srcs/deque.c.o: ../libft/includes/libft.h
+CMakeFiles/lem_in.dir/srcs/deque.c.o: ../srcs/deque.c
+
 CMakeFiles/lem_in.dir/srcs/deque2.c.o: ../includes/lem_in.h
 CMakeFiles/lem_in.dir/srcs/deque2.c.o: ../libft/includes/binary_heap.h
 CMakeFiles/lem_in.dir/srcs/deque2.c.o: ../libft/includes/dstr.h
 CMakeFiles/lem_in.dir/srcs/deque2.c.o: ../libft/includes/get_next_line.h
 CMakeFiles/lem_in.dir/srcs/deque2.c.o: ../libft/includes/libft.h
 CMakeFiles/lem_in.dir/srcs/deque2.c.o: ../srcs/deque2.c
-
-CMakeFiles/lem_in.dir/srcs/dijkstra.c.o: ../includes/lem_in.h
-CMakeFiles/lem_in.dir/srcs/dijkstra.c.o: ../libft/includes/binary_heap.h
-CMakeFiles/lem_in.dir/srcs/dijkstra.c.o: ../libft/includes/dstr.h
-CMakeFiles/lem_in.dir/srcs/dijkstra.c.o: ../libft/includes/get_next_line.h
-CMakeFiles/lem_in.dir/srcs/dijkstra.c.o: ../libft/includes/libft.h
-CMakeFiles/lem_in.dir/srcs/dijkstra.c.o: ../srcs/dijkstra.c
 
 CMakeFiles/lem_in.dir/srcs/main.c.o: ../includes/lem_in.h
 CMakeFiles/lem_in.dir/srcs/main.c.o: ../libft/includes/binary_heap.h
@@ -98,28 +98,6 @@ CMakeFiles/lem_in.dir/srcs/parse_utils.c.o: ../libft/includes/get_next_line.h
 CMakeFiles/lem_in.dir/srcs/parse_utils.c.o: ../libft/includes/libft.h
 CMakeFiles/lem_in.dir/srcs/parse_utils.c.o: ../srcs/parse_utils.c
 
-CMakeFiles/lem_in.dir/srcs/solver.c.o: ../includes/lem_in.h
-CMakeFiles/lem_in.dir/srcs/solver.c.o: ../libft/includes/binary_heap.h
-CMakeFiles/lem_in.dir/srcs/solver.c.o: ../libft/includes/dstr.h
-CMakeFiles/lem_in.dir/srcs/solver.c.o: ../libft/includes/get_next_line.h
-CMakeFiles/lem_in.dir/srcs/solver.c.o: ../libft/includes/libft.h
-CMakeFiles/lem_in.dir/srcs/solver.c.o: ../srcs/deque.c
-CMakeFiles/lem_in.dir/srcs/solver.c.o: ../srcs/solver.c
-
-CMakeFiles/lem_in.dir/srcs/solver_algorithm.c.o: ../includes/lem_in.h
-CMakeFiles/lem_in.dir/srcs/solver_algorithm.c.o: ../libft/includes/binary_heap.h
-CMakeFiles/lem_in.dir/srcs/solver_algorithm.c.o: ../libft/includes/dstr.h
-CMakeFiles/lem_in.dir/srcs/solver_algorithm.c.o: ../libft/includes/get_next_line.h
-CMakeFiles/lem_in.dir/srcs/solver_algorithm.c.o: ../libft/includes/libft.h
-CMakeFiles/lem_in.dir/srcs/solver_algorithm.c.o: ../srcs/solver_algorithm.c
-
-CMakeFiles/lem_in.dir/srcs/solver_algorithm_cleaning.c.o: ../includes/lem_in.h
-CMakeFiles/lem_in.dir/srcs/solver_algorithm_cleaning.c.o: ../libft/includes/binary_heap.h
-CMakeFiles/lem_in.dir/srcs/solver_algorithm_cleaning.c.o: ../libft/includes/dstr.h
-CMakeFiles/lem_in.dir/srcs/solver_algorithm_cleaning.c.o: ../libft/includes/get_next_line.h
-CMakeFiles/lem_in.dir/srcs/solver_algorithm_cleaning.c.o: ../libft/includes/libft.h
-CMakeFiles/lem_in.dir/srcs/solver_algorithm_cleaning.c.o: ../srcs/solver_algorithm_cleaning.c
-
 CMakeFiles/lem_in.dir/srcs/solver_bfs.c.o: ../includes/lem_in.h
 CMakeFiles/lem_in.dir/srcs/solver_bfs.c.o: ../libft/includes/binary_heap.h
 CMakeFiles/lem_in.dir/srcs/solver_bfs.c.o: ../libft/includes/dstr.h
@@ -127,12 +105,12 @@ CMakeFiles/lem_in.dir/srcs/solver_bfs.c.o: ../libft/includes/get_next_line.h
 CMakeFiles/lem_in.dir/srcs/solver_bfs.c.o: ../libft/includes/libft.h
 CMakeFiles/lem_in.dir/srcs/solver_bfs.c.o: ../srcs/solver_bfs.c
 
-CMakeFiles/lem_in.dir/srcs/solver_dfs.c.o: ../includes/lem_in.h
-CMakeFiles/lem_in.dir/srcs/solver_dfs.c.o: ../libft/includes/binary_heap.h
-CMakeFiles/lem_in.dir/srcs/solver_dfs.c.o: ../libft/includes/dstr.h
-CMakeFiles/lem_in.dir/srcs/solver_dfs.c.o: ../libft/includes/get_next_line.h
-CMakeFiles/lem_in.dir/srcs/solver_dfs.c.o: ../libft/includes/libft.h
-CMakeFiles/lem_in.dir/srcs/solver_dfs.c.o: ../srcs/solver_dfs.c
+CMakeFiles/lem_in.dir/srcs/solver_dijkstra.c.o: ../includes/lem_in.h
+CMakeFiles/lem_in.dir/srcs/solver_dijkstra.c.o: ../libft/includes/binary_heap.h
+CMakeFiles/lem_in.dir/srcs/solver_dijkstra.c.o: ../libft/includes/dstr.h
+CMakeFiles/lem_in.dir/srcs/solver_dijkstra.c.o: ../libft/includes/get_next_line.h
+CMakeFiles/lem_in.dir/srcs/solver_dijkstra.c.o: ../libft/includes/libft.h
+CMakeFiles/lem_in.dir/srcs/solver_dijkstra.c.o: ../srcs/solver_dijkstra.c
 
 CMakeFiles/lem_in.dir/srcs/solver_ek.c.o: ../includes/lem_in.h
 CMakeFiles/lem_in.dir/srcs/solver_ek.c.o: ../libft/includes/binary_heap.h
@@ -140,6 +118,13 @@ CMakeFiles/lem_in.dir/srcs/solver_ek.c.o: ../libft/includes/dstr.h
 CMakeFiles/lem_in.dir/srcs/solver_ek.c.o: ../libft/includes/get_next_line.h
 CMakeFiles/lem_in.dir/srcs/solver_ek.c.o: ../libft/includes/libft.h
 CMakeFiles/lem_in.dir/srcs/solver_ek.c.o: ../srcs/solver_ek.c
+
+CMakeFiles/lem_in.dir/srcs/solver_ek2.c.o: ../includes/lem_in.h
+CMakeFiles/lem_in.dir/srcs/solver_ek2.c.o: ../libft/includes/binary_heap.h
+CMakeFiles/lem_in.dir/srcs/solver_ek2.c.o: ../libft/includes/dstr.h
+CMakeFiles/lem_in.dir/srcs/solver_ek2.c.o: ../libft/includes/get_next_line.h
+CMakeFiles/lem_in.dir/srcs/solver_ek2.c.o: ../libft/includes/libft.h
+CMakeFiles/lem_in.dir/srcs/solver_ek2.c.o: ../srcs/solver_ek2.c
 
 CMakeFiles/lem_in.dir/srcs/solver_tools.c.o: ../includes/lem_in.h
 CMakeFiles/lem_in.dir/srcs/solver_tools.c.o: ../libft/includes/binary_heap.h

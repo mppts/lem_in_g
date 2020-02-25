@@ -6,29 +6,23 @@
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/21 12:50:11 by limry             #+#    #+#             */
-/*   Updated: 2020/02/21 22:48:48 by limry            ###   ########.fr       */
+/*   Updated: 2020/02/25 16:15:43 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <lem_in.h>
 #include "binary_heap.h"
-/*
-int				pass_qrit(t_room *tmp, t_link *ln)
-{
-	if (ln->to->sign == 0 && ln->to->potential >= tmp->potential + ln->flow)
-		return (1);
-	else if (ln->to->sign == 1 && ln->to->potential > tmp->potential + ln->flow)
-		return (1);
-	return (0);
-}*/
 
-int				pass_qrit(t_room *tmp, t_link *ln)
+static void		pass_qrit(t_room *tmp, t_link *ln, t_bin_heap *heap)
 {
-	if (ln->to->delta > tmp->potential - ln->to->potential + ln->flow + tmp->delta)
-		return (1);
-	//else if (ln->to->sign == 1 && ln->to->delta > tmp->potential - ln->to->potential + ln->flow + tmp->delta)
-	//	return (1);
-	return (0);
+	if (ln && ((ln->to->delta >
+	tmp->potential - ln->to->potential + ln->flow + tmp->delta)))
+	{
+		ln->to->pred = tmp;
+		ln->to->delta =
+		tmp->potential - ln->to->potential + ln->flow + tmp->delta;
+		bin_heap_insert(heap, ln->to, ln->to->delta);
+	}
 }
 
 int				bin_dijkstra(t_map *g, t_bin_heap *heap)
@@ -39,7 +33,7 @@ int				bin_dijkstra(t_map *g, t_bin_heap *heap)
 
 	flag = 0;
 	bin_heap_insert(heap, g->start, g->start->delta);
-	while(heap->num_nodes > 1)
+	while (heap->num_nodes > 1)
 	{
 		tmp = (t_room*)bin_pop_root(tmp, heap);
 		tmp->sign = 1;
@@ -48,12 +42,7 @@ int				bin_dijkstra(t_map *g, t_bin_heap *heap)
 		{
 			while (ln && (ln->to == tmp || ln->flow == 0))
 				ln = ln->next;
-			if (ln && ((pass_qrit(tmp, ln))))
-			{
-				ln->to->pred = tmp;
-				ln->to->delta = tmp->potential - ln->to->potential + ln->flow + tmp->delta;
-				bin_heap_insert(heap, ln->to, ln->to->delta);
-			}
+			pass_qrit(tmp, ln, heap);
 			if (ln && ln->to == g->fin)
 				flag = 1;
 			if (ln)

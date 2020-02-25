@@ -47,5 +47,5 @@ int			main(int ac, char *av[])
 		write(1, map.dstr->data, map.dstr->len);
 	del_map(&map);
 	close(fd);
-	return 0;
+	return (0);
 }

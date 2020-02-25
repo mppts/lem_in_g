@@ -6,7 +6,7 @@
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/05 12:03:07 by limry             #+#    #+#             */
-/*   Updated: 2020/02/21 22:56:24 by limry            ###   ########.fr       */
+/*   Updated: 2020/02/25 16:19:19 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -135,7 +135,7 @@ typedef struct		s_deq
 typedef struct		s_paths_arr
 {
 	uint64_t		amt_steps_cost;
-	int				current_path;
+	int				path_id;
 	int				num_paths;
 	t_room			**path;
 	t_room			***path_starts;
@@ -230,17 +230,28 @@ t_room				*deq_pop_front(t_deq *sdeq);
 void				deq_push_back(void *room, t_deq *sdeq);
 void				deq_remove_unsafe(t_deq *deq);
 void				deq_clear_data(t_deq *deq, uint64_t num_elems, size_t size_of_elem);
+void				*deq_get_rear(t_deq *sdeq);
 /*
 ** solver_tools.c
 */
 t_solver			*init_solver(t_map *g);
 void				slv_clean_paths(t_paths_arr *path, t_map *g);
 void				remove_solver(t_solver *slv);
+t_paths_arr			*slv_error_cleaning(int step, t_paths_arr *solution);
+
+/*
+** solver_ek.c
+*/
+void				fulfill_path(t_map *g);
+void				find_all_paths(t_paths_arr *path, t_map *g);
+/*
+ * writer_main_new.c writer_push_ants.c
+ */
 
 
 int					bin_dijkstra(t_map *g, t_bin_heap *heap);
 void				solver_edmonds_karp(t_map *g);
-t_room				*bfs_potential(t_room *start, t_room *final, t_map *map, t_deq *deq);
+t_room				*bfs_potential(t_room *start, t_room *final, t_deq *deq);
 
 
 #endif

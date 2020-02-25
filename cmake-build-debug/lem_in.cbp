@@ -128,10 +128,10 @@
 		<Unit filename="/Users/limry/CLionProjects/lm_full/libft/srcs/dstr/dstr.c">
 			<Option target="lem_in"/>
 		</Unit>
-		<Unit filename="/Users/limry/CLionProjects/lm_full/srcs/deque2.c">
+		<Unit filename="/Users/limry/CLionProjects/lm_full/srcs/deque.c">
 			<Option target="lem_in"/>
 		</Unit>
-		<Unit filename="/Users/limry/CLionProjects/lm_full/srcs/dijkstra.c">
+		<Unit filename="/Users/limry/CLionProjects/lm_full/srcs/deque2.c">
 			<Option target="lem_in"/>
 		</Unit>
 		<Unit filename="/Users/limry/CLionProjects/lm_full/srcs/main.c">
@@ -158,28 +158,25 @@
 		<Unit filename="/Users/limry/CLionProjects/lm_full/srcs/parse_utils.c">
 			<Option target="lem_in"/>
 		</Unit>
-		<Unit filename="/Users/limry/CLionProjects/lm_full/srcs/solver.c">
-			<Option target="lem_in"/>
-		</Unit>
-		<Unit filename="/Users/limry/CLionProjects/lm_full/srcs/solver_algorithm.c">
-			<Option target="lem_in"/>
-		</Unit>
-		<Unit filename="/Users/limry/CLionProjects/lm_full/srcs/solver_algorithm_cleaning.c">
-			<Option target="lem_in"/>
-		</Unit>
 		<Unit filename="/Users/limry/CLionProjects/lm_full/srcs/solver_bfs.c">
 			<Option target="lem_in"/>
 		</Unit>
-		<Unit filename="/Users/limry/CLionProjects/lm_full/srcs/solver_dfs.c">
+		<Unit filename="/Users/limry/CLionProjects/lm_full/srcs/solver_dijkstra.c">
 			<Option target="lem_in"/>
 		</Unit>
 		<Unit filename="/Users/limry/CLionProjects/lm_full/srcs/solver_ek.c">
+			<Option target="lem_in"/>
+		</Unit>
+		<Unit filename="/Users/limry/CLionProjects/lm_full/srcs/solver_ek2.c">
 			<Option target="lem_in"/>
 		</Unit>
 		<Unit filename="/Users/limry/CLionProjects/lm_full/srcs/solver_tools.c">
 			<Option target="lem_in"/>
 		</Unit>
 		<Unit filename="/Users/limry/CLionProjects/lm_full/srcs/writer_main_new.c">
+			<Option target="lem_in"/>
+		</Unit>
+		<Unit filename="/Users/limry/CLionProjects/lm_full/srcs/writer_push_ants.c">
 			<Option target="lem_in"/>
 		</Unit>
 		<Unit filename="/Users/limry/CLionProjects/lm_full/CMakeLists.txt">

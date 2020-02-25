@@ -174,22 +174,9 @@ CMakeFiles/lem_in.dir/srcs/parse_room2.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lem_in.dir/srcs/parse_room2.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/limry/CLionProjects/lm_full/srcs/parse_room2.c -o CMakeFiles/lem_in.dir/srcs/parse_room2.c.s
 
-CMakeFiles/lem_in.dir/srcs/solver.c.o: CMakeFiles/lem_in.dir/flags.make
-CMakeFiles/lem_in.dir/srcs/solver.c.o: ../srcs/solver.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/limry/CLionProjects/lm_full/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/lem_in.dir/srcs/solver.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/srcs/solver.c.o   -c /Users/limry/CLionProjects/lm_full/srcs/solver.c
-
-CMakeFiles/lem_in.dir/srcs/solver.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lem_in.dir/srcs/solver.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/limry/CLionProjects/lm_full/srcs/solver.c > CMakeFiles/lem_in.dir/srcs/solver.c.i
-
-CMakeFiles/lem_in.dir/srcs/solver.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lem_in.dir/srcs/solver.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/limry/CLionProjects/lm_full/srcs/solver.c -o CMakeFiles/lem_in.dir/srcs/solver.c.s
-
 CMakeFiles/lem_in.dir/srcs/solver_bfs.c.o: CMakeFiles/lem_in.dir/flags.make
 CMakeFiles/lem_in.dir/srcs/solver_bfs.c.o: ../srcs/solver_bfs.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/limry/CLionProjects/lm_full/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/lem_in.dir/srcs/solver_bfs.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/limry/CLionProjects/lm_full/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building C object CMakeFiles/lem_in.dir/srcs/solver_bfs.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/srcs/solver_bfs.c.o   -c /Users/limry/CLionProjects/lm_full/srcs/solver_bfs.c
 
 CMakeFiles/lem_in.dir/srcs/solver_bfs.c.i: cmake_force
@@ -200,48 +187,9 @@ CMakeFiles/lem_in.dir/srcs/solver_bfs.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lem_in.dir/srcs/solver_bfs.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/limry/CLionProjects/lm_full/srcs/solver_bfs.c -o CMakeFiles/lem_in.dir/srcs/solver_bfs.c.s
 
-CMakeFiles/lem_in.dir/srcs/solver_algorithm.c.o: CMakeFiles/lem_in.dir/flags.make
-CMakeFiles/lem_in.dir/srcs/solver_algorithm.c.o: ../srcs/solver_algorithm.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/limry/CLionProjects/lm_full/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/lem_in.dir/srcs/solver_algorithm.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/srcs/solver_algorithm.c.o   -c /Users/limry/CLionProjects/lm_full/srcs/solver_algorithm.c
-
-CMakeFiles/lem_in.dir/srcs/solver_algorithm.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lem_in.dir/srcs/solver_algorithm.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/limry/CLionProjects/lm_full/srcs/solver_algorithm.c > CMakeFiles/lem_in.dir/srcs/solver_algorithm.c.i
-
-CMakeFiles/lem_in.dir/srcs/solver_algorithm.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lem_in.dir/srcs/solver_algorithm.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/limry/CLionProjects/lm_full/srcs/solver_algorithm.c -o CMakeFiles/lem_in.dir/srcs/solver_algorithm.c.s
-
-CMakeFiles/lem_in.dir/srcs/solver_dfs.c.o: CMakeFiles/lem_in.dir/flags.make
-CMakeFiles/lem_in.dir/srcs/solver_dfs.c.o: ../srcs/solver_dfs.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/limry/CLionProjects/lm_full/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/lem_in.dir/srcs/solver_dfs.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/srcs/solver_dfs.c.o   -c /Users/limry/CLionProjects/lm_full/srcs/solver_dfs.c
-
-CMakeFiles/lem_in.dir/srcs/solver_dfs.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lem_in.dir/srcs/solver_dfs.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/limry/CLionProjects/lm_full/srcs/solver_dfs.c > CMakeFiles/lem_in.dir/srcs/solver_dfs.c.i
-
-CMakeFiles/lem_in.dir/srcs/solver_dfs.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lem_in.dir/srcs/solver_dfs.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/limry/CLionProjects/lm_full/srcs/solver_dfs.c -o CMakeFiles/lem_in.dir/srcs/solver_dfs.c.s
-
-CMakeFiles/lem_in.dir/srcs/solver_algorithm_cleaning.c.o: CMakeFiles/lem_in.dir/flags.make
-CMakeFiles/lem_in.dir/srcs/solver_algorithm_cleaning.c.o: ../srcs/solver_algorithm_cleaning.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/limry/CLionProjects/lm_full/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/lem_in.dir/srcs/solver_algorithm_cleaning.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/srcs/solver_algorithm_cleaning.c.o   -c /Users/limry/CLionProjects/lm_full/srcs/solver_algorithm_cleaning.c
-
-CMakeFiles/lem_in.dir/srcs/solver_algorithm_cleaning.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lem_in.dir/srcs/solver_algorithm_cleaning.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/limry/CLionProjects/lm_full/srcs/solver_algorithm_cleaning.c > CMakeFiles/lem_in.dir/srcs/solver_algorithm_cleaning.c.i
-
-CMakeFiles/lem_in.dir/srcs/solver_algorithm_cleaning.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lem_in.dir/srcs/solver_algorithm_cleaning.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/limry/CLionProjects/lm_full/srcs/solver_algorithm_cleaning.c -o CMakeFiles/lem_in.dir/srcs/solver_algorithm_cleaning.c.s
-
 CMakeFiles/lem_in.dir/srcs/solver_ek.c.o: CMakeFiles/lem_in.dir/flags.make
 CMakeFiles/lem_in.dir/srcs/solver_ek.c.o: ../srcs/solver_ek.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/limry/CLionProjects/lm_full/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/lem_in.dir/srcs/solver_ek.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/limry/CLionProjects/lm_full/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building C object CMakeFiles/lem_in.dir/srcs/solver_ek.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/srcs/solver_ek.c.o   -c /Users/limry/CLionProjects/lm_full/srcs/solver_ek.c
 
 CMakeFiles/lem_in.dir/srcs/solver_ek.c.i: cmake_force
@@ -252,22 +200,22 @@ CMakeFiles/lem_in.dir/srcs/solver_ek.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lem_in.dir/srcs/solver_ek.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/limry/CLionProjects/lm_full/srcs/solver_ek.c -o CMakeFiles/lem_in.dir/srcs/solver_ek.c.s
 
-CMakeFiles/lem_in.dir/srcs/dijkstra.c.o: CMakeFiles/lem_in.dir/flags.make
-CMakeFiles/lem_in.dir/srcs/dijkstra.c.o: ../srcs/dijkstra.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/limry/CLionProjects/lm_full/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/lem_in.dir/srcs/dijkstra.c.o"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/srcs/dijkstra.c.o   -c /Users/limry/CLionProjects/lm_full/srcs/dijkstra.c
+CMakeFiles/lem_in.dir/srcs/solver_dijkstra.c.o: CMakeFiles/lem_in.dir/flags.make
+CMakeFiles/lem_in.dir/srcs/solver_dijkstra.c.o: ../srcs/solver_dijkstra.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/limry/CLionProjects/lm_full/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building C object CMakeFiles/lem_in.dir/srcs/solver_dijkstra.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/srcs/solver_dijkstra.c.o   -c /Users/limry/CLionProjects/lm_full/srcs/solver_dijkstra.c
 
-CMakeFiles/lem_in.dir/srcs/dijkstra.c.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lem_in.dir/srcs/dijkstra.c.i"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/limry/CLionProjects/lm_full/srcs/dijkstra.c > CMakeFiles/lem_in.dir/srcs/dijkstra.c.i
+CMakeFiles/lem_in.dir/srcs/solver_dijkstra.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lem_in.dir/srcs/solver_dijkstra.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/limry/CLionProjects/lm_full/srcs/solver_dijkstra.c > CMakeFiles/lem_in.dir/srcs/solver_dijkstra.c.i
 
-CMakeFiles/lem_in.dir/srcs/dijkstra.c.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lem_in.dir/srcs/dijkstra.c.s"
-	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/limry/CLionProjects/lm_full/srcs/dijkstra.c -o CMakeFiles/lem_in.dir/srcs/dijkstra.c.s
+CMakeFiles/lem_in.dir/srcs/solver_dijkstra.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lem_in.dir/srcs/solver_dijkstra.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/limry/CLionProjects/lm_full/srcs/solver_dijkstra.c -o CMakeFiles/lem_in.dir/srcs/solver_dijkstra.c.s
 
 CMakeFiles/lem_in.dir/libft/srcs/binary_heap/binary_init.c.o: CMakeFiles/lem_in.dir/flags.make
 CMakeFiles/lem_in.dir/libft/srcs/binary_heap/binary_init.c.o: ../libft/srcs/binary_heap/binary_init.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/limry/CLionProjects/lm_full/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/lem_in.dir/libft/srcs/binary_heap/binary_init.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/limry/CLionProjects/lm_full/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building C object CMakeFiles/lem_in.dir/libft/srcs/binary_heap/binary_init.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/libft/srcs/binary_heap/binary_init.c.o   -c /Users/limry/CLionProjects/lm_full/libft/srcs/binary_heap/binary_init.c
 
 CMakeFiles/lem_in.dir/libft/srcs/binary_heap/binary_init.c.i: cmake_force
@@ -280,7 +228,7 @@ CMakeFiles/lem_in.dir/libft/srcs/binary_heap/binary_init.c.s: cmake_force
 
 CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_swap.c.o: CMakeFiles/lem_in.dir/flags.make
 CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_swap.c.o: ../libft/srcs/binary_heap/bin_swap.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/limry/CLionProjects/lm_full/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_swap.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/limry/CLionProjects/lm_full/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building C object CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_swap.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_swap.c.o   -c /Users/limry/CLionProjects/lm_full/libft/srcs/binary_heap/bin_swap.c
 
 CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_swap.c.i: cmake_force
@@ -293,7 +241,7 @@ CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_swap.c.s: cmake_force
 
 CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_remove_root.c.o: CMakeFiles/lem_in.dir/flags.make
 CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_remove_root.c.o: ../libft/srcs/binary_heap/bin_remove_root.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/limry/CLionProjects/lm_full/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_remove_root.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/limry/CLionProjects/lm_full/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building C object CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_remove_root.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_remove_root.c.o   -c /Users/limry/CLionProjects/lm_full/libft/srcs/binary_heap/bin_remove_root.c
 
 CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_remove_root.c.i: cmake_force
@@ -306,7 +254,7 @@ CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_remove_root.c.s: cmake_force
 
 CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_free.c.o: CMakeFiles/lem_in.dir/flags.make
 CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_free.c.o: ../libft/srcs/binary_heap/bin_free.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/limry/CLionProjects/lm_full/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_free.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/limry/CLionProjects/lm_full/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building C object CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_free.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_free.c.o   -c /Users/limry/CLionProjects/lm_full/libft/srcs/binary_heap/bin_free.c
 
 CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_free.c.i: cmake_force
@@ -319,7 +267,7 @@ CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_free.c.s: cmake_force
 
 CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_insert.c.o: CMakeFiles/lem_in.dir/flags.make
 CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_insert.c.o: ../libft/srcs/binary_heap/bin_insert.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/limry/CLionProjects/lm_full/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_insert.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/limry/CLionProjects/lm_full/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building C object CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_insert.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_insert.c.o   -c /Users/limry/CLionProjects/lm_full/libft/srcs/binary_heap/bin_insert.c
 
 CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_insert.c.i: cmake_force
@@ -332,7 +280,7 @@ CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_insert.c.s: cmake_force
 
 CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_inc_key.c.o: CMakeFiles/lem_in.dir/flags.make
 CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_inc_key.c.o: ../libft/srcs/binary_heap/bin_inc_key.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/limry/CLionProjects/lm_full/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_inc_key.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/limry/CLionProjects/lm_full/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building C object CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_inc_key.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_inc_key.c.o   -c /Users/limry/CLionProjects/lm_full/libft/srcs/binary_heap/bin_inc_key.c
 
 CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_inc_key.c.i: cmake_force
@@ -345,7 +293,7 @@ CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_inc_key.c.s: cmake_force
 
 CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_get_root.c.o: CMakeFiles/lem_in.dir/flags.make
 CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_get_root.c.o: ../libft/srcs/binary_heap/bin_get_root.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/limry/CLionProjects/lm_full/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_get_root.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/limry/CLionProjects/lm_full/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building C object CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_get_root.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_get_root.c.o   -c /Users/limry/CLionProjects/lm_full/libft/srcs/binary_heap/bin_get_root.c
 
 CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_get_root.c.i: cmake_force
@@ -358,7 +306,7 @@ CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_get_root.c.s: cmake_force
 
 CMakeFiles/lem_in.dir/srcs/solver_tools.c.o: CMakeFiles/lem_in.dir/flags.make
 CMakeFiles/lem_in.dir/srcs/solver_tools.c.o: ../srcs/solver_tools.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/limry/CLionProjects/lm_full/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/lem_in.dir/srcs/solver_tools.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/limry/CLionProjects/lm_full/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building C object CMakeFiles/lem_in.dir/srcs/solver_tools.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/srcs/solver_tools.c.o   -c /Users/limry/CLionProjects/lm_full/srcs/solver_tools.c
 
 CMakeFiles/lem_in.dir/srcs/solver_tools.c.i: cmake_force
@@ -371,7 +319,7 @@ CMakeFiles/lem_in.dir/srcs/solver_tools.c.s: cmake_force
 
 CMakeFiles/lem_in.dir/srcs/deque2.c.o: CMakeFiles/lem_in.dir/flags.make
 CMakeFiles/lem_in.dir/srcs/deque2.c.o: ../srcs/deque2.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/limry/CLionProjects/lm_full/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/lem_in.dir/srcs/deque2.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/limry/CLionProjects/lm_full/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building C object CMakeFiles/lem_in.dir/srcs/deque2.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/srcs/deque2.c.o   -c /Users/limry/CLionProjects/lm_full/srcs/deque2.c
 
 CMakeFiles/lem_in.dir/srcs/deque2.c.i: cmake_force
@@ -382,9 +330,22 @@ CMakeFiles/lem_in.dir/srcs/deque2.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lem_in.dir/srcs/deque2.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/limry/CLionProjects/lm_full/srcs/deque2.c -o CMakeFiles/lem_in.dir/srcs/deque2.c.s
 
+CMakeFiles/lem_in.dir/srcs/deque.c.o: CMakeFiles/lem_in.dir/flags.make
+CMakeFiles/lem_in.dir/srcs/deque.c.o: ../srcs/deque.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/limry/CLionProjects/lm_full/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building C object CMakeFiles/lem_in.dir/srcs/deque.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/srcs/deque.c.o   -c /Users/limry/CLionProjects/lm_full/srcs/deque.c
+
+CMakeFiles/lem_in.dir/srcs/deque.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lem_in.dir/srcs/deque.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/limry/CLionProjects/lm_full/srcs/deque.c > CMakeFiles/lem_in.dir/srcs/deque.c.i
+
+CMakeFiles/lem_in.dir/srcs/deque.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lem_in.dir/srcs/deque.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/limry/CLionProjects/lm_full/srcs/deque.c -o CMakeFiles/lem_in.dir/srcs/deque.c.s
+
 CMakeFiles/lem_in.dir/srcs/writer_main_new.c.o: CMakeFiles/lem_in.dir/flags.make
 CMakeFiles/lem_in.dir/srcs/writer_main_new.c.o: ../srcs/writer_main_new.c
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/limry/CLionProjects/lm_full/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building C object CMakeFiles/lem_in.dir/srcs/writer_main_new.c.o"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/limry/CLionProjects/lm_full/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building C object CMakeFiles/lem_in.dir/srcs/writer_main_new.c.o"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/srcs/writer_main_new.c.o   -c /Users/limry/CLionProjects/lm_full/srcs/writer_main_new.c
 
 CMakeFiles/lem_in.dir/srcs/writer_main_new.c.i: cmake_force
@@ -394,6 +355,32 @@ CMakeFiles/lem_in.dir/srcs/writer_main_new.c.i: cmake_force
 CMakeFiles/lem_in.dir/srcs/writer_main_new.c.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lem_in.dir/srcs/writer_main_new.c.s"
 	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/limry/CLionProjects/lm_full/srcs/writer_main_new.c -o CMakeFiles/lem_in.dir/srcs/writer_main_new.c.s
+
+CMakeFiles/lem_in.dir/srcs/solver_ek2.c.o: CMakeFiles/lem_in.dir/flags.make
+CMakeFiles/lem_in.dir/srcs/solver_ek2.c.o: ../srcs/solver_ek2.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/limry/CLionProjects/lm_full/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building C object CMakeFiles/lem_in.dir/srcs/solver_ek2.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/srcs/solver_ek2.c.o   -c /Users/limry/CLionProjects/lm_full/srcs/solver_ek2.c
+
+CMakeFiles/lem_in.dir/srcs/solver_ek2.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lem_in.dir/srcs/solver_ek2.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/limry/CLionProjects/lm_full/srcs/solver_ek2.c > CMakeFiles/lem_in.dir/srcs/solver_ek2.c.i
+
+CMakeFiles/lem_in.dir/srcs/solver_ek2.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lem_in.dir/srcs/solver_ek2.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/limry/CLionProjects/lm_full/srcs/solver_ek2.c -o CMakeFiles/lem_in.dir/srcs/solver_ek2.c.s
+
+CMakeFiles/lem_in.dir/srcs/writer_push_ants.c.o: CMakeFiles/lem_in.dir/flags.make
+CMakeFiles/lem_in.dir/srcs/writer_push_ants.c.o: ../srcs/writer_push_ants.c
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/Users/limry/CLionProjects/lm_full/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building C object CMakeFiles/lem_in.dir/srcs/writer_push_ants.c.o"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -o CMakeFiles/lem_in.dir/srcs/writer_push_ants.c.o   -c /Users/limry/CLionProjects/lm_full/srcs/writer_push_ants.c
+
+CMakeFiles/lem_in.dir/srcs/writer_push_ants.c.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing C source to CMakeFiles/lem_in.dir/srcs/writer_push_ants.c.i"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -E /Users/limry/CLionProjects/lm_full/srcs/writer_push_ants.c > CMakeFiles/lem_in.dir/srcs/writer_push_ants.c.i
+
+CMakeFiles/lem_in.dir/srcs/writer_push_ants.c.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling C source to assembly CMakeFiles/lem_in.dir/srcs/writer_push_ants.c.s"
+	/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/bin/cc $(C_DEFINES) $(C_INCLUDES) $(C_FLAGS) -S /Users/limry/CLionProjects/lm_full/srcs/writer_push_ants.c -o CMakeFiles/lem_in.dir/srcs/writer_push_ants.c.s
 
 # Object files for target lem_in
 lem_in_OBJECTS = \
@@ -406,13 +393,9 @@ lem_in_OBJECTS = \
 "CMakeFiles/lem_in.dir/srcs/parse_links.c.o" \
 "CMakeFiles/lem_in.dir/srcs/parse_hash.c.o" \
 "CMakeFiles/lem_in.dir/srcs/parse_room2.c.o" \
-"CMakeFiles/lem_in.dir/srcs/solver.c.o" \
 "CMakeFiles/lem_in.dir/srcs/solver_bfs.c.o" \
-"CMakeFiles/lem_in.dir/srcs/solver_algorithm.c.o" \
-"CMakeFiles/lem_in.dir/srcs/solver_dfs.c.o" \
-"CMakeFiles/lem_in.dir/srcs/solver_algorithm_cleaning.c.o" \
 "CMakeFiles/lem_in.dir/srcs/solver_ek.c.o" \
-"CMakeFiles/lem_in.dir/srcs/dijkstra.c.o" \
+"CMakeFiles/lem_in.dir/srcs/solver_dijkstra.c.o" \
 "CMakeFiles/lem_in.dir/libft/srcs/binary_heap/binary_init.c.o" \
 "CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_swap.c.o" \
 "CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_remove_root.c.o" \
@@ -422,7 +405,10 @@ lem_in_OBJECTS = \
 "CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_get_root.c.o" \
 "CMakeFiles/lem_in.dir/srcs/solver_tools.c.o" \
 "CMakeFiles/lem_in.dir/srcs/deque2.c.o" \
-"CMakeFiles/lem_in.dir/srcs/writer_main_new.c.o"
+"CMakeFiles/lem_in.dir/srcs/deque.c.o" \
+"CMakeFiles/lem_in.dir/srcs/writer_main_new.c.o" \
+"CMakeFiles/lem_in.dir/srcs/solver_ek2.c.o" \
+"CMakeFiles/lem_in.dir/srcs/writer_push_ants.c.o"
 
 # External object files for target lem_in
 lem_in_EXTERNAL_OBJECTS =
@@ -436,13 +422,9 @@ lem_in: CMakeFiles/lem_in.dir/srcs/parse_utils.c.o
 lem_in: CMakeFiles/lem_in.dir/srcs/parse_links.c.o
 lem_in: CMakeFiles/lem_in.dir/srcs/parse_hash.c.o
 lem_in: CMakeFiles/lem_in.dir/srcs/parse_room2.c.o
-lem_in: CMakeFiles/lem_in.dir/srcs/solver.c.o
 lem_in: CMakeFiles/lem_in.dir/srcs/solver_bfs.c.o
-lem_in: CMakeFiles/lem_in.dir/srcs/solver_algorithm.c.o
-lem_in: CMakeFiles/lem_in.dir/srcs/solver_dfs.c.o
-lem_in: CMakeFiles/lem_in.dir/srcs/solver_algorithm_cleaning.c.o
 lem_in: CMakeFiles/lem_in.dir/srcs/solver_ek.c.o
-lem_in: CMakeFiles/lem_in.dir/srcs/dijkstra.c.o
+lem_in: CMakeFiles/lem_in.dir/srcs/solver_dijkstra.c.o
 lem_in: CMakeFiles/lem_in.dir/libft/srcs/binary_heap/binary_init.c.o
 lem_in: CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_swap.c.o
 lem_in: CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_remove_root.c.o
@@ -452,11 +434,14 @@ lem_in: CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_inc_key.c.o
 lem_in: CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_get_root.c.o
 lem_in: CMakeFiles/lem_in.dir/srcs/solver_tools.c.o
 lem_in: CMakeFiles/lem_in.dir/srcs/deque2.c.o
+lem_in: CMakeFiles/lem_in.dir/srcs/deque.c.o
 lem_in: CMakeFiles/lem_in.dir/srcs/writer_main_new.c.o
+lem_in: CMakeFiles/lem_in.dir/srcs/solver_ek2.c.o
+lem_in: CMakeFiles/lem_in.dir/srcs/writer_push_ants.c.o
 lem_in: CMakeFiles/lem_in.dir/build.make
 lem_in: ../libft/libft.a
 lem_in: CMakeFiles/lem_in.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/limry/CLionProjects/lm_full/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Linking C executable lem_in"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/Users/limry/CLionProjects/lm_full/cmake-build-debug/CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Linking C executable lem_in"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/lem_in.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

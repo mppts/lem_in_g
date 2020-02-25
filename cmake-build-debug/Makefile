@@ -339,6 +339,33 @@ libft/srcs/dstr/dstr.c.s:
 	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libft/srcs/dstr/dstr.c.s
 .PHONY : libft/srcs/dstr/dstr.c.s
 
+srcs/deque.o: srcs/deque.c.o
+
+.PHONY : srcs/deque.o
+
+# target to build an object file
+srcs/deque.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/deque.c.o
+.PHONY : srcs/deque.c.o
+
+srcs/deque.i: srcs/deque.c.i
+
+.PHONY : srcs/deque.i
+
+# target to preprocess a source file
+srcs/deque.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/deque.c.i
+.PHONY : srcs/deque.c.i
+
+srcs/deque.s: srcs/deque.c.s
+
+.PHONY : srcs/deque.s
+
+# target to generate assembly for a file
+srcs/deque.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/deque.c.s
+.PHONY : srcs/deque.c.s
+
 srcs/deque2.o: srcs/deque2.c.o
 
 .PHONY : srcs/deque2.o
@@ -365,33 +392,6 @@ srcs/deque2.s: srcs/deque2.c.s
 srcs/deque2.c.s:
 	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/deque2.c.s
 .PHONY : srcs/deque2.c.s
-
-srcs/dijkstra.o: srcs/dijkstra.c.o
-
-.PHONY : srcs/dijkstra.o
-
-# target to build an object file
-srcs/dijkstra.c.o:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/dijkstra.c.o
-.PHONY : srcs/dijkstra.c.o
-
-srcs/dijkstra.i: srcs/dijkstra.c.i
-
-.PHONY : srcs/dijkstra.i
-
-# target to preprocess a source file
-srcs/dijkstra.c.i:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/dijkstra.c.i
-.PHONY : srcs/dijkstra.c.i
-
-srcs/dijkstra.s: srcs/dijkstra.c.s
-
-.PHONY : srcs/dijkstra.s
-
-# target to generate assembly for a file
-srcs/dijkstra.c.s:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/dijkstra.c.s
-.PHONY : srcs/dijkstra.c.s
 
 srcs/main.o: srcs/main.c.o
 
@@ -609,87 +609,6 @@ srcs/parse_utils.c.s:
 	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/parse_utils.c.s
 .PHONY : srcs/parse_utils.c.s
 
-srcs/solver.o: srcs/solver.c.o
-
-.PHONY : srcs/solver.o
-
-# target to build an object file
-srcs/solver.c.o:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver.c.o
-.PHONY : srcs/solver.c.o
-
-srcs/solver.i: srcs/solver.c.i
-
-.PHONY : srcs/solver.i
-
-# target to preprocess a source file
-srcs/solver.c.i:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver.c.i
-.PHONY : srcs/solver.c.i
-
-srcs/solver.s: srcs/solver.c.s
-
-.PHONY : srcs/solver.s
-
-# target to generate assembly for a file
-srcs/solver.c.s:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver.c.s
-.PHONY : srcs/solver.c.s
-
-srcs/solver_algorithm.o: srcs/solver_algorithm.c.o
-
-.PHONY : srcs/solver_algorithm.o
-
-# target to build an object file
-srcs/solver_algorithm.c.o:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_algorithm.c.o
-.PHONY : srcs/solver_algorithm.c.o
-
-srcs/solver_algorithm.i: srcs/solver_algorithm.c.i
-
-.PHONY : srcs/solver_algorithm.i
-
-# target to preprocess a source file
-srcs/solver_algorithm.c.i:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_algorithm.c.i
-.PHONY : srcs/solver_algorithm.c.i
-
-srcs/solver_algorithm.s: srcs/solver_algorithm.c.s
-
-.PHONY : srcs/solver_algorithm.s
-
-# target to generate assembly for a file
-srcs/solver_algorithm.c.s:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_algorithm.c.s
-.PHONY : srcs/solver_algorithm.c.s
-
-srcs/solver_algorithm_cleaning.o: srcs/solver_algorithm_cleaning.c.o
-
-.PHONY : srcs/solver_algorithm_cleaning.o
-
-# target to build an object file
-srcs/solver_algorithm_cleaning.c.o:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_algorithm_cleaning.c.o
-.PHONY : srcs/solver_algorithm_cleaning.c.o
-
-srcs/solver_algorithm_cleaning.i: srcs/solver_algorithm_cleaning.c.i
-
-.PHONY : srcs/solver_algorithm_cleaning.i
-
-# target to preprocess a source file
-srcs/solver_algorithm_cleaning.c.i:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_algorithm_cleaning.c.i
-.PHONY : srcs/solver_algorithm_cleaning.c.i
-
-srcs/solver_algorithm_cleaning.s: srcs/solver_algorithm_cleaning.c.s
-
-.PHONY : srcs/solver_algorithm_cleaning.s
-
-# target to generate assembly for a file
-srcs/solver_algorithm_cleaning.c.s:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_algorithm_cleaning.c.s
-.PHONY : srcs/solver_algorithm_cleaning.c.s
-
 srcs/solver_bfs.o: srcs/solver_bfs.c.o
 
 .PHONY : srcs/solver_bfs.o
@@ -717,32 +636,32 @@ srcs/solver_bfs.c.s:
 	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_bfs.c.s
 .PHONY : srcs/solver_bfs.c.s
 
-srcs/solver_dfs.o: srcs/solver_dfs.c.o
+srcs/solver_dijkstra.o: srcs/solver_dijkstra.c.o
 
-.PHONY : srcs/solver_dfs.o
+.PHONY : srcs/solver_dijkstra.o
 
 # target to build an object file
-srcs/solver_dfs.c.o:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_dfs.c.o
-.PHONY : srcs/solver_dfs.c.o
+srcs/solver_dijkstra.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_dijkstra.c.o
+.PHONY : srcs/solver_dijkstra.c.o
 
-srcs/solver_dfs.i: srcs/solver_dfs.c.i
+srcs/solver_dijkstra.i: srcs/solver_dijkstra.c.i
 
-.PHONY : srcs/solver_dfs.i
+.PHONY : srcs/solver_dijkstra.i
 
 # target to preprocess a source file
-srcs/solver_dfs.c.i:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_dfs.c.i
-.PHONY : srcs/solver_dfs.c.i
+srcs/solver_dijkstra.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_dijkstra.c.i
+.PHONY : srcs/solver_dijkstra.c.i
 
-srcs/solver_dfs.s: srcs/solver_dfs.c.s
+srcs/solver_dijkstra.s: srcs/solver_dijkstra.c.s
 
-.PHONY : srcs/solver_dfs.s
+.PHONY : srcs/solver_dijkstra.s
 
 # target to generate assembly for a file
-srcs/solver_dfs.c.s:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_dfs.c.s
-.PHONY : srcs/solver_dfs.c.s
+srcs/solver_dijkstra.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_dijkstra.c.s
+.PHONY : srcs/solver_dijkstra.c.s
 
 srcs/solver_ek.o: srcs/solver_ek.c.o
 
@@ -770,6 +689,33 @@ srcs/solver_ek.s: srcs/solver_ek.c.s
 srcs/solver_ek.c.s:
 	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_ek.c.s
 .PHONY : srcs/solver_ek.c.s
+
+srcs/solver_ek2.o: srcs/solver_ek2.c.o
+
+.PHONY : srcs/solver_ek2.o
+
+# target to build an object file
+srcs/solver_ek2.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_ek2.c.o
+.PHONY : srcs/solver_ek2.c.o
+
+srcs/solver_ek2.i: srcs/solver_ek2.c.i
+
+.PHONY : srcs/solver_ek2.i
+
+# target to preprocess a source file
+srcs/solver_ek2.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_ek2.c.i
+.PHONY : srcs/solver_ek2.c.i
+
+srcs/solver_ek2.s: srcs/solver_ek2.c.s
+
+.PHONY : srcs/solver_ek2.s
+
+# target to generate assembly for a file
+srcs/solver_ek2.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_ek2.c.s
+.PHONY : srcs/solver_ek2.c.s
 
 srcs/solver_tools.o: srcs/solver_tools.c.o
 
@@ -825,6 +771,33 @@ srcs/writer_main_new.c.s:
 	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/writer_main_new.c.s
 .PHONY : srcs/writer_main_new.c.s
 
+srcs/writer_push_ants.o: srcs/writer_push_ants.c.o
+
+.PHONY : srcs/writer_push_ants.o
+
+# target to build an object file
+srcs/writer_push_ants.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/writer_push_ants.c.o
+.PHONY : srcs/writer_push_ants.c.o
+
+srcs/writer_push_ants.i: srcs/writer_push_ants.c.i
+
+.PHONY : srcs/writer_push_ants.i
+
+# target to preprocess a source file
+srcs/writer_push_ants.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/writer_push_ants.c.i
+.PHONY : srcs/writer_push_ants.c.i
+
+srcs/writer_push_ants.s: srcs/writer_push_ants.c.s
+
+.PHONY : srcs/writer_push_ants.s
+
+# target to generate assembly for a file
+srcs/writer_push_ants.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/writer_push_ants.c.s
+.PHONY : srcs/writer_push_ants.c.s
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -858,12 +831,12 @@ help:
 	@echo "... libft/srcs/dstr/dstr.o"
 	@echo "... libft/srcs/dstr/dstr.i"
 	@echo "... libft/srcs/dstr/dstr.s"
+	@echo "... srcs/deque.o"
+	@echo "... srcs/deque.i"
+	@echo "... srcs/deque.s"
 	@echo "... srcs/deque2.o"
 	@echo "... srcs/deque2.i"
 	@echo "... srcs/deque2.s"
-	@echo "... srcs/dijkstra.o"
-	@echo "... srcs/dijkstra.i"
-	@echo "... srcs/dijkstra.s"
 	@echo "... srcs/main.o"
 	@echo "... srcs/main.i"
 	@echo "... srcs/main.s"
@@ -888,30 +861,27 @@ help:
 	@echo "... srcs/parse_utils.o"
 	@echo "... srcs/parse_utils.i"
 	@echo "... srcs/parse_utils.s"
-	@echo "... srcs/solver.o"
-	@echo "... srcs/solver.i"
-	@echo "... srcs/solver.s"
-	@echo "... srcs/solver_algorithm.o"
-	@echo "... srcs/solver_algorithm.i"
-	@echo "... srcs/solver_algorithm.s"
-	@echo "... srcs/solver_algorithm_cleaning.o"
-	@echo "... srcs/solver_algorithm_cleaning.i"
-	@echo "... srcs/solver_algorithm_cleaning.s"
 	@echo "... srcs/solver_bfs.o"
 	@echo "... srcs/solver_bfs.i"
 	@echo "... srcs/solver_bfs.s"
-	@echo "... srcs/solver_dfs.o"
-	@echo "... srcs/solver_dfs.i"
-	@echo "... srcs/solver_dfs.s"
+	@echo "... srcs/solver_dijkstra.o"
+	@echo "... srcs/solver_dijkstra.i"
+	@echo "... srcs/solver_dijkstra.s"
 	@echo "... srcs/solver_ek.o"
 	@echo "... srcs/solver_ek.i"
 	@echo "... srcs/solver_ek.s"
+	@echo "... srcs/solver_ek2.o"
+	@echo "... srcs/solver_ek2.i"
+	@echo "... srcs/solver_ek2.s"
 	@echo "... srcs/solver_tools.o"
 	@echo "... srcs/solver_tools.i"
 	@echo "... srcs/solver_tools.s"
 	@echo "... srcs/writer_main_new.o"
 	@echo "... srcs/writer_main_new.i"
 	@echo "... srcs/writer_main_new.s"
+	@echo "... srcs/writer_push_ants.o"
+	@echo "... srcs/writer_push_ants.i"
+	@echo "... srcs/writer_push_ants.s"
 .PHONY : help
 
 

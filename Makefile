@@ -19,19 +19,21 @@ SOURCE = \
          parse_room.c\
          parse_room2.c\
 		 parse_utils.c\
-         solver.c\
-         solver_algorithm.c\
+		 solver_dijkstra.c\
+         solver_ek.c\
+         solver_ek2.c\
+         solver_tools.c\
          solver_bfs.c\
-         solver_dfs.c\
-         solver_algorithm_cleaning.c\
-         writer_main.c
+         deque.c\
+         deque2.c\
+         writer_main_new.c
 
 
 HEADERS =	lem_in.h \
 			libft.h \
 			binary_heap.h
 
-#FLAGS = -Wall -Wextra -Werror -g3
+FLAGS = -Wall -Wextra -Werror
 FLAGS = 
 OBJ = $(SOURCE:%.c=%.o)
 OBJS = $(SOURCE:%.c=$(DIR_OBJ)%.o)

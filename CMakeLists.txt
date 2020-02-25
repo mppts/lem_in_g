@@ -39,7 +39,7 @@ add_executable(lem_in
         srcs/deque.c
         srcs/writer_main_new.c
         srcs/solver_ek2.c
-        srcs/writer_push_ants.c)
+        srcs/writer_push_ants.c libft/srcs/dstr/dstr2.c)
 
 target_link_libraries(lem_in ${CMAKE_SOURCE_DIR}/libft/libft.a)
 

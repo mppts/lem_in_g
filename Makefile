@@ -26,14 +26,15 @@ SOURCE = \
          solver_bfs.c\
          deque.c\
          deque2.c\
-         writer_main_new.c
+         writer_main_new.c\
+		 writer_push_ants.c
 
 
 HEADERS =	lem_in.h \
 			libft.h \
 			binary_heap.h
 
-FLAGS = -Wall -Wextra -Werror
+FLAGS = -Wall -Wextra -Werror -g3
 FLAGS = 
 OBJ = $(SOURCE:%.c=%.o)
 OBJS = $(SOURCE:%.c=$(DIR_OBJ)%.o)

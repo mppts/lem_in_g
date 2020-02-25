@@ -6,7 +6,7 @@
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/04 20:09:29 by limry             #+#    #+#             */
-/*   Updated: 2020/02/10 17:11:18 by limry            ###   ########.fr       */
+/*   Updated: 2020/02/25 17:45:00 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,7 @@ void			init_map(t_map *map)
 	map->paths = NULL;
 }
 
-void			parse_map(t_map *map, int fd)
+void			parse_map(t_map *map)
 {
 	char		*buf;
 	t_flag		flag;
@@ -98,7 +98,7 @@ void			parse_map(t_map *map, int fd)
 	flag.flag_end = 0;
 	flag.flag_start = 0;
 	buf = NULL;
-	while ((ret = get_next_line(fd, &buf)))
+	while ((ret = get_next_line(0, &buf)))
 	{
 		if (ret == -1)
 			break ;

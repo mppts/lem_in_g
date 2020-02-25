@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/02/25 20:35:36 by limry             #+#    #+#             */
+/*   Updated: 2020/02/25 20:35:45 by limry            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 void				*ft_memcpy(void *dst, const void *src, size_t n)
@@ -18,7 +30,7 @@ void				*ft_memcpy(void *dst, const void *src, size_t n)
 	}
 	srt_dst = (uint8_t*)lsub_dst;
 	srt_src = (uint8_t*)lsub_src;
-	while(n--)
+	while (n--)
 		*srt_dst++ = *srt_src++;
 	return (dst);
 }

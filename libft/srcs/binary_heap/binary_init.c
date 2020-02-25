@@ -1,7 +1,19 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   binary_init.c                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/02/25 20:30:07 by limry             #+#    #+#             */
+/*   Updated: 2020/02/25 20:30:09 by limry            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "binary_heap.h"
 #include "libft.h"
 
-void			bin_clean_heap_data(t_bin_heap* heap)
+void			bin_clean_heap_data(t_bin_heap *heap)
 {
 	ft_bzero(heap->nodes, sizeof(t_bin_node) * (heap->capacity + 1));
 	heap->num_nodes = 1;

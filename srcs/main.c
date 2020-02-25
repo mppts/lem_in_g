@@ -6,7 +6,7 @@
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/13 15:38:25 by limry             #+#    #+#             */
-/*   Updated: 2020/02/19 16:31:26 by kona             ###   ########.fr       */
+/*   Updated: 2020/02/25 20:18:32 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,14 +29,12 @@ void		parse_errors(t_map *map)
 					NULL, NULL, map);
 }
 
-int			main(int ac, char *av[])
+int			main(void)
 {
 	t_map	map;
-	int		fd;
 
-	fd = open(av[1], O_RDONLY);
 	init_map(&map);
-	parse_map(&map, fd);
+	parse_map(&map);
 	parse_errors(&map);
 	solver_edmonds_karp(&map);
 	if (map.paths == NULL)
@@ -46,6 +44,5 @@ int			main(int ac, char *av[])
 	if (map.dstr->data)
 		write(1, map.dstr->data, map.dstr->len);
 	del_map(&map);
-	close(fd);
 	return (0);
 }

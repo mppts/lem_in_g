@@ -50,7 +50,7 @@ void			fulfill_path(t_map *g)
 	}
 }
 
-void			push_path(t_paths_arr *path, t_map *g, t_link *lf)
+void			push_path(t_patha *path, t_map *g, t_link *lf)
 {
 	t_link		*link;
 
@@ -72,7 +72,7 @@ void			push_path(t_paths_arr *path, t_map *g, t_link *lf)
 	path->path_starts[path->path_id][path->path_lens[path->path_id]] = NULL;
 }
 
-void			find_all_paths(t_paths_arr *path, t_map *g)
+void			find_all_paths(t_patha *path, t_map *g)
 {
 	t_link		*link;
 

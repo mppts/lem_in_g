@@ -128,6 +128,9 @@
 		<Unit filename="/Users/limry/CLionProjects/lm_full/libft/srcs/dstr/dstr.c">
 			<Option target="lem_in"/>
 		</Unit>
+		<Unit filename="/Users/limry/CLionProjects/lm_full/libft/srcs/dstr/dstr2.c">
+			<Option target="lem_in"/>
+		</Unit>
 		<Unit filename="/Users/limry/CLionProjects/lm_full/srcs/deque.c">
 			<Option target="lem_in"/>
 		</Unit>

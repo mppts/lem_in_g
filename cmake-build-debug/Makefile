@@ -339,6 +339,33 @@ libft/srcs/dstr/dstr.c.s:
 	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libft/srcs/dstr/dstr.c.s
 .PHONY : libft/srcs/dstr/dstr.c.s
 
+libft/srcs/dstr/dstr2.o: libft/srcs/dstr/dstr2.c.o
+
+.PHONY : libft/srcs/dstr/dstr2.o
+
+# target to build an object file
+libft/srcs/dstr/dstr2.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libft/srcs/dstr/dstr2.c.o
+.PHONY : libft/srcs/dstr/dstr2.c.o
+
+libft/srcs/dstr/dstr2.i: libft/srcs/dstr/dstr2.c.i
+
+.PHONY : libft/srcs/dstr/dstr2.i
+
+# target to preprocess a source file
+libft/srcs/dstr/dstr2.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libft/srcs/dstr/dstr2.c.i
+.PHONY : libft/srcs/dstr/dstr2.c.i
+
+libft/srcs/dstr/dstr2.s: libft/srcs/dstr/dstr2.c.s
+
+.PHONY : libft/srcs/dstr/dstr2.s
+
+# target to generate assembly for a file
+libft/srcs/dstr/dstr2.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libft/srcs/dstr/dstr2.c.s
+.PHONY : libft/srcs/dstr/dstr2.c.s
+
 srcs/deque.o: srcs/deque.c.o
 
 .PHONY : srcs/deque.o
@@ -831,6 +858,9 @@ help:
 	@echo "... libft/srcs/dstr/dstr.o"
 	@echo "... libft/srcs/dstr/dstr.i"
 	@echo "... libft/srcs/dstr/dstr.s"
+	@echo "... libft/srcs/dstr/dstr2.o"
+	@echo "... libft/srcs/dstr/dstr2.i"
+	@echo "... libft/srcs/dstr/dstr2.s"
 	@echo "... srcs/deque.o"
 	@echo "... srcs/deque.i"
 	@echo "... srcs/deque.s"

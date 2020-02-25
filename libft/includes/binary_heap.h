@@ -1,20 +1,32 @@
-#ifndef LEM_IN_BINARY_HEAP_H
-#define LEM_IN_BINARY_HEAP_H
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   binary_heap.h                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/02/25 20:39:41 by limry             #+#    #+#             */
+/*   Updated: 2020/02/25 20:40:20 by limry            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 
-#include <stdlib.h>
-#include <inttypes.h>
+#ifndef LEM_IN_BINARY_HEAP_H
+# define LEM_IN_BINARY_HEAP_H
+
+# include <stdlib.h>
+# include <inttypes.h>
 
 typedef struct		s_bin_node
 {
-	int64_t 		key;
+	int64_t			key;
 	void			*data;
 }					t_bin_node;
 
 typedef struct		s_bin_heap
 {
-	int64_t 		capacity;
-	int64_t 		num_nodes;
-	t_bin_node 		*nodes;
+	int64_t			capacity;
+	int64_t			num_nodes;
+	t_bin_node		*nodes;
 }					t_bin_heap;
 
 t_bin_heap			*bin_heap_init(int64_t size);
@@ -26,6 +38,6 @@ void				bin_remove_root(t_bin_heap *heap);
 int					bin_inc_key(t_bin_heap *heap, int64_t i, int64_t key);
 int					bin_decr_key(t_bin_heap *heap, int64_t i, int64_t key);
 void				*bin_pop_root(void *new_min, t_bin_heap *heap);
-void				bin_clean_heap_data(t_bin_heap* heap);
+void				bin_clean_heap_data(t_bin_heap *heap);
 
 #endif

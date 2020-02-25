@@ -5,14 +5,15 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/08 16:36:34 by limry             #+#    #+#             */
-/*   Updated: 2020/02/09 01:02:50 by kona             ###   ########.fr       */
+/*   Created: 2020/02/25 20:28:08 by limry             #+#    #+#             */
+/*   Updated: 2020/02/25 20:28:09 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char			*ft_strnstr(const char *haystack, const char *needle, size_t len)
+char			*ft_strnstr(const char *haystack,
+				const char *needle, size_t len)
 {
 	const char	*camel;
 	const char	*eye;

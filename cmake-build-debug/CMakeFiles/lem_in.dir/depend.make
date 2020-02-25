@@ -28,6 +28,10 @@ CMakeFiles/lem_in.dir/libft/srcs/dstr/dstr.c.o: ../libft/includes/dstr.h
 CMakeFiles/lem_in.dir/libft/srcs/dstr/dstr.c.o: ../libft/includes/libft.h
 CMakeFiles/lem_in.dir/libft/srcs/dstr/dstr.c.o: ../libft/srcs/dstr/dstr.c
 
+CMakeFiles/lem_in.dir/libft/srcs/dstr/dstr2.c.o: ../libft/includes/dstr.h
+CMakeFiles/lem_in.dir/libft/srcs/dstr/dstr2.c.o: ../libft/includes/libft.h
+CMakeFiles/lem_in.dir/libft/srcs/dstr/dstr2.c.o: ../libft/srcs/dstr/dstr2.c
+
 CMakeFiles/lem_in.dir/srcs/deque.c.o: ../includes/lem_in.h
 CMakeFiles/lem_in.dir/srcs/deque.c.o: ../libft/includes/binary_heap.h
 CMakeFiles/lem_in.dir/srcs/deque.c.o: ../libft/includes/dstr.h
@@ -139,4 +143,11 @@ CMakeFiles/lem_in.dir/srcs/writer_main_new.c.o: ../libft/includes/dstr.h
 CMakeFiles/lem_in.dir/srcs/writer_main_new.c.o: ../libft/includes/get_next_line.h
 CMakeFiles/lem_in.dir/srcs/writer_main_new.c.o: ../libft/includes/libft.h
 CMakeFiles/lem_in.dir/srcs/writer_main_new.c.o: ../srcs/writer_main_new.c
+
+CMakeFiles/lem_in.dir/srcs/writer_push_ants.c.o: ../includes/lem_in.h
+CMakeFiles/lem_in.dir/srcs/writer_push_ants.c.o: ../libft/includes/binary_heap.h
+CMakeFiles/lem_in.dir/srcs/writer_push_ants.c.o: ../libft/includes/dstr.h
+CMakeFiles/lem_in.dir/srcs/writer_push_ants.c.o: ../libft/includes/get_next_line.h
+CMakeFiles/lem_in.dir/srcs/writer_push_ants.c.o: ../libft/includes/libft.h
+CMakeFiles/lem_in.dir/srcs/writer_push_ants.c.o: ../srcs/writer_push_ants.c
 

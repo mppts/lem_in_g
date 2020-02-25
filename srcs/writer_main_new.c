@@ -6,15 +6,15 @@
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 17:42:37 by limry             #+#    #+#             */
-/*   Updated: 2020/02/25 16:29:25 by limry            ###   ########.fr       */
+/*   Updated: 2020/02/25 19:01:26 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
 
-void 				count_ants_for_paths(t_map *map)
+void				count_ants_for_paths(t_map *map)
 {
-	t_paths_arr		*path;
+	t_patha		*path;
 	int				to_div;
 	int				spreaded;
 	int				iter;
@@ -37,15 +37,14 @@ void 				count_ants_for_paths(t_map *map)
 	}
 }
 
-
-void				prep_paths(t_paths_arr *p)
+void				prep_paths(t_patha *p)
 {
-	t_paths_arr		*tmp;
-	int 			i;
+	t_patha		*tmp;
+	int				i;
 
 	tmp = p;
 	i = 0;
-	while(i < tmp->path_id)
+	while (i < tmp->path_id)
 	{
 		tmp->path_starts[i]++;
 		tmp->path_lens[i]--;

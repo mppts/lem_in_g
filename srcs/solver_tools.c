@@ -12,7 +12,7 @@
 
 #include <lem_in.h>
 
-t_paths_arr		*slv_error_cleaning(int step, t_paths_arr *solution)
+t_patha		*slv_error_cleaning(int step, t_patha *solution)
 {
 	if (step > 4)
 		free(solution->num_ants);
@@ -27,7 +27,7 @@ t_paths_arr		*slv_error_cleaning(int step, t_paths_arr *solution)
 	return (NULL);
 }
 
-void			slv_clean_paths(t_paths_arr *path, t_map *g)
+void			slv_clean_paths(t_patha *path, t_map *g)
 {
 	uint64_t	max_path_num;
 
@@ -43,14 +43,14 @@ void			slv_clean_paths(t_paths_arr *path, t_map *g)
 	path->path_id = 0;
 }
 
-t_paths_arr		*slv_init_solution(t_map *g)
+t_patha		*slv_init_solution(t_map *g)
 {
-	t_paths_arr	*path;
+	t_patha	*path;
 	uint64_t	max_num_p;
 	int			err;
 
 	err = 0;
-	if (!(path = malloc(sizeof(t_paths_arr))))
+	if (!(path = malloc(sizeof(t_patha))))
 		return (NULL);
 	if (++err && !(path->path = malloc(sizeof(t_room*) * g->num_nodes)))
 		return (slv_error_cleaning(err, path));

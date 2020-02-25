@@ -88,7 +88,8 @@ STR		=	ft_strcat.c \
 TONUM	=	ft_atoli.c \
             ft_atoi.c
 
-DSTR	=	dstr.c
+DSTR	=	dstr.c\
+			dstr2.c
 
 BIN_HEAP = bin_free.c\
 		 bin_get_root.c\

@@ -6,7 +6,7 @@
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 17:42:37 by limry             #+#    #+#             */
-/*   Updated: 2020/02/25 19:01:26 by limry            ###   ########.fr       */
+/*   Updated: 2020/02/25 21:35:47 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,9 +52,31 @@ void				prep_paths(t_patha *p)
 	}
 }
 
+void			print_desc(t_patha *pArr)
+{
+	int 		i;
+	int 		j;
+
+	i = 0;
+	while (i < pArr->path_id)
+	{
+		j = 0;
+		printf("%d %d: ",pArr->num_ants[i] , pArr->path_lens[i]);
+		while (j < pArr->path_lens[i])
+		{
+			printf("[%s] ", pArr->path_starts[i][j]->name);
+			j++;
+		}
+		printf("\n");
+		i++;
+	}
+}
+
 void				writer(t_map *map)
 {
+	dstr_joinstr(map->dstr, "\n");
 	count_ants_for_paths(map);
+	print_desc(map->paths);
 	prep_paths(map->paths);
 	push_ants(map);
 }

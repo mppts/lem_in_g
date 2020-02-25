@@ -86,7 +86,6 @@ void			remove_solver(t_solver *slv)
 		bin_heap_free(slv->heap);
 		deq_remove_unsafe(slv->deq);
 		slv_error_cleaning(5, slv->paths_arr);
-		//slv_error_cleaning(5, slv->paths_arr_solution);
 	}
 	free(slv);
 }

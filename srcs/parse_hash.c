@@ -33,7 +33,7 @@ void			hash_rooms(t_map *map)
 	uint64_t	i;
 
 	if (!map->room_start)
-		man_err_map("Error: no rooms\n", &map->buf, ft_strdel, map);
+		man_err_map("ERROR: no rooms\n", &map->buf, ft_strdel, map);
 	map->len_rh = map->num_nodes * 3;
 	map->hashed_rooms = (t_room**)malloc(map->len_rh * sizeof(t_room*));
 	ft_bzero(map->hashed_rooms, map->len_rh * sizeof(t_room*));

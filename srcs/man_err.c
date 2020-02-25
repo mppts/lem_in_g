@@ -6,7 +6,7 @@
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/04 22:00:51 by limry             #+#    #+#             */
-/*   Updated: 2020/02/25 16:19:33 by limry            ###   ########.fr       */
+/*   Updated: 2020/02/25 21:01:49 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,9 +78,8 @@ void			man_err_map(char *msg, char **data,
 				void (*f_todel)(char**), t_map *map)
 {
 	get_next_line(-1, &map->buf);
-	write(1, map->dstr->data, map->dstr->len);
 	if (msg)
-		ft_putstr(msg);
+		ft_putstr_fd(msg, 2);
 	if (f_todel && data)
 		f_todel(data);
 	del_map(map);

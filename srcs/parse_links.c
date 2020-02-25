@@ -41,7 +41,7 @@ static t_link	*add_new_link(t_room *from, t_room *to, t_map *map)
 	t_link		*tmp;
 
 	if (!(new = (t_link*)malloc(sizeof(t_link))))
-		man_err_map("Error: can't allocate new link\n",
+		man_err_map("ERROR: can't allocate new link\n",
 				&map->buf, ft_strdel, map);
 	new->to = to;
 	new->next = NULL;
@@ -84,12 +84,12 @@ void			add_link(char *buf, t_map *map)
 	r.from = buf;
 	if (!((b = ft_strchr(buf, '-')) &&
 	!ft_strchr(r.to = ++b, '-')))
-		man_err_map("Error: link line error\n", &buf, ft_strdel, map);
+		man_err_map("ERROR: link line error\n", &buf, ft_strdel, map);
 	*(r.to - 1) = '\0';
 	if (!(from = find_hashed_room(map, r.from)))
-		man_err_map("Error: can't find from\n", &buf, ft_strdel, map);
+		man_err_map("ERROR: can't find from\n", &buf, ft_strdel, map);
 	if (!(to = find_hashed_room(map, r.to)))
-		man_err_map("Error: can't find to\n", &buf, ft_strdel, map);
+		man_err_map("ERROR: can't find to\n", &buf, ft_strdel, map);
 	if (error_in_link(map, from, to))
 	{
 		free(r.from);

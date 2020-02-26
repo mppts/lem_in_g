@@ -6,7 +6,7 @@
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/04 20:09:29 by limry             #+#    #+#             */
-/*   Updated: 2020/02/25 21:04:28 by limry            ###   ########.fr       */
+/*   Updated: 2020/02/26 11:16:15 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,6 +89,7 @@ void			init_map(t_map *map)
 	map->len_rh = 0;
 	map->path = NULL;
 	map->paths = NULL;
+	map->max_len = 0;
 }
 
 void			parse_map(t_map *map)

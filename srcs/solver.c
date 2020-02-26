@@ -6,7 +6,7 @@
 /*   By: limry <marvin@42.fr>                       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/28 19:23:42 by limry             #+#    #+#             */
-/*   Updated: 2020/02/16 04:38:40 by kona             ###   ########.fr       */
+/*   Updated: 2020/02/26 11:16:15 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,16 @@ void		restore_meta_graph_info(t_room *source)
 	tmp = source->next;
 	while (tmp != source)
 	{
-		tmp->color = WHITE;
-		//tmp->level = 0;
-		//tmp->potential = 0;
-		//tmp->lev_m_pot = 0;
+		//tmp->color = WHITE;
+		tmp->level = 0;
+		tmp->potential = 0;
+		tmp->lev_m_pot = 0;
 		tmp = tmp->next;
 	}
-	tmp->color = WHITE;
-	//tmp->level = 0;
-	//tmp->potential = 0;
-	//tmp->lev_m_pot = 0;
+	//tmp->color = WHITE;
+	tmp->level = 0;
+	tmp->potential = 0;
+	tmp->lev_m_pot = 0;
 }
 
 void		put_zero_to_flows(t_room *source)
@@ -228,7 +228,7 @@ void		add_path(t_map *map, t_link *link)
 		if (l->mirror->flow == 1)
 		{
 			i++;
-			printf("[%s] - %ld", l->mirror->to->name, l->mirror->to->level);
+			printf("[%s] - %lld", l->mirror->to->name, l->mirror->to->level);
 			l->mirror->flow = 0;
 		}
 		r = l->to;
@@ -256,7 +256,7 @@ void		find_paths(t_graph_inf *inf, t_map *map)
 		l = l->next;
 	}
 }
-/*
+
 void		solver(t_map *map)
 {
 	t_graph_inf	inf;
@@ -273,12 +273,12 @@ void		solver(t_map *map)
 	inf.total_ways_len = 0;
 	inf.are_enough_ways_current = 0;
 	inf.are_enough_ways_new = 0;
-	algo2(map, &inf, &inf_min);
-	find_paths(&inf, map);
+	algo3(map, &inf, &inf_min);
+	find_paths(&inf_min, map);
 	//put_ways_to_list(&inf, map);
 	free_ways(&inf);
 	free_ways(&inf_min);
 	free(inf.mirror_links);
 }
-*/
+
 

@@ -6,7 +6,7 @@
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/13 15:38:25 by limry             #+#    #+#             */
-/*   Updated: 2020/02/25 20:58:19 by limry            ###   ########.fr       */
+/*   Updated: 2020/02/26 11:24:07 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,5 +44,5 @@ int			main(void)
 	//if (map.dstr->data)
 	//	write(1, map.dstr->data, map.dstr->len);
 	del_map(&map);
-	return (0);
+	return 0;
 }

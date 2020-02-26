@@ -6,7 +6,7 @@
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 17:42:37 by limry             #+#    #+#             */
-/*   Updated: 2020/02/25 21:35:47 by limry            ###   ########.fr       */
+/*   Updated: 2020/02/26 16:29:42 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void				count_ants_for_paths(t_map *map)
 {
-	t_patha		*path;
+	t_patha			*path;
 	int				to_div;
 	int				spreaded;
 	int				iter;
@@ -28,18 +28,19 @@ void				count_ants_for_paths(t_map *map)
 		to_div = map->ants - spreaded;
 		iter = i;
 		while (++iter < map->paths->path_id)
-		{
 			to_div -= (path->path_lens[i] - path->path_lens[iter]);
-		}
-		path->num_ants[i] = to_div > 0 ? to_div / (iter - i) : 0;
+		if (to_div * 10 / ((iter) - i) % 10 >= 5 )
+			path->num_ants[i] = to_div > 0 ? to_div / ((iter) - i) + 1 : 0;
+		else
+			path->num_ants[i] = to_div > 0 ? to_div / ((iter) - i) : 0;
 		spreaded += path->num_ants[i];
 		i++;
 	}
 }
 
-void				prep_paths(t_patha *p)
+void				prep_paths(t_patha *p, t_map *g)
 {
-	t_patha		*tmp;
+	t_patha			*tmp;
 	int				i;
 
 	tmp = p;
@@ -48,14 +49,16 @@ void				prep_paths(t_patha *p)
 	{
 		tmp->path_starts[i]++;
 		tmp->path_lens[i]--;
+		if (g->max_len < tmp->path_lens[i])
+			g->max_len = tmp->path_lens[i];
 		i++;
 	}
 }
 
-void			print_desc(t_patha *pArr)
+void				print_desc(t_patha *pArr)
 {
-	int 		i;
-	int 		j;
+	int 			i;
+	int 			j;
 
 	i = 0;
 	while (i < pArr->path_id)
@@ -76,7 +79,7 @@ void				writer(t_map *map)
 {
 	dstr_joinstr(map->dstr, "\n");
 	count_ants_for_paths(map);
+	prep_paths(map->paths, map);
 	print_desc(map->paths);
-	prep_paths(map->paths);
 	push_ants(map);
 }

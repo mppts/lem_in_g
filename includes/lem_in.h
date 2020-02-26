@@ -6,7 +6,7 @@
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/05 12:03:07 by limry             #+#    #+#             */
-/*   Updated: 2020/02/25 20:46:51 by limry            ###   ########.fr       */
+/*   Updated: 2020/02/26 16:05:27 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -91,6 +91,7 @@ typedef struct		s_room
 	int				x;
 	int				y;
 	int				checked;
+	int				flv;
 	uint64_t		hash;
 	uint64_t		hash_id;
 	uint64_t		path_id;
@@ -107,6 +108,7 @@ typedef struct		s_map
 	uint64_t		num_nodes;
 	uint64_t		num_links;
 	int				ants;
+	int				max_len;
 	uint8_t			is_rooms_hashed;
 	uint64_t		len_rh;
 	t_room			**hashed_rooms;

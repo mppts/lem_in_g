@@ -6,7 +6,7 @@
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 15:37:56 by limry             #+#    #+#             */
-/*   Updated: 2020/02/25 15:47:25 by limry            ###   ########.fr       */
+/*   Updated: 2020/02/26 18:43:11 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,10 +36,10 @@ void			slv_copy_to_solution(t_solver *slv, t_map *g)
 int				enough_solutions(t_solver *slv, t_map *g)
 {
 	if (slv->paths_arr_solution->path_id == 0 ||
-	(slv->paths_arr_solution->amt_steps_cost + g->ants) /
-	(slv->paths_arr_solution->path_id)
-	> (slv->paths_arr->amt_steps_cost + g->ants) /
-	(slv->paths_arr->path_id))
+		(slv->paths_arr_solution->amt_steps_cost + g->ants) /
+		(slv->paths_arr_solution->path_id)
+		> (slv->paths_arr->amt_steps_cost + g->ants) /
+		  (slv->paths_arr->path_id))
 	{
 		slv_copy_to_solution(slv, g);
 		slv_clean_paths(slv->paths_arr, g);
@@ -66,6 +66,50 @@ void			refresh_potentials(t_room *start)
 	}
 }
 
+
+void				print_desc2(t_patha *pArr)
+{
+	int 			i;
+	int 			j;
+
+	i = 0;
+	while (i < pArr->path_id)
+	{
+		j = 0;
+		printf("%d: ", pArr->path_lens[i]);
+		while (j < pArr->path_lens[i])
+		{
+			printf("[%s] ", pArr->path_starts[i][j]->name);
+			j++;
+		}
+		printf("\n");
+		i++;
+	}
+}
+
+void				print_ppath(t_map *g)
+{
+	t_room	*tmp;
+	t_link	*ln;
+	char	*nm;
+	tmp = g->start;
+	while (tmp != g->start->prev)
+	{
+		nm = tmp->name;
+		ln = tmp->linked_to;
+		while (ln)
+		{
+			if (ln->flow == 0)
+			{
+				printf("%s\t\t%s\n",nm, ln->to->name);
+				nm = "\t";
+			}
+			ln = ln->next;
+		}
+		tmp = tmp->next;
+	}
+}
+
 void			solver_edmonds_karp(t_map *g)
 {
 	t_solver	*slv;
@@ -79,6 +123,9 @@ void			solver_edmonds_karp(t_map *g)
 		{
 			fulfill_path(g);
 			find_all_paths(slv->paths_arr, g);
+			print_desc2(slv->paths_arr);
+			//print_ppath(g);
+			printf("\n");
 			if (enough_solutions(slv, g))
 				break ;
 			bin_clean_heap_data(slv->heap);

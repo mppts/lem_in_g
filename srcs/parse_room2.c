@@ -6,7 +6,7 @@
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/05 15:27:11 by limry             #+#    #+#             */
-/*   Updated: 2020/02/16 04:38:40 by kona             ###   ########.fr       */
+/*   Updated: 2020/02/26 11:16:15 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,6 @@ void	init_room(t_room *new, int x, int y, char *name)
 	new->color = WHITE;
 	new->pred = NULL;
 	new->sign = 0;
+	new->flv = 0;
 	new->delta = INT64_MAX;
 }

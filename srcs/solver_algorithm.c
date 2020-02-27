@@ -52,6 +52,8 @@ void			algo(t_map *map, t_graph_inf *inf)
 		find_way_1(map, way_1, inf);
 		if (sufficienty_c(inf, map))
 			indicator = 1;
+//		if (indicator)
+//			free_way(inf->ways[inf->current_way_number]);
 		if (!indicator && inf->common_rooms[0])
 			separate_cross_ways(inf, map);
 		auxiliary_works(map, inf, way_1);

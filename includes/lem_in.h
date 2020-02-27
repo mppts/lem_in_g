@@ -43,20 +43,24 @@ typedef struct		s_path
 	struct s_path	*next;
 }					t_path;
 
-/*
-** Пока что проще работать со своими структурами данных.
-*/
+typedef struct		s_way
+{
+	int				way_number;
+	int 			way_len;
+	struct s_room	*room;
+	struct s_way	*next;
+	struct s_way	*prev_way;
+}					t_way;
+
 typedef struct 		s_graph_inf
 {
-	struct s_room	***ways;
-	struct s_link	**mirror_links;
-	int				two_flows;
+	struct s_way	**ways;
+	struct s_room	**common_rooms;
 	int				current_way_number;
-	int 			current_pos_in_way;
-	int				position_in_way;
-	int				total_ways_len;
-	double			are_enough_ways_current;
-	double			are_enough_ways_new;
+	int64_t			total_ways_len;
+	int64_t			are_enough_ways_current;
+	int64_t			are_enough_ways_new;
+	int 			max_ways;
 }					t_graph_inf;
 
 typedef struct		s_link
@@ -76,8 +80,10 @@ typedef struct		s_room
 	int 			ant;
 	char			*name;
 	int64_t			level;
-	int				color;
+	int64_t			level_rev;
+	int				way_number;
 	t_link			*linked_to;
+	struct s_room	*room_from_we_came;
 	struct s_room	*next;
 	struct s_room	*prev;
 	int				x;
@@ -167,31 +173,33 @@ void				man_err_map(char *msg, char **data,
 void				solver(t_map *map);
 void				make_color_white_again(t_room *source);
 int					rooms_calc(t_room *source);
-int					way_len_calc(t_room **way);
+t_graph_inf			*create_inf(t_map *map);
 
 /*
-** solve_algorithm.c
+** solver_algorithm.c
 */
 void				algo(t_map *map, t_graph_inf *inf);
+int					enough_ways(t_map *map, t_graph_inf *inf);
 
 /*
-** solve_algorithm_cleaning.c
+** solver_algorithm_cleaning.c
 */
 void		delite_mirror_links(t_graph_inf *inf);
 void		clean_ways(t_room ***ways);
 void		clean_levels_and_flows(t_room *source);
-void		time_to_do_some_cleaning(t_map *map, t_graph_inf *inf);
+t_graph_inf	*time_to_do_some_cleaning(t_map *map, t_graph_inf *inf);
 
 
 /*
-** solve_bfs.c
+** solver_bfs.c
 */
-t_room				*bfs(t_room *sink, t_map *map);
+int				bellman_ford(t_map *map, t_room **line, t_graph_inf *inf);
+int				bellman_ford_rev(t_map *map, t_room **line, t_graph_inf *inf);
 
 /*
-** solve_dfs.c
+** solver_find_best_current_way.c
 */
-int					dfs(t_room *room, t_graph_inf *inf, t_map *map);
+int		find_best_current_way(t_map *map, t_room **way_1, t_room **way_2, t_graph_inf *inf);
 
 void				writer(t_map *map);
 

@@ -1,89 +1,4 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   solver_algorithm.c                                 :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: dorphan <marvin@42.fr>                     +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/12 16:38:24 by dorphan           #+#    #+#             */
-/*   Updated: 2020/02/12 16:38:29 by dorphan          ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "lem_in.h"
-
-//int			enough_ways(t_map *map, t_graph_inf *inf)
-//{
-//	int		current_way_len;
-//
-//	current_way_len = way_len_calc(inf->ways[inf->current_way_number]) - 1;
-//	if (!inf->are_enough_ways_current)
-//	{
-//		if (map->ants == 1)
-//			return (1);
-//		if ((map->ants + current_way_len) % (inf->current_way_number + 1))
-//			inf->are_enough_ways_current = ((int)map->ants + current_way_len) / (inf->current_way_number + 1) + 1;
-//		else
-//			inf->are_enough_ways_current = ((int)map->ants + current_way_len) / (inf->current_way_number + 1);
-//		inf->total_ways_len += current_way_len;
-//		return (0);
-//	}
-//	else
-//	{
-//		if (((int)map->ants + (inf->total_ways_len + current_way_len)) % (inf->current_way_number + 1))
-//			inf->are_enough_ways_new = ((int)map->ants + (inf->total_ways_len + current_way_len)) / (inf->current_way_number + 1) + 1;
-//		else
-//			inf->are_enough_ways_new = ((int)map->ants + (inf->total_ways_len + current_way_len)) / (inf->current_way_number + 1);
-//		if (inf->are_enough_ways_new >= inf->are_enough_ways_current)
-//		{
-//			inf->ways[inf->current_way_number][0] = NULL;
-//			return (1);
-//		}
-//		inf->total_ways_len += current_way_len;
-//		inf->are_enough_ways_current = inf->are_enough_ways_new;
-//		return (0);
-//	}
-//}
-//
-//void		initialization_algo(t_graph_inf *inf, t_map *map)
-//{
-//	inf->two_flows = 0;
-//	inf->current_way_number = 0;
-//	inf->current_pos_in_way = 0;
-//	inf->position_in_way = 1;
-//	inf->ways[inf->current_way_number][0] = map->start;
-//	inf->are_enough_ways_current = 0;
-//	inf->total_ways_len = 0;
-//}
-//
-//void		algo(t_map *map, t_graph_inf *inf)
-//{
-//	while (bfs(map->fin, map))
-//	{
-//		initialization_algo(inf, map);
-//		while ((dfs(map->start, inf, map)))
-//		{
-//			map->fin->color = WHITE;
-//			if (inf->mirror_links[0])
-//				break ;
-//			if (!inf->mirror_links[0] && enough_ways(map, inf))
-//				break ;
-//			inf->position_in_way = 1;
-//			(inf->current_way_number)++;
-//			inf->current_pos_in_way = 0;
-//			if (inf->ways[inf->current_way_number])
-//				inf->ways[inf->current_way_number][0] = map->start;
-//		}
-//		if (!inf->mirror_links[0])
-//		{
-//			if (inf->ways[inf->current_way_number] && inf->ways[inf->current_way_number][0] == map->start && !inf->ways[inf->current_way_number][1])
-//				inf->ways[inf->current_way_number][0] = NULL;
-//			break ;
-//		}
-//		else
-//			inf = time_to_do_some_cleaning(map, inf);
-//	}
-//}
 
 void		clear_levels(t_room *source)
 {
@@ -162,33 +77,7 @@ void		find_way_1(t_map *map, t_room **line, t_graph_inf *inf)
 		add_flow(line[i], line[i + 1]);
 		i++;
 	}
-//	current_vertex->next = add_new_way_pos(line[i], inf, map);
 }
-
-//void		find_way(t_map *map, t_room	**line, int source, t_graph_inf *inf)
-//{
-//	t_room	*room;
-//	t_way	*current_vertex;
-//
-//	room = line[source];
-//	inf->ways[inf->current_way_number] = add_new_way_pos(room, inf, map);
-//	map->start->way_number = -1;
-//	current_vertex = inf->ways[inf->current_way_number];
-//	add_flow(room);
-//	room = room->room_from_we_came;
-//	while (room != map->fin)
-//	{
-//		if (room->way_number == -1)
-//			room->way_number = inf->current_way_number;
-//		else
-//			add_to_common_rooms(inf, room);
-//		current_vertex->next = add_new_way_pos(room, inf, map);
-//		current_vertex = current_vertex->next;
-//		add_flow(room);
-//		room = room->room_from_we_came;
-//	}
-//	current_vertex->next = add_new_way_pos(room, inf, map);
-//}
 
 void		clear_line(t_room **line)
 {
@@ -215,44 +104,6 @@ void		clean_way_in_list(t_way **ways, int current_way)
 	ways[current_way] = NULL;
 }
 
-//int			crosses_calc(t_graph_inf *inf)
-//{
-//	int		crosses;
-//	t_way	*tmp;
-//
-//	crosses = 0;
-//	tmp = inf->ways[inf->current_way_number]->next;
-//	while (tmp)
-//	{
-//		if (tmp->way_number != tmp->room->way_number)
-//			crosses++;
-//	}
-//}
-//
-//int				sufficienty_c(t_graph_inf *inf, t_map *map)
-//{
-//	uint64_t	crosses;
-//	uint64_t	current_len;
-//	t_way		*tmp;
-//
-//	tmp = inf->ways[inf->current_way_number];
-//	current_len = inf->total_ways_len + map->start->level;
-//	if (inf->current_way_number == 0)
-//	{
-//		inf->total_ways_len += current_len;
-//		inf->are_enough_ways_current = map->ants + inf->total_ways_len;
-//	}
-//	else
-//	{
-//		while (tmp)
-//		{
-//			if
-//			tmp = tmp->next;
-//		}
-//		crosses = crosses_calc(inf);
-//	}
-//}
-
 void		clear_flow(t_map *map, t_room *room_1, t_room *room_2)
 {
 	t_link	*tmp;
@@ -276,7 +127,7 @@ t_way		*separation(t_way *tmp, t_graph_inf *inf, t_map *map)
 	tmp->next = way_2->next;
 	tmp_sep = tmp->prev_way;
 	clear_flow(map, tmp->room, tmp_sep->room);
-	// tmp_sep->next->way_number != tmp_sep->next->room->way_number
+	free(way_2);
 	while (tmp_sep->room->way_number == tmp_sep->next->room->way_number)
 	{
 		clear_flow(map, tmp_sep->room, tmp_sep->next->room);
@@ -288,7 +139,9 @@ t_way		*separation(t_way *tmp, t_graph_inf *inf, t_map *map)
 	way_2 = inf->ways[tmp_sep->room->way_number];
 	while (way_2 && way_2->room != tmp_sep->room)
 		way_2 = way_2->next;
-	way_2->next = tmp_sep->next;
+	if (way_2 && way_2->next)
+		way_2->next = tmp_sep->next;
+	free(tmp_sep);
 	return (tmp_sep->next);
 }
 
@@ -430,20 +283,34 @@ int			common_rooms_calc(t_graph_inf *inf)
 	return (total_result);
 }
 
+int			way_len_calc(t_way *way)
+{
+	int		i;
+
+	i = 0;
+	while (way)
+	{
+		way = way->next;
+		i++;
+	}
+	return (i - 1);
+}
+
 int			sufficienty_c(t_graph_inf *inf, t_map *map)
 {
 	int		current_way_len;
 	int 	i;
 
-	current_way_len = inf->ways[inf->current_way_number]->way_len;
+	current_way_len = way_len_calc(inf->ways[inf->current_way_number]);
+	i = 0;
 	if (!inf->are_enough_ways_current)
 	{
 		if (map->ants == 1)
 			return (1);
 		if ((map->ants + current_way_len) % (inf->current_way_number + 1))
-			inf->are_enough_ways_current = ((int)map->ants + current_way_len) / (inf->current_way_number + 1) + 1;
-		else
 			inf->are_enough_ways_current = ((int)map->ants + current_way_len) / (inf->current_way_number + 1);
+		else
+			inf->are_enough_ways_current = (((int)map->ants + current_way_len) / (inf->current_way_number + 1)) - 1;
 		inf->total_ways_len += current_way_len;
 		return (0);
 	}
@@ -451,10 +318,10 @@ int			sufficienty_c(t_graph_inf *inf, t_map *map)
 	{
 		if (!inf->common_rooms[0])
 		{
-//			if (((int)map->ants + (inf->total_ways_len + current_way_len)) % (inf->current_way_number + 1))
-//				inf->are_enough_ways_new = ((int)map->ants + (inf->total_ways_len + current_way_len)) / (inf->current_way_number + 1);
-//			else
+			if (((int)map->ants + (inf->total_ways_len + current_way_len)) % (inf->current_way_number + 1))
 				inf->are_enough_ways_new = ((int)map->ants + (inf->total_ways_len + current_way_len)) / (inf->current_way_number + 1);
+			else
+				inf->are_enough_ways_new = (((int)map->ants + (inf->total_ways_len + current_way_len)) / (inf->current_way_number + 1)) - 1;
 			if (inf->are_enough_ways_new >= inf->are_enough_ways_current)
 			{
 				clean_way_in_list(inf->ways, inf->current_way_number);
@@ -467,10 +334,10 @@ int			sufficienty_c(t_graph_inf *inf, t_map *map)
 		else
 		{
 			i = common_rooms_calc(inf);
-//			if (((int)map->ants + (inf->total_ways_len + current_way_len - i)) % (inf->current_way_number + 1))
+			if (((int)map->ants + (inf->total_ways_len + current_way_len - i)) % (inf->current_way_number + 1))
 				inf->are_enough_ways_new = ((int)map->ants + (inf->total_ways_len + current_way_len - i)) / (inf->current_way_number + 1);
-//			else
-//				inf->are_enough_ways_new = ((int)map->ants + (inf->total_ways_len + current_way_len - i)) / (inf->current_way_number + 1);
+			else
+				inf->are_enough_ways_new = (((int)map->ants + (inf->total_ways_len + current_way_len - i)) / (inf->current_way_number + 1)) - 1;
 			if (inf->are_enough_ways_new >= inf->are_enough_ways_current)
 			{
 				clean_way_in_list(inf->ways, inf->current_way_number);
@@ -508,6 +375,16 @@ void		nulls_to_ways(t_room **way_1, t_room **way_2, int len)
 	}
 }
 
+void		clear_common_rooms(t_graph_inf *inf)
+{
+	int		i;
+
+	i = 1;
+	inf->common_rooms[0] = NULL;
+	while (inf->common_rooms[i])
+		inf->common_rooms[i++] = NULL;
+}
+
 void		algo(t_map *map, t_graph_inf *inf)
 {
 	t_room		**way_1;
@@ -521,8 +398,8 @@ void		algo(t_map *map, t_graph_inf *inf)
 	while (!indicator && (find_best_current_way(map, way_1, way_2, inf)))
 	{
 		find_way_1(map, way_1, inf);
-//		if (sufficienty_c(inf, map))
-//			indicator = 1;
+		if (sufficienty_c(inf, map))
+			indicator = 1;
 		if (!indicator && inf->common_rooms[0])
 			separate_cross_ways(inf, map);
 		clear_levels(map->start);
@@ -532,9 +409,10 @@ void		algo(t_map *map, t_graph_inf *inf)
 		give_right_numbers_to_ways(inf);
 		map->start->way_number = -1;
 		map->fin->way_number = -1;
+		clear_common_rooms(inf);
 		if (!indicator)
 			inf->current_way_number++;
-		print_ways_len_2(inf);
+		//print_ways_len_2(inf);
 	}
 	free(way_1);
 	free(way_2);

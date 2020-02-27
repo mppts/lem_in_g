@@ -52,14 +52,14 @@ void			refresh_potentials(t_room *start)
 {
 	t_room		*tmp;
 
-	start->potential = start->delta;
+	start->potential += start->delta;
 	start->level = 0;
 	start->delta = 0;
 	start->sign = 0;
 	tmp = start->next;
 	while (tmp != start)
 	{
-		tmp->potential = tmp->delta;
+		tmp->potential += tmp->delta;
 		tmp->delta = INT64_MAX;
 		tmp->sign = 0;
 		tmp = tmp->next;
@@ -87,29 +87,6 @@ void				print_desc2(t_patha *pArr)
 	}
 }
 
-void				print_ppath(t_map *g)
-{
-	t_room	*tmp;
-	t_link	*ln;
-	char	*nm;
-	tmp = g->start;
-	while (tmp != g->start->prev)
-	{
-		nm = tmp->name;
-		ln = tmp->linked_to;
-		while (ln)
-		{
-			if (ln->flow == 0)
-			{
-				printf("%s\t\t%s\n",nm, ln->to->name);
-				nm = "\t";
-			}
-			ln = ln->next;
-		}
-		tmp = tmp->next;
-	}
-}
-
 void			solver_edmonds_karp(t_map *g)
 {
 	t_solver	*slv;
@@ -124,7 +101,6 @@ void			solver_edmonds_karp(t_map *g)
 			fulfill_path(g);
 			find_all_paths(slv->paths_arr, g);
 			print_desc2(slv->paths_arr);
-			//print_ppath(g);
 			printf("\n");
 			if (enough_solutions(slv, g))
 				break ;

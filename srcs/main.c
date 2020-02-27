@@ -11,6 +11,8 @@
 /* ************************************************************************** */
 
 #include "lem_in.h"
+#include "fcntl.h"
+
 
 void		parse_errors(t_map *map)
 {
@@ -29,12 +31,14 @@ void		parse_errors(t_map *map)
 					NULL, NULL, map);
 }
 
-int			main(void)
+int			main(int ac, char *av[])
 {
 	t_map	map;
+	int fd;
 
+	fd = open(av[1],O_RDONLY);
 	init_map(&map);
-	parse_map(&map);
+	parse_map(&map, fd);
 	parse_errors(&map);
 	solver_edmonds_karp(&map);
 	if (map.paths == NULL)

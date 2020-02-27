@@ -86,6 +86,7 @@ typedef struct		s_room
 	int				color;
 	t_link			*linked_to;
 	struct s_room	*pred;
+	struct s_room	*pred_neg;
 	struct s_room	*next;
 	struct s_room	*prev;
 	int				x;
@@ -156,7 +157,7 @@ typedef struct		s_solver
 /*
 ** parse_map.c
 */
-void				parse_map(t_map *map);
+void				parse_map(t_map *map, int fd);
 void				init_map(t_map *map);
 /*
 ** parse_room.c

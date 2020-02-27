@@ -41,23 +41,27 @@ void			fill_link_from_to(t_room *from, t_room *to)
 void			fulfill_path(t_map *g)
 {
 	t_room		*rm;
-	int 		i;
+	t_room		*rm_tmp;
 
 	rm = g->fin;
-	i = 1;
 	while (rm != g->start)
 	{
 		rm->level = 1;
-		fill_link_from_to(rm->pred, rm);
-		printf("%s ", rm->name);
-		rm = rm->pred;
+		if (rm->pred_neg)
+		{
+			fill_link_from_to(rm->pred_neg, rm);
+			rm_tmp = rm;
+			rm = rm->pred_neg;
+			rm_tmp->pred_neg = NULL;
+		}
+		else
+		{
+			fill_link_from_to(rm->pred, rm);
+			rm = rm->pred;
+		}
 		if (rm != g->start)
 			rm->level = 1;
-		i++;
 	}
-	printf("%s ", rm->name);
-	printf("%d\n", i);
-	printf("\n");
 }
 
 int				is_in_res(struct s_room *room, t_room **paths)
@@ -91,7 +95,7 @@ void			push_path(t_patha *path, t_map *g, t_link *lf)
 		else
 			link = link->next;
 	}
-	path->path_starts[path->path_id][path->path_lens[path->path_id]] = NULL;
+	//path->path_starts[path->path_id][path->path_lens[path->path_id]] = NULL;
 }
 
 void			find_all_paths(t_patha *path, t_map *g)

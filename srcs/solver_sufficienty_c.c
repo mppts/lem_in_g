@@ -12,21 +12,22 @@
 
 #include "lem_in.h"
 
-//void		clean_way_in_list(t_way **ways, int current_way)
-//{
-//	t_way	*tmp;
-//	t_way	*tmp_2;
-//
-//	tmp = ways[current_way];
-//	tmp_2 = tmp->next;
-//	while (tmp_2)
-//	{
-//		free(tmp);
-//		tmp = tmp_2;
-//		tmp_2 = tmp_2->next;
-//	}
-//	ways[current_way] = NULL;
-//}
+void		clean_way_in_list(t_way **ways, int current_way)
+{
+	t_way	*tmp;
+	t_way	*tmp_2;
+
+	tmp = ways[current_way];
+	tmp_2 = tmp->next;
+	while (tmp_2)
+	{
+		free(tmp);
+		tmp = tmp_2;
+		tmp_2 = tmp_2->next;
+	}
+	free(tmp);
+	ways[current_way] = NULL;
+}
 
 int			way_len_calc(t_way *way)
 {
@@ -55,7 +56,7 @@ int			has_common_rooms(t_map *map, t_graph_inf *inf, int len_c)
 				/ (inf->current_way_number + 1)) - 1;
 	if (inf->enough_n >= inf->enough_c)
 	{
-		free_way(inf->ways[inf->current_way_number]);
+		clean_way_in_list(inf->ways, inf->current_way_number);
 		return (1);
 	}
 	inf->len_t += len_c - i;
@@ -73,7 +74,7 @@ int			no_common_rooms(t_map *map, t_graph_inf *inf, int len_c)
 				/ (inf->current_way_number + 1)) - 1;
 	if (inf->enough_n >= inf->enough_c)
 	{
-		free_way(inf->ways[inf->current_way_number]);
+		clean_way_in_list(inf->ways, inf->current_way_number);
 		return (1);
 	}
 	inf->len_t += len_c;

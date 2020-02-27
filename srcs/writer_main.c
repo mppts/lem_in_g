@@ -118,7 +118,7 @@ void				log_ant_move(t_room *room, t_map *map, t_path *path)
 	color = path->id % 8 + 30;
 	//dstr_joinstr(map->dstr, "\033[1;");
 	//dstr_joinstr(map->dstr, ft_itoa(color));
-	dstr_joinstr(map->dstr, "m");
+	//dstr_joinstr(map->dstr, "m");
 	dstr_joinstr(map->dstr, "L");
 	dstr_joinstr(map->dstr, ft_itoa(room->ant));
 	dstr_joinstr(map->dstr, "-");

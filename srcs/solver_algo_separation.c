@@ -23,12 +23,19 @@ void		clear_flow(t_map *map, t_room *room_1, t_room *room_2)
 	tmp->mirror->flow = 0;
 }
 
-void		separation_cycle_addition(t_map *map, t_way *tmp, t_way **tmp_sep)
+void		separation_cycle_addition(t_map *map, t_way *tmp, t_way **tmp_sep,
+										t_graph_inf *inf, int way_num)
 {
+	t_way	*way_2;
+
 	clear_flow(map, (*tmp_sep)->room, (*tmp_sep)->next->room);
 	tmp = *tmp_sep;
 	(*tmp_sep)->room->way_number = -1;
 	*tmp_sep = (*tmp_sep)->next;
+	way_2 = inf->ways[way_num];
+	while (way_2->room != tmp->room)
+		way_2 = way_2->next;
+	free(way_2);
 	free(tmp);
 }
 
@@ -36,8 +43,10 @@ t_way		*separation(t_way *tmp, t_graph_inf *inf, t_map *map)
 {
 	t_way	*tmp_sep;
 	t_way	*way_2;
+	int		way_num;
 
-	way_2 = inf->ways[tmp->room->way_number];
+	way_num = tmp->room->way_number;
+	way_2 = inf->ways[way_num];
 	while (way_2 && way_2->room != tmp->room)
 		way_2 = way_2->next;
 	tmp->prev_way = tmp->next;
@@ -46,7 +55,7 @@ t_way		*separation(t_way *tmp, t_graph_inf *inf, t_map *map)
 	clear_flow(map, tmp->room, tmp_sep->room);
 	free(way_2);
 	while (tmp_sep->room->way_number == tmp_sep->next->room->way_number)
-		separation_cycle_addition(map, tmp, &tmp_sep);
+		separation_cycle_addition(map, tmp, &tmp_sep, inf, way_num);
 	way_2 = inf->ways[tmp_sep->room->way_number];
 	while (way_2 && way_2->room != tmp_sep->room)
 		way_2 = way_2->next;

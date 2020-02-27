@@ -25,9 +25,9 @@ SOURCE = \
 		 parse_utils.c\
          solver.c\
          solver_algorithm.c\
-         solver_bfs.c\
-         solver_dfs.c\
-         solver_algorithm_cleaning.c\
+         solver_find_best_current_way.c\
+         solver_bellman_ford_start_end.c\
+         solver_bellman_ford_end_start.c\
          writer_main.c
 
 

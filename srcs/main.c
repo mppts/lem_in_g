@@ -45,8 +45,8 @@ int			main(int ac, char *av[])
 		man_err_map("ERROR: no way for the honest ant...=(\n",
 					NULL, NULL, &map);
 	writer(&map);
-	//if (map.dstr->data)
-	//	write(1, map.dstr->data, map.dstr->len);
+	if (map.dstr->data)
+		write(1, map.dstr->data, map.dstr->len);
 	del_map(&map);
 	return 0;
 }

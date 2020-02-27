@@ -56,10 +56,12 @@ void			refresh_potentials(t_room *start)
 	start->level = 0;
 	start->delta = 0;
 	start->sign = 0;
+	start->pred = NULL;
 	tmp = start->next;
 	while (tmp != start)
 	{
 		tmp->potential += tmp->delta;
+		tmp->pred = NULL;
 		tmp->delta = INT64_MAX;
 		tmp->sign = 0;
 		tmp = tmp->next;

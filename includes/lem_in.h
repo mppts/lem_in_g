@@ -171,6 +171,7 @@ void				man_err_map(char *msg, char **data,
 ** solver.c
 */
 void				solver(t_map *map);
+void				free_way(t_way *way);
 
 /*
 ** solver_initialization.c

@@ -57,8 +57,13 @@ CMakeFiles/lem_in.dir/srcs/solver.c.o: ../includes/lem_in.h
 CMakeFiles/lem_in.dir/srcs/solver.c.o: ../libft/includes/dstr.h
 CMakeFiles/lem_in.dir/srcs/solver.c.o: ../libft/includes/get_next_line.h
 CMakeFiles/lem_in.dir/srcs/solver.c.o: ../libft/includes/libft.h
-CMakeFiles/lem_in.dir/srcs/solver.c.o: ../srcs/deque.c
 CMakeFiles/lem_in.dir/srcs/solver.c.o: ../srcs/solver.c
+
+CMakeFiles/lem_in.dir/srcs/solver_algo_separation.c.o: ../includes/lem_in.h
+CMakeFiles/lem_in.dir/srcs/solver_algo_separation.c.o: ../libft/includes/dstr.h
+CMakeFiles/lem_in.dir/srcs/solver_algo_separation.c.o: ../libft/includes/get_next_line.h
+CMakeFiles/lem_in.dir/srcs/solver_algo_separation.c.o: ../libft/includes/libft.h
+CMakeFiles/lem_in.dir/srcs/solver_algo_separation.c.o: ../srcs/solver_algo_separation.c
 
 CMakeFiles/lem_in.dir/srcs/solver_algorithm.c.o: ../includes/lem_in.h
 CMakeFiles/lem_in.dir/srcs/solver_algorithm.c.o: ../libft/includes/dstr.h
@@ -66,23 +71,71 @@ CMakeFiles/lem_in.dir/srcs/solver_algorithm.c.o: ../libft/includes/get_next_line
 CMakeFiles/lem_in.dir/srcs/solver_algorithm.c.o: ../libft/includes/libft.h
 CMakeFiles/lem_in.dir/srcs/solver_algorithm.c.o: ../srcs/solver_algorithm.c
 
-CMakeFiles/lem_in.dir/srcs/solver_algorithm_cleaning.c.o: ../includes/lem_in.h
-CMakeFiles/lem_in.dir/srcs/solver_algorithm_cleaning.c.o: ../libft/includes/dstr.h
-CMakeFiles/lem_in.dir/srcs/solver_algorithm_cleaning.c.o: ../libft/includes/get_next_line.h
-CMakeFiles/lem_in.dir/srcs/solver_algorithm_cleaning.c.o: ../libft/includes/libft.h
-CMakeFiles/lem_in.dir/srcs/solver_algorithm_cleaning.c.o: ../srcs/solver_algorithm_cleaning.c
+CMakeFiles/lem_in.dir/srcs/solver_auxiliary_works_algo.c.o: ../includes/lem_in.h
+CMakeFiles/lem_in.dir/srcs/solver_auxiliary_works_algo.c.o: ../libft/includes/dstr.h
+CMakeFiles/lem_in.dir/srcs/solver_auxiliary_works_algo.c.o: ../libft/includes/get_next_line.h
+CMakeFiles/lem_in.dir/srcs/solver_auxiliary_works_algo.c.o: ../libft/includes/libft.h
+CMakeFiles/lem_in.dir/srcs/solver_auxiliary_works_algo.c.o: ../srcs/solver_auxiliary_works_algo.c
 
-CMakeFiles/lem_in.dir/srcs/solver_bfs.c.o: ../includes/lem_in.h
-CMakeFiles/lem_in.dir/srcs/solver_bfs.c.o: ../libft/includes/dstr.h
-CMakeFiles/lem_in.dir/srcs/solver_bfs.c.o: ../libft/includes/get_next_line.h
-CMakeFiles/lem_in.dir/srcs/solver_bfs.c.o: ../libft/includes/libft.h
-CMakeFiles/lem_in.dir/srcs/solver_bfs.c.o: ../srcs/solver_bfs.c
+CMakeFiles/lem_in.dir/srcs/solver_auxiliary_works_algo_2.c.o: ../includes/lem_in.h
+CMakeFiles/lem_in.dir/srcs/solver_auxiliary_works_algo_2.c.o: ../libft/includes/dstr.h
+CMakeFiles/lem_in.dir/srcs/solver_auxiliary_works_algo_2.c.o: ../libft/includes/get_next_line.h
+CMakeFiles/lem_in.dir/srcs/solver_auxiliary_works_algo_2.c.o: ../libft/includes/libft.h
+CMakeFiles/lem_in.dir/srcs/solver_auxiliary_works_algo_2.c.o: ../srcs/solver_auxiliary_works_algo_2.c
 
-CMakeFiles/lem_in.dir/srcs/solver_dfs.c.o: ../includes/lem_in.h
-CMakeFiles/lem_in.dir/srcs/solver_dfs.c.o: ../libft/includes/dstr.h
-CMakeFiles/lem_in.dir/srcs/solver_dfs.c.o: ../libft/includes/get_next_line.h
-CMakeFiles/lem_in.dir/srcs/solver_dfs.c.o: ../libft/includes/libft.h
-CMakeFiles/lem_in.dir/srcs/solver_dfs.c.o: ../srcs/solver_dfs.c
+CMakeFiles/lem_in.dir/srcs/solver_bellman_ford_end_start.c.o: ../includes/lem_in.h
+CMakeFiles/lem_in.dir/srcs/solver_bellman_ford_end_start.c.o: ../libft/includes/dstr.h
+CMakeFiles/lem_in.dir/srcs/solver_bellman_ford_end_start.c.o: ../libft/includes/get_next_line.h
+CMakeFiles/lem_in.dir/srcs/solver_bellman_ford_end_start.c.o: ../libft/includes/libft.h
+CMakeFiles/lem_in.dir/srcs/solver_bellman_ford_end_start.c.o: ../srcs/solver_bellman_ford_end_start.c
+
+CMakeFiles/lem_in.dir/srcs/solver_bellman_ford_start_end.c.o: ../includes/lem_in.h
+CMakeFiles/lem_in.dir/srcs/solver_bellman_ford_start_end.c.o: ../libft/includes/dstr.h
+CMakeFiles/lem_in.dir/srcs/solver_bellman_ford_start_end.c.o: ../libft/includes/get_next_line.h
+CMakeFiles/lem_in.dir/srcs/solver_bellman_ford_start_end.c.o: ../libft/includes/libft.h
+CMakeFiles/lem_in.dir/srcs/solver_bellman_ford_start_end.c.o: ../srcs/solver_bellman_ford_start_end.c
+
+CMakeFiles/lem_in.dir/srcs/solver_bf_es_find_way.c.o: ../includes/lem_in.h
+CMakeFiles/lem_in.dir/srcs/solver_bf_es_find_way.c.o: ../libft/includes/dstr.h
+CMakeFiles/lem_in.dir/srcs/solver_bf_es_find_way.c.o: ../libft/includes/get_next_line.h
+CMakeFiles/lem_in.dir/srcs/solver_bf_es_find_way.c.o: ../libft/includes/libft.h
+CMakeFiles/lem_in.dir/srcs/solver_bf_es_find_way.c.o: ../srcs/solver_bf_es_find_way.c
+
+CMakeFiles/lem_in.dir/srcs/solver_bf_find_way.c.o: ../includes/lem_in.h
+CMakeFiles/lem_in.dir/srcs/solver_bf_find_way.c.o: ../libft/includes/dstr.h
+CMakeFiles/lem_in.dir/srcs/solver_bf_find_way.c.o: ../libft/includes/get_next_line.h
+CMakeFiles/lem_in.dir/srcs/solver_bf_find_way.c.o: ../libft/includes/libft.h
+CMakeFiles/lem_in.dir/srcs/solver_bf_find_way.c.o: ../srcs/solver_bf_find_way.c
+
+CMakeFiles/lem_in.dir/srcs/solver_find_best_current_way.c.o: ../includes/lem_in.h
+CMakeFiles/lem_in.dir/srcs/solver_find_best_current_way.c.o: ../libft/includes/dstr.h
+CMakeFiles/lem_in.dir/srcs/solver_find_best_current_way.c.o: ../libft/includes/get_next_line.h
+CMakeFiles/lem_in.dir/srcs/solver_find_best_current_way.c.o: ../libft/includes/libft.h
+CMakeFiles/lem_in.dir/srcs/solver_find_best_current_way.c.o: ../srcs/solver_find_best_current_way.c
+
+CMakeFiles/lem_in.dir/srcs/solver_find_way.c.o: ../includes/lem_in.h
+CMakeFiles/lem_in.dir/srcs/solver_find_way.c.o: ../libft/includes/dstr.h
+CMakeFiles/lem_in.dir/srcs/solver_find_way.c.o: ../libft/includes/get_next_line.h
+CMakeFiles/lem_in.dir/srcs/solver_find_way.c.o: ../libft/includes/libft.h
+CMakeFiles/lem_in.dir/srcs/solver_find_way.c.o: ../srcs/solver_find_way.c
+
+CMakeFiles/lem_in.dir/srcs/solver_initialization.c.o: ../includes/lem_in.h
+CMakeFiles/lem_in.dir/srcs/solver_initialization.c.o: ../libft/includes/dstr.h
+CMakeFiles/lem_in.dir/srcs/solver_initialization.c.o: ../libft/includes/get_next_line.h
+CMakeFiles/lem_in.dir/srcs/solver_initialization.c.o: ../libft/includes/libft.h
+CMakeFiles/lem_in.dir/srcs/solver_initialization.c.o: ../srcs/solver_initialization.c
+
+CMakeFiles/lem_in.dir/srcs/solver_sufficienty_c.c.o: ../includes/lem_in.h
+CMakeFiles/lem_in.dir/srcs/solver_sufficienty_c.c.o: ../libft/includes/dstr.h
+CMakeFiles/lem_in.dir/srcs/solver_sufficienty_c.c.o: ../libft/includes/get_next_line.h
+CMakeFiles/lem_in.dir/srcs/solver_sufficienty_c.c.o: ../libft/includes/libft.h
+CMakeFiles/lem_in.dir/srcs/solver_sufficienty_c.c.o: ../srcs/solver_sufficienty_c.c
+
+CMakeFiles/lem_in.dir/srcs/solver_sufficienty_c_common_rooms_calc.c.o: ../includes/lem_in.h
+CMakeFiles/lem_in.dir/srcs/solver_sufficienty_c_common_rooms_calc.c.o: ../libft/includes/dstr.h
+CMakeFiles/lem_in.dir/srcs/solver_sufficienty_c_common_rooms_calc.c.o: ../libft/includes/get_next_line.h
+CMakeFiles/lem_in.dir/srcs/solver_sufficienty_c_common_rooms_calc.c.o: ../libft/includes/libft.h
+CMakeFiles/lem_in.dir/srcs/solver_sufficienty_c_common_rooms_calc.c.o: ../srcs/solver_sufficienty_c_common_rooms_calc.c
 
 CMakeFiles/lem_in.dir/srcs/writer_main.c.o: ../includes/lem_in.h
 CMakeFiles/lem_in.dir/srcs/writer_main.c.o: ../libft/includes/dstr.h

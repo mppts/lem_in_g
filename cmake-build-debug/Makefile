@@ -393,6 +393,33 @@ srcs/solver.c.s:
 	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver.c.s
 .PHONY : srcs/solver.c.s
 
+srcs/solver_algo_separation.o: srcs/solver_algo_separation.c.o
+
+.PHONY : srcs/solver_algo_separation.o
+
+# target to build an object file
+srcs/solver_algo_separation.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_algo_separation.c.o
+.PHONY : srcs/solver_algo_separation.c.o
+
+srcs/solver_algo_separation.i: srcs/solver_algo_separation.c.i
+
+.PHONY : srcs/solver_algo_separation.i
+
+# target to preprocess a source file
+srcs/solver_algo_separation.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_algo_separation.c.i
+.PHONY : srcs/solver_algo_separation.c.i
+
+srcs/solver_algo_separation.s: srcs/solver_algo_separation.c.s
+
+.PHONY : srcs/solver_algo_separation.s
+
+# target to generate assembly for a file
+srcs/solver_algo_separation.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_algo_separation.c.s
+.PHONY : srcs/solver_algo_separation.c.s
+
 srcs/solver_algorithm.o: srcs/solver_algorithm.c.o
 
 .PHONY : srcs/solver_algorithm.o
@@ -419,6 +446,60 @@ srcs/solver_algorithm.s: srcs/solver_algorithm.c.s
 srcs/solver_algorithm.c.s:
 	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_algorithm.c.s
 .PHONY : srcs/solver_algorithm.c.s
+
+srcs/solver_auxiliary_works_algo.o: srcs/solver_auxiliary_works_algo.c.o
+
+.PHONY : srcs/solver_auxiliary_works_algo.o
+
+# target to build an object file
+srcs/solver_auxiliary_works_algo.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_auxiliary_works_algo.c.o
+.PHONY : srcs/solver_auxiliary_works_algo.c.o
+
+srcs/solver_auxiliary_works_algo.i: srcs/solver_auxiliary_works_algo.c.i
+
+.PHONY : srcs/solver_auxiliary_works_algo.i
+
+# target to preprocess a source file
+srcs/solver_auxiliary_works_algo.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_auxiliary_works_algo.c.i
+.PHONY : srcs/solver_auxiliary_works_algo.c.i
+
+srcs/solver_auxiliary_works_algo.s: srcs/solver_auxiliary_works_algo.c.s
+
+.PHONY : srcs/solver_auxiliary_works_algo.s
+
+# target to generate assembly for a file
+srcs/solver_auxiliary_works_algo.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_auxiliary_works_algo.c.s
+.PHONY : srcs/solver_auxiliary_works_algo.c.s
+
+srcs/solver_auxiliary_works_algo_2.o: srcs/solver_auxiliary_works_algo_2.c.o
+
+.PHONY : srcs/solver_auxiliary_works_algo_2.o
+
+# target to build an object file
+srcs/solver_auxiliary_works_algo_2.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_auxiliary_works_algo_2.c.o
+.PHONY : srcs/solver_auxiliary_works_algo_2.c.o
+
+srcs/solver_auxiliary_works_algo_2.i: srcs/solver_auxiliary_works_algo_2.c.i
+
+.PHONY : srcs/solver_auxiliary_works_algo_2.i
+
+# target to preprocess a source file
+srcs/solver_auxiliary_works_algo_2.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_auxiliary_works_algo_2.c.i
+.PHONY : srcs/solver_auxiliary_works_algo_2.c.i
+
+srcs/solver_auxiliary_works_algo_2.s: srcs/solver_auxiliary_works_algo_2.c.s
+
+.PHONY : srcs/solver_auxiliary_works_algo_2.s
+
+# target to generate assembly for a file
+srcs/solver_auxiliary_works_algo_2.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_auxiliary_works_algo_2.c.s
+.PHONY : srcs/solver_auxiliary_works_algo_2.c.s
 
 srcs/solver_bellman_ford_end_start.o: srcs/solver_bellman_ford_end_start.c.o
 
@@ -474,32 +555,59 @@ srcs/solver_bellman_ford_start_end.c.s:
 	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_bellman_ford_start_end.c.s
 .PHONY : srcs/solver_bellman_ford_start_end.c.s
 
-srcs/solver_dfs.o: srcs/solver_dfs.c.o
+srcs/solver_bf_es_find_way.o: srcs/solver_bf_es_find_way.c.o
 
-.PHONY : srcs/solver_dfs.o
+.PHONY : srcs/solver_bf_es_find_way.o
 
 # target to build an object file
-srcs/solver_dfs.c.o:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_dfs.c.o
-.PHONY : srcs/solver_dfs.c.o
+srcs/solver_bf_es_find_way.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_bf_es_find_way.c.o
+.PHONY : srcs/solver_bf_es_find_way.c.o
 
-srcs/solver_dfs.i: srcs/solver_dfs.c.i
+srcs/solver_bf_es_find_way.i: srcs/solver_bf_es_find_way.c.i
 
-.PHONY : srcs/solver_dfs.i
+.PHONY : srcs/solver_bf_es_find_way.i
 
 # target to preprocess a source file
-srcs/solver_dfs.c.i:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_dfs.c.i
-.PHONY : srcs/solver_dfs.c.i
+srcs/solver_bf_es_find_way.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_bf_es_find_way.c.i
+.PHONY : srcs/solver_bf_es_find_way.c.i
 
-srcs/solver_dfs.s: srcs/solver_dfs.c.s
+srcs/solver_bf_es_find_way.s: srcs/solver_bf_es_find_way.c.s
 
-.PHONY : srcs/solver_dfs.s
+.PHONY : srcs/solver_bf_es_find_way.s
 
 # target to generate assembly for a file
-srcs/solver_dfs.c.s:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_dfs.c.s
-.PHONY : srcs/solver_dfs.c.s
+srcs/solver_bf_es_find_way.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_bf_es_find_way.c.s
+.PHONY : srcs/solver_bf_es_find_way.c.s
+
+srcs/solver_bf_find_way.o: srcs/solver_bf_find_way.c.o
+
+.PHONY : srcs/solver_bf_find_way.o
+
+# target to build an object file
+srcs/solver_bf_find_way.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_bf_find_way.c.o
+.PHONY : srcs/solver_bf_find_way.c.o
+
+srcs/solver_bf_find_way.i: srcs/solver_bf_find_way.c.i
+
+.PHONY : srcs/solver_bf_find_way.i
+
+# target to preprocess a source file
+srcs/solver_bf_find_way.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_bf_find_way.c.i
+.PHONY : srcs/solver_bf_find_way.c.i
+
+srcs/solver_bf_find_way.s: srcs/solver_bf_find_way.c.s
+
+.PHONY : srcs/solver_bf_find_way.s
+
+# target to generate assembly for a file
+srcs/solver_bf_find_way.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_bf_find_way.c.s
+.PHONY : srcs/solver_bf_find_way.c.s
 
 srcs/solver_find_best_current_way.o: srcs/solver_find_best_current_way.c.o
 
@@ -527,6 +635,114 @@ srcs/solver_find_best_current_way.s: srcs/solver_find_best_current_way.c.s
 srcs/solver_find_best_current_way.c.s:
 	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_find_best_current_way.c.s
 .PHONY : srcs/solver_find_best_current_way.c.s
+
+srcs/solver_find_way.o: srcs/solver_find_way.c.o
+
+.PHONY : srcs/solver_find_way.o
+
+# target to build an object file
+srcs/solver_find_way.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_find_way.c.o
+.PHONY : srcs/solver_find_way.c.o
+
+srcs/solver_find_way.i: srcs/solver_find_way.c.i
+
+.PHONY : srcs/solver_find_way.i
+
+# target to preprocess a source file
+srcs/solver_find_way.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_find_way.c.i
+.PHONY : srcs/solver_find_way.c.i
+
+srcs/solver_find_way.s: srcs/solver_find_way.c.s
+
+.PHONY : srcs/solver_find_way.s
+
+# target to generate assembly for a file
+srcs/solver_find_way.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_find_way.c.s
+.PHONY : srcs/solver_find_way.c.s
+
+srcs/solver_initialization.o: srcs/solver_initialization.c.o
+
+.PHONY : srcs/solver_initialization.o
+
+# target to build an object file
+srcs/solver_initialization.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_initialization.c.o
+.PHONY : srcs/solver_initialization.c.o
+
+srcs/solver_initialization.i: srcs/solver_initialization.c.i
+
+.PHONY : srcs/solver_initialization.i
+
+# target to preprocess a source file
+srcs/solver_initialization.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_initialization.c.i
+.PHONY : srcs/solver_initialization.c.i
+
+srcs/solver_initialization.s: srcs/solver_initialization.c.s
+
+.PHONY : srcs/solver_initialization.s
+
+# target to generate assembly for a file
+srcs/solver_initialization.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_initialization.c.s
+.PHONY : srcs/solver_initialization.c.s
+
+srcs/solver_sufficienty_c.o: srcs/solver_sufficienty_c.c.o
+
+.PHONY : srcs/solver_sufficienty_c.o
+
+# target to build an object file
+srcs/solver_sufficienty_c.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_sufficienty_c.c.o
+.PHONY : srcs/solver_sufficienty_c.c.o
+
+srcs/solver_sufficienty_c.i: srcs/solver_sufficienty_c.c.i
+
+.PHONY : srcs/solver_sufficienty_c.i
+
+# target to preprocess a source file
+srcs/solver_sufficienty_c.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_sufficienty_c.c.i
+.PHONY : srcs/solver_sufficienty_c.c.i
+
+srcs/solver_sufficienty_c.s: srcs/solver_sufficienty_c.c.s
+
+.PHONY : srcs/solver_sufficienty_c.s
+
+# target to generate assembly for a file
+srcs/solver_sufficienty_c.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_sufficienty_c.c.s
+.PHONY : srcs/solver_sufficienty_c.c.s
+
+srcs/solver_sufficienty_c_common_rooms_calc.o: srcs/solver_sufficienty_c_common_rooms_calc.c.o
+
+.PHONY : srcs/solver_sufficienty_c_common_rooms_calc.o
+
+# target to build an object file
+srcs/solver_sufficienty_c_common_rooms_calc.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_sufficienty_c_common_rooms_calc.c.o
+.PHONY : srcs/solver_sufficienty_c_common_rooms_calc.c.o
+
+srcs/solver_sufficienty_c_common_rooms_calc.i: srcs/solver_sufficienty_c_common_rooms_calc.c.i
+
+.PHONY : srcs/solver_sufficienty_c_common_rooms_calc.i
+
+# target to preprocess a source file
+srcs/solver_sufficienty_c_common_rooms_calc.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_sufficienty_c_common_rooms_calc.c.i
+.PHONY : srcs/solver_sufficienty_c_common_rooms_calc.c.i
+
+srcs/solver_sufficienty_c_common_rooms_calc.s: srcs/solver_sufficienty_c_common_rooms_calc.c.s
+
+.PHONY : srcs/solver_sufficienty_c_common_rooms_calc.s
+
+# target to generate assembly for a file
+srcs/solver_sufficienty_c_common_rooms_calc.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/srcs/solver_sufficienty_c_common_rooms_calc.c.s
+.PHONY : srcs/solver_sufficienty_c_common_rooms_calc.c.s
 
 srcs/writer_main.o: srcs/writer_main.c.o
 
@@ -594,21 +810,45 @@ help:
 	@echo "... srcs/solver.o"
 	@echo "... srcs/solver.i"
 	@echo "... srcs/solver.s"
+	@echo "... srcs/solver_algo_separation.o"
+	@echo "... srcs/solver_algo_separation.i"
+	@echo "... srcs/solver_algo_separation.s"
 	@echo "... srcs/solver_algorithm.o"
 	@echo "... srcs/solver_algorithm.i"
 	@echo "... srcs/solver_algorithm.s"
+	@echo "... srcs/solver_auxiliary_works_algo.o"
+	@echo "... srcs/solver_auxiliary_works_algo.i"
+	@echo "... srcs/solver_auxiliary_works_algo.s"
+	@echo "... srcs/solver_auxiliary_works_algo_2.o"
+	@echo "... srcs/solver_auxiliary_works_algo_2.i"
+	@echo "... srcs/solver_auxiliary_works_algo_2.s"
 	@echo "... srcs/solver_bellman_ford_end_start.o"
 	@echo "... srcs/solver_bellman_ford_end_start.i"
 	@echo "... srcs/solver_bellman_ford_end_start.s"
 	@echo "... srcs/solver_bellman_ford_start_end.o"
 	@echo "... srcs/solver_bellman_ford_start_end.i"
 	@echo "... srcs/solver_bellman_ford_start_end.s"
-	@echo "... srcs/solver_dfs.o"
-	@echo "... srcs/solver_dfs.i"
-	@echo "... srcs/solver_dfs.s"
+	@echo "... srcs/solver_bf_es_find_way.o"
+	@echo "... srcs/solver_bf_es_find_way.i"
+	@echo "... srcs/solver_bf_es_find_way.s"
+	@echo "... srcs/solver_bf_find_way.o"
+	@echo "... srcs/solver_bf_find_way.i"
+	@echo "... srcs/solver_bf_find_way.s"
 	@echo "... srcs/solver_find_best_current_way.o"
 	@echo "... srcs/solver_find_best_current_way.i"
 	@echo "... srcs/solver_find_best_current_way.s"
+	@echo "... srcs/solver_find_way.o"
+	@echo "... srcs/solver_find_way.i"
+	@echo "... srcs/solver_find_way.s"
+	@echo "... srcs/solver_initialization.o"
+	@echo "... srcs/solver_initialization.i"
+	@echo "... srcs/solver_initialization.s"
+	@echo "... srcs/solver_sufficienty_c.o"
+	@echo "... srcs/solver_sufficienty_c.i"
+	@echo "... srcs/solver_sufficienty_c.s"
+	@echo "... srcs/solver_sufficienty_c_common_rooms_calc.o"
+	@echo "... srcs/solver_sufficienty_c_common_rooms_calc.i"
+	@echo "... srcs/solver_sufficienty_c_common_rooms_calc.s"
 	@echo "... srcs/writer_main.o"
 	@echo "... srcs/writer_main.i"
 	@echo "... srcs/writer_main.s"

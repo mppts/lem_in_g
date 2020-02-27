@@ -134,16 +134,43 @@
 		<Unit filename="/Users/dorphan/Desktop/Projects/LI_works/full/srcs/solver.c">
 			<Option target="lem_in"/>
 		</Unit>
+		<Unit filename="/Users/dorphan/Desktop/Projects/LI_works/full/srcs/solver_algo_separation.c">
+			<Option target="lem_in"/>
+		</Unit>
 		<Unit filename="/Users/dorphan/Desktop/Projects/LI_works/full/srcs/solver_algorithm.c">
 			<Option target="lem_in"/>
 		</Unit>
-		<Unit filename="/Users/dorphan/Desktop/Projects/LI_works/full/srcs/solver_algorithm_cleaning.c">
+		<Unit filename="/Users/dorphan/Desktop/Projects/LI_works/full/srcs/solver_auxiliary_works_algo.c">
 			<Option target="lem_in"/>
 		</Unit>
-		<Unit filename="/Users/dorphan/Desktop/Projects/LI_works/full/srcs/solver_bfs.c">
+		<Unit filename="/Users/dorphan/Desktop/Projects/LI_works/full/srcs/solver_auxiliary_works_algo_2.c">
 			<Option target="lem_in"/>
 		</Unit>
-		<Unit filename="/Users/dorphan/Desktop/Projects/LI_works/full/srcs/solver_dfs.c">
+		<Unit filename="/Users/dorphan/Desktop/Projects/LI_works/full/srcs/solver_bellman_ford_end_start.c">
+			<Option target="lem_in"/>
+		</Unit>
+		<Unit filename="/Users/dorphan/Desktop/Projects/LI_works/full/srcs/solver_bellman_ford_start_end.c">
+			<Option target="lem_in"/>
+		</Unit>
+		<Unit filename="/Users/dorphan/Desktop/Projects/LI_works/full/srcs/solver_bf_es_find_way.c">
+			<Option target="lem_in"/>
+		</Unit>
+		<Unit filename="/Users/dorphan/Desktop/Projects/LI_works/full/srcs/solver_bf_find_way.c">
+			<Option target="lem_in"/>
+		</Unit>
+		<Unit filename="/Users/dorphan/Desktop/Projects/LI_works/full/srcs/solver_find_best_current_way.c">
+			<Option target="lem_in"/>
+		</Unit>
+		<Unit filename="/Users/dorphan/Desktop/Projects/LI_works/full/srcs/solver_find_way.c">
+			<Option target="lem_in"/>
+		</Unit>
+		<Unit filename="/Users/dorphan/Desktop/Projects/LI_works/full/srcs/solver_initialization.c">
+			<Option target="lem_in"/>
+		</Unit>
+		<Unit filename="/Users/dorphan/Desktop/Projects/LI_works/full/srcs/solver_sufficienty_c.c">
+			<Option target="lem_in"/>
+		</Unit>
+		<Unit filename="/Users/dorphan/Desktop/Projects/LI_works/full/srcs/solver_sufficienty_c_common_rooms_calc.c">
 			<Option target="lem_in"/>
 		</Unit>
 		<Unit filename="/Users/dorphan/Desktop/Projects/LI_works/full/srcs/writer_main.c">

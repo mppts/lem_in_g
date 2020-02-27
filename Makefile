@@ -24,10 +24,19 @@ SOURCE = \
          parse_room2.c\
 		 parse_utils.c\
          solver.c\
+         solver_initialization.c\
          solver_algorithm.c\
          solver_find_best_current_way.c\
          solver_bellman_ford_start_end.c\
          solver_bellman_ford_end_start.c\
+         solver_auxiliary_works_algo.c\
+         solver_auxiliary_works_algo_2.c\
+         solver_bf_es_find_way.c\
+         solver_bf_find_way.c\
+         solver_find_way.c\
+         solver_sufficienty_c.c\
+         solver_sufficienty_c_common_rooms_calc.c\
+         solver_algo_separation.c\
          writer_main.c
 
 

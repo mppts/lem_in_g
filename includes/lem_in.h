@@ -57,9 +57,9 @@ typedef struct 		s_graph_inf
 	struct s_way	**ways;
 	struct s_room	**common_rooms;
 	int				current_way_number;
-	int64_t			total_ways_len;
-	int64_t			are_enough_ways_current;
-	int64_t			are_enough_ways_new;
+	int64_t			len_t;
+	int64_t			enough_c;
+	int64_t			enough_n;
 	int 			max_ways;
 }					t_graph_inf;
 
@@ -171,15 +171,15 @@ void				man_err_map(char *msg, char **data,
 ** solver.c
 */
 void				solver(t_map *map);
-void				make_color_white_again(t_room *source);
-int					rooms_calc(t_room *source);
-t_graph_inf			*create_inf(t_map *map);
 
+/*
+** solver_initialization.c
+*/
+void				initialization(t_map *map, t_graph_inf	*inf);
 /*
 ** solver_algorithm.c
 */
 void				algo(t_map *map, t_graph_inf *inf);
-int					enough_ways(t_map *map, t_graph_inf *inf);
 
 /*
 ** solver_algorithm_cleaning.c
@@ -200,6 +200,46 @@ int				bellman_ford_rev(t_map *map, t_room **line, t_graph_inf *inf);
 ** solver_find_best_current_way.c
 */
 int		find_best_current_way(t_map *map, t_room **way_1, t_room **way_2, t_graph_inf *inf);
+
+/*
+** solver_bf_find_way.c
+*/
+int					find_way_bf(t_map *map, t_room **line);
+/*
+** solver_bf_es_find_way.c
+*/
+int					find_way_bf_e_s(t_map *map, t_room **line);
+
+/*
+** solver_auxiliary_works_algo.c
+*/
+void				auxiliary_works(t_map *map, t_graph_inf *inf, t_room **way_1);
+
+/*
+** solver_auxiliary_works_algo_2.c
+*/
+void				sort_ways(t_graph_inf *inf);
+void				give_right_numbers_to_ways(t_graph_inf *inf);
+void				clear_common_rooms(t_graph_inf *inf);
+
+/*
+** solver_find_way.c
+*/
+void				find_way_1(t_map *map, t_room **line, t_graph_inf *inf);
+/*
+** solver_separation.c
+*/
+void				separate_cross_ways(t_graph_inf *inf, t_map *map);
+
+/*
+** solver_sufficienty_c.c
+*/
+int					sufficienty_c(t_graph_inf *inf, t_map *map);
+
+/*
+** solver_sufficienty_c_common_rooms_calc.c
+*/
+int					common_rooms_calc(t_graph_inf *inf);
 
 void				writer(t_map *map);
 

@@ -106,6 +106,9 @@
 		<Unit filename="/home/kona/Progs/lem_in/libft/srcs/binary_heap/bin_get_root.c">
 			<Option target="lem_in"/>
 		</Unit>
+		<Unit filename="/home/kona/Progs/lem_in/libft/srcs/binary_heap/bin_heapify.c">
+			<Option target="lem_in"/>
+		</Unit>
 		<Unit filename="/home/kona/Progs/lem_in/libft/srcs/binary_heap/bin_inc_key.c">
 			<Option target="lem_in"/>
 		</Unit>

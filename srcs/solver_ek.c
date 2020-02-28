@@ -48,24 +48,27 @@ int				enough_solutions(t_solver *slv, t_map *g)
 	return (1);
 }
 
-void			refresh_potentials(t_room *start)
+void			refresh_potentials(t_room *start, t_map *g)
 {
 	t_room		*tmp;
 
-	start->potential += start->delta;
+	start->potential = start->delta;
 	start->level = 0;
 	start->delta = 0;
 	start->sign = 0;
 	start->pred = NULL;
+	start->pred_neg = NULL;
 	tmp = start->next;
 	while (tmp != start)
 	{
-		tmp->potential += tmp->delta;
+		tmp->potential = tmp->delta;
 		tmp->pred = NULL;
+		tmp->pred_neg = NULL;
 		tmp->delta = INT64_MAX;
 		tmp->sign = 0;
 		tmp = tmp->next;
 	}
+	g->fin->level = 1;
 }
 
 
@@ -86,7 +89,12 @@ void				print_desc2(t_patha *pArr)
 		}
 		printf("\n");
 		i++;
-	}
+	}/*
+	while(i < pArr->amt_steps_cost)
+	{
+		printf("[%s] ", pArr->path[i]->name);
+		i++;
+	}*/
 }
 
 void			solver_edmonds_karp(t_map *g)
@@ -96,8 +104,6 @@ void			solver_edmonds_karp(t_map *g)
 	slv = init_solver(g);
 	if (bfs_potential(g->start, g->fin, slv->deq))
 	{
-		g->start->potential = 0;
-		g->start->delta = 0;
 		while (bin_dijkstra(g, slv->heap))
 		{
 			fulfill_path(g);
@@ -107,8 +113,8 @@ void			solver_edmonds_karp(t_map *g)
 			if (enough_solutions(slv, g))
 				break ;
 			bin_clean_heap_data(slv->heap);
-			refresh_potentials(g->start);
-			g->fin->level = 1;
+			refresh_potentials(g->start, g);
+			g->fin->level = 0;
 		}
 	}
 	g->paths = slv->paths_arr_solution;

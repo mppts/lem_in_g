@@ -33,6 +33,7 @@ void			fill_link_from_to(t_room *from, t_room *to)
 				ln->flow = 0;
 				ln->mirror->flow = -1;
 			}
+			break ;
 		}
 		ln = ln->next;
 	}
@@ -42,25 +43,30 @@ void			fulfill_path(t_map *g)
 {
 	t_room		*rm;
 	t_room		*rm_tmp;
+	int 		flag_neg;
 
 	rm = g->fin;
+	flag_neg = 0;
 	while (rm != g->start)
 	{
-		rm->level = 1;
 		if (rm->pred_neg)
 		{
+			//printf("\t%s\n", rm->name);
+			rm->level = flag_neg ? 0 : -1;
 			fill_link_from_to(rm->pred_neg, rm);
 			rm_tmp = rm;
 			rm = rm->pred_neg;
 			rm_tmp->pred_neg = NULL;
+			flag_neg = 1;
 		}
 		else
 		{
+		//	printf("%s\n", rm->name);
+			rm->level = 1;
 			fill_link_from_to(rm->pred, rm);
 			rm = rm->pred;
+			flag_neg = 0;
 		}
-		if (rm != g->start)
-			rm->level = 1;
 	}
 }
 
@@ -94,8 +100,11 @@ void			push_path(t_patha *path, t_map *g, t_link *lf)
 		}
 		else
 			link = link->next;
+		if (link->to == g->fin)
+			break ;
 	}
-	//path->path_starts[path->path_id][path->path_lens[path->path_id]] = NULL;
+	path->path_starts[path->path_id][path->path_lens[path->path_id]++] = link->to;
+	path->path_starts[path->path_id][path->path_lens[path->path_id]] = NULL;
 }
 
 void			find_all_paths(t_patha *path, t_map *g)

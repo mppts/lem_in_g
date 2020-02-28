@@ -177,6 +177,33 @@ libft/srcs/binary_heap/bin_get_root.c.s:
 	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_get_root.c.s
 .PHONY : libft/srcs/binary_heap/bin_get_root.c.s
 
+libft/srcs/binary_heap/bin_heapify.o: libft/srcs/binary_heap/bin_heapify.c.o
+
+.PHONY : libft/srcs/binary_heap/bin_heapify.o
+
+# target to build an object file
+libft/srcs/binary_heap/bin_heapify.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_heapify.c.o
+.PHONY : libft/srcs/binary_heap/bin_heapify.c.o
+
+libft/srcs/binary_heap/bin_heapify.i: libft/srcs/binary_heap/bin_heapify.c.i
+
+.PHONY : libft/srcs/binary_heap/bin_heapify.i
+
+# target to preprocess a source file
+libft/srcs/binary_heap/bin_heapify.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_heapify.c.i
+.PHONY : libft/srcs/binary_heap/bin_heapify.c.i
+
+libft/srcs/binary_heap/bin_heapify.s: libft/srcs/binary_heap/bin_heapify.c.s
+
+.PHONY : libft/srcs/binary_heap/bin_heapify.s
+
+# target to generate assembly for a file
+libft/srcs/binary_heap/bin_heapify.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_heapify.c.s
+.PHONY : libft/srcs/binary_heap/bin_heapify.c.s
+
 libft/srcs/binary_heap/bin_inc_key.o: libft/srcs/binary_heap/bin_inc_key.c.o
 
 .PHONY : libft/srcs/binary_heap/bin_inc_key.o
@@ -840,6 +867,9 @@ help:
 	@echo "... libft/srcs/binary_heap/bin_get_root.o"
 	@echo "... libft/srcs/binary_heap/bin_get_root.i"
 	@echo "... libft/srcs/binary_heap/bin_get_root.s"
+	@echo "... libft/srcs/binary_heap/bin_heapify.o"
+	@echo "... libft/srcs/binary_heap/bin_heapify.i"
+	@echo "... libft/srcs/binary_heap/bin_heapify.s"
 	@echo "... libft/srcs/binary_heap/bin_inc_key.o"
 	@echo "... libft/srcs/binary_heap/bin_inc_key.i"
 	@echo "... libft/srcs/binary_heap/bin_inc_key.s"

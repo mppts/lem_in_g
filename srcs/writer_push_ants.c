@@ -88,12 +88,11 @@ void				push_ants(t_map *map)
 		slv[4] = -1;
 		while (++slv[4] < map->paths->path_id)
 		{
-			slv[1] = map->paths->path_lens[slv[4]] - 1;
-			while (slv[1] >= 0)
+			slv[1] = map->paths->path_lens[slv[4]];
+			while (slv[1]-- > 0)
 			{
-				if (move_ant(slv, slv[1] % map->paths->path_lens[slv[4]], map))
+				if (move_ant(slv, slv[1], map))
 					dstr_joinstr(map->dstr, " ");
-				slv[1]--;
 			}
 		}
 		dstr_remove_back(map->dstr, 1);

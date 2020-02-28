@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_free.c.o"
   "CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_get_root.c.o"
+  "CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_heapify.c.o"
   "CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_inc_key.c.o"
   "CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_insert.c.o"
   "CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_remove_root.c.o"

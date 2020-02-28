@@ -34,6 +34,7 @@ add_executable(lem_in
         libft/srcs/binary_heap/bin_insert.c
         libft/srcs/binary_heap/bin_inc_key.c
         libft/srcs/binary_heap/bin_get_root.c
+        libft/srcs/binary_heap/bin_heapify.c
         srcs/solver_tools.c
         srcs/deque2.c
         srcs/deque.c

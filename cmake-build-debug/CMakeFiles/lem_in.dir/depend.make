@@ -7,6 +7,9 @@ CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_free.c.o: ../libft/srcs/binary_
 CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_get_root.c.o: ../libft/includes/binary_heap.h
 CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_get_root.c.o: ../libft/srcs/binary_heap/bin_get_root.c
 
+CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_heapify.c.o: ../libft/includes/binary_heap.h
+CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_heapify.c.o: ../libft/srcs/binary_heap/bin_heapify.c
+
 CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_inc_key.c.o: ../libft/includes/binary_heap.h
 CMakeFiles/lem_in.dir/libft/srcs/binary_heap/bin_inc_key.c.o: ../libft/srcs/binary_heap/bin_inc_key.c
 

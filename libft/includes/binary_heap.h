@@ -39,5 +39,7 @@ int					bin_inc_key(t_bin_heap *heap, int64_t i, int64_t key);
 int					bin_decr_key(t_bin_heap *heap, int64_t i, int64_t key);
 void				*bin_pop_root(void *new_min, t_bin_heap *heap);
 void				bin_clean_heap_data(t_bin_heap *heap);
+void				bin_refresh_keys(t_bin_heap *heap, int64_t f(void*));
+void				bin_heap_restore(t_bin_heap *heap);
 
 #endif

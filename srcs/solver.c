@@ -22,7 +22,8 @@ t_path			*add_one_way(int i, t_graph_inf *inf, t_map *map)
 	tmp = (t_path *)malloc(sizeof(t_path));
 	tmp->next = NULL;
 	tmp->len = inf->ways[i]->way_len;
-	tmp->path = (t_room **)malloc(sizeof(t_room *) * (inf->ways[i]->way_len + 1));
+	tmp->path = (t_room **)malloc(sizeof(t_room *) *
+			(inf->ways[i]->way_len + 1));
 	tmp->path[inf->ways[i]->way_len] = NULL;
 	tmp->ants = map->ants;
 	way_in_list = inf->ways[i];
@@ -86,4 +87,28 @@ void			solver(t_map *map)
 	if (inf.ways[0])
 		put_ways_to_map(&inf, map);
 	free_inf_content(&inf);
+
+
+
+//	int 		k;
+//	t_path 		*tmp;
+//	int 		way_n;
+//
+//	way_n = 0;
+//	tmp = map->path;
+//	while (tmp)
+//	{
+//		k = 0;
+//		ft_putstr("way ");
+//		ft_putnbr(way_n++);
+//		ft_putstr(" is:\n");
+//		while (tmp->path[k])
+//		{
+//			ft_putstr(tmp->path[k++]->name);
+//			ft_putstr("  ");
+//		}
+//		ft_putchar('\n');
+//		tmp = tmp->next;
+//	}
+
 }

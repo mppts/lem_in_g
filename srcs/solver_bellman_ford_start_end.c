@@ -50,7 +50,7 @@ int				conditions_checking(t_map *map, t_link *tmp_link, t_room *room)
 }
 
 void			change_level(t_link *tmp, t_room *room,
-								char *do_we_have_a_change)
+								int *do_we_have_a_change)
 {
 	if (tmp->mirror->flow)
 	{
@@ -73,7 +73,7 @@ void			change_level(t_link *tmp, t_room *room,
 }
 
 void			work_with_links(t_map *map, t_room *room,
-									char *do_we_have_a_change)
+									int *do_we_have_a_change)
 {
 	t_link		*tmp;
 
@@ -89,19 +89,18 @@ void			work_with_links(t_map *map, t_room *room,
 int				bellman_ford(t_map *map, t_room **line, t_graph_inf *inf)
 {
 	t_room		*tmp_room;
-	char		do_we_have_a_change;
+	int			do_we_have_a_change;
 	int			indicator;
-	int			cycles;
 
-	cycles = 0;
 	do_we_have_a_change = 1;
+	map->cycle_found = 0;
 	while (do_we_have_a_change)
 	{
 		tmp_room = map->start;
 		do_we_have_a_change = 0;
 		indicator = 0;
-		cycles++;
-		if (cycles > map->num_nodes + 2)
+		map->cycle_found++;
+		if (map->cycle_found > map->num_nodes + 2)
 			break ;
 		while (!indicator || tmp_room != map->start)
 		{

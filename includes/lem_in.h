@@ -58,6 +58,7 @@ typedef struct		s_graph_inf
 	int64_t			enough_c;
 	int64_t			enough_n;
 	int				max_ways;
+	int				helper;
 }					t_graph_inf;
 
 typedef struct		s_link
@@ -109,6 +110,7 @@ typedef struct		s_map
 	char			*out;
 	t_dstr			*dstr;
 	struct s_path	*path;
+	char			cycle_found;
 }					t_map;
 
 typedef struct		s_flag

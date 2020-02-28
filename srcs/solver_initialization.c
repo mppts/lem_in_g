@@ -86,6 +86,8 @@ void		initialization(t_map *map, t_graph_inf *inf)
 	int		i;
 
 	i = 0;
+	map->cycle_found = 0;
+	inf->helper = -5;
 	inf->max_ways = find_num_of_ways(map);
 	inf->ways = malloc(sizeof(t_way *) * (inf->max_ways + 1));
 	inf->current_way_number = 0;

@@ -20,8 +20,10 @@ t_room			*find_way_on_fork_e_s(t_room *room, t_room *room_prev)
 	while (link)
 	{
 		if (link->to != room_prev &&
-				(link->to->level_rev - 1 == room->level_rev ||
-					link->to->level_rev + 1 == room->level_rev))
+				((link->to->level_rev - 1 == room->level_rev &&
+					link->flow) ||
+				(link->to->level_rev + 1 == room->level_rev &&
+					!link->flow)))
 			return (link->to);
 		link = link->next;
 	}
@@ -42,6 +44,12 @@ int				copy_to_line_e_s(t_room **line, int i, t_room **tmp_line,
 	return (0);
 }
 
+int				i_have_to_save_one_line_e_s(t_room **tmp_line)
+{
+	free(tmp_line);
+	return (0);
+}
+
 int				find_way_bf_e_s(t_map *map, t_room **line)
 {
 	int			i;
@@ -49,23 +57,22 @@ int				find_way_bf_e_s(t_map *map, t_room **line)
 	t_room		**tmp_line;
 
 	i = 0;
+	if (map->cycle_found == map->num_nodes + 2)
+		return (0);
 	tmp_line = (t_room **)malloc(sizeof(t_room) * (map->num_nodes + 1));
 	tmp = map->start;
 	while (tmp && tmp != map->fin)
 	{
 		tmp_line[i++] = tmp;
-		if (tmp->room_from_we_came &&
+		if (tmp == map->start || (tmp->room_from_we_came &&
 			(tmp->room_from_we_came->level_rev - 1 == tmp->level_rev ||
-				tmp->room_from_we_came->level_rev + 1 == tmp->level_rev))
+				tmp->room_from_we_came->level_rev + 1 == tmp->level_rev)))
 			tmp = tmp->room_from_we_came;
 		else
 			tmp = find_way_on_fork_e_s(tmp, tmp_line[i - 2]);
 	}
 	if (!tmp)
-	{
-		free(tmp_line);
-		return (0);
-	}
+		return (i_have_to_save_one_line_e_s(tmp_line));
 	tmp_line[i] = tmp;
 	return (copy_to_line_e_s(line, i, tmp_line, map));
 }

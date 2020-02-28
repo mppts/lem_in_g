@@ -57,7 +57,7 @@ void			algo(t_map *map, t_graph_inf *inf)
 		auxiliary_works(map, inf, way_1);
 		if (!indicator)
 			inf->current_way_number++;
-		//print_ways_len_2(inf);
+	//	print_ways_len_2(inf);
 	}
 	free(way_1);
 	free(way_2);

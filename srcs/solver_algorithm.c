@@ -12,19 +12,6 @@
 
 #include "lem_in.h"
 
-void			print_ways_len_2(t_graph_inf *inf)
-{
-	int			i;
-
-	i = 0;
-	while (inf->ways[i])
-	{
-		ft_putnbr(inf->ways[i++]->way_len);
-		ft_putstr("  ");
-	}
-	ft_putchar('\n');
-}
-
 void			nulls_to_ways(t_room **way_1, t_room **way_2, int len)
 {
 	int			i;
@@ -57,7 +44,6 @@ void			algo(t_map *map, t_graph_inf *inf)
 		auxiliary_works(map, inf, way_1);
 		if (!indicator)
 			inf->current_way_number++;
-	//	print_ways_len_2(inf);
 	}
 	free(way_1);
 	free(way_2);

@@ -1,4 +1,4 @@
-# Install script for directory: /Users/dorphan/Desktop/Projects/LI_works/full
+# Install script for directory: /Users/limry/CLionProjects/lnfull
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/Users/dorphan/Desktop/Projects/LI_works/full/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/Users/limry/CLionProjects/lnfull/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")

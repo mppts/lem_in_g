@@ -5,6 +5,10 @@ CMakeFiles/lem_in.dir/libft/srcs/dstr/dstr.c.o: ../libft/includes/dstr.h
 CMakeFiles/lem_in.dir/libft/srcs/dstr/dstr.c.o: ../libft/includes/libft.h
 CMakeFiles/lem_in.dir/libft/srcs/dstr/dstr.c.o: ../libft/srcs/dstr/dstr.c
 
+CMakeFiles/lem_in.dir/libft/srcs/dstr/dstr2.c.o: ../libft/includes/dstr.h
+CMakeFiles/lem_in.dir/libft/srcs/dstr/dstr2.c.o: ../libft/includes/libft.h
+CMakeFiles/lem_in.dir/libft/srcs/dstr/dstr2.c.o: ../libft/srcs/dstr/dstr2.c
+
 CMakeFiles/lem_in.dir/srcs/main.c.o: ../includes/lem_in.h
 CMakeFiles/lem_in.dir/srcs/main.c.o: ../libft/includes/dstr.h
 CMakeFiles/lem_in.dir/srcs/main.c.o: ../libft/includes/get_next_line.h
@@ -142,4 +146,10 @@ CMakeFiles/lem_in.dir/srcs/writer_main.c.o: ../libft/includes/dstr.h
 CMakeFiles/lem_in.dir/srcs/writer_main.c.o: ../libft/includes/get_next_line.h
 CMakeFiles/lem_in.dir/srcs/writer_main.c.o: ../libft/includes/libft.h
 CMakeFiles/lem_in.dir/srcs/writer_main.c.o: ../srcs/writer_main.c
+
+CMakeFiles/lem_in.dir/srcs/writer_main2.c.o: ../includes/lem_in.h
+CMakeFiles/lem_in.dir/srcs/writer_main2.c.o: ../libft/includes/dstr.h
+CMakeFiles/lem_in.dir/srcs/writer_main2.c.o: ../libft/includes/get_next_line.h
+CMakeFiles/lem_in.dir/srcs/writer_main2.c.o: ../libft/includes/libft.h
+CMakeFiles/lem_in.dir/srcs/writer_main2.c.o: ../srcs/writer_main2.c
 

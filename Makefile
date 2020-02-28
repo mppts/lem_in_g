@@ -10,10 +10,6 @@ LIB = libft.a
 DIR_LIB	= $(LIB:.a=/)
 LIB_INCLUDES = $(LIB:.a=/includes/)
 
-LIB_HEAP = libbinheap.a
-DIR_LIB_HEAP = $(LIB_HEAP:.a=/)
-LIB_HEAP_INCLUDES = $(LIB_HEAP:.a=/includes/)
-
 SOURCE = \
          main.c\
          man_err.c\
@@ -22,7 +18,7 @@ SOURCE = \
          parse_map.c\
          parse_room.c\
          parse_room2.c\
-		 parse_utils.c\
+         parse_utils.c\
          solver.c\
          solver_initialization.c\
          solver_algorithm.c\
@@ -37,12 +33,12 @@ SOURCE = \
          solver_sufficienty_c.c\
          solver_sufficienty_c_common_rooms_calc.c\
          solver_algo_separation.c\
-         writer_main.c
+         writer_main.c\
+         writer_main2.c
 
 
 HEADERS =	lem_in.h \
 			libft.h \
-			binary_heap.h
 
 #FLAGS = -Wall -Wextra -Werror
 FLAGS = 
@@ -52,8 +48,8 @@ SRCS = $(SOURCE:%.c=$(DIR_SRC)%.c)
 
 all: $(NAME)
 
-$(NAME): $(LIB) $(LIB_HEAP) directories $(OBJS)
-	gcc $(FLAGS) -o $(NAME) $(OBJS) -L$(DIR_LIB) -lft -L$(DIR_LIB_HEAP) -lbinheap
+$(NAME): $(LIB) directories $(OBJS)
+	gcc $(FLAGS) -o $(NAME) $(OBJS) -L$(DIR_LIB) -lft
 
 directories:
 	mkdir -p $(DIR_OBJ)
@@ -61,11 +57,8 @@ directories:
 $(LIB):
 	$(MAKE) -C $(DIR_LIB)
 
-$(LIB_HEAP):
-	$(MAKE) -C $(DIR_LIB_HEAP)
-
 $(DIR_OBJ)%.o: $(DIR_SRC)%.c
-	gcc $(FLAGS) -o $@ -c $< -I$(DIR_INC) -I$(LIB_INCLUDES) -I$(LIB_HEAP_INCLUDES)
+	gcc $(FLAGS) -MD -o $@ -c $< -I$(DIR_INC) -I$(LIB_INCLUDES) include $(wildcard *.d)
 
 clean:
 	rm -f $(DIR_OBJ)*.o

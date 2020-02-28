@@ -87,7 +87,8 @@ STR		=	ft_strcat.c \
 TONUM	=	ft_atoli.c \
             ft_atoi.c
 
-DSTR	=	dstr.c
+DSTR	=	dstr.c\
+			dstr2.c
 
 FILES			+=	$(CHK) \
 					$(GNL) \
@@ -109,8 +110,12 @@ FILES_WITH_PATH	=	$(addprefix ./$(SRC_DIR)/$(CHK_DIR)/, $(CHK))\
 					$(addprefix ./$(SRC_DIR)/$(TONUM_DIR)/, $(TONUM))\
 					$(addprefix ./$(SRC_DIR)/$(DSTR_DIR)/, $(DSTR))
 
+
 OBJ				=	$(FILES:%.c=%.o)
 OBJS			=	$(FILES:%.c=./$(OBJ_DIR)/%.o)
+DEPS = $(OBJS:.o=.d)
+
+VPATH = ./$(SRC_DIR)/$(CHK_DIR)/
 
 .PHONY:				all clean fclean re dirs
 
@@ -120,19 +125,18 @@ NAME	= libft.a
 
 all: $(NAME)
 
-$(NAME): dirs
-				gcc $(FLAGS) -c $(FILES_WITH_PATH) -Iincludes/
-				@ar rc $(NAME) $(OBJ)
+$(NAME): dirs $(OBJS)
+				@ar rc $(NAME) $(OBJS)
 				@ranlib $(NAME)
 
 dirs:
 				mkdir -p $(OBJ_DIR)
 
-$(OBJ_DIR)%o:$(FILES_WITH_PATH)%c
-				gcc $(FLAGS) -o $@ -c $< -Iincludes/
+$(OBJS)%o:%.c
+				gcc $(FLAGS) -MD -o $@ -c $< -Iincludes/
 
 clean:
-				@rm -f $(OBJ_DIR)/$(OBJ)
+				@rm -f $(OBJS)
 				@rm -f $(OBJ)
 				@rm -rf $(OBJ_DIR)
 

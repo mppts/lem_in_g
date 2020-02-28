@@ -6,7 +6,7 @@
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/08 16:32:08 by limry             #+#    #+#             */
-/*   Updated: 2020/02/09 04:22:43 by kona             ###   ########.fr       */
+/*   Updated: 2020/02/28 18:01:22 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ t_dstr			*dstr_init(char *data, uint64_t cap)
 	if (!cap)
 		cap = 4;
 	while (cap < new->len)
-		cap <<=1;
+		cap <<= 1;
 	new->cap = cap;
 	new->data = ft_strnew(new->cap);
 	new->data[0] = '\0';
@@ -64,7 +64,7 @@ void			dstr_del(t_dstr *str)
 	str = NULL;
 }
 
-static void			dstr_expand(t_dstr *dstr, uint64_t len_s, char *s)
+static void		dstr_expand(t_dstr *dstr, uint64_t len_s, char *s)
 {
 	uint64_t	new_cap;
 	char		*new;
@@ -85,13 +85,13 @@ static void			dstr_expand(t_dstr *dstr, uint64_t len_s, char *s)
 	dstr->len = dstr->len_data;
 }
 
-t_dstr 			*dstr_joinstr(t_dstr *dstr, char *s)
+t_dstr			*dstr_joinstr(t_dstr *dstr, char *s)
 {
 	uint64_t	len_s;
 
 	if (!s)
 		return (dstr);
-	len_s  = ft_strlen(s);
+	len_s = ft_strlen(s);
 	if (len_s + dstr->len >= dstr->cap)
 	{
 		if (len_s < dstr->len - dstr->len_data)

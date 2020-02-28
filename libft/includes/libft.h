@@ -6,7 +6,7 @@
 /*   By: mschimme <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/11/24 17:02:42 by mschimme          #+#    #+#             */
-/*   Updated: 2020/02/09 01:07:39 by kona             ###   ########.fr       */
+/*   Updated: 2020/02/28 18:08:54 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,16 +28,6 @@
 # define DHZERO 0x8080808080808080UL
 # define FALSE 0
 # define TRUE 1
-/*
-** GNL defines
-*/
-
-# define BUFF_SIZE 128
-# define B_S BUFF_SIZE
-# define FDRSET &fdl, fd, fdl, fdl
-# define RSSET line, pl[0], &fdl
-# define SZFSZT sizeof(size_t)
-# define SZFINT sizeof(int)
 
 typedef struct		s_list
 {
@@ -116,6 +106,6 @@ void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 void				ft_del(void *content, size_t size);
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
-long 				ft_atoli(const char *str);
+long				ft_atoli(const char *str);
 
 #endif

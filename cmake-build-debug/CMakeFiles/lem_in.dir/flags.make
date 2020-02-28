@@ -6,5 +6,5 @@ C_FLAGS = -g   -std=gnu11
 
 C_DEFINES = 
 
-C_INCLUDES = -I/Users/dorphan/Desktop/Projects/LI_works/full/libft/includes -I/Users/dorphan/Desktop/Projects/LI_works/full/includes -I/Users/dorphan/Desktop/Projects/LI_works/full/libbinheap -I/Users/dorphan/Desktop/Projects/LI_works/full/libbinheap/includes -I/Users/dorphan/Desktop/Projects/LI_works/full/fibonacci_heap -I/Users/dorphan/Desktop/Projects/LI_works/full/fibonacci_heap/includes 
+C_INCLUDES = -I/Users/limry/CLionProjects/lnfull/libft/includes -I/Users/limry/CLionProjects/lnfull/includes -I/Users/limry/CLionProjects/lnfull/libbinheap -I/Users/limry/CLionProjects/lnfull/libbinheap/includes -I/Users/limry/CLionProjects/lnfull/fibonacci_heap -I/Users/limry/CLionProjects/lnfull/fibonacci_heap/includes 
 

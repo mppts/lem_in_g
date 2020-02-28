@@ -6,7 +6,7 @@
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/08 16:37:32 by limry             #+#    #+#             */
-/*   Updated: 2020/02/09 01:02:50 by kona             ###   ########.fr       */
+/*   Updated: 2020/02/28 18:05:02 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ char				*ft_strchr(const char *s, int c)
 	}
 	longword = (uint64_t*)byte;
 	while ((((*longword) - MHZERO) & ~(*longword) & DHZERO) == FALSE && \
-					(((((*longword) - MHZERO) & ~(*longword) & DHZERO) ^ w)) == FALSE)
+	(((((*longword) - MHZERO) & ~(*longword) & DHZERO) ^ w)) == FALSE)
 		longword++;
 	byte = (uint8_t*)longword;
 	if (((((*longword) - MHZERO) & ~(*longword) & DHZERO) ^ w) != FALSE)

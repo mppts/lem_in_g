@@ -17,6 +17,8 @@ int				is_num(char *str)
 	char		*tmp;
 
 	tmp = str;
+	if (*tmp == '+' || *tmp == '-')
+		tmp++;
 	while (*tmp)
 	{
 		if (!ft_isdigit(*tmp))

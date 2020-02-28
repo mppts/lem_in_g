@@ -23,7 +23,7 @@ add_executable(lem_in
         srcs/solver_bellman_ford_start_end.c
                 srcs/solver_algorithm.c
         srcs/writer_main.c
-        srcs/solver_find_best_current_way.c srcs/solver_bellman_ford_end_start.c srcs/solver_bf_es_find_way.c srcs/solver_bf_find_way.c srcs/solver_auxiliary_works_algo.c srcs/solver_auxiliary_works_algo_2.c srcs/solver_sufficienty_c.c srcs/solver_sufficienty_c_common_rooms_calc.c srcs/solver_algo_separation.c srcs/solver_find_way.c srcs/solver_initialization.c)
+        srcs/solver_find_best_current_way.c srcs/solver_bellman_ford_end_start.c srcs/solver_bf_es_find_way.c srcs/solver_bf_find_way.c srcs/solver_auxiliary_works_algo.c srcs/solver_auxiliary_works_algo_2.c srcs/solver_sufficienty_c.c srcs/solver_sufficienty_c_common_rooms_calc.c srcs/solver_algo_separation.c srcs/solver_find_way.c srcs/solver_initialization.c srcs/writer_main2.c libft/srcs/dstr/dstr2.c)
 
 target_link_libraries(lem_in ${CMAKE_SOURCE_DIR}/libft/libft.a)
 

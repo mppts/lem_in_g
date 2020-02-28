@@ -6,7 +6,7 @@
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/05 12:03:07 by limry             #+#    #+#             */
-/*   Updated: 2020/02/12 18:55:35 by limry            ###   ########.fr       */
+/*   Updated: 2020/02/28 17:48:23 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ typedef struct		s_r_reader
 typedef struct		s_path
 {
 	int				id;
-	uint64_t		len;
-	uint64_t		ants;
+	int				len;
+	int64_t			ants;
 	struct s_room	**path;
 	struct s_path	*next;
 }					t_path;
@@ -119,18 +119,6 @@ typedef struct		s_flag
 	int				flag_start;
 }					t_flag;
 
-typedef struct		s_deq
-{
-	t_room			**deq;
-	int64_t			rear;
-	int64_t			begin;
-}					t_deq;
-
-typedef struct		s_positioner
-{
-	uint64_t		offset;
-	t_path			*path;
-}					t_positioner;
 /*
 ** parse_map.c
 */
@@ -223,5 +211,7 @@ int					common_rooms_calc(t_graph_inf *inf);
 ** writer_main.c
 */
 void				writer(t_map *map);
+void				count_ants_for_paths(t_map *map);
+void				prep_paths(t_path *p, int pos);
 
 #endif

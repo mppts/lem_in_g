@@ -1,5 +1,6 @@
 file(REMOVE_RECURSE
   "CMakeFiles/lem_in.dir/libft/srcs/dstr/dstr.c.o"
+  "CMakeFiles/lem_in.dir/libft/srcs/dstr/dstr2.c.o"
   "CMakeFiles/lem_in.dir/srcs/main.c.o"
   "CMakeFiles/lem_in.dir/srcs/man_err.c.o"
   "CMakeFiles/lem_in.dir/srcs/parse_hash.c.o"
@@ -23,6 +24,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/lem_in.dir/srcs/solver_sufficienty_c.c.o"
   "CMakeFiles/lem_in.dir/srcs/solver_sufficienty_c_common_rooms_calc.c.o"
   "CMakeFiles/lem_in.dir/srcs/writer_main.c.o"
+  "CMakeFiles/lem_in.dir/srcs/writer_main2.c.o"
   "lem_in"
   "lem_in.pdb"
 )

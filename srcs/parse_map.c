@@ -6,7 +6,7 @@
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/04 20:09:29 by limry             #+#    #+#             */
-/*   Updated: 2020/02/10 17:11:18 by limry            ###   ########.fr       */
+/*   Updated: 2020/02/28 16:33:03 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ static void		add_room_or_path(char *buf, t_flag *flag, t_map *map)
 	if (ft_strchr(buf, ' '))
 	{
 		if (map->is_rooms_hashed)
-			man_err_map("Error: add room after links\n", &buf, ft_strdel, map);
+			man_err_map("ERROR: add room after links\n", &buf, ft_strdel, map);
 		add_room(buf, flag, map);
 		map->num_nodes++;
 	}
@@ -29,22 +29,24 @@ static void		add_room_or_path(char *buf, t_flag *flag, t_map *map)
 		map->num_links++;
 	}
 	else
-		man_err_map("Error: non compliant line\n", &buf, ft_strdel, map);
+		man_err_map("ERROR: non compliant line\n", &buf, ft_strdel, map);
 }
 
-static void		parse_ants(t_map *map, char *buf)
+static void		parse_ants(t_map *map, char *buf, t_flag *flag)
 {
 	int64_t		ants;
 
 	if (!is_num(buf))
 	{
-		man_err_map("Error: not only numbers in first line\n",
+		man_err_map("ERROR: not only numbers in first line\n",
 					&buf, ft_strdel, map);
 	}
 	ants = ft_atoli(buf);
 	if (ants < 1 || ants > INT32_MAX)
-		man_err_map("Error: no or too many ants\n", &buf, ft_strdel, map);
+		man_err_map("ERROR: no or too many ants\n", &buf, ft_strdel, map);
 	map->ants = ants;
+	flag->flag_end = 0;
+	flag->flag_start = 0;
 	free(buf);
 }
 
@@ -61,11 +63,11 @@ static int		parse_line(char *buf, t_flag *flag, t_map *map)
 		free(buf);
 	}
 	else if (!map->ants)
-		parse_ants(map, buf);
+		parse_ants(map, buf, flag);
 	else if (*buf != 'L')
 		add_room_or_path(buf, flag, map);
 	else
-		man_err_map("Room starts with L\n", &buf, ft_strdel, map);
+		man_err_map("ERROR: Room starts with L\n", &buf, ft_strdel, map);
 	return (0);
 }
 

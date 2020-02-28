@@ -87,28 +87,4 @@ void			solver(t_map *map)
 	if (inf.ways[0])
 		put_ways_to_map(&inf, map);
 	free_inf_content(&inf);
-
-
-
-//	int 		k;
-//	t_path 		*tmp;
-//	int 		way_n;
-//
-//	way_n = 0;
-//	tmp = map->path;
-//	while (tmp)
-//	{
-//		k = 0;
-//		ft_putstr("way ");
-//		ft_putnbr(way_n++);
-//		ft_putstr(" is:\n");
-//		while (tmp->path[k])
-//		{
-//			ft_putstr(tmp->path[k++]->name);
-//			ft_putstr("  ");
-//		}
-//		ft_putchar('\n');
-//		tmp = tmp->next;
-//	}
-
 }

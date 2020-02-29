@@ -21,6 +21,20 @@ int64_t			get_room_delta(void *rm)
 	return (trm->delta);
 }
 
+int				neg_has_exit(t_room *rm, int64_t new_delta)
+{
+	t_link		*ln;
+
+	ln = rm->linked_to;
+	while (ln)
+	{
+		if (ln->flow == 1 && ln->to->delta > new_delta)
+			return (1);
+		ln = ln->next;
+	}
+	return (0);
+}
+
 int				neg_can_go(t_room *rm, int64_t new_delta)
 {
 	t_link		*ln;
@@ -29,8 +43,14 @@ int				neg_can_go(t_room *rm, int64_t new_delta)
 	while (ln)
 	{
 		if (ln->flow == -1 && ln->to->delta > new_delta)
-			return (1);
-		ln = ln->next;
+		{
+			if (neg_has_exit(ln->to, new_delta - 1))
+				return (1);
+			else
+				ln = ln->to->linked_to;
+		}
+		else
+			ln = ln->next;
 	}
 	return (0);
 }

@@ -29,8 +29,8 @@ uint64_t		get_hash(char *str, uint64_t size)
 void			hash_rooms(t_map *map)
 {
 	t_room		*tmp;
-	uint64_t	num;
-	uint64_t	i;
+	int64_t		num;
+	int64_t		i;
 
 	if (!map->room_start)
 		man_err_map("ERROR: no rooms\n", &map->buf, ft_strdel, map);

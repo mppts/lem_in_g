@@ -12,7 +12,7 @@
 
 #include "lem_in.h"
 
-void		clear_flow(t_map *map, t_room *room_1, t_room *room_2)
+void		clear_flow(t_room *room_1, t_room *room_2)
 {
 	t_link	*tmp;
 
@@ -23,12 +23,12 @@ void		clear_flow(t_map *map, t_room *room_1, t_room *room_2)
 	tmp->mirror->flow = 0;
 }
 
-void		separation_cycle_addition(t_map *map, t_way *tmp, t_way **tmp_sep,
+void		separation_cycle_addition(t_way *tmp, t_way **tmp_sep,
 										t_graph_inf *inf)
 {
 	t_way	*way_2;
 
-	clear_flow(map, (*tmp_sep)->room, (*tmp_sep)->next->room);
+	clear_flow((*tmp_sep)->room, (*tmp_sep)->next->room);
 	tmp = *tmp_sep;
 	(*tmp_sep)->room->way_number = -1;
 	*tmp_sep = (*tmp_sep)->next;
@@ -39,7 +39,7 @@ void		separation_cycle_addition(t_map *map, t_way *tmp, t_way **tmp_sep,
 	free(tmp);
 }
 
-t_way		*separation(t_way *tmp, t_graph_inf *inf, t_map *map)
+t_way		*separation(t_way *tmp, t_graph_inf *inf)
 {
 	t_way	*tmp_sep;
 	t_way	*way_2;
@@ -51,10 +51,10 @@ t_way		*separation(t_way *tmp, t_graph_inf *inf, t_map *map)
 	tmp->prev_way = tmp->next;
 	tmp->next = way_2->next;
 	tmp_sep = tmp->prev_way;
-	clear_flow(map, tmp->room, tmp_sep->room);
+	clear_flow(tmp->room, tmp_sep->room);
 	free(way_2);
 	while (tmp_sep->room->way_number == tmp_sep->next->room->way_number)
-		separation_cycle_addition(map, tmp, &tmp_sep, inf);
+		separation_cycle_addition(tmp, &tmp_sep, inf);
 	way_2 = inf->ways[tmp_sep->room->way_number];
 	while (way_2 && way_2->room != tmp_sep->room)
 		way_2 = way_2->next;
@@ -75,7 +75,7 @@ void		separate_cross_ways(t_graph_inf *inf, t_map *map)
 	while (tmp->room != map->fin)
 	{
 		if (tmp->room != map->start && tmp->way_number != tmp->room->way_number)
-			tmp = separation(tmp, inf, map);
+			tmp = separation(tmp, inf);
 		else
 			tmp = tmp->next;
 	}

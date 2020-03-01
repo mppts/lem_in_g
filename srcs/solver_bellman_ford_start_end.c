@@ -86,7 +86,7 @@ void			work_with_links(t_map *map, t_room *room,
 	}
 }
 
-int				bellman_ford(t_map *map, t_room **line, t_graph_inf *inf)
+int				bellman_ford(t_map *map, t_room **line)
 {
 	t_room		*tmp_room;
 	int			do_we_have_a_change;

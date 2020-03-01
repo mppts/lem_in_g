@@ -73,11 +73,11 @@ void		clear_precessors(t_map *map)
 }
 
 int			find_best_current_way(t_map *map, t_room **way_1,
-								t_room **way_2, t_graph_inf *inf)
+								t_room **way_2)
 {
-	bellman_ford(map, way_1, inf);
+	bellman_ford(map, way_1);
 	clear_precessors(map);
-	bellman_ford_rev(map, way_2, inf);
+	bellman_ford_rev(map, way_2);
 	if (!compare_ways(way_1, way_2))
 		return (0);
 	return (1);

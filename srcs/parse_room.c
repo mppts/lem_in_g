@@ -77,7 +77,7 @@ static int		no_room_with_this_name(t_map *map, t_r_reader r)
 	return (1);
 }
 
-static t_room	*new_room(t_r_reader r, t_flag *flag, t_map *map)
+static t_room	*new_room(t_r_reader r, t_map *map)
 {
 	t_room		*new;
 	int64_t		x;
@@ -116,7 +116,7 @@ void			add_room(char *buf, t_flag *flag, t_map *map)
 	*(r.sy - 1) = '\0';
 	new = NULL;
 	if (no_room_with_this_name(map, r))
-		new = new_room(r, flag, map);
+		new = new_room(r, map);
 	else
 		man_err_map("ERROR: this room already exists\n", &buf, ft_strdel, map);
 	set_start_and_fin(new, map, flag);

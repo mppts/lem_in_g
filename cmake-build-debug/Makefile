@@ -39,19 +39,19 @@ cmake_force:
 SHELL = /bin/sh
 
 # The CMake executable.
-CMAKE_COMMAND = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake
+CMAKE_COMMAND = /home/kona/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/193.6494.38/bin/cmake/linux/bin/cmake
 
 # The command to remove a file.
-RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
+RM = /home/kona/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/193.6494.38/bin/cmake/linux/bin/cmake -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/limry/CLionProjects/lnfull
+CMAKE_SOURCE_DIR = /home/kona/Progs/lem_in
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/limry/CLionProjects/lnfull/cmake-build-debug
+CMAKE_BINARY_DIR = /home/kona/Progs/lem_in/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -59,7 +59,7 @@ CMAKE_BINARY_DIR = /Users/limry/CLionProjects/lnfull/cmake-build-debug
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	/home/kona/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/193.6494.38/bin/cmake/linux/bin/cmake -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -70,7 +70,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	/home/kona/.local/share/JetBrains/Toolbox/apps/CLion/ch-0/193.6494.38/bin/cmake/linux/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -80,9 +80,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/limry/CLionProjects/lnfull/cmake-build-debug/CMakeFiles /Users/limry/CLionProjects/lnfull/cmake-build-debug/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kona/Progs/lem_in/cmake-build-debug/CMakeFiles /home/kona/Progs/lem_in/cmake-build-debug/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/limry/CLionProjects/lnfull/cmake-build-debug/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/kona/Progs/lem_in/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -123,59 +123,59 @@ lem_in/fast:
 	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/build
 .PHONY : lem_in/fast
 
-libft/srcs/dstr/dstr.o: libft/srcs/dstr/dstr.c.o
+libft/srcs/3_dstr/srcs/dstr.o: libft/srcs/3_dstr/srcs/dstr.c.o
 
-.PHONY : libft/srcs/dstr/dstr.o
-
-# target to build an object file
-libft/srcs/dstr/dstr.c.o:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libft/srcs/dstr/dstr.c.o
-.PHONY : libft/srcs/dstr/dstr.c.o
-
-libft/srcs/dstr/dstr.i: libft/srcs/dstr/dstr.c.i
-
-.PHONY : libft/srcs/dstr/dstr.i
-
-# target to preprocess a source file
-libft/srcs/dstr/dstr.c.i:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libft/srcs/dstr/dstr.c.i
-.PHONY : libft/srcs/dstr/dstr.c.i
-
-libft/srcs/dstr/dstr.s: libft/srcs/dstr/dstr.c.s
-
-.PHONY : libft/srcs/dstr/dstr.s
-
-# target to generate assembly for a file
-libft/srcs/dstr/dstr.c.s:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libft/srcs/dstr/dstr.c.s
-.PHONY : libft/srcs/dstr/dstr.c.s
-
-libft/srcs/dstr/dstr2.o: libft/srcs/dstr/dstr2.c.o
-
-.PHONY : libft/srcs/dstr/dstr2.o
+.PHONY : libft/srcs/3_dstr/srcs/dstr.o
 
 # target to build an object file
-libft/srcs/dstr/dstr2.c.o:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libft/srcs/dstr/dstr2.c.o
-.PHONY : libft/srcs/dstr/dstr2.c.o
+libft/srcs/3_dstr/srcs/dstr.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libft/srcs/3_dstr/srcs/dstr.c.o
+.PHONY : libft/srcs/3_dstr/srcs/dstr.c.o
 
-libft/srcs/dstr/dstr2.i: libft/srcs/dstr/dstr2.c.i
+libft/srcs/3_dstr/srcs/dstr.i: libft/srcs/3_dstr/srcs/dstr.c.i
 
-.PHONY : libft/srcs/dstr/dstr2.i
+.PHONY : libft/srcs/3_dstr/srcs/dstr.i
 
 # target to preprocess a source file
-libft/srcs/dstr/dstr2.c.i:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libft/srcs/dstr/dstr2.c.i
-.PHONY : libft/srcs/dstr/dstr2.c.i
+libft/srcs/3_dstr/srcs/dstr.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libft/srcs/3_dstr/srcs/dstr.c.i
+.PHONY : libft/srcs/3_dstr/srcs/dstr.c.i
 
-libft/srcs/dstr/dstr2.s: libft/srcs/dstr/dstr2.c.s
+libft/srcs/3_dstr/srcs/dstr.s: libft/srcs/3_dstr/srcs/dstr.c.s
 
-.PHONY : libft/srcs/dstr/dstr2.s
+.PHONY : libft/srcs/3_dstr/srcs/dstr.s
 
 # target to generate assembly for a file
-libft/srcs/dstr/dstr2.c.s:
-	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libft/srcs/dstr/dstr2.c.s
-.PHONY : libft/srcs/dstr/dstr2.c.s
+libft/srcs/3_dstr/srcs/dstr.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libft/srcs/3_dstr/srcs/dstr.c.s
+.PHONY : libft/srcs/3_dstr/srcs/dstr.c.s
+
+libft/srcs/3_dstr/srcs/dstr2.o: libft/srcs/3_dstr/srcs/dstr2.c.o
+
+.PHONY : libft/srcs/3_dstr/srcs/dstr2.o
+
+# target to build an object file
+libft/srcs/3_dstr/srcs/dstr2.c.o:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libft/srcs/3_dstr/srcs/dstr2.c.o
+.PHONY : libft/srcs/3_dstr/srcs/dstr2.c.o
+
+libft/srcs/3_dstr/srcs/dstr2.i: libft/srcs/3_dstr/srcs/dstr2.c.i
+
+.PHONY : libft/srcs/3_dstr/srcs/dstr2.i
+
+# target to preprocess a source file
+libft/srcs/3_dstr/srcs/dstr2.c.i:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libft/srcs/3_dstr/srcs/dstr2.c.i
+.PHONY : libft/srcs/3_dstr/srcs/dstr2.c.i
+
+libft/srcs/3_dstr/srcs/dstr2.s: libft/srcs/3_dstr/srcs/dstr2.c.s
+
+.PHONY : libft/srcs/3_dstr/srcs/dstr2.s
+
+# target to generate assembly for a file
+libft/srcs/3_dstr/srcs/dstr2.c.s:
+	$(MAKE) -f CMakeFiles/lem_in.dir/build.make CMakeFiles/lem_in.dir/libft/srcs/3_dstr/srcs/dstr2.c.s
+.PHONY : libft/srcs/3_dstr/srcs/dstr2.c.s
 
 srcs/main.o: srcs/main.c.o
 
@@ -832,14 +832,14 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... rebuild_cache"
-	@echo "... edit_cache"
 	@echo "... lem_in"
-	@echo "... libft/srcs/dstr/dstr.o"
-	@echo "... libft/srcs/dstr/dstr.i"
-	@echo "... libft/srcs/dstr/dstr.s"
-	@echo "... libft/srcs/dstr/dstr2.o"
-	@echo "... libft/srcs/dstr/dstr2.i"
-	@echo "... libft/srcs/dstr/dstr2.s"
+	@echo "... edit_cache"
+	@echo "... libft/srcs/3_dstr/srcs/dstr.o"
+	@echo "... libft/srcs/3_dstr/srcs/dstr.i"
+	@echo "... libft/srcs/3_dstr/srcs/dstr.s"
+	@echo "... libft/srcs/3_dstr/srcs/dstr2.o"
+	@echo "... libft/srcs/3_dstr/srcs/dstr2.i"
+	@echo "... libft/srcs/3_dstr/srcs/dstr2.s"
 	@echo "... srcs/main.o"
 	@echo "... srcs/main.i"
 	@echo "... srcs/main.s"

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.h                                    :+:      :+:    :+:   */
+/*   2_get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -13,8 +13,8 @@
 #ifndef LEM_IN_GET_NEXT_LINE_H
 # define LEM_IN_GET_NEXT_LINE_H
 
-# include "libft.h"
-# include "dstr.h"
+# include "ft_dstr.h"
+# include "ft_string.h"
 
 # define BUFF_SIZE 128
 

@@ -37,14 +37,16 @@ SOURCE = \
          writer_main2.c
 
 
-HEADERS =	lem_in.h \
-			libft.h \
+HEADERS =	lem_in.h
 
-#FLAGS = -Wall -Wextra -Werror
-FLAGS = 
+FLAGS = -Wall -Wextra -Werror
 OBJ = $(SOURCE:%.c=%.o)
+DEP = $(OBJ:%.o=%.d)
 OBJS = $(SOURCE:%.c=$(DIR_OBJ)%.o)
 SRCS = $(SOURCE:%.c=$(DIR_SRC)%.c)
+DEPS = $(SRC:%.c=$(DIR_OBJ)%.d)
+
+MKDIR_P = mkdir -p
 
 all: $(NAME)
 
@@ -52,13 +54,14 @@ $(NAME): $(LIB) directories $(OBJS)
 	gcc $(FLAGS) -o $(NAME) $(OBJS) -L$(DIR_LIB) -lft
 
 directories:
-	mkdir -p $(DIR_OBJ)
+	$(MKDIR_P) $(DIR_OBJ)
 
 $(LIB):
-	$(MAKE) -C $(DIR_LIB)
+	$(MAKE) -s -C $(DIR_LIB)
 
 $(DIR_OBJ)%.o: $(DIR_SRC)%.c
-	gcc $(FLAGS) -MD -o $@ -c $< -I$(DIR_INC) -I$(LIB_INCLUDES) include $(wildcard *.d)
+	gcc $(FLAGS) -MD -o $@ -c $< -I$(DIR_INC) -I$(LIB_INCLUDES)
+include $(wildcard *.d)
 
 clean:
 	rm -f $(DIR_OBJ)*.o

@@ -2,15 +2,15 @@ SRC_DIR			=	srcs
 INCLUDES_DIR	=	includes
 OBJ_DIR			=	obj
 
-CHK_DIR			=	checkers
-GNL_DIR			=	get_next_line
-LST_DIR			=	lst
-MEM_DIR			=	mem
-PUT_DIR			=	put
-STRCH_DIR		=	str_change
-STR_DIR			=	string
-TONUM_DIR		=	to_num
-DSTR_DIR		=	dstr
+CHK_DIR			=	0_checkers
+MEM_DIR			=	0_mem
+STR_DIR			=	1_string
+TONUM_DIR		=	1_tonum
+GNL_DIR			=	2_get_next_line
+LST_DIR			=	2_lst
+PUT_DIR			=	2_put
+STRCH_DIR		=	2_strchange
+DSTR_DIR		=	3_dstr
 
 CHK		=	ft_isalnum.c \
 			ft_isalpha.c \
@@ -100,16 +100,6 @@ FILES			+=	$(CHK) \
 					$(TONUM) \
 					$(DSTR)
 
-FILES_WITH_PATH	=	$(addprefix ./$(SRC_DIR)/$(CHK_DIR)/, $(CHK))\
-					$(addprefix ./$(SRC_DIR)/$(GNL_DIR)/, $(GNL))\
-					$(addprefix ./$(SRC_DIR)/$(LST_DIR)/, $(LST))\
-					$(addprefix ./$(SRC_DIR)/$(MEM_DIR)/, $(MEM))\
-					$(addprefix ./$(SRC_DIR)/$(PUT_DIR)/, $(PUT))\
-					$(addprefix ./$(SRC_DIR)/$(STRCH_DIR)/, $(STRCH))\
-					$(addprefix ./$(SRC_DIR)/$(STR_DIR)/, $(STR))\
-					$(addprefix ./$(SRC_DIR)/$(TONUM_DIR)/, $(TONUM))\
-					$(addprefix ./$(SRC_DIR)/$(DSTR_DIR)/, $(DSTR))
-
 
 OBJ				=	$(FILES:%.c=%.o)
 OBJS			=	$(FILES:%.c=./$(OBJ_DIR)/%.o)
@@ -117,7 +107,7 @@ DEPS = $(OBJS:.o=.d)
 
 VPATH = ./$(SRC_DIR)/$(CHK_DIR)/
 
-.PHONY:				all clean fclean re dirs
+.PHONY: all clean fclean re dirs modules
 
 FLAGS = -Wall -Werror -Wextra
 
@@ -125,15 +115,29 @@ NAME	= libft.a
 
 all: $(NAME)
 
-$(NAME): dirs $(OBJS)
+$(NAME): dirs modules
 				@ar rc $(NAME) $(OBJS)
 				@ranlib $(NAME)
 
-dirs:
-				mkdir -p $(OBJ_DIR)
-
-$(OBJS)%o:%.c
-				gcc $(FLAGS) -MD -o $@ -c $< -Iincludes/
+modules:
+		@$(MAKE) -s -C $(CHK_DIR)
+		@echo -e "\033[0;32mCheckers module done\033[0m"
+		@$(MAKE) -s -C$(MEM_DIR)
+		@echo -e "\033[0;32mMemory module done\033[0m"
+		@$(MAKE) -s -C $(STR_DIR)
+		@echo -e "\033[0;32mString module done\033[0m"
+		@$(MAKE) -s -C $(STRCH_DIR)
+		@echo -e "\033[0;32mString changers module done\033[0m"
+		@$(MAKE) -s -C $(TONUM_DIR)
+		@echo -e "\033[0;32mNumber cast module done\033[0m"
+		@$(MAKE) -s -C $(GNL_DIR)
+		@echo -e "\033[0;32mGNL module done\033[0m"
+		@$(MAKE) -s -C $(LST_DIR)
+		@echo -e "\033[0;32mList module done\033[0m"
+		@$(MAKE) -s -C $(PUT_DIR)
+		@echo -e "\033[0;32mWriters module done\033[0m"
+		@$(MAKE) -s -C $(DSTR_DIR)
+		@echo -e "\033[0;32mDynamic string module done\033[0m"
 
 clean:
 				@rm -f $(OBJS)

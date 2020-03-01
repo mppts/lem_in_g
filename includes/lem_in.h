@@ -15,8 +15,6 @@
 
 # include <inttypes.h>
 # include <libft.h>
-# include <dstr.h>
-# include <get_next_line.h>
 # include <stdlib.h>
 
 # define FALSE 0
@@ -100,8 +98,8 @@ typedef struct		s_map
 	t_room			*room_end;
 	t_room			*start;
 	t_room			*fin;
-	uint64_t		num_nodes;
-	uint64_t		num_links;
+	int64_t			num_nodes;
+	int64_t			num_links;
 	int64_t			ants;
 	uint8_t			is_rooms_hashed;
 	uint64_t		len_rh;
@@ -168,10 +166,9 @@ void				algo(t_map *map, t_graph_inf *inf);
 ** solver_find_best_current_way.c
 */
 int					find_best_current_way(t_map *map, t_room **way_1,
-											t_room **way_2, t_graph_inf *inf);
-int					bellman_ford(t_map *map, t_room **line, t_graph_inf *inf);
-int					bellman_ford_rev(t_map *map, t_room **line,
-										t_graph_inf *inf);
+											t_room **way_2);
+int					bellman_ford(t_map *map, t_room **line);
+int					bellman_ford_rev(t_map *map, t_room **line);
 /*
 ** solver_bf_find_way.c
 */

@@ -31,20 +31,18 @@ int				has_way_to_same_way(t_room *room)
 
 int				conditions_checking(t_map *map, t_link *tmp_link, t_room *room)
 {
-	int			indicator;
-
 	if (!room->room_from_we_came && room != map->start)
 		return (0);
 	if (room == map->start && !tmp_link->flow)
 		return (1);
 	if (!tmp_link->flow && tmp_link->to != room->room_from_we_came
-			&& tmp_link->to != map->start &&
+		&& tmp_link->to != map->start &&
 		(room->way_number == tmp_link->to->way_number ||
-			(room->way_number != tmp_link->to->way_number &&
-				room->room_from_we_came->way_number == room->way_number &&
-					(indicator = has_way_to_same_way(tmp_link->to))) ||
 		(room->way_number != tmp_link->to->way_number &&
-			room->way_number == -1 && indicator)))
+			room->room_from_we_came->way_number == room->way_number &&
+				has_way_to_same_way(tmp_link->to)) ||
+		(room->way_number != tmp_link->to->way_number &&
+			room->way_number == -1 && has_way_to_same_way(tmp_link->to))))
 		return (1);
 	return (0);
 }

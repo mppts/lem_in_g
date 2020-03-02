@@ -6,7 +6,7 @@
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/28 16:57:27 by limry             #+#    #+#             */
-/*   Updated: 2020/02/28 16:58:41 by limry            ###   ########.fr       */
+/*   Updated: 2020/03/02 12:49:21 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,4 +55,24 @@ void				prep_paths(t_path *p, int pos)
 		tmp->id = i++;
 		tmp = tmp->next;
 	}
+}
+
+void				simple_writer(t_map *g)
+{
+	char			*num;
+	int				ants;
+
+	ants = (int)g->ants;
+	while (ants > 0)
+	{
+		dstr_joinstr(g->dstr, "L");
+		dstr_joinstr(g->dstr, num = ft_itoa(ants));
+		dstr_joinstr(g->dstr, "-");
+		dstr_joinstr(g->dstr, g->fin->name);
+		dstr_joinstr(g->dstr, " ");
+		free(num);
+		ants--;
+	}
+	dstr_remove_back(g->dstr, 1);
+	dstr_joinstr(g->dstr, "\n");
 }

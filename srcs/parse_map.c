@@ -80,11 +80,9 @@ void			init_map(t_map *map)
 	map->room_end = NULL;
 	map->start = NULL;
 	map->fin = NULL;
-	map->no_path_exists = 1;
 	map->ants = 0;
 	map->hashed_rooms = NULL;
 	map->buf = NULL;
-	map->out = NULL;
 	map->dstr = dstr_init(NULL, 500);
 	map->len_rh = 0;
 	map->path = NULL;

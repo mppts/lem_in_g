@@ -6,7 +6,7 @@
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/05 12:03:07 by limry             #+#    #+#             */
-/*   Updated: 2020/02/28 17:48:23 by limry            ###   ########.fr       */
+/*   Updated: 2020/03/02 12:42:19 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,6 @@ typedef struct		s_room
 
 typedef struct		s_map
 {
-	uint8_t			no_path_exists;
 	t_room			*room_start;
 	t_room			*room_end;
 	t_room			*start;
@@ -105,7 +104,6 @@ typedef struct		s_map
 	uint64_t		len_rh;
 	t_room			**hashed_rooms;
 	char			*buf;
-	char			*out;
 	t_dstr			*dstr;
 	struct s_path	*path;
 	char			cycle_found;
@@ -210,5 +208,6 @@ int					common_rooms_calc(t_graph_inf *inf);
 void				writer(t_map *map);
 void				count_ants_for_paths(t_map *map);
 void				prep_paths(t_path *p, int pos);
+void				simple_writer(t_map *g);
 
 #endif

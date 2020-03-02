@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   2_get_next_line.h                                    :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/08 18:06:29 by limry             #+#    #+#             */
-/*   Updated: 2020/02/28 18:08:21 by limry            ###   ########.fr       */
+/*   Created: 2020/03/02 11:29:52 by limry             #+#    #+#             */
+/*   Updated: 2020/03/02 11:29:53 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LEM_IN_GET_NEXT_LINE_H
-# define LEM_IN_GET_NEXT_LINE_H
+#ifndef FT_GET_NEXT_LINE_H
+# define FT_GET_NEXT_LINE_H
 
 # include "ft_dstr.h"
 # include "ft_string.h"

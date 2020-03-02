@@ -66,8 +66,10 @@ include $(wildcard *.d)
 clean:
 	rm -f $(DIR_OBJ)*.o
 	rm -rf $(DIR_OBJ)
+	$(MAKE) -s -C $(DIR_LIB) clean
 
 fclean: clean
 	rm -f $(NAME)
+	$(MAKE) -s -C $(DIR_LIB) fclean
 
 re: fclean all

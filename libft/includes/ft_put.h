@@ -1,5 +1,17 @@
-#ifndef LEM_IN_PUT_H
-# define LEM_IN_PUT_H
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_put.h                                           :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/03/02 11:29:20 by limry             #+#    #+#             */
+/*   Updated: 2020/03/02 11:29:22 by limry            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef FT_PUT_H
+# define FT_PUT_H
 
 # include <stdio.h>
 # include <stdlib.h>
@@ -15,6 +27,5 @@ void				ft_putchar_fd(char c, int fd);
 void				ft_putstr_fd(char const *s, int fd);
 void				ft_putendl_fd(char const *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
-
 
 #endif

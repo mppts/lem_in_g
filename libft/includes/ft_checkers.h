@@ -1,5 +1,17 @@
-#ifndef CHECKERS_H
-# define CHECKERS_H
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_checkers.h                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2020/03/02 11:27:57 by limry             #+#    #+#             */
+/*   Updated: 2020/03/02 11:27:57 by limry            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef FT_CHECKERS_H
+# define FT_CHECKERS_H
 
 int					ft_isalpha(int c);
 int					ft_isascii(int c);

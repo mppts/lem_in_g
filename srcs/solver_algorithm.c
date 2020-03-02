@@ -34,7 +34,7 @@ void			algo(t_map *map, t_graph_inf *inf)
 	way_2 = (t_room **)malloc(sizeof(t_room *) * (map->num_nodes + 1));
 	nulls_to_ways(way_1, way_2, map->num_nodes);
 	indicator = 0;
-	while (!indicator && (find_best_current_way(map, way_1, way_2, inf)))
+	while (!indicator && (find_best_current_way(map, way_1, way_2)))
 	{
 		find_way_1(map, way_1, inf);
 		if (sufficienty_c(inf, map))

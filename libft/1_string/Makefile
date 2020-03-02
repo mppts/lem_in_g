@@ -1,7 +1,7 @@
 .PHONY: all clean fclean re directories
 
 DIR_SRC = srcs/
-DIR_INC = -I../includes/ -I../0_mem/includes
+DIR_INC = -I../includes/
 DIR_OBJ = ../obj/
 
 SRC = ft_strcat.c\
@@ -53,7 +53,7 @@ directories:
 	@$(MKDIR_P) $(DIR_OBJ)
 
 $(DIR_OBJ)%.o: $(DIR_SRC)%.c
-	@gcc $(FLAGS) -MD -o $@ -c $< $(DIR_INC)
+	gcc $(FLAGS) -MD -o $@ -c $< $(DIR_INC)
 include $(wildcard *.d)
 
 

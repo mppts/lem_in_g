@@ -30,7 +30,7 @@ directories:
 	@$(MKDIR_P) $(DIR_OBJ)
 
 $(DIR_OBJ)%.o: $(DIR_SRC)%.c
-	@gcc $(FLAGS) -MD -o $@ -c $< $(DIR_INC)
+	gcc $(FLAGS) -MD -o $@ -c $< $(DIR_INC)
 include $(wildcard *.d)
 
 

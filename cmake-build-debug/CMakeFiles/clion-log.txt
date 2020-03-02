@@ -1,4 +1,1 @@
-"/Volumes/Storage/cache/limry/Library/Application Support/JetBrains/Toolbox/apps/CLion/ch-0/201.5616.31/CLion 2020.1 EAP.app/Contents/bin/cmake/mac/bin/cmake" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /Users/limry/CLionProjects/lnfull
--- Configuring done
--- Generating done
--- Build files have been written to: /Users/limry/CLionProjects/lnfull/cmake-build-debug
+CMakeLists.txt not found in /Users/limry/CLionProjects/lnfull Select CMakeLists.txt file...

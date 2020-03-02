@@ -1,16 +1,16 @@
-SRC_DIR			=	srcs
-INCLUDES_DIR	=	includes
-OBJ_DIR			=	obj
+SRC_DIR			=	srcs/
+INCLUDES_DIR	=	includes/
+OBJ_DIR			=	obj/
 
-CHK_DIR			=	0_checkers
-MEM_DIR			=	0_mem
-STR_DIR			=	1_string
-TONUM_DIR		=	1_tonum
-GNL_DIR			=	2_get_next_line
-LST_DIR			=	2_lst
-PUT_DIR			=	2_put
-STRCH_DIR		=	2_strchange
-DSTR_DIR		=	3_dstr
+CHK_DIR			=	0_checkers/
+MEM_DIR			=	0_mem/
+STR_DIR			=	1_string/
+TONUM_DIR		=	1_tonum/
+GNL_DIR			=	2_get_next_line/
+LST_DIR			=	2_lst/
+PUT_DIR			=	2_put/
+STRCH_DIR		=	2_strchange/
+DSTR_DIR		=	3_dstr/
 
 CHK		=	ft_isalnum.c \
 			ft_isalpha.c \
@@ -100,12 +100,11 @@ FILES			+=	$(CHK) \
 					$(TONUM) \
 					$(DSTR)
 
-
 OBJ				=	$(FILES:%.c=%.o)
-OBJS			=	$(FILES:%.c=./$(OBJ_DIR)/%.o)
-DEPS = $(OBJS:.o=.d)
+OBJS			=	$(FILES:%.c=./$(OBJ_DIR)%.o)
+DEPS 			= 	$(OBJS:.o=.d)
 
-VPATH = ./$(SRC_DIR)/$(CHK_DIR)/
+MAKE_P = make -p
 
 .PHONY: all clean fclean re dirs modules
 
@@ -115,36 +114,29 @@ NAME	= libft.a
 
 all: $(NAME)
 
-$(NAME): dirs modules
-				@ar rc $(NAME) $(OBJS)
-				@ranlib $(NAME)
+$(NAME): $(OBJS) | $(OBJ_DIR)
+				ar rc $@ $^
+				ranlib $@
 
-modules:
-		@$(MAKE) -s -C $(CHK_DIR)
-		@echo -e "\033[0;32mCheckers module done\033[0m"
-		@$(MAKE) -s -C$(MEM_DIR)
-		@echo -e "\033[0;32mMemory module done\033[0m"
-		@$(MAKE) -s -C $(STR_DIR)
-		@echo -e "\033[0;32mString module done\033[0m"
-		@$(MAKE) -s -C $(STRCH_DIR)
-		@echo -e "\033[0;32mString changers module done\033[0m"
-		@$(MAKE) -s -C $(TONUM_DIR)
-		@echo -e "\033[0;32mNumber cast module done\033[0m"
-		@$(MAKE) -s -C $(GNL_DIR)
-		@echo -e "\033[0;32mGNL module done\033[0m"
-		@$(MAKE) -s -C $(LST_DIR)
-		@echo -e "\033[0;32mList module done\033[0m"
-		@$(MAKE) -s -C $(PUT_DIR)
-		@echo -e "\033[0;32mWriters module done\033[0m"
-		@$(MAKE) -s -C $(DSTR_DIR)
-		@echo -e "\033[0;32mDynamic string module done\033[0m"
+$(OBJS):
+		$(MAKE) -C $(CHK_DIR)
+		$(MAKE) -C $(MEM_DIR)
+		$(MAKE) -C $(STR_DIR)
+		$(MAKE) -C $(STRCH_DIR)
+		$(MAKE) -C $(TONUM_DIR)
+		$(MAKE) -C $(GNL_DIR)
+		$(MAKE) -C $(LST_DIR)
+		$(MAKE) -C $(PUT_DIR)
+		$(MAKE) -C $(DSTR_DIR)
+
+$(OBJ_DIR):
+		$(MAKE_P) $@
 
 clean:
-				@rm -f $(OBJS)
-				@rm -f $(OBJ)
-				@rm -rf $(OBJ_DIR)
+				rm -f $(OBJS)
+				rm -rf $(OBJ_DIR)
 
 fclean: clean
-				@rm -f $(NAME)
+				rm -f $(NAME)
 
 re: fclean all

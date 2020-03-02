@@ -42,26 +42,32 @@ HEADERS =	lem_in.h
 FLAGS = -Wall -Wextra -Werror
 OBJ = $(SOURCE:%.c=%.o)
 DEP = $(OBJ:%.o=%.d)
-OBJS = $(SOURCE:%.c=$(DIR_OBJ)%.o)
-SRCS = $(SOURCE:%.c=$(DIR_SRC)%.c)
-DEPS = $(SRC:%.c=$(DIR_OBJ)%.d)
+SRCS = $(addprefix $(DIR_SRC),$(SRC))
+OBJS = $(addprefix $(DIR_OBJ),$(OBJ))
+DEPS = $(addprefix $(DIR_OBJ),$(DEP))
+#SRCS = $(SOURCE:%.c=$(DIR_SRC)%.c)
+#DEPS = $(SRC:%.c=$(DIR_OBJ)%.d)
 
 MKDIR_P = mkdir -p
 
+
+
 all: $(NAME)
 
-$(NAME): $(LIB) directories $(OBJS)
-	gcc $(FLAGS) -o $(NAME) $(OBJS) -L$(DIR_LIB) -lft
-
-directories:
-	$(MKDIR_P) $(DIR_OBJ)
-
-$(LIB):
-	$(MAKE) -s -C $(DIR_LIB)
+$(NAME): $(OBJS) | $(LIB)
+	gcc $(FLAGS) -o $(NAME) $+ -L$(DIR_LIB) -lft
 
 $(DIR_OBJ)%.o: $(DIR_SRC)%.c
 	gcc $(FLAGS) -MD -o $@ -c $< -I$(DIR_INC) -I$(LIB_INCLUDES)
-include $(wildcard *.d)
+include $(wildcard $(DEPS))
+
+$(OBJS): | $(DIR_OBJ)
+
+$(LIB):
+	$(MAKE) -C $(DIR_LIB)
+
+$(DIR_OBJ):
+	$(MKDIR_P) $@
 
 clean:
 	rm -f $(DIR_OBJ)*.o
@@ -73,3 +79,4 @@ fclean: clean
 	$(MAKE) -s -C $(DIR_LIB) fclean
 
 re: fclean all
+

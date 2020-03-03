@@ -75,6 +75,7 @@ void		put_null_to_precessor(t_map *map)
 	while (!indicator || tmp != map->start)
 	{
 		tmp->level_rev = 0;
+		tmp->circle_in_find_way = 0;
 		tmp->room_from_we_came = NULL;
 		tmp = tmp->next;
 		indicator++;

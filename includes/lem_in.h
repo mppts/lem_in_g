@@ -6,7 +6,7 @@
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/05 12:03:07 by limry             #+#    #+#             */
-/*   Updated: 2020/03/02 18:23:02 by limry            ###   ########.fr       */
+/*   Updated: 2020/03/02 17:39:03 by dorphan          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,9 @@
 # include <inttypes.h>
 # include <libft.h>
 # include <stdlib.h>
+
+#include <fcntl.h>
+
 
 # define FALSE 0
 # define TRUE 1
@@ -78,6 +81,7 @@ typedef struct		s_room
 	int64_t			level;
 	int64_t			level_rev;
 	int				way_number;
+	char			circle_in_find_way;
 	t_link			*linked_to;
 	struct s_room	*room_from_we_came;
 	struct s_room	*next;
@@ -106,7 +110,7 @@ typedef struct		s_map
 	char			*buf;
 	t_dstr			*dstr;
 	struct s_path	*path;
-	char			cycle_found;
+	int				cycle_found;
 }					t_map;
 
 typedef struct		s_flag

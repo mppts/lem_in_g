@@ -12,12 +12,12 @@
 
 #include "lem_in.h"
 
-int				has_way_to_same_way(t_room *room)
+int				has_way_to_same_way(t_room *room, t_map *map)
 {
 	t_link		*tmp;
 
 	tmp = room->linked_to;
-	if (room->way_number == -1)
+	if (room->way_number == -1 && room != map->fin)
 		return (1);
 	while (tmp)
 	{
@@ -31,8 +31,6 @@ int				has_way_to_same_way(t_room *room)
 
 int				conditions_checking(t_map *map, t_link *tmp_link, t_room *room)
 {
-	int			indicator;
-
 	if (!room->room_from_we_came && room != map->start)
 		return (0);
 	if (room == map->start && !tmp_link->flow)
@@ -42,9 +40,10 @@ int				conditions_checking(t_map *map, t_link *tmp_link, t_room *room)
 		(room->way_number == tmp_link->to->way_number ||
 			(room->way_number != tmp_link->to->way_number &&
 				room->room_from_we_came->way_number == room->way_number &&
-					(indicator = has_way_to_same_way(tmp_link->to))) ||
+					 (tmp_link->to->way_number == -1 || has_way_to_same_way(tmp_link->to, map))) ||
 		(room->way_number != tmp_link->to->way_number &&
-			room->way_number == -1 && indicator)))
+			room->room_from_we_came->way_number != room->way_number &&
+				room->way_number == -1 && has_way_to_same_way(tmp_link->to, map))))
 		return (1);
 	return (0);
 }

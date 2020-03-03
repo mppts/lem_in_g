@@ -21,9 +21,9 @@ t_room			*find_way_on_fork(t_room *room, t_room *room_prev)
 	{
 		if (link->to != room_prev &&
 			((link->to->level - 1 == room->level &&
-				!link->mirror->flow && !link->flow) ||
+				link->mirror->flow && !link->flow && !link->to->circle_in_find_way) ||
 			(link->to->level + 1 == room->level &&
-				link->flow && !link->mirror->flow)))
+				!link->flow && link->mirror->flow && !link->to->circle_in_find_way)))
 			return (link->to);
 		link = link->next;
 	}
@@ -57,17 +57,18 @@ int				find_way_bf(t_map *map, t_room **line)
 	t_room		**tmp_line;
 
 	i = 0;
-	if (map->cycle_found == map->num_nodes + 2)
-		return (0);
 	tmp_line = (t_room **)malloc(sizeof(t_room) * (map->num_nodes + 1));
 	tmp = map->fin;
 	while (tmp && tmp != map->start)
 	{
 		tmp_line[i++] = tmp;
-		if (tmp == map->fin || (tmp->room_from_we_came &&
+		if (tmp == map->fin || (tmp->room_from_we_came && !tmp->circle_in_find_way &&
 			(tmp->room_from_we_came->level - 1 == tmp->level ||
 				tmp->room_from_we_came->level + 1 == tmp->level)))
+		{
+			tmp->circle_in_find_way = 1;
 			tmp = tmp->room_from_we_came;
+		}
 		else
 			tmp = find_way_on_fork(tmp, tmp_line[i - 2]);
 	}

@@ -32,8 +32,6 @@ int				has_way_to_same_way_e_s(t_room *room)
 int				conditions_checking_e_s(t_map *map, t_link *tmp_link,
 											t_room *room)
 {
-	int			indicator;
-
 	if (!room->room_from_we_came && room != map->fin)
 		return (0);
 	if (room == map->fin && !tmp_link->mirror->flow)
@@ -44,9 +42,10 @@ int				conditions_checking_e_s(t_map *map, t_link *tmp_link,
 		(room->way_number == tmp_link->to->way_number ||
 			(room->way_number != tmp_link->to->way_number
 				&& room->room_from_we_came->way_number == room->way_number &&
-					(indicator = has_way_to_same_way_e_s(tmp_link->to))) ||
+					 has_way_to_same_way_e_s(tmp_link->to)) ||
 		(room->way_number != tmp_link->to->way_number &&
-			room->way_number == -1 && indicator)))
+			room->room_from_we_came->way_number != room->way_number &&
+				room->way_number == -1 && has_way_to_same_way_e_s(tmp_link->to))))
 		return (1);
 	return (0);
 }

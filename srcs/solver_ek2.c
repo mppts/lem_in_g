@@ -6,13 +6,11 @@
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 15:38:38 by limry             #+#    #+#             */
-/*   Updated: 2020/02/26 18:43:25 by limry            ###   ########.fr       */
+/*   Updated: 2020/03/03 20:12:31 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
-
-int is_in_res(struct s_room *room, t_room **paths);
 
 void			fill_link_from_to(t_room *from, t_room *to)
 {
@@ -25,11 +23,13 @@ void			fill_link_from_to(t_room *from, t_room *to)
 		{
 			if (ln->flow == -1)
 			{
+				//printf("(%d) %d",ln->to->level, ln->flow);
 				ln->flow = 1;
 				ln->mirror->flow = 1;
 			}
-			else
+			else if (ln->flow == 1)
 			{
+				//printf("(%d) %d",ln->to->level, ln->flow);
 				ln->flow = 0;
 				ln->mirror->flow = -1;
 			}
@@ -39,35 +39,70 @@ void			fill_link_from_to(t_room *from, t_room *to)
 	}
 }
 
+
+int		go_pred_out(t_room **rm, int *flag_neg)
+{
+	t_room		*rm_tmp;
+
+	if ((*rm)->pred_out)
+	{
+		//printf("\033[0;31m%s\033[0m ", (*rm)->name);
+		fill_link_from_to((*rm)->pred_out, (*rm));
+		(*rm)->level = *flag_neg ? 0 : 1;
+		rm_tmp = (*rm);
+		(*rm) = (*rm)->pred_out;
+		rm_tmp->pred_out = NULL;
+		*flag_neg = 1;
+		return (0);
+	}
+	return (1);
+}
+
+int		go_pred_in(t_room **rm, int *flag_neg)
+{
+	t_room		*rm_tmp;
+
+	if ((*rm)->pred_in)
+	{
+		//printf("\033[0;32m%s\033[0m ", (*rm)->name);
+		fill_link_from_to((*rm)->pred_in, (*rm));
+		(*rm)->level = 1;
+		rm_tmp = (*rm);
+		(*rm) = (*rm)->pred_in;
+		rm_tmp->pred_in = NULL;
+		*flag_neg = 0;
+		return (0);
+	}
+	return (1);
+}
+
 void			fulfill_path(t_map *g)
 {
 	t_room		*rm;
-	t_room		*rm_tmp;
-	int 		flag_neg;
+	int			flag_neg;
+	int			flag_path;
 
+	flag_path = NORM;
 	rm = g->fin;
 	flag_neg = 0;
 	while (rm != g->start)
 	{
-		if (rm->pred_neg)
+		if (flag_path == NORM)
 		{
-			//printf("\t%s\n", rm->name);
-			rm->level = flag_neg ? 0 : -1;
-			fill_link_from_to(rm->pred_neg, rm);
-			rm_tmp = rm;
-			rm = rm->pred_neg;
-			rm_tmp->pred_neg = NULL;
-			flag_neg = 1;
+			if (go_pred_out(&rm, &flag_neg))
+				go_pred_in(&rm, &flag_neg);
+			else
+				flag_path = BACK;
 		}
-		else
+		else if (flag_path == BACK)
 		{
-		//	printf("%s\n", rm->name);
-			rm->level = 1;
-			fill_link_from_to(rm->pred, rm);
-			rm = rm->pred;
-			flag_neg = 0;
+			if(go_pred_in(&rm, &flag_neg))
+				go_pred_out(&rm, &flag_neg);
+			else
+				flag_path = NORM;
 		}
 	}
+	//printf("\n");
 }
 
 int				is_in_res(struct s_room *room, t_room **paths)
@@ -89,6 +124,7 @@ void			push_path(t_patha *path, t_map *g, t_link *lf)
 
 	path->path_starts[path->path_id][0] = g->start;
 	path->path_starts[path->path_id][1] = lf->to;
+	lf->to->level = 1;
 	path->path_lens[path->path_id] = 2;
 	link = lf->to->linked_to;
 	while (link)
@@ -96,6 +132,7 @@ void			push_path(t_patha *path, t_map *g, t_link *lf)
 		if (link->flow == 0 && (!g->paths || !is_in_res(link->to, g->paths->path)))
 		{
 			path->path_starts[path->path_id][path->path_lens[path->path_id]++] = link->to;
+			link->to->level = 1;
 			link = link->to->linked_to;
 		}
 		else

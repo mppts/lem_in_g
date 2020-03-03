@@ -6,7 +6,7 @@
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/10 17:42:37 by limry             #+#    #+#             */
-/*   Updated: 2020/02/26 16:29:42 by limry            ###   ########.fr       */
+/*   Updated: 2020/03/02 21:03:14 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,6 +80,6 @@ void				writer(t_map *map)
 	dstr_joinstr(map->dstr, "\n");
 	count_ants_for_paths(map);
 	prep_paths(map->paths, map);
-	print_desc(map->paths);
+	//print_desc(map->paths);
 	push_ants(map);
 }

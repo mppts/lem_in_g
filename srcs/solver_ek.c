@@ -6,7 +6,7 @@
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 15:37:56 by limry             #+#    #+#             */
-/*   Updated: 2020/02/26 18:43:11 by limry            ###   ########.fr       */
+/*   Updated: 2020/03/03 20:05:02 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,19 +52,23 @@ void			refresh_potentials(t_room *start, t_map *g)
 {
 	t_room		*tmp;
 
-	start->potential = start->delta;
+	start->pot_out = start->delta_out;
+	start->pot_in = start->delta_in;
 	start->level = 0;
-	start->delta = 0;
+	start->delta_out = 0;
+	start->delta_in = 0;
 	start->sign = 0;
-	start->pred = NULL;
-	start->pred_neg = NULL;
+	start->pred_in = NULL;
+	start->pred_out = NULL;
 	tmp = start->next;
 	while (tmp != start)
 	{
-		tmp->potential = tmp->delta;
-		tmp->pred = NULL;
-		tmp->pred_neg = NULL;
-		tmp->delta = INT64_MAX;
+		tmp->pot_out = tmp->delta_out;
+		tmp->pot_in = tmp->delta_in;
+		tmp->pred_in = NULL;
+		tmp->pred_out = NULL;
+		tmp->delta_out = INT64_MAX;
+		tmp->delta_in = INT64_MAX;
 		tmp->sign = 0;
 		tmp = tmp->next;
 	}
@@ -104,12 +108,15 @@ void			solver_edmonds_karp(t_map *g)
 	slv = init_solver(g);
 	if (bfs_potential(g->start, g->fin, slv->deq))
 	{
+		g->start->delta_out = 0;
+		g->start->delta_in = 0;
 		while (bin_dijkstra(g, slv->heap))
 		{
+
 			fulfill_path(g);
 			find_all_paths(slv->paths_arr, g);
-			print_desc2(slv->paths_arr);
-			printf("\n");
+			//print_desc2(slv->paths_arr);
+			//printf("\n");
 			if (enough_solutions(slv, g))
 				break ;
 			bin_clean_heap_data(slv->heap);

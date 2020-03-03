@@ -6,7 +6,7 @@
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 16:31:36 by limry             #+#    #+#             */
-/*   Updated: 2020/02/26 16:28:15 by limry            ###   ########.fr       */
+/*   Updated: 2020/03/03 20:16:22 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,8 +83,8 @@ void				push_ants(t_map *map)
 	slv[3] = 1;
 	while (slv[2] < map->ants)
 	{
-		dstr_joinstr(map->dstr, ft_itoa(slv[0]++));
-		dstr_joinstr(map->dstr, ": ");
+		//dstr_joinstr(map->dstr, ft_itoa(slv[0]++));
+		//dstr_joinstr(map->dstr, ": ");
 		slv[4] = -1;
 		while (++slv[4] < map->paths->path_id)
 		{

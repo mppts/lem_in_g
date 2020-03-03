@@ -6,7 +6,7 @@
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/05 12:03:07 by limry             #+#    #+#             */
-/*   Updated: 2020/02/26 16:05:27 by limry            ###   ########.fr       */
+/*   Updated: 2020/03/03 19:06:16 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,8 @@
 
 # define FALSE 0
 # define TRUE 1
-# define WHITE 0
-# define GRAY 1
-# define BLACK 2
+# define NORM 0
+# define BACK 1
 
 typedef struct		s_r_reader
 {
@@ -80,13 +79,16 @@ typedef struct		s_room
 	int				ant;
 	char			*name;
 	int64_t			level;
-	int64_t			potential;
-	int64_t			delta;
+	int64_t			pot_out;
+	int64_t			pot_in;
+	int64_t			delta_out;
+	int64_t			delta_in;
 	int64_t			sign;
+	int64_t			sim;
 	int				color;
 	t_link			*linked_to;
-	struct s_room	*pred;
-	struct s_room	*pred_neg;
+	struct s_room	*pred_in;
+	struct s_room	*pred_out;
 	struct s_room	*next;
 	struct s_room	*prev;
 	int				x;

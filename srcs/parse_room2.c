@@ -6,7 +6,7 @@
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/05 15:27:11 by limry             #+#    #+#             */
-/*   Updated: 2020/02/26 11:16:15 by limry            ###   ########.fr       */
+/*   Updated: 2020/03/03 19:06:16 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,15 @@ void	init_room(t_room *new, int x, int y, char *name)
 	new->prev = NULL;
 	new->num_linked_to = 0;
 	new->level = 0;
-	new->potential = 0;
+	new->pot_out = 0;
+	new->pot_in = 0;
 	new->path_id = 0;
 	new->ant = 0;
-	new->color = WHITE;
-	new->pred = NULL;
-	new->pred_neg = NULL;
+	new->pred_in = NULL;
+	new->pred_out = NULL;
 	new->sign = 0;
 	new->flv = 0;
-	new->delta = INT64_MAX;
+	new->delta_out = INT64_MAX;
+	new->delta_in = INT64_MAX;
+	new->sim = 0;
 }

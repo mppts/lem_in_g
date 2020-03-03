@@ -228,13 +228,13 @@ void		add_path(t_map *map, t_link *link)
 		if (l->mirror->flow == 1)
 		{
 			i++;
-			printf("[%s] - %lld", l->mirror->to->name, l->mirror->to->level);
+			//printf("[%s] - %lld", l->mirror->to->name, l->mirror->to->level);
 			l->mirror->flow = 0;
 		}
 		r = l->to;
 		l = r->linked_to;
 	}
-	printf("len is %d\n", i);
+	//printf("len is %d\n", i);
 }
 
 void		find_paths(t_graph_inf *inf, t_map *map)

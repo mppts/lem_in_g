@@ -66,7 +66,7 @@ void		clear_precessors(t_map *map)
 	indicator = 0;
 	while (!indicator || tmp != map->start)
 	{
-		tmp->circle_in_find_way = 0;
+		tmp->c_in_way = 0;
 		tmp->room_from_we_came = NULL;
 		tmp = tmp->next;
 		indicator++;

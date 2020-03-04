@@ -21,9 +21,9 @@ t_room			*find_way_on_fork_e_s(t_room *room, t_room *room_prev)
 	{
 		if (link->to != room_prev &&
 				((link->to->level_rev - 1 == room->level_rev &&
-					link->flow && !link->to->circle_in_find_way) ||
+					link->flow && !link->to->c_in_way) ||
 				(link->to->level_rev + 1 == room->level_rev &&
-					!link->flow && !link->to->circle_in_find_way)))
+					!link->flow && !link->to->c_in_way)))
 			return (link->to);
 		link = link->next;
 	}
@@ -62,11 +62,11 @@ int				find_way_bf_e_s(t_map *map, t_room **line)
 	while (tmp && tmp != map->fin)
 	{
 		tmp_line[i++] = tmp;
-		if (tmp == map->start || (tmp->room_from_we_came && !tmp->circle_in_find_way &&
+		if (tmp == map->start || (tmp->room_from_we_came && !tmp->c_in_way &&
 			(tmp->room_from_we_came->level_rev - 1 == tmp->level_rev ||
 				tmp->room_from_we_came->level_rev + 1 == tmp->level_rev)))
 		{
-			tmp->circle_in_find_way = 1;
+			tmp->c_in_way = 1;
 			tmp = tmp->room_from_we_came;
 		}
 		else

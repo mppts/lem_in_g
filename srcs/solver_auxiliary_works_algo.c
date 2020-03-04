@@ -18,12 +18,12 @@ void		clear_levels(t_room *source)
 
 	source->level = 0;
 	source->level_rev = 0;
-	source->circle_in_find_way = 0;
+	source->c_in_way = 0;
 	source->room_from_we_came = NULL;
 	tmp_r = source->next;
 	while (tmp_r != source)
 	{
-		tmp_r->circle_in_find_way = 0;
+		tmp_r->c_in_way = 0;
 		tmp_r->level = 0;
 		tmp_r->level_rev = 0;
 		tmp_r->room_from_we_came = NULL;

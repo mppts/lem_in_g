@@ -40,10 +40,12 @@ int				conditions_checking(t_map *map, t_link *tmp_link, t_room *room)
 		(room->way_number == tmp_link->to->way_number ||
 			(room->way_number != tmp_link->to->way_number &&
 				room->room_from_we_came->way_number == room->way_number &&
-					 (tmp_link->to->way_number == -1 || has_way_to_same_way(tmp_link->to, map))) ||
+					(tmp_link->to->way_number == -1 ||
+						has_way_to_same_way(tmp_link->to, map))) ||
 		(room->way_number != tmp_link->to->way_number &&
-			room->room_from_we_came->way_number != room->way_number &&
-				room->way_number == -1 && has_way_to_same_way(tmp_link->to, map))))
+			room->room_from_we_came->way_number != room->way_number
+				&& room->way_number == -1 &&
+					has_way_to_same_way(tmp_link->to, map))))
 		return (1);
 	return (0);
 }

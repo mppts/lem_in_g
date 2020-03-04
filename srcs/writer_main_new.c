@@ -80,6 +80,6 @@ void				writer(t_map *map)
 	dstr_joinstr(map->dstr, "\n");
 	count_ants_for_paths(map);
 	prep_paths(map->paths, map);
-	print_desc(map->paths);
+	//print_desc(map->paths);
 	push_ants(map);
 }

@@ -92,12 +92,13 @@ DSTR	=	dstr.c\
 			dstr2.c
 
 BIN_HEAP = bin_free.c\
-		 bin_get_root.c\
-         bin_inc_key.c\
-         bin_insert.c\
-         bin_remove_root.c\
-         bin_swap.c\
-         binary_init.c\
+           bin_get_root.c\
+           bin_heapify.c\
+           bin_inc_key.c\
+           bin_insert.c\
+           bin_remove_root.c\
+           bin_swap.c\
+           binary_init.c
 
 FILES			+=	$(CHK) \
 					$(GNL) \

@@ -104,30 +104,6 @@
 		<Unit filename="/Users/limry/CLionProjects/lm_full/libft/includes/libft.h">
 			<Option target="lem_in"/>
 		</Unit>
-		<Unit filename="/Users/limry/CLionProjects/lm_full/libft/srcs/binary_heap/bin_free.c">
-			<Option target="lem_in"/>
-		</Unit>
-		<Unit filename="/Users/limry/CLionProjects/lm_full/libft/srcs/binary_heap/bin_get_root.c">
-			<Option target="lem_in"/>
-		</Unit>
-		<Unit filename="/Users/limry/CLionProjects/lm_full/libft/srcs/binary_heap/bin_heapify.c">
-			<Option target="lem_in"/>
-		</Unit>
-		<Unit filename="/Users/limry/CLionProjects/lm_full/libft/srcs/binary_heap/bin_inc_key.c">
-			<Option target="lem_in"/>
-		</Unit>
-		<Unit filename="/Users/limry/CLionProjects/lm_full/libft/srcs/binary_heap/bin_insert.c">
-			<Option target="lem_in"/>
-		</Unit>
-		<Unit filename="/Users/limry/CLionProjects/lm_full/libft/srcs/binary_heap/bin_remove_root.c">
-			<Option target="lem_in"/>
-		</Unit>
-		<Unit filename="/Users/limry/CLionProjects/lm_full/libft/srcs/binary_heap/bin_swap.c">
-			<Option target="lem_in"/>
-		</Unit>
-		<Unit filename="/Users/limry/CLionProjects/lm_full/libft/srcs/binary_heap/binary_init.c">
-			<Option target="lem_in"/>
-		</Unit>
 		<Unit filename="/Users/limry/CLionProjects/lm_full/libft/srcs/dstr/dstr.c">
 			<Option target="lem_in"/>
 		</Unit>

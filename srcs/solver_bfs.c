@@ -6,7 +6,7 @@
 /*   By: dorphan <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/12 16:43:01 by dorphan           #+#    #+#             */
-/*   Updated: 2020/03/04 08:54:21 by limry            ###   ########.fr       */
+/*   Updated: 2020/03/04 13:53:14 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 t_room			*bfs_potential(t_room *start, t_room *final, t_deq *deq)
 {
 	t_link		*ln;
-	t_room		*rm;
+	t_room		*tmp;
 	t_room		*find_source;
 
 	find_source = NULL;
@@ -25,24 +25,22 @@ t_room			*bfs_potential(t_room *start, t_room *final, t_deq *deq)
 	start->sign = 1;
 	while (deq->begin <= deq->rear)
 	{
-		rm = (t_room*)deq_pop_front(deq);
-		ln = rm->linked_to;
+		tmp = (t_room*)deq_pop_front(deq);
+		ln = tmp->linked_to;
 		while (ln)
 		{
-			if (ln && ln->to->sign == 0 && ln->to != rm && ln->flow == 1)
+			if (ln->to->sign == 0 && ln->to != tmp && ln->flow == 1)
 			{
 				if (!find_source && (ln->to == final))
 					find_source = ln->to;
 				if (ln->to != final)
-				{
 					deq_push_back(ln->to, deq);
-					ln->to->sign = 1;
-				}
-				ln->to->pot_out = rm->pot_out + ln->flow;
-				ln->to->pot_in = rm->pot_out + ln->flow;
+				ln->to->sign = 1;
+				ln->to->pot_out = tmp->pot_out + ln->flow;
+				ln->to->pot_in = tmp->pot_in + ln->flow;
+				ln->to->pred_in = tmp;
 			}
-			if (ln)
-				ln = ln->next;
+			ln = ln->next;
 		}
 	}
 	return (find_source);

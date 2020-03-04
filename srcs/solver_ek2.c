@@ -6,13 +6,11 @@
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 15:38:38 by limry             #+#    #+#             */
-/*   Updated: 2020/03/04 08:54:06 by limry            ###   ########.fr       */
+/*   Updated: 2020/03/04 18:36:42 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "lem_in.h"
-
-int is_in_res(struct s_room *room, t_room **paths);
 
 void			fill_link_from_to(t_room *from, t_room *to)
 {
@@ -25,13 +23,13 @@ void			fill_link_from_to(t_room *from, t_room *to)
 		{
 			if (ln->flow == -1)
 			{
-				printf("%d", ln->flow);
+				//printf("%d", ln->flow);
 				ln->flow = 1;
 				ln->mirror->flow = 1;
 			}
 			else if (ln->flow == 1)
 			{
-				printf("%d", ln->flow);
+				//printf("%d", ln->flow);
 				ln->flow = 0;
 				ln->mirror->flow = -1;
 			}
@@ -41,36 +39,70 @@ void			fill_link_from_to(t_room *from, t_room *to)
 	}
 }
 
+int				go_pred_out(t_room **rm, int *flag_neg, int *flag_move)
+{
+	t_room		*rm_tmp;
+
+	if ((*rm)->pred_out)
+	{
+		//printf("\033[0;31m%s\033[0m ", (*rm)->name);
+		(*rm)->level = *flag_neg ? 0 : -1;
+		fill_link_from_to((*rm)->pred_out, (*rm));
+		rm_tmp = (*rm);
+		(*rm) = (*rm)->pred_out;
+		rm_tmp->pred_out = NULL;
+		*flag_neg = 1;
+		*flag_move = BACK;
+		return (0);
+	}
+	return (1);
+}
+
+int				go_pred_in(t_room **rm, int *flag_neg, int *flag_move)
+{
+	t_room		*rm_tmp;
+
+	if ((*rm)->pred_in)
+	{
+		//printf("\033[0;32m%s\033[0m ", (*rm)->name);
+		(*rm)->level = 1;
+		fill_link_from_to((*rm)->pred_in, (*rm));
+		rm_tmp = (*rm);
+		(*rm) = (*rm)->pred_in;
+		rm_tmp->pred_in = NULL;
+		*flag_neg = 0;
+		*flag_move = BACK;
+		return (0);
+	}
+	return (1);
+}
 void			fulfill_path(t_map *g)
 {
 	t_room		*rm;
-	t_room		*rm_tmp;
 	int 		flag_neg;
+	int 		flag_move;
 
 	rm = g->fin;
 	flag_neg = 0;
+	flag_move = NORM;
 	while (rm != g->start)
 	{
-		if (rm->pred_neg)
+		if (flag_move == NORM)
 		{
-			printf("\033[0;31m%s\033[0m ", rm->name);
-			rm->level = flag_neg ? 0 : -1;
-			fill_link_from_to(rm->pred_neg, rm);
-			rm_tmp = rm;
-			rm = rm->pred_neg;
-			rm_tmp->pred_neg = NULL;
-			flag_neg = 1;
+			if (go_pred_in(&rm, &flag_neg, &flag_move))
+				go_pred_out(&rm, &flag_neg, &flag_move);
+			if (rm->sim == 1)
+				flag_move = NORM;
 		}
-		else
+		else if (flag_move == BACK)
 		{
-			printf("\033[0;32m%s\033[0m ", rm->name);
-			rm->level = 1;
-			fill_link_from_to(rm->pred, rm);
-			rm = rm->pred;
-			flag_neg = 0;
+			if (go_pred_out(&rm, &flag_neg, &flag_move))
+				go_pred_in(&rm, &flag_neg, &flag_move);
+			if (rm->sim == 1)
+				flag_move = BACK;
 		}
 	}
-	printf("\n");
+	//printf("\n");
 }
 
 int				is_in_res(struct s_room *room, t_room **paths)
@@ -86,48 +118,60 @@ int				is_in_res(struct s_room *room, t_room **paths)
 	}
 	return (0);
 }
+
+
+t_room			*split_node(t_room *in)
+{
+	t_room		*out;
+
+	if (!(out = (t_room*)malloc(sizeof(t_room)))
+		return (NULL);
+	é
+}
+
 void			push_path(t_patha *path, t_map *g, t_link *lf)
 {
-	t_link		*link;
+	t_link		*ln;
 
 	path->path_starts[path->path_id][0] = g->start;
 	path->path_starts[path->path_id][1] = lf->to;
 	lf->to->level = 1;
 	path->path_lens[path->path_id] = 2;
-	link = lf->to->linked_to;
-	while (link)
+	ln = lf->to->linked_to;
+	while (ln)
 	{
-		if (link->flow == 0 && (!g->paths || !is_in_res(link->to, g->paths->path)))
+		if (ln->flow == 0 && (!g->paths || !is_in_res(ln->to, g->paths->path)))
 		{
-			path->path_starts[path->path_id][path->path_lens[path->path_id]++] = link->to;
-			link->to->level = 1;
-			link = link->to->linked_to;
+			path->path_starts[path->path_id][path->path_lens[path->path_id]++] = ln->to;
+			split_node(ln->to);
+			ln->to->level = 1;
+			ln = ln->to->linked_to;
 		}
 		else
-			link = link->next;
-		if (link->to == g->fin)
+			ln = ln->next;
+		if (ln->to == g->fin)
 			break ;
 	}
-	path->path_starts[path->path_id][path->path_lens[path->path_id]++] = link->to;
-	path->path_starts[path->path_id][path->path_lens[path->path_id]] = NULL;
+	if (ln && ln->to)
+		path->path_starts[path->path_id][path->path_lens[path->path_id]] = (t_room*)ln->to;
+	path->path_lens[path->path_id]++;
+	//path->path_starts[path->path_id][path->path_lens[path->path_id]] = NULL;
 }
 
 void			find_all_paths(t_patha *path, t_map *g)
 {
-	t_link		*link;
+	t_link		*ln;
 
-	link = g->start->linked_to;
-	while (link)
+	ln = g->start->linked_to;
+	while (ln)
 	{
-		if (link->flow == 0)
+		if (ln->flow == 0)
 		{
-			push_path(path, g, link);
+			push_path(path, g, ln);
 			path->amt_steps_cost += path->path_lens[path->path_id];
 			path->path_id++;
-			path->path_starts[path->path_id] =
-					path->path_starts[path->path_id - 1] +
-					path->path_lens[path->path_id - 1];
+			path->path_starts[path->path_id] =((t_room**) (path->path_starts[path->path_id - 1] + path->path_lens[path->path_id - 1]));
 		}
-		link = link->next;
+		ln = ln->next;
 	}
 }

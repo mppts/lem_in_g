@@ -19,6 +19,7 @@
 # include <stdio.h>
 # include <inttypes.h>
 # include "dstr.h"
+# include "binary_heap.h"
 
 /*
 ** libFT defines

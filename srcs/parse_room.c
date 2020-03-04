@@ -77,7 +77,7 @@ static int		no_room_with_this_name(t_map *map, t_r_reader r)
 	return (1);
 }
 
-static t_room	*new_room(t_r_reader r, t_flag *flag, t_map *map)
+t_room	*new_room(t_r_reader r, t_flag *flag, t_map *map)
 {
 	t_room		*new;
 	int64_t		x;

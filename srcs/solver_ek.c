@@ -6,7 +6,7 @@
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 15:37:56 by limry             #+#    #+#             */
-/*   Updated: 2020/03/04 08:54:21 by limry            ###   ########.fr       */
+/*   Updated: 2020/03/04 18:28:27 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,27 +48,28 @@ int				enough_solutions(t_solver *slv, t_map *g)
 	return (1);
 }
 
-void			refresh_potentials(t_room *start, t_map *g)
+void			refresh_potentials(t_room *start, t_map *g, int f)
 {
 	t_room		*tmp;
 
-	start->potential = start->delta;
+	start->pot_out += f  ? start->delta_out : 0;
+	start->pot_in += f  ? start->delta_in : 0;
 	start->level = 0;
-	start->delta = 0;
-	start->sign = 0;
-	start->pred = NULL;
-	start->pred_neg = NULL;
+	start->delta_out = 0;
+	start->delta_in = 0;
+	start->sign = 1;
 	tmp = start->next;
 	while (tmp != start)
 	{
-		tmp->potential = tmp->delta;
-		tmp->pred = NULL;
-		tmp->pred_neg = NULL;
-		tmp->delta = INT64_MAX;
+		tmp->pot_out += f ? tmp->delta_out : 0;
+		tmp->pot_in += f  ? tmp->delta_in : 0;
+		tmp->delta_out = INT64_MAX;
+		tmp->delta_in = INT64_MAX;
 		tmp->sign = 0;
+		tmp->sim = 0;
 		tmp = tmp->next;
 	}
-	g->fin->level = 1;
+	g->fin->level = f ? 1 : 0;
 }
 
 
@@ -104,6 +105,7 @@ void			solver_edmonds_karp(t_map *g)
 	slv = init_solver(g);
 	if (bfs_potential(g->start, g->fin, slv->deq))
 	{
+		refresh_potentials(g->start, g, 0);
 		while (bin_dijkstra(g, slv->heap))
 		{
 			fulfill_path(g);
@@ -112,9 +114,8 @@ void			solver_edmonds_karp(t_map *g)
 			printf("\n");
 			if (enough_solutions(slv, g))
 				break ;
+			refresh_potentials(g->start, g, 1);
 			bin_clean_heap_data(slv->heap);
-			refresh_potentials(g->start, g);
-			g->fin->level = 0;
 		}
 	}
 	g->paths = slv->paths_arr_solution;

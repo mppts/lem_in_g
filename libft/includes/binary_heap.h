@@ -6,7 +6,7 @@
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 20:39:41 by limry             #+#    #+#             */
-/*   Updated: 2020/02/25 20:40:20 by limry            ###   ########.fr       */
+/*   Updated: 2020/03/04 17:25:44 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,5 +41,7 @@ void				*bin_pop_root(void *new_min, t_bin_heap *heap);
 void				bin_clean_heap_data(t_bin_heap *heap);
 void				bin_refresh_keys(t_bin_heap *heap, int64_t f(void*));
 void				bin_heap_restore(t_bin_heap *heap);
+void				bin_heapify(t_bin_heap *heap, int64_t i);
+
 
 #endif

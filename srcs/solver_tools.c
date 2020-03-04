@@ -6,7 +6,7 @@
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 15:56:05 by limry             #+#    #+#             */
-/*   Updated: 2020/02/25 16:01:00 by limry            ###   ########.fr       */
+/*   Updated: 2020/03/04 15:00:41 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void			slv_clean_paths(t_patha *path, t_map *g)
 
 	max_path_num = g->start->num_linked_to > g->fin->num_linked_to ?
 	g->start->num_linked_to : g->fin->num_linked_to;
-	ft_bzero(path->path, sizeof(t_room*) * g->num_nodes);
+	ft_bzero(path->path, (sizeof(t_room*) * g->num_nodes));
 	ft_bzero(path->path_starts, sizeof(t_room**) * max_path_num);
 	ft_bzero(path->path_lens, sizeof(int) * max_path_num);
 	ft_bzero(path->num_ants, sizeof(int) * max_path_num);

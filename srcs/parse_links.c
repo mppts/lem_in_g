@@ -90,6 +90,8 @@ void			add_link(char *buf, t_map *map)
 		man_err_map("ERROR: can't find from\n", &buf, ft_strdel, map);
 	if (!(to = find_hashed_room(map, r.to)))
 		man_err_map("ERROR: can't find to\n", &buf, ft_strdel, map);
+	if (to == from)
+		man_err_map("ERROR: from and to\n", &buf, ft_strdel, map);
 	if (error_in_link(map, from, to))
 	{
 		free(r.from);

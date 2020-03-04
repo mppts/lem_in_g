@@ -27,14 +27,14 @@ add_executable(lem_in
                 #srcs/solver_algorithm_cleaning.c
                 srcs/solver_ek.c
         srcs/solver_dijkstra.c
-        libft/srcs/binary_heap/binary_init.c
-        libft/srcs/binary_heap/bin_swap.c
-        libft/srcs/binary_heap/bin_remove_root.c
-        libft/srcs/binary_heap/bin_free.c
-        libft/srcs/binary_heap/bin_insert.c
-        libft/srcs/binary_heap/bin_inc_key.c
-        libft/srcs/binary_heap/bin_get_root.c
-        libft/srcs/binary_heap/bin_heapify.c
+#        libft/srcs/binary_heap/binary_init.c
+#        libft/srcs/binary_heap/bin_swap.c
+#        libft/srcs/binary_heap/bin_remove_root.c
+#        libft/srcs/binary_heap/bin_free.c
+#        libft/srcs/binary_heap/bin_insert.c
+#        libft/srcs/binary_heap/bin_inc_key.c
+#        libft/srcs/binary_heap/bin_get_root.c
+#        libft/srcs/binary_heap/bin_heapify.c
         srcs/solver_tools.c
         srcs/deque2.c
         srcs/deque.c

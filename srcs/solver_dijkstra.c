@@ -6,7 +6,7 @@
 /*   By: limry <limry@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/21 12:50:11 by limry             #+#    #+#             */
-/*   Updated: 2020/03/03 18:54:45 by limry            ###   ########.fr       */
+/*   Updated: 2020/03/04 08:54:21 by limry            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int64_t			get_room_delta(void *rm)
 	t_room		*trm;
 
 	trm = (t_room*)rm;
-	return (trm->delta_out);
+	return (trm->delta);
 }
 
 int				neg_has_exit(t_room *rm, int64_t new_delta)
@@ -28,7 +28,7 @@ int				neg_has_exit(t_room *rm, int64_t new_delta)
 	ln = rm->linked_to;
 	while (ln)
 	{
-		if (ln->flow == 1 && ln->to->level == 0 && ln->to->delta_out > new_delta)
+		if (ln->flow == 1 && ln->to->level == 0 && ln->to->delta > new_delta)
 			return (1);
 		ln = ln->next;
 	}
@@ -44,7 +44,7 @@ int				neg_can_go(t_room *rm, int64_t new_delta)
 	i = 1;
 	while (ln)
 	{
-		if (ln->flow == -1 && rm->level != 0 && ln->to->level != 0 && ln->to->delta_out > new_delta - i)
+		if (ln->flow == -1 && ln->to->level != 0 && ln->to->delta > new_delta - i)
 		{
 			if (neg_has_exit(ln->to, new_delta - 1))
 				return (1);
@@ -62,65 +62,55 @@ int				neg_can_go(t_room *rm, int64_t new_delta)
 
 static int		pass_qrit(t_room *tmp, t_link *ln, t_bin_heap *heap, t_map *m)
 {
-	if (ln->to->level == 1)
+	int 	flag;
+
+	flag = 0;
+	if (ln->to->delta > tmp->potential - ln->to->potential + ln->flow + tmp->delta)
 	{
-		if (tmp->level == 0 && ln->flow == 1 && ln->to->delta_in > tmp->pot_out - ln->to->pot_in + ln->flow + tmp->delta_out)
+		if (tmp->level == 0)
 		{
-			ln->to->pred_in = tmp;
-			ln->to->delta_in = tmp->pot_out - ln->to->pot_in + ln->flow + tmp->delta_out;
-			bin_heap_insert(heap, ln->to, ln->to->delta_in);
-		}
-		else if (tmp->level == 1 && ln->flow == -1 && ln->to->delta_out > tmp->pot_in - ln->to->pot_out + ln->flow + tmp->delta_in)
-		{
-			ln->to->pred_out = tmp;
-			ln->to->delta_out = tmp->pot_in - ln->to->pot_out + ln->flow + tmp->delta_in;
-			if (ln->to->delta_out < ln->to->delta_in)
+			if ((ln->to->level == 0 || neg_can_go(ln->to, tmp->potential - ln->to->potential + ln->flow + tmp->delta)))
 			{
-				ln->to->sim = 1;
-				ln->to->delta_in = ln->to->delta_out;
-				bin_heap_insert(heap, ln->to, ln->to->delta_in);
+				ln->to->pred = tmp;
+				ln->to->delta = tmp->potential - ln->to->potential + ln->flow + tmp->delta;
+				if (m->fin != ln->to)
+					ln->to->flv = bin_heap_insert(heap, ln->to, ln->to->delta);
+				flag = 1;
 			}
 			else
-				bin_heap_insert(heap, ln->to, ln->to->delta_out);
+				ln->to->delta = INT64_MAX;
 		}
-		else if (tmp->level == 1 && ln->flow == 1 && ln->to->delta_in > tmp->pot_out - ln->to->pot_in + ln->flow + tmp->delta_out && ln->to->pred_out)
+		else if (tmp->level != 0 && ln->flow == 1 && (tmp->pred_neg || (tmp->pred && tmp->pred->level != 0)))
 		{
-			ln->to->pred_in = tmp;
-			ln->to->delta_in = tmp->pot_out - ln->to->pot_in + ln->flow + tmp->delta_out;
-			ln->to->delta_out = ln->to->delta_in;
-			bin_heap_insert(heap, ln->to, ln->to->delta_in);
+			ln->to->pred = tmp;
+			ln->to->delta = tmp->potential - ln->to->potential + ln->flow + tmp->delta;
+			if (m->fin != ln->to)
+				ln->to->flv = bin_heap_insert(heap, ln->to, ln->to->delta);
+			flag = 2;
 		}
+		else if (tmp->level != 0 && ln->flow == -1)
+		{
+			ln->to->pred_neg = tmp;
+			ln->to->delta = tmp->potential - ln->to->potential + ln->flow + tmp->delta;
+			if (m->fin != ln->to)
+				ln->to->flv = bin_heap_insert(heap, ln->to, ln->to->delta);
+			flag = 3;
+		}
+		//if (!flag)
+		//	tmp->delta = heap->nodes[heap->num_nodes].key;
+		return (1);
 	}
-	else if (ln->to->level == 0)
+	/*else if (tmp->level != 0 && ln->flow == -1)
 	{
-		if (tmp->level == 0 && ln->flow == 1 && ln->to->delta_in > tmp->pot_out - ln->to->pot_in + ln->flow + tmp->delta_out)
+		ln->to->delta = tmp->potential - ln->to->potential + ln->flow + tmp->delta;
+		if (ln->to->flv)
 		{
-			ln->to->pred_in = tmp;
-			ln->to->delta_in = tmp->pot_out - ln->to->pot_in + ln->flow + tmp->delta_out;
-			ln->to->delta_out = ln->to->delta_in;
-			bin_heap_insert(heap, ln->to, ln->to->delta_in);
+			bin_refresh_keys(heap, get_room_delta);
+			bin_heap_restore(heap);
 		}
-		else if (tmp->level == 1 && tmp->pred_in && tmp->pred_in->level == 1 && tmp->pred_out == NULL)
-		{
-			if (ln->to->delta_in > tmp->pot_in - ln->to->pot_in + ln->flow + tmp->delta_in)
-			{
-				ln->to->pred_in = tmp;
-				ln->to->delta_in = tmp->pot_out - ln->to->pot_in + ln->flow + tmp->delta_out;
-				ln->to->delta_out = ln->to->delta_in;
-				bin_heap_insert(heap, ln->to, ln->to->delta_in);
-			}
-		}
-		else if (tmp->level == 1 && tmp->pred_out)
-		{
-			if (ln->to->delta_in > tmp->pot_out - ln->to->pot_in + ln->flow + tmp->delta_out)
-			{
-				ln->to->pred_in = tmp;
-				ln->to->delta_in = tmp->pot_out - ln->to->pot_in + ln->flow + tmp->delta_out;
-				ln->to->delta_out = ln->to->delta_in;
-				bin_heap_insert(heap, ln->to, ln->to->delta_in);
-			}
-		}
-	}
+		else
+			ln->to->flv = bin_heap_insert(heap, ln->to, ln->to->delta);
+	}*/
 	return (0);
 }
 
@@ -131,7 +121,7 @@ int				bin_dijkstra(t_map *g, t_bin_heap *heap)
 	int			flag;
 
 	flag = 0;
-	bin_heap_insert(heap, g->start, g->start->delta_out);
+	bin_heap_insert(heap, g->start, g->start->delta);
 	g->start->flv = 1;
 	while (heap->num_nodes > 1)
 	{
@@ -141,7 +131,7 @@ int				bin_dijkstra(t_map *g, t_bin_heap *heap)
 		ln = tmp->linked_to;
 		while (ln)
 		{
-			while (ln && (ln->flow == 0 || ln->to == g->start))
+			while (ln && (ln->flow == 0))
 				ln = ln->next;
 			ln && pass_qrit(tmp, ln, heap, g);
 			if (ln && ln->to == g->fin)

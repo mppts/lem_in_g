@@ -120,13 +120,41 @@ int				is_in_res(struct s_room *room, t_room **paths)
 }
 
 
-t_room			*split_node(t_room *in)
+t_room			*split_node(t_room *in, t_map *g)
 {
 	t_room		*out;
+	t_link		*ln_in_out;
+	t_link		*ln_out_in;
 
-	if (!(out = (t_room*)malloc(sizeof(t_room)))
+	if (!(out = (t_room*)malloc(sizeof(t_room))))
 		return (NULL);
-	é
+	out->level = 1;
+	out->name = ft_strdup(in->name);
+	out->linked_to = in->linked_to;
+	in->linked_to = NULL;
+	out->num_linked_to = in->num_linked_to;
+	out->next = g->room_start;
+	g->room_start->prev = out;
+	out->prev = g->room_end;
+	g->room_end->next = out;
+	out->sign = 0;
+	out->ant = 0;
+	out->pred_in = NULL;
+	out->pred_out = NULL;
+	out->delta_in = INT64_MAX;
+	out->delta_out = INT64_MAX;
+	if (!(ln_in_out = (t_link*)malloc(sizeof(t_link))))
+		return (NULL);
+	ln_in_out->to = out;
+	ln_in_out->flow = 0;
+	ln_in_out->next = NULL;
+	in->linked_to = ln_in_out;
+	if (!(ln_out_in = (t_link*)malloc(sizeof(t_link))))
+		return (NULL);
+	ln_out_in->flow = -1;
+	ln_out_in->to = in;
+	ln_out_in->next = out->linked_to;
+	out->linked_to = ln_out_in;
 }
 
 void			push_path(t_patha *path, t_map *g, t_link *lf)
@@ -143,7 +171,7 @@ void			push_path(t_patha *path, t_map *g, t_link *lf)
 		if (ln->flow == 0 && (!g->paths || !is_in_res(ln->to, g->paths->path)))
 		{
 			path->path_starts[path->path_id][path->path_lens[path->path_id]++] = ln->to;
-			split_node(ln->to);
+			split_node(ln->to, g);
 			ln->to->level = 1;
 			ln = ln->to->linked_to;
 		}

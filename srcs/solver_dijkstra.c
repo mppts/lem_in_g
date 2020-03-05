@@ -101,7 +101,7 @@ int				bin_dijkstra(t_map *g, t_bin_heap *heap)
 		ln = tmp->linked_to;
 		while (ln)
 		{
-			while (ln && (ln->flow == 0))
+			while (ln && (ln->flow == 0 || ln->to->sign == 1))
 				ln = ln->next;
 			ln && pass_qrit(tmp, ln, heap, g);
 			if (ln && ln->to == g->fin)
